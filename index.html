@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,68 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2017-12-08-Unix-Chapter1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/08/2017-12-08-Unix-Chapter1/" class="article-date">
+  <time datetime="2017-12-08T02:28:34.000Z" itemprop="datePublished">2017-12-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/08/2017-12-08-Unix-Chapter1/">2017-12-08 Unix Chapter1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="초보자를-위한-UNIX-Chapter1-Unix란-무엇인가"><a href="#초보자를-위한-UNIX-Chapter1-Unix란-무엇인가" class="headerlink" title="초보자를 위한 UNIX Chapter1 : Unix란 무엇인가?"></a>초보자를 위한 UNIX Chapter1 : Unix란 무엇인가?</h2><h4 id="Unix는-컴퓨터의-운영체제이다-운영체제는-사용자와-상호작용하는-역할을-할-뿐-아니라-컴퓨터상의-자원-관리-그리고-다른-컴퓨터와의-상호작용을-조율하는-소프트웨어이다"><a href="#Unix는-컴퓨터의-운영체제이다-운영체제는-사용자와-상호작용하는-역할을-할-뿐-아니라-컴퓨터상의-자원-관리-그리고-다른-컴퓨터와의-상호작용을-조율하는-소프트웨어이다" class="headerlink" title="Unix는 컴퓨터의 운영체제이다. 운영체제는 사용자와 상호작용하는 역할을 할 뿐 아니라, 컴퓨터상의 자원 관리 그리고 다른 컴퓨터와의 상호작용을 조율하는 소프트웨어이다."></a>Unix는 컴퓨터의 운영체제이다. 운영체제는 사용자와 상호작용하는 역할을 할 뿐 아니라, 컴퓨터상의 자원 관리 그리고 다른 컴퓨터와의 상호작용을 조율하는 소프트웨어이다.</h4><h5 id="Unix의-명령어들을-동사라고-생각하면-명령어들의-옵션은-형용사가-되고-파일이나-디렉토리의-이름은-명사가-된다-이-명령어들의-조합되어-만들어진-일련의-작업은-파일을-실행시키는-문장이된다"><a href="#Unix의-명령어들을-동사라고-생각하면-명령어들의-옵션은-형용사가-되고-파일이나-디렉토리의-이름은-명사가-된다-이-명령어들의-조합되어-만들어진-일련의-작업은-파일을-실행시키는-문장이된다" class="headerlink" title="Unix의 명령어들을 동사라고 생각하면, 명령어들의 옵션은 형용사가 되고, 파일이나 디렉토리의 이름은 명사가 된다. 이 명령어들의 조합되어 만들어진 일련의 작업은 파일을 실행시키는 문장이된다."></a>Unix의 명령어들을 동사라고 생각하면, 명령어들의 옵션은 형용사가 되고, 파일이나 디렉토리의 이름은 명사가 된다. 이 명령어들의 조합되어 만들어진 일련의 작업은 파일을 실행시키는 문장이된다.</h5><h4 id="다중사용시스템이란"><a href="#다중사용시스템이란" class="headerlink" title="다중사용시스템이란?"></a>다중사용시스템이란?</h4><ul>
+<li>다중사용자 시스템의 목표는 해당시스템을 사용하는 모든 사용자가 마치 자신만의 단독 시스템을 사용하는 듯한 느낌이 들게 하는것이다.</li>
+<li>각각의 사용자에게 계정(account)이 부여되며, 각각의 계정에는 홈 디렉토리가 부여된다.</li>
+</ul>
+<h4 id="셸이란"><a href="#셸이란" class="headerlink" title="셸이란?"></a>셸이란?</h4><ul>
+<li>셸이란 명령행 기반 사용자 인터페이스를 셸이라고 한다. 셸은 사용자가 입력한 명령어들을 해석하는 인터프리터이다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp folder1/file foler2</span><br><span class="line">// folder1에 있는 file을 folder2로 복사해라</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="man-명령어"><a href="#man-명령어" class="headerlink" title="man 명령어"></a>man 명령어</h4><ul>
+<li>man은 Unix manual의 약자이다.</li>
+<li>man -k옵션을 이용해서 키워드를 검색할 수도 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">man 명령어</span><br><span class="line">//해당 명령어에 대한 메뉴얼이 쭈우욱 나온다.</span><br><span class="line">mkdir man</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/mkdir_man.png" alt="Alt text" title="mkdir man"><br>mkdir 명령어에 대해서 man을 입력하면 다음과 같이 나온다.</p>
+<p>man은 명령어에 대한 모든 설명이 나와있지만 이와 간결하게 whatis라는 명령어가 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">whatis 명령어</span><br><span class="line">whatis mkdir</span><br></pre></td></tr></table></figure>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/whatis_mkdir.png" alt="Alt text" title="whatis mkdir"></p>
+<h3 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h3><h4 id="기초용어정리"><a href="#기초용어정리" class="headerlink" title="기초용어정리"></a>기초용어정리</h4><ol>
+<li>계정(account) : Unix 시스템이 각각의 사용자에게 부여하는 이름.</li>
+<li>인자(arguments) : 컴퓨터에서는 주로 어떤 프로그램이나 함수에 전달되는 옵션이나 파일명이다.</li>
+<li>명령어(command) : Unix 시스템에 설치된 각각의 프로그램들을 전부 명령어라고한다.</li>
+<li>man 페이지(page) : 모든 표준 Unix 명령어에 사용법과 기능을 명시한 문서이다.</li>
+<li>다중작업(multitasking) : 하나 이상의 프로그램이나 작업을 동시에 실행할 수 있도록 해 주는 컴퓨터를 멀티태스킹 컴퓨터라고 한다.</li>
+<li>경로명(pathname) : Unix 시스템안에는 여러개의 디렉토리와 그 하위 디렉토리들이 존재하는데, 특정한 파일을 찾을때 디렉토리들을 어떤 순서로 찾아야 하는지를 명시하는 문자열이다.</li>
+<li>셸(shell) : Unix 시스템을 사용하려면 명령어를 명령어 인터프리터상에 입력해야 한다. 이 인터프리터를 Unix에서는 셸, 혹은 명령어 셸(command shell)이라고 부른다.</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/08/2017-12-08-Unix-Chapter1/" data-id="cjaxanx5z000310tbdwsp7xu6" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2017-12-07-TIL-Array" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -150,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL-Array/" data-id="cjaw7z0ke000098tbdb5jt5xn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL-Array/" data-id="cjaxanx6z000510tb0ea2ec31" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -221,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL/" data-id="cjaw7z0kl000298tbmemn7ia6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL/" data-id="cjaxanx72000610tb22te3fju" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -315,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjaw7z0kq000698tbyvyd07gp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjaxanx75000710tb2u6ma1kt" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -369,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/2017-12-06-TIL/" data-id="cjaw7z0kp000598tb1a46wqyq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/06/2017-12-06-TIL/" data-id="cjaxanx6u000410tbog4dpwq9" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -446,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/05/2017-12-05-TIL/" data-id="cjaw7z0km000398tbq5eggiks" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/05/2017-12-05-TIL/" data-id="cjaxanx5l000010tbpj9bwt0h" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -515,7 +577,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/04/2017-12-04-TIL/" data-id="cjaw7z0ko000498tbrg7fbs3l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/04/2017-12-04-TIL/" data-id="cjaxanx5x000210tbu98qi4ds" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -561,7 +623,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/01/2017-12-01-TIL/" data-id="cjaw7z0ki000198tbnp87pvgm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/01/2017-12-01-TIL/" data-id="cjaxanx5t000110tb40wsa0zy" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -606,7 +668,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/01/hello-world/" data-id="cjaw7z0kr000798tboqza4am8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/01/hello-world/" data-id="cjaxanx78000810tbr31xnqc8" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -641,9 +703,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/12/08/2017-12-08-Unix-Chapter1/">2017-12-08 Unix Chapter1</a>
+          </li>
         
           <li>
             <a href="/2017/12/07/2017-12-07-TIL-Array/">2017-12-07 TIL Array</a>
@@ -661,10 +727,6 @@
             <a href="/2017/12/06/2017-12-06-TIL/">2017-12-06 TIL</a>
           </li>
         
-          <li>
-            <a href="/2017/12/05/2017-12-05-TIL/">2017-12-05 TIL</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -678,7 +740,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Jimmy<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
