@@ -12,10 +12,13 @@
 <meta property="og:site_name" content="jaeyeon&#39;s blog">
 <meta property="og:description" content="GIT git은 소스코드 관리 저장소이다. 안전하게 소스코드를 관리하기 위해서 git으로 관리하면 변경 이력이 다 남는다(소스코드의 타임머신이라고 생각하면 된다) Commit : 한마디로 스냅샷 -&amp;gt; 내 컴퓨터의 특정 시간의 작업내용, commit을 만들어 낼때 해당 사람의 컴퓨터의 상태  작업 디렉토리 = 워킹디렉토리 사람이 직접 파일을 변경하는 곳">
 <meta property="og:locale" content="Korean">
-<meta property="og:updated_time" content="2017-12-05T07:15:56.232Z">
+<meta property="og:image" content="http://yoursite.com/Users/jimmy/Desktop/project/blog/source/_posts/1.png">
+<meta property="og:image" content="http://yoursite.com/Users/jimmy/Desktop/project/blog/source/_posts/2.png">
+<meta property="og:updated_time" content="2017-12-08T07:08:59.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017-12-05 TIL">
 <meta name="twitter:description" content="GIT git은 소스코드 관리 저장소이다. 안전하게 소스코드를 관리하기 위해서 git으로 관리하면 변경 이력이 다 남는다(소스코드의 타임머신이라고 생각하면 된다) Commit : 한마디로 스냅샷 -&amp;gt; 내 컴퓨터의 특정 시간의 작업내용, commit을 만들어 낼때 해당 사람의 컴퓨터의 상태  작업 디렉토리 = 워킹디렉토리 사람이 직접 파일을 변경하는 곳">
+<meta name="twitter:image" content="http://yoursite.com/Users/jimmy/Desktop/project/blog/source/_posts/1.png">
   
     <link rel="alternate" href="/atom.xml" title="jaeyeon&#39;s blog" type="application/atom+xml">
   
@@ -131,11 +134,30 @@
 <li>clone한 폴더로 이동해서 추가한다</li>
 </ol>
 <h4 id="git저장소로-들어가면-워킹트리가-된다"><a href="#git저장소로-들어가면-워킹트리가-된다" class="headerlink" title="git저장소로 들어가면 워킹트리가 된다."></a>git저장소로 들어가면 워킹트리가 된다.</h4><h4 id="mkdir-directory-gt-cd-directory-gt-git-init을-하면-로컬저장소가-된다"><a href="#mkdir-directory-gt-cd-directory-gt-git-init을-하면-로컬저장소가-된다" class="headerlink" title="mkdir directory =&gt; cd directory =&gt; git init을 하면 로컬저장소가 된다."></a>mkdir directory =&gt; cd directory =&gt; git init을 하면 로컬저장소가 된다.</h4><h4 id="git이-있는-디렉토리를-워킹디렉토리라고하고-git을-로컬저장소라고-한다-아직-원격-저장소가-없는상태이다"><a href="#git이-있는-디렉토리를-워킹디렉토리라고하고-git을-로컬저장소라고-한다-아직-원격-저장소가-없는상태이다" class="headerlink" title=".git이 있는 디렉토리를 워킹디렉토리라고하고 .git을 로컬저장소라고 한다. 아직 원격 저장소가 없는상태이다."></a>.git이 있는 디렉토리를 워킹디렉토리라고하고 .git을 로컬저장소라고 한다. 아직 원격 저장소가 없는상태이다.</h4><h4 id="만약에-홈디렉토리에서-git-init을-하게되면-rm-rf-git폴더를-지워야된다"><a href="#만약에-홈디렉토리에서-git-init을-하게되면-rm-rf-git폴더를-지워야된다" class="headerlink" title="만약에 홈디렉토리에서 git init을 하게되면, rm -rf .git폴더를 지워야된다."></a>만약에 홈디렉토리에서 git init을 하게되면, rm -rf .git폴더를 지워야된다.</h4><h2 id="GIT-명령어"><a href="#GIT-명령어" class="headerlink" title="GIT 명령어"></a>GIT 명령어</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git status : 디렉토리의 작업상태를 보는것이다.</span><br><span class="line">git commit : 인덱스의 내용을 로컬저장소에 올리는것이다.</span><br><span class="line">git add : 변경내용을 인덱스라고 하는 stage에 업로드를 시킨다. 인덱스에 올린것만 commit할 수 있다.</span><br><span class="line">git commit -m &apos;message&apos; 우리팀사람들이나 미래의 나한테 보내는 것이다. 70자이내 간결하게.</span><br><span class="line">git log : commit의단위 commit은 고유한 번호이다.</span><br><span class="line">git push : push를 하면 로컬저장소를 원격저장소에 업로드를 하는것이다.</span><br></pre></td></tr></table></figure>
-<h4 id="중요한것은-커밋의-단위다-커밋의-단위는-기능을-추가할수록-하는것이-좋다-한문장으로-설명할-수-있으면-한커밋이다"><a href="#중요한것은-커밋의-단위다-커밋의-단위는-기능을-추가할수록-하는것이-좋다-한문장으로-설명할-수-있으면-한커밋이다" class="headerlink" title="중요한것은 커밋의 단위다. 커밋의 단위는 기능을 추가할수록 하는것이 좋다. 한문장으로 설명할 수 있으면 한커밋이다."></a>중요한것은 커밋의 단위다. 커밋의 단위는 기능을 추가할수록 하는것이 좋다. 한문장으로 설명할 수 있으면 한커밋이다.</h4><h4 id="참고-“원숭이도-배우는-GIT”을-공부하기"><a href="#참고-“원숭이도-배우는-GIT”을-공부하기" class="headerlink" title="참고 “원숭이도 배우는 GIT”을 공부하기"></a>참고 “원숭이도 배우는 GIT”을 공부하기</h4>
+<h4 id="중요한것은-커밋의-단위다-커밋의-단위는-기능을-추가할수록-하는것이-좋다-한문장으로-설명할-수-있으면-한커밋이다"><a href="#중요한것은-커밋의-단위다-커밋의-단위는-기능을-추가할수록-하는것이-좋다-한문장으로-설명할-수-있으면-한커밋이다" class="headerlink" title="중요한것은 커밋의 단위다. 커밋의 단위는 기능을 추가할수록 하는것이 좋다. 한문장으로 설명할 수 있으면 한커밋이다."></a>중요한것은 커밋의 단위다. 커밋의 단위는 기능을 추가할수록 하는것이 좋다. 한문장으로 설명할 수 있으면 한커밋이다.</h4><h4 id="참고-“원숭이도-배우는-GIT”을-공부하기"><a href="#참고-“원숭이도-배우는-GIT”을-공부하기" class="headerlink" title="참고 “원숭이도 배우는 GIT”을 공부하기"></a>참고 “원숭이도 배우는 GIT”을 공부하기</h4><h4 id="git-remote-v"><a href="#git-remote-v" class="headerlink" title="git remote -v"></a>git remote -v</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$git remote -v를 하면 원격저장소 위치를 확인할 수 있다</span><br><span class="line">origin	https://github.com/jaeyeon93/js-study.git (fetch)</span><br><span class="line">origin	https://github.com/jaeyeon93/js-study.git (push)</span><br><span class="line">// origin이 원격저장소다.</span><br></pre></td></tr></table></figure>
+<h4 id="원격저장소-수동으로-등록하기"><a href="#원격저장소-수동으로-등록하기" class="headerlink" title="원격저장소 수동으로 등록하기"></a>원격저장소 수동으로 등록하기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git remote add origin url</span><br><span class="line">$git remote add origin https://github.com/jaeyeon93/git-study-day6.git</span><br></pre></td></tr></table></figure>
+<p>여기서 git push를 하더라도 안된다.<br><img src="/Users/jimmy/Desktop/project/blog/source/_posts/1.png" alt="Alt text" title="git push"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git push --set-upstream origin master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git push -u origin master</span><br><span class="line">// 한번만 git push -u origin master하면 되고 그 다음부터는 git push만 하면된다!</span><br></pre></td></tr></table></figure>
+<p>한줄로 로그를 보기<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git log --oneline</span><br></pre></td></tr></table></figure></p>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/2.png" alt="Alt text" title="git oneline"></p>
+<ul>
+<li><p>HEAD : 현재 작업하고 있는 branch *은 head다.</p>
+</li>
+<li><p>mater branch는 항상 배포버전이다 =&gt; 항상 정상동작 그러므로 master에서 코딩을 안하고 branch를 만들어서 개발을 한다.</p>
+</li>
+<li>branch의 이름은 내가 구현하는 기능을 이름으로 한다.</li>
+<li><p>merge</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git merge branch-name</span><br><span class="line">// 충돌이 일어나는경우에는 양쪽에서 다 파일을 수정한 경우에 충돌이 일어난다. 이럴 경우 에디터를 열어서 확인해야한다.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>branch는 참조다.</p>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/05/2017-12-05-TIL/" data-id="cjaxanx5l000010tbpj9bwt0h" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/05/2017-12-05-TIL/" data-id="cjaxkm9uj0002p8tbjb72kklj" class="article-share-link">Partager</a>
       
       
     </footer>
