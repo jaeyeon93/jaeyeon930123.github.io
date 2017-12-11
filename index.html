@@ -69,6 +69,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-12-11-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/11/2017-12-11-TIL/" class="article-date">
+  <time datetime="2017-12-11T07:26:14.000Z" itemprop="datePublished">2017-12-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/11/2017-12-11-TIL/">2017-12-11 TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="배열과-문자열"><a href="#배열과-문자열" class="headerlink" title="배열과 문자열"></a>배열과 문자열</h2><h3 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h3><ul>
+<li>같은 용도의 데이터를 묶어서 저장하고 관리하기 위해 사용</li>
+<li>요즘은 배열과 리스트가 모호하지만, C나 C++은 엄격하게 구분이 된다.</li>
+<li>자료구조에서 가장 많이 사용</li>
+<li>배열 == 리스트 비슷함, 오브젝트 == 해쉬</li>
+<li>웬만해서 배열에서는 같은 타입의 데이터타입을 넣는것이 좋다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3]</span><br><span class="line">typeof(arr) // object</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Stack자료구조"><a href="#Stack자료구조" class="headerlink" title="Stack자료구조"></a>Stack자료구조</h4><ul>
+<li>LIFO : Last In First Out</li>
+<li>push(), pop()을 이용</li>
+</ul>
+<h4 id="Queue자료구조"><a href="#Queue자료구조" class="headerlink" title="Queue자료구조"></a>Queue자료구조</h4><ul>
+<li>FIFO : First in First Out</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; var arr = [1, 2, 3];</span><br><span class="line">undefined</span><br><span class="line"></span><br><span class="line">&gt; var append = function(array, data)&#123;</span><br><span class="line">&gt; return array[array.length]=data;&#125;</span><br><span class="line">undefined</span><br><span class="line">&gt; append(arr,4);</span><br><span class="line">&gt; arr</span><br><span class="line">&gt; [1,2,3,4]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>객체안에는 프로토타입이라는 객체를 가지고있다.</li>
+<li>프로토타입(객체의 추상적인 컨셉)</li>
+<li>Array.prototype.method() =&gt; 모든 배열은 … 메소드를 붙일 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.append = function(v)&#123;</span><br><span class="line">	this[this.length] = v;</span><br><span class="line">    return this.length;</span><br><span class="line">&#125;; // 이제 모든 배열에는 append라는 메소드를 가진다, this는 해당 배열을 가리킨다.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="prototype은-모든-ex-Array-prototype-모든-배열-…"><a href="#prototype은-모든-ex-Array-prototype-모든-배열-…" class="headerlink" title="prototype은 모든.. ex) Array.prototype : 모든 배열 …"></a>prototype은 모든.. ex) Array.prototype : 모든 배열 …</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/11/2017-12-11-TIL/" data-id="cjb1vk95h0005betb0qlw6yr1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2017-12-10-Algorithm-sumDivisor" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/10/2017-12-10-Algorithm-sumDivisor/" class="article-date">
@@ -98,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/10/2017-12-10-Algorithm-sumDivisor/" data-id="cjb0vcmnl0007ruvlmo37dij8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/10/2017-12-10-Algorithm-sumDivisor/" data-id="cjb1vk95p0008betbzd64sai3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -160,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/08/2017-12-08-Unix-Chapter1/" data-id="cjb0vcmnk0006ruvlhbh5xvei" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/08/2017-12-08-Unix-Chapter1/" data-id="cjb1vk95m0007betbsrmaaj02" class="article-share-link">Share</a>
       
       
     </footer>
@@ -251,7 +309,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL-Array/" data-id="cjb0vcmnh0004ruvlyhnx9akm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL-Array/" data-id="cjb1vk94u0004betbf5prcyqw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -322,7 +380,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL/" data-id="cjb0vcmnj0005ruvlalx486l8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL/" data-id="cjb1vk95k0006betbp6gvipqd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -416,7 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjb0vcmno0008ruvlkjbpfgo9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjb1vk96d0009betbaoc1lphg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -470,7 +528,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/2017-12-06-TIL/" data-id="cjb0vcmnf0003ruvliana076y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/06/2017-12-06-TIL/" data-id="cjb1vk94r0003betbmf3ybg5a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -566,7 +624,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/05/2017-12-05-TIL/" data-id="cjb0vcmnd0002ruvlfa3xnuzr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/05/2017-12-05-TIL/" data-id="cjb1vk94o0002betb06feb6zh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -635,7 +693,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/04/2017-12-04-TIL/" data-id="cjb0vcmn90001ruvlhonbvn76" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/04/2017-12-04-TIL/" data-id="cjb1vk93y0001betbrtqvfig0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -681,52 +739,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/01/2017-12-01-TIL/" data-id="cjb0vcmn30000ruvlhw9k2xwl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/01/hello-world/" class="article-date">
-  <time datetime="2017-12-01T07:23:34.130Z" itemprop="datePublished">2017-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/01/hello-world/" data-id="cjb0vcmnq0009ruvlzbn1409s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/01/2017-12-01-TIL/" data-id="cjb1vk93d0000betbrncqfkos" class="article-share-link">Share</a>
       
       
     </footer>
@@ -737,6 +750,10 @@
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -766,6 +783,10 @@
       <ul>
         
           <li>
+            <a href="/2017/12/11/2017-12-11-TIL/">2017-12-11 TIL</a>
+          </li>
+        
+          <li>
             <a href="/2017/12/10/2017-12-10-Algorithm-sumDivisor/">(no title)</a>
           </li>
         
@@ -779,10 +800,6 @@
         
           <li>
             <a href="/2017/12/07/2017-12-07-TIL/">2017-12-07 TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/06/String-Number-Method-Object/">String, Number, Method Object</a>
           </li>
         
       </ul>
