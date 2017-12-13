@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux System Mangement(1) | jaeyeon&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Linux System Mangement (1)SSH(Secure SHell) : 다른PC에 네트워크 경유로 로그인해할 수 있게 해준다.1234$ssh -Y -C user@192.168.0.0.1// -Y flag : X 전송지정// -C flag : 통신내용을 압축// X : 리눅스에">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux System Mangement(1)">
+<meta property="og:url" content="http://yoursite.com/2017/12/13/Linux-System-Mangement-1/index.html">
+<meta property="og:site_name" content="jaeyeon&#39;s blog">
+<meta property="og:description" content="Linux System Mangement (1)SSH(Secure SHell) : 다른PC에 네트워크 경유로 로그인해할 수 있게 해준다.1234$ssh -Y -C user@192.168.0.0.1// -Y flag : X 전송지정// -C flag : 통신내용을 압축// X : 리눅스에서 화면 표시와 입력을 담당하는 구조 root, sudo : root는">
+<meta property="og:locale" content="Korean">
+<meta property="og:updated_time" content="2017-12-13T06:06:20.325Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux System Mangement(1)">
+<meta name="twitter:description" content="Linux System Mangement (1)SSH(Secure SHell) : 다른PC에 네트워크 경유로 로그인해할 수 있게 해준다.1234$ssh -Y -C user@192.168.0.0.1// -Y flag : X 전송지정// -C flag : 통신내용을 압축// X : 리눅스에서 화면 표시와 입력을 담당하는 구조 root, sudo : root는">
+  
+    <link rel="alternate" href="/atom.xml" title="jaeyeon&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jaeyeon&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">coding</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Linux-System-Mangement-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/13/Linux-System-Mangement-1/" class="article-date">
+  <time datetime="2017-12-13T06:05:42.000Z" itemprop="datePublished">2017-12-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux System Mangement(1)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Linux-System-Mangement-1"><a href="#Linux-System-Mangement-1" class="headerlink" title="Linux System Mangement (1)"></a>Linux System Mangement (1)</h2><h5 id="SSH-Secure-SHell-다른PC에-네트워크-경유로-로그인해할-수-있게-해준다"><a href="#SSH-Secure-SHell-다른PC에-네트워크-경유로-로그인해할-수-있게-해준다" class="headerlink" title="SSH(Secure SHell) : 다른PC에 네트워크 경유로 로그인해할 수 있게 해준다."></a>SSH(Secure SHell) : 다른PC에 네트워크 경유로 로그인해할 수 있게 해준다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ssh -Y -C user@192.168.0.0.1</span><br><span class="line">// -Y flag : X 전송지정</span><br><span class="line">// -C flag : 통신내용을 압축</span><br><span class="line">// X : 리눅스에서 화면 표시와 입력을 담당하는 구조</span><br></pre></td></tr></table></figure>
+<h5 id="root-sudo-root는-관리자-권한을-가진-사용자로서-파일-접근-권한을-자유롭게-변경하고-수정이-가능하다-임시적으로-root-사용자권한을-얻기-위해서는-sudo-명령어를-사용한다"><a href="#root-sudo-root는-관리자-권한을-가진-사용자로서-파일-접근-권한을-자유롭게-변경하고-수정이-가능하다-임시적으로-root-사용자권한을-얻기-위해서는-sudo-명령어를-사용한다" class="headerlink" title="root, sudo : root는 관리자 권한을 가진 사용자로서 파일 접근 권한을 자유롭게 변경하고, 수정이 가능하다. 임시적으로 root 사용자권한을 얻기 위해서는 sudo 명령어를 사용한다."></a>root, sudo : root는 관리자 권한을 가진 사용자로서 파일 접근 권한을 자유롭게 변경하고, 수정이 가능하다. 임시적으로 root 사용자권한을 얻기 위해서는 sudo 명령어를 사용한다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$sudo -i</span><br><span class="line">[sudo[ password for user: ****</span><br><span class="line">root@server:~#</span><br><span class="line">// sudo -i를 하면 root사용자로 일시적으로 권한이 생긴다.</span><br></pre></td></tr></table></figure>
+<h5 id="grep-검색하고-싶은-문자열을-검색한다"><a href="#grep-검색하고-싶은-문자열을-검색한다" class="headerlink" title="grep : 검색하고 싶은 문자열을 검색한다."></a>grep : 검색하고 싶은 문자열을 검색한다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ grep -r &quot;string&quot; /path/</span><br><span class="line">- r flag : 서브폴더까지 검색하도록 지정</span><br><span class="line">- string : 검색하고 싶은 내용</span><br><span class="line">- path : 찾을 파일이 있는 폴더</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/13/Linux-System-Mangement-1/" data-id="cjb4nkze9000bx6tbhs0zls8h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/13/IT-Infra-Study-1-Server-Infra/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">IT Infra Study(1) - Server, Infra</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/13/Linux-System-Mangement-1/">Linux System Mangement(1)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/13/IT-Infra-Study-1-Server-Infra/">IT Infra Study(1) - Server, Infra</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/12/2017-12-12-Object-Study/">2017-12-12 Object Study</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/11/2017-12-11-TIL/">2017-12-11 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/10/2017-12-10-Algorithm-sumDivisor/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Jimmy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
