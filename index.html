@@ -69,6 +69,81 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-IT-Infra-Study-1-Server-Infra" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/13/IT-Infra-Study-1-Server-Infra/" class="article-date">
+  <time datetime="2017-12-13T05:54:12.000Z" itemprop="datePublished">2017-12-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/13/IT-Infra-Study-1-Server-Infra/">IT Infra Study(1) - Server, Infra</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="그림으로-공부하는-IT인프라-구조-1-인프라아키텍처-서버"><a href="#그림으로-공부하는-IT인프라-구조-1-인프라아키텍처-서버" class="headerlink" title="그림으로 공부하는 IT인프라 구조 (1) - 인프라아키텍처, 서버"></a>그림으로 공부하는 IT인프라 구조 (1) - 인프라아키텍처, 서버</h2><h3 id="IT인프라는-2가지-형태로-구성이-된다"><a href="#IT인프라는-2가지-형태로-구성이-된다" class="headerlink" title="IT인프라는 2가지 형태로 구성이 된다."></a>IT인프라는 2가지 형태로 구성이 된다.</h3><h4 id="집약형-대형컴퓨터-메인프레임-등-성능이-좋은것이고-집약형의-최대-장점은-단순하다는-점이다"><a href="#집약형-대형컴퓨터-메인프레임-등-성능이-좋은것이고-집약형의-최대-장점은-단순하다는-점이다" class="headerlink" title="집약형 : 대형컴퓨터, 메인프레임 등 성능이 좋은것이고 집약형의 최대 장점은 단순하다는 점이다."></a>집약형 : 대형컴퓨터, 메인프레임 등 성능이 좋은것이고 집약형의 최대 장점은 단순하다는 점이다.</h4><h5 id="장점"><a href="#장점" class="headerlink" title="장점"></a>장점</h5><ol>
+<li>한 대의 대형 컴퓨터만 있으면 되므로 구성이 간단.</li>
+<li>안정성이 높고 고성능이다.<h5 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h5></li>
+<li>비용이 비싸다.</li>
+<li>확장성에 한계가 있다.</li>
+</ol>
+<h4 id="분산형-아키텍처"><a href="#분산형-아키텍처" class="headerlink" title="분산형 아키텍처"></a>분산형 아키텍처</h4><h5 id="장점-1"><a href="#장점-1" class="headerlink" title="장점"></a>장점</h5><ol>
+<li>낮은 비용이다.</li>
+<li>확장성이 매우 좋다.</li>
+</ol>
+<h5 id="단점-1"><a href="#단점-1" class="headerlink" title="단점"></a>단점</h5><ol>
+<li>복잡하다.</li>
+<li>한대가 고장나면 영향을 최소화하기위해 설계가 필요</li>
+</ol>
+<h4 id="클라이언트-서버형-아키텍처"><a href="#클라이언트-서버형-아키텍처" class="headerlink" title="클라이언트 - 서버형 아키텍처"></a>클라이언트 - 서버형 아키텍처</h4><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/1.jpeg" alt=""></p>
+<h5 id="장점-2"><a href="#장점-2" class="headerlink" title="장점"></a>장점</h5><ol>
+<li>클라이언트측에서 많은 처리를 실행할 수 있어서 소수의 서버로 다수의 클라이언트를 처리할 수 있다.</li>
+</ol>
+<h5 id="단점-2"><a href="#단점-2" class="headerlink" title="단점"></a>단점</h5><ol>
+<li>확장성에 한계가 필요</li>
+</ol>
+<h4 id="3계층형-아키텍처"><a href="#3계층형-아키텍처" class="headerlink" title="3계층형 아키텍처"></a>3계층형 아키텍처</h4><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/2.jpeg" alt=""></p>
+<h6 id="3계층형은-‘프레젠테이션-계층’-‘애플리케이션-계층’-‘데이터-계층’-총-3가지-계층으로-분할이-되어있다"><a href="#3계층형은-‘프레젠테이션-계층’-‘애플리케이션-계층’-‘데이터-계층’-총-3가지-계층으로-분할이-되어있다" class="headerlink" title="3계층형은 ‘프레젠테이션 계층’, ‘애플리케이션 계층’, ‘데이터 계층’ 총 3가지 계층으로 분할이 되어있다."></a>3계층형은 ‘프레젠테이션 계층’, ‘애플리케이션 계층’, ‘데이터 계층’ 총 3가지 계층으로 분할이 되어있다.</h6><h5 id="프레젠테이션-계층"><a href="#프레젠테이션-계층" class="headerlink" title="프레젠테이션 계층"></a>프레젠테이션 계층</h5><ul>
+<li>사용자의 입력을 받는다.</li>
+<li>웹브라우저 화면을 표시한다.</li>
+</ul>
+<h5 id="애플리케이션-계층"><a href="#애플리케이션-계층" class="headerlink" title="애플리케이션 계층"></a>애플리케이션 계층</h5><ul>
+<li>사용자 요청(request)를 처리</li>
+</ul>
+<h5 id="데이터-계층"><a href="#데이터-계층" class="headerlink" title="데이터 계층"></a>데이터 계층</h5><ul>
+<li>애플리케이션의 요청에 따라 데이터를 입출력</li>
+</ul>
+<h5 id="장점-3"><a href="#장점-3" class="headerlink" title="장점"></a>장점</h5><ul>
+<li>서버 부하 집중 개선<h5 id="단점-3"><a href="#단점-3" class="headerlink" title="단점"></a>단점</h5></li>
+<li>구조가 클라이언트 - 서버 구성보다 복잡.</li>
+</ul>
+<h4 id="물리서버"><a href="#물리서버" class="headerlink" title="물리서버"></a>물리서버</h4><h6 id="서버는-렉-rack-이라는-것에-장착된다"><a href="#서버는-렉-rack-이라는-것에-장착된다" class="headerlink" title="서버는 렉(rack)이라는 것에 장착된다."></a>서버는 렉(rack)이라는 것에 장착된다.</h6><h6 id="서버와-PC는-물리적으로-기본-구성이-같다"><a href="#서버와-PC는-물리적으로-기본-구성이-같다" class="headerlink" title="서버와 PC는 물리적으로 기본 구성이 같다."></a>서버와 PC는 물리적으로 기본 구성이 같다.</h6><h6 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h6><p>CPU는 Central Processing Unit의 약자다. 서버 중심에 위치해서 연산처리를 한다.<br><img src="/Users/jimmy/Desktop/project/blog/source/_posts/3.jpeg" alt=""></p>
+<h6 id="CPU는-명령을-받아서-연산을-실행하고-결과를-반환한다"><a href="#CPU는-명령을-받아서-연산을-실행하고-결과를-반환한다" class="headerlink" title="CPU는 명령을 받아서 연산을 실행하고 결과를 반환한다."></a>CPU는 명령을 받아서 연산을 실행하고 결과를 반환한다.</h6><h6 id="CPU가-명령을-자발적으로-처리하는-것은-아니다-‘프로세스’나-사용자의-입력을-받아서-그것이-OS에-명령을-내리고-OS-운영체제-라는-소프트웨어가-CPU에-명령을-내린다"><a href="#CPU가-명령을-자발적으로-처리하는-것은-아니다-‘프로세스’나-사용자의-입력을-받아서-그것이-OS에-명령을-내리고-OS-운영체제-라는-소프트웨어가-CPU에-명령을-내린다" class="headerlink" title="CPU가 명령을 자발적으로 처리하는 것은 아니다. ‘프로세스’나 사용자의 입력을 받아서 그것이 OS에 명령을 내리고, OS(운영체제)라는 소프트웨어가 CPU에 명령을 내린다."></a>CPU가 명령을 자발적으로 처리하는 것은 아니다. ‘프로세스’나 사용자의 입력을 받아서 그것이 OS에 명령을 내리고, OS(운영체제)라는 소프트웨어가 CPU에 명령을 내린다.</h6><h6 id="메모리"><a href="#메모리" class="headerlink" title="메모리"></a>메모리</h6><h6 id="메모리는-CPU옆에-위치하고-CPU에-전달하는-내용이나-데이터를-저장하거나-처리결과를-받는다"><a href="#메모리는-CPU옆에-위치하고-CPU에-전달하는-내용이나-데이터를-저장하거나-처리결과를-받는다" class="headerlink" title="메모리는 CPU옆에 위치하고, CPU에 전달하는 내용이나 데이터를 저장하거나 처리결과를 받는다."></a>메모리는 CPU옆에 위치하고, CPU에 전달하는 내용이나 데이터를 저장하거나 처리결과를 받는다.</h6><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/4.jpeg" alt=""></p>
+<h5 id="메모리에-저장되는-정보는-영구성이-없지만-액세스가-매우-빠르게-이루어-지기때문에-사용을-한다"><a href="#메모리에-저장되는-정보는-영구성이-없지만-액세스가-매우-빠르게-이루어-지기때문에-사용을-한다" class="headerlink" title="메모리에 저장되는 정보는 영구성이 없지만 액세스가 매우 빠르게 이루어 지기때문에 사용을 한다."></a>메모리에 저장되는 정보는 영구성이 없지만 액세스가 매우 빠르게 이루어 지기때문에 사용을 한다.</h5><h6 id="CPU자체도-메모리를-가지고-있다-이것을-레지스터나-L1-L2캐시라고-부른다"><a href="#CPU자체도-메모리를-가지고-있다-이것을-레지스터나-L1-L2캐시라고-부른다" class="headerlink" title="CPU자체도 메모리를 가지고 있다. 이것을 레지스터나 L1, L2캐시라고 부른다."></a>CPU자체도 메모리를 가지고 있다. 이것을 레지스터나 L1, L2캐시라고 부른다.</h6><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/5.jpeg" alt=""></p>
+<h6 id="L1-L2-캐시에-있는-데이터는-L3에도-존재한다-다른-코어는-자신-이외의-캐시를-확인하지-않고-L3캐시만-확인하면-되는-구조다"><a href="#L1-L2-캐시에-있는-데이터는-L3에도-존재한다-다른-코어는-자신-이외의-캐시를-확인하지-않고-L3캐시만-확인하면-되는-구조다" class="headerlink" title="L1, L2 캐시에 있는 데이터는 L3에도 존재한다. 다른 코어는 자신 이외의 캐시를 확인하지 않고 L3캐시만 확인하면 되는 구조다."></a>L1, L2 캐시에 있는 데이터는 L3에도 존재한다. 다른 코어는 자신 이외의 캐시를 확인하지 않고 L3캐시만 확인하면 되는 구조다.</h6><h6 id="메모리를-이용하려면-메모리-컨트롤러를-경유해서-CPU밖으로-나가야한다-이때-처리지연을-줄이기-위해서-자주-사용하는-명령-데이터를-코어-가까운-곳에-배치를-한다"><a href="#메모리를-이용하려면-메모리-컨트롤러를-경유해서-CPU밖으로-나가야한다-이때-처리지연을-줄이기-위해서-자주-사용하는-명령-데이터를-코어-가까운-곳에-배치를-한다" class="headerlink" title="메모리를 이용하려면 메모리 컨트롤러를 경유해서 CPU밖으로 나가야한다. 이때 처리지연을 줄이기 위해서 자주 사용하는 명령/데이터를 코어 가까운 곳에 배치를 한다."></a>메모리를 이용하려면 메모리 컨트롤러를 경유해서 CPU밖으로 나가야한다. 이때 처리지연을 줄이기 위해서 자주 사용하는 명령/데이터를 코어 가까운 곳에 배치를 한다.</h6><h5 id="버스"><a href="#버스" class="headerlink" title="버스"></a>버스</h5><h6 id="버스-bus-는-서버-내부에-있는-컴포넌트들을-서로-연결시키는-회선을-가리킨다-버스에서는-버스가-어느정도의-데이터-전송-능력을-가지고-있는가-대역-이-중요하다"><a href="#버스-bus-는-서버-내부에-있는-컴포넌트들을-서로-연결시키는-회선을-가리킨다-버스에서는-버스가-어느정도의-데이터-전송-능력을-가지고-있는가-대역-이-중요하다" class="headerlink" title="버스(bus)는 서버 내부에 있는 컴포넌트들을 서로 연결시키는 회선을 가리킨다. 버스에서는 버스가 어느정도의 데이터 전송 능력을 가지고 있는가(대역)이 중요하다."></a>버스(bus)는 서버 내부에 있는 컴포넌트들을 서로 연결시키는 회선을 가리킨다. 버스에서는 버스가 어느정도의 데이터 전송 능력을 가지고 있는가(대역)이 중요하다.</h6>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/13/IT-Infra-Study-1-Server-Infra/" data-id="cjb4n7fco0009p5tbjv8tr96i" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2017-12-12-Object-Study" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/12/2017-12-12-Object-Study/" class="article-date">
@@ -135,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/12/2017-12-12-Object-Study/" data-id="cjb3aodpr000749tbjduag3pr" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/12/2017-12-12-Object-Study/" data-id="cjb4n7fcp000ap5tb48dtzgki" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -193,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/11/2017-12-11-TIL/" data-id="cjb3aodpt000949tbtr2v8py8" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/11/2017-12-11-TIL/" data-id="cjb4n7fcm0007p5tb5clh8s88" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -232,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/10/2017-12-10-Algorithm-sumDivisor/" data-id="cjb3aodps000849tbxtzb1tgx" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/10/2017-12-10-Algorithm-sumDivisor/" data-id="cjb4n7fcn0008p5tb95xlfkxa" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -294,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/08/2017-12-08-Unix-Chapter1/" data-id="cjb3aodpo000449tbqylzdel5" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/08/2017-12-08-Unix-Chapter1/" data-id="cjb4n7fcl0006p5tb5mhgmzie" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -385,7 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL-Array/" data-id="cjb3aodpq000649tbd5z9y6f5" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL-Array/" data-id="cjb4n7fcf0002p5tbdov8ln1u" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -456,7 +531,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL/" data-id="cjb3aodpp000549tbx78ginf1" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL/" data-id="cjb4n7fck0005p5tbwrc3okjp" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -550,7 +625,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjb3aodpx000b49tbbm7zu3xu" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjb4n7fcs000bp5tbhjktx0mg" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -604,7 +679,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/2017-12-06-TIL/" data-id="cjb3aodpm000349tbma79en2g" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/06/2017-12-06-TIL/" data-id="cjb4n7fch0003p5tbs92u7usk" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -700,76 +775,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/05/2017-12-05-TIL/" data-id="cjb3aodpl000249tbcmzctntu" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-04-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/04/2017-12-04-TIL/" class="article-date">
-  <time datetime="2017-12-04T09:01:43.000Z" itemprop="datePublished">2017-12-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/04/2017-12-04-TIL/">2017-12-04 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="12-04-TIL-JS스터디-및-하드웨어"><a href="#12-04-TIL-JS스터디-및-하드웨어" class="headerlink" title="12-04 TIL JS스터디 및 하드웨어"></a>12-04 TIL JS스터디 및 하드웨어</h1><h2 id="하드웨어"><a href="#하드웨어" class="headerlink" title="하드웨어"></a>하드웨어</h2><ol>
-<li>CPU : CPU는 주로 사칙연산 및 논리연산을 한다.</li>
-<li>RAM : 임시적으로 데이터를 기억하기위해 사용(현재 사용하고 있는 데이터만 넣는다)</li>
-<li>HDD : 영구적으로 데이터를 저장(프로그램)</li>
-<li>속도비유 CPU(우주선) &gt;&gt;&gt; RAM(KTX) &gt;&gt; HDD(자전거)</li>
-</ol>
-<ul>
-<li>컴퓨터는 데이터를 잘 처리하기 위해 존재하는 것이고 그것을 잘 처리하기 위해 데이터타입이라는것이 존재하는 것이다.</li>
-</ul>
-<h2 id="변수-및-연산자"><a href="#변수-및-연산자" class="headerlink" title="변수 및 연산자"></a>변수 및 연산자</h2><ol>
-<li>=연산자 : =연산자는 오른쪽에 있는 값을 왼쪽에 있는 변수에 할당을 하는 역할을 한다.</li>
-<li>값을 저장을 하면 특정 객체 또는 인스턴스가 생성이 된다. 컴퓨터에서 객체는 반드시 메모리를 차지한다.</li>
-</ol>
-<h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><ol>
-<li>객체들은 고유한 속성가 있고 이를 프로퍼티라고 한다.</li>
-<li>속성값은 .(dot operator)를 통해 확인 할 수 있다. ex) 철수의 키 —&gt; 철수.키; 프로퍼티</li>
-<li>메소드는 객체의 행동을 이야기한다. 객체에 속한 함수를 메소드라고 한다. ex) 철수야 먹어 —&gt; 철수.먹어();</li>
-<li>메소드를 호출하기 위해서는 객체.메소드(); 으로 호출을 한다.</li>
-</ol>
-<h2 id="Math객체"><a href="#Math객체" class="headerlink" title="Math객체"></a>Math객체</h2><ul>
-<li>Ex) Math.PI =&gt; 프로퍼티다. 괄호가 없기때문에.</li>
-<li>Math.random() =&gt; 메소드 // 0-1사이의 난수를 발생.</li>
-<li>Math.floor(2.3); =&gt; 2 // 내림</li>
-<li>Math.ceil(2.3); =&gt; 3 // 올림</li>
-<li>Math.round(2.6) =&gt; 7 // 반올림</li>
-</ul>
-<p>Math.floor(Math.random() * 10);</p>
-<h2 id="데이터의-4가지-타입"><a href="#데이터의-4가지-타입" class="headerlink" title="데이터의 4가지 타입"></a>데이터의 4가지 타입</h2><ol>
-<li>String</li>
-<li>Number</li>
-<li>Null</li>
-<li>Object</li>
-</ol>
-<h3 id="메모리와-계산을-잘하기위해-데이터타입이-중요하다-4가지-데이터타입을-제외한-나머지를-객체라고-한다-데이터타입마다-할-수-있는-operator가-있다-각-타입은-각타입마다-할-수-있는-operator가-따로있다-모든연산은-같은-타입끼리만-할-수-있다"><a href="#메모리와-계산을-잘하기위해-데이터타입이-중요하다-4가지-데이터타입을-제외한-나머지를-객체라고-한다-데이터타입마다-할-수-있는-operator가-있다-각-타입은-각타입마다-할-수-있는-operator가-따로있다-모든연산은-같은-타입끼리만-할-수-있다" class="headerlink" title="메모리와 계산을 잘하기위해 데이터타입이 중요하다.4가지 데이터타입을 제외한 나머지를 객체라고 한다.데이터타입마다 할 수 있는 operator가 있다.각 타입은 각타입마다 할 수 있는 operator가 따로있다.모든연산은 같은 타입끼리만 할 수 있다."></a>메모리와 계산을 잘하기위해 데이터타입이 중요하다.4가지 데이터타입을 제외한 나머지를 객체라고 한다.데이터타입마다 할 수 있는 operator가 있다.각 타입은 각타입마다 할 수 있는 operator가 따로있다.모든연산은 같은 타입끼리만 할 수 있다.</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/04/2017-12-04-TIL/" data-id="cjb3aodpf000049tbenifj2fx" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/05/2017-12-05-TIL/" data-id="cjb4n7fci0004p5tbo7hssou2" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -813,6 +819,10 @@
       <ul>
         
           <li>
+            <a href="/2017/12/13/IT-Infra-Study-1-Server-Infra/">IT Infra Study(1) - Server, Infra</a>
+          </li>
+        
+          <li>
             <a href="/2017/12/12/2017-12-12-Object-Study/">2017-12-12 Object Study</a>
           </li>
         
@@ -826,10 +836,6 @@
         
           <li>
             <a href="/2017/12/08/2017-12-08-Unix-Chapter1/">2017-12-08 Unix Chapter1</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/07/2017-12-07-TIL-Array/">2017-12-07 TIL Array</a>
           </li>
         
       </ul>
