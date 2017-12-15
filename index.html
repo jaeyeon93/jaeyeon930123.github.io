@@ -41,7 +41,7 @@
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">coding</a>
+          <a href="/" id="subtitle">I design therefore I am</a>
         </h2>
       
     </div>
@@ -68,6 +68,70 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2017-12-15-JS-function-Study" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/15/2017-12-15-JS-function-Study/" class="article-date">
+  <time datetime="2017-12-15T02:33:15.000Z" itemprop="datePublished">2017-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/15/2017-12-15-JS-function-Study/">2017-12-15 JS function Study</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="함수와-스코프"><a href="#함수와-스코프" class="headerlink" title="함수와 스코프"></a>함수와 스코프</h2><ul>
+<li>함수는 다대일은 괜찮으지만 일대다는 안된다.</li>
+<li>함수에서는 return값을 출력이라고한다. console.log는 출력이 아닌 화면에 보여주는 것이다.</li>
+<li>stdio는 키보드를 입력으로 받아서 모니터로 출력을 하지만, fileIO는 file을 입력으로 받아서 file로 출력을 받는다.</li>
+</ul>
+<h4 id="js함수선언"><a href="#js함수선언" class="headerlink" title="js함수선언"></a>js함수선언</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var foo = function () &#123;</span><br><span class="line">	//code here</span><br><span class="line">    console.log(&quot;I am function&quot;); // STD IO</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function foo2() &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="hoisting"><a href="#hoisting" class="headerlink" title="hoisting"></a>hoisting</h4><p>변수 선언을 먼저한다.<br>이 부분은 공부가 좀 더 필요.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">console.log(bar);</span><br><span class="line">bar(); // error</span><br><span class="line">foo(); // no problem</span><br><span class="line"></span><br><span class="line">function foo() &#123;</span><br><span class="line">	console.log(&quot;I am foo&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var bar = function() &#123;</span><br><span class="line">	console.log(&quot;I am bar&quot;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">bar(); // &quot;I am bar&quot;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>function name() {};으로 선언을 하면 위에서 호출을 하더라도 값이 출력이 되지만, var name = function(){};형태로 할당을 하면 함수 밑에 있어야한다.</li>
+</ul>
+<h4 id="함수호출"><a href="#함수호출" class="headerlink" title="함수호출"></a>함수호출</h4><ul>
+<li>함수이름();</li>
+</ul>
+<h4 id="매개변수가-있는-함수-정의하기"><a href="#매개변수가-있는-함수-정의하기" class="headerlink" title="매개변수가 있는 함수 정의하기"></a>매개변수가 있는 함수 정의하기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var foo2 = function(name) &#123;</span><br><span class="line">	console.log(&quot;hello&quot; + name);</span><br><span class="line">&#125;</span><br><span class="line">foo2(&quot;jimmy&quot;);</span><br></pre></td></tr></table></figure>
+<p>여기서 jimmy를 arguments, name을 parameter라고 한다.<br>argument는 항상 값이 복사가 된다. 절대로 변수가 복사되지 않는다.</p>
+<p>함수에서 return을 사용하면 무조건 함수를 종료시키고 값을 리턴시킨다.</p>
+<h4 id="call-by-value"><a href="#call-by-value" class="headerlink" title="call by value"></a>call by value</h4><p>기본타입의 경우 매개변수에 변수가 아닌 값을 전달<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var foo = function(n) &#123;</span><br><span class="line">	n = n * 2;</span><br><span class="line">    return n;</span><br><span class="line">&#125;</span><br><span class="line">var a = 10;</span><br><span class="line">var b = foo(a);</span><br><span class="line">console.log(a);</span><br><span class="line">console.log(b);</span><br></pre></td></tr></table></figure></p>
+<h4 id="swap구현하기"><a href="#swap구현하기" class="headerlink" title="swap구현하기"></a>swap구현하기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function mySwap(a, b) &#123;</span><br><span class="line">	var t = a;</span><br><span class="line">    var a = b;</span><br><span class="line">    var b = t;</span><br><span class="line">&#125;</span><br><span class="line">var a = 5;</span><br><span class="line">var b = 3;</span><br><span class="line">mySwap(a, b);</span><br><span class="line">console.log(a, b); // 3 5</span><br></pre></td></tr></table></figure>
+<p>기본타입(String, Number, Boolean, null)은 call by value이기때문에 안된다.</p>
+<h3 id="call-by-reference"><a href="#call-by-reference" class="headerlink" title="call by reference"></a>call by reference</h3><p>참조를 가리키는것이 객체이다.<br>나머지 객체의 경우 변수의 참조를 넘긴다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var angel = function(people)&#123;</span><br><span class="line">	p1.money *= 2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p1 = &#123; money: 100, name: &apos;jimmy&apos;&#125;;</span><br><span class="line">angel(p1);</span><br><span class="line">console.log(p1);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>언어마다 참조변수는 다르게 정의되어 있다.</li>
+</ul>
+<h4 id="함수-어떻게-만들까"><a href="#함수-어떻게-만들까" class="headerlink" title="함수 어떻게 만들까?"></a>함수 어떻게 만들까?</h4><ul>
+<li>10줄이상 되면 함수로 빼자.</li>
+<li>인덴트가 깊어져도 함수로 빼자.</li>
+<li>함수는 반드시 한가지 일만 하도록 하자.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/15/2017-12-15-JS-function-Study/" data-id="cjb7av4ir00086itbq49mppjf" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2017-12-14-TIL-HTML" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -119,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/14/2017-12-14-TIL-HTML/" data-id="cjb5wuh2f0007k4tb7tj35dvr" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/14/2017-12-14-TIL-HTML/" data-id="cjb7av4ix000c6itbxh2qth9f" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -158,7 +222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/13/Linux-System-Mangement-1/" data-id="cjb5wuh2o000ck4tbb9bu2vqf" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/13/Linux-System-Mangement-1/" data-id="cjb7av4j1000e6itbcfa6p2vo" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -233,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/13/IT-Infra-Study-1-Server-Infra/" data-id="cjb5wuh2l000bk4tb8rfvxi6n" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/13/IT-Infra-Study-1-Server-Infra/" data-id="cjb7av4iw000b6itb6wuw35nj" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -309,422 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/12/2017-12-12-Object-Study/" data-id="cjb5wuh2i0009k4tb8stwfzd6" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-11-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/11/2017-12-11-TIL/" class="article-date">
-  <time datetime="2017-12-11T07:26:14.000Z" itemprop="datePublished">2017-12-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/11/2017-12-11-TIL/">2017-12-11 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="배열과-문자열"><a href="#배열과-문자열" class="headerlink" title="배열과 문자열"></a>배열과 문자열</h2><h3 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h3><ul>
-<li>같은 용도의 데이터를 묶어서 저장하고 관리하기 위해 사용</li>
-<li>요즘은 배열과 리스트가 모호하지만, C나 C++은 엄격하게 구분이 된다.</li>
-<li>자료구조에서 가장 많이 사용</li>
-<li>배열 == 리스트 비슷함, 오브젝트 == 해쉬</li>
-<li>웬만해서 배열에서는 같은 타입의 데이터타입을 넣는것이 좋다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3]</span><br><span class="line">typeof(arr) // object</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="Stack자료구조"><a href="#Stack자료구조" class="headerlink" title="Stack자료구조"></a>Stack자료구조</h4><ul>
-<li>LIFO : Last In First Out</li>
-<li>push(), pop()을 이용</li>
-</ul>
-<h4 id="Queue자료구조"><a href="#Queue자료구조" class="headerlink" title="Queue자료구조"></a>Queue자료구조</h4><ul>
-<li>FIFO : First in First Out</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; var arr = [1, 2, 3];</span><br><span class="line">undefined</span><br><span class="line"></span><br><span class="line">&gt; var append = function(array, data)&#123;</span><br><span class="line">&gt; return array[array.length]=data;&#125;</span><br><span class="line">undefined</span><br><span class="line">&gt; append(arr,4);</span><br><span class="line">&gt; arr</span><br><span class="line">&gt; [1,2,3,4]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>객체안에는 프로토타입이라는 객체를 가지고있다.</li>
-<li>프로토타입(객체의 추상적인 컨셉)</li>
-<li>Array.prototype.method() =&gt; 모든 배열은 … 메소드를 붙일 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.append = function(v)&#123;</span><br><span class="line">	this[this.length] = v;</span><br><span class="line">    return this.length;</span><br><span class="line">&#125;; // 이제 모든 배열에는 append라는 메소드를 가진다, this는 해당 배열을 가리킨다.</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="prototype은-모든-ex-Array-prototype-모든-배열-…"><a href="#prototype은-모든-ex-Array-prototype-모든-배열-…" class="headerlink" title="prototype은 모든.. ex) Array.prototype : 모든 배열 …"></a>prototype은 모든.. ex) Array.prototype : 모든 배열 …</h4>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/11/2017-12-11-TIL/" data-id="cjb5wuh2j000ak4tb6srdua6y" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-10-Algorithm-sumDivisor" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/10/2017-12-10-Algorithm-sumDivisor/" class="article-date">
-  <time datetime="2017-12-10T14:32:51.868Z" itemprop="datePublished">2017-12-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>title: 2017-12-10 Algorithm sumDivisor<br>date: 2017-12-10 23:32:08<br>tags:</p>
-<h2 id="알고리즘-1-약수의합-구하기"><a href="#알고리즘-1-약수의합-구하기" class="headerlink" title="알고리즘(1) - 약수의합 구하기"></a>알고리즘(1) - 약수의합 구하기</h2><h5 id="어떤-수를-입력받아-그-수의-약수를-모두-더한-수-sumDivisor-함수를-완성해-보세요-예를-들어-12가-입력된다면-12의-약수는-1-2-3-4-6-12-가-되고-총-합은-28이-되므로-28을-반환해-주면-됩니다"><a href="#어떤-수를-입력받아-그-수의-약수를-모두-더한-수-sumDivisor-함수를-완성해-보세요-예를-들어-12가-입력된다면-12의-약수는-1-2-3-4-6-12-가-되고-총-합은-28이-되므로-28을-반환해-주면-됩니다" class="headerlink" title="어떤 수를 입력받아 그 수의 약수를 모두 더한 수 sumDivisor 함수를 완성해 보세요. 예를 들어 12가 입력된다면 12의 약수는 [1, 2, 3, 4, 6, 12]가 되고, 총 합은 28이 되므로 28을 반환해 주면 됩니다."></a>어떤 수를 입력받아 그 수의 약수를 모두 더한 수 sumDivisor 함수를 완성해 보세요. 예를 들어 12가 입력된다면 12의 약수는 [1, 2, 3, 4, 6, 12]가 되고, 총 합은 28이 되므로 28을 반환해 주면 됩니다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function sumDivisor(num) &#123;</span><br><span class="line">  var answer = 0;</span><br><span class="line">  var list = [];</span><br><span class="line">  for(var i=1; i&lt;=num; i++)&#123;</span><br><span class="line">    if(num % i === 0)&#123;</span><br><span class="line">      list.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  for(var j of list)&#123;</span><br><span class="line">    answer = answer + j;</span><br><span class="line">  &#125;</span><br><span class="line">	return answer;</span><br><span class="line">&#125;</span><br><span class="line">console.log(sumDivisor(12));</span><br></pre></td></tr></table></figure>
-<ol>
-<li>sumDivisor라는 함수는 num을 인수로 받는다.</li>
-<li>약수의 합을 반환해주는 answer라는 변수를 선언해준다.</li>
-<li>약수의 값들을 넣어둘 빈 배열 list를 선언한다.</li>
-<li>약수는 1부터 해당수까지 1씩증가를 했을때 나눠지는 수가 약수라고 한다.</li>
-<li>i가 1씩 증가할때마다 num을 i로 나눠서 0으로 나눠떨어지면 그것은 num의 약수이다. 그 약수를 push()메소드를 이용해서 list에 넣어둬야한다.</li>
-<li>약수들이 list라는 변수에 담겨져 있으면 이제는 그 안의 합을 구해야된다.</li>
-<li>for (var j of list)라는 함수는 list에 있는 각각의 요소들을 j라는 변수에 한번담고 다음변수로 넘어간다는 의미이다.</li>
-<li>j가 한바퀴 돌때마다 값을 answer에 더하고 마지막으로 돌면 그 합은 약수의 합이 된다.—</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/10/2017-12-10-Algorithm-sumDivisor/" data-id="cjb5wuh2g0008k4tb0hefiyq6" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-08-Unix-Chapter1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/08/2017-12-08-Unix-Chapter1/" class="article-date">
-  <time datetime="2017-12-08T02:28:34.000Z" itemprop="datePublished">2017-12-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/08/2017-12-08-Unix-Chapter1/">2017-12-08 Unix Chapter1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="초보자를-위한-UNIX-Chapter1-Unix란-무엇인가"><a href="#초보자를-위한-UNIX-Chapter1-Unix란-무엇인가" class="headerlink" title="초보자를 위한 UNIX Chapter1 : Unix란 무엇인가?"></a>초보자를 위한 UNIX Chapter1 : Unix란 무엇인가?</h2><h4 id="Unix는-컴퓨터의-운영체제이다-운영체제는-사용자와-상호작용하는-역할을-할-뿐-아니라-컴퓨터상의-자원-관리-그리고-다른-컴퓨터와의-상호작용을-조율하는-소프트웨어이다"><a href="#Unix는-컴퓨터의-운영체제이다-운영체제는-사용자와-상호작용하는-역할을-할-뿐-아니라-컴퓨터상의-자원-관리-그리고-다른-컴퓨터와의-상호작용을-조율하는-소프트웨어이다" class="headerlink" title="Unix는 컴퓨터의 운영체제이다. 운영체제는 사용자와 상호작용하는 역할을 할 뿐 아니라, 컴퓨터상의 자원 관리 그리고 다른 컴퓨터와의 상호작용을 조율하는 소프트웨어이다."></a>Unix는 컴퓨터의 운영체제이다. 운영체제는 사용자와 상호작용하는 역할을 할 뿐 아니라, 컴퓨터상의 자원 관리 그리고 다른 컴퓨터와의 상호작용을 조율하는 소프트웨어이다.</h4><h5 id="Unix의-명령어들을-동사라고-생각하면-명령어들의-옵션은-형용사가-되고-파일이나-디렉토리의-이름은-명사가-된다-이-명령어들의-조합되어-만들어진-일련의-작업은-파일을-실행시키는-문장이된다"><a href="#Unix의-명령어들을-동사라고-생각하면-명령어들의-옵션은-형용사가-되고-파일이나-디렉토리의-이름은-명사가-된다-이-명령어들의-조합되어-만들어진-일련의-작업은-파일을-실행시키는-문장이된다" class="headerlink" title="Unix의 명령어들을 동사라고 생각하면, 명령어들의 옵션은 형용사가 되고, 파일이나 디렉토리의 이름은 명사가 된다. 이 명령어들의 조합되어 만들어진 일련의 작업은 파일을 실행시키는 문장이된다."></a>Unix의 명령어들을 동사라고 생각하면, 명령어들의 옵션은 형용사가 되고, 파일이나 디렉토리의 이름은 명사가 된다. 이 명령어들의 조합되어 만들어진 일련의 작업은 파일을 실행시키는 문장이된다.</h5><h4 id="다중사용시스템이란"><a href="#다중사용시스템이란" class="headerlink" title="다중사용시스템이란?"></a>다중사용시스템이란?</h4><ul>
-<li>다중사용자 시스템의 목표는 해당시스템을 사용하는 모든 사용자가 마치 자신만의 단독 시스템을 사용하는 듯한 느낌이 들게 하는것이다.</li>
-<li>각각의 사용자에게 계정(account)이 부여되며, 각각의 계정에는 홈 디렉토리가 부여된다.</li>
-</ul>
-<h4 id="셸이란"><a href="#셸이란" class="headerlink" title="셸이란?"></a>셸이란?</h4><ul>
-<li>셸이란 명령행 기반 사용자 인터페이스를 셸이라고 한다. 셸은 사용자가 입력한 명령어들을 해석하는 인터프리터이다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp folder1/file foler2</span><br><span class="line">// folder1에 있는 file을 folder2로 복사해라</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="man-명령어"><a href="#man-명령어" class="headerlink" title="man 명령어"></a>man 명령어</h4><ul>
-<li>man은 Unix manual의 약자이다.</li>
-<li>man -k옵션을 이용해서 키워드를 검색할 수도 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">man 명령어</span><br><span class="line">//해당 명령어에 대한 메뉴얼이 쭈우욱 나온다.</span><br><span class="line">mkdir man</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/mkdir_man.png" alt="Alt text" title="mkdir man"><br>mkdir 명령어에 대해서 man을 입력하면 다음과 같이 나온다.</p>
-<p>man은 명령어에 대한 모든 설명이 나와있지만 이와 간결하게 whatis라는 명령어가 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">whatis 명령어</span><br><span class="line">whatis mkdir</span><br></pre></td></tr></table></figure>
-<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/whatis_mkdir.png" alt="Alt text" title="whatis mkdir"></p>
-<h3 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h3><h4 id="기초용어정리"><a href="#기초용어정리" class="headerlink" title="기초용어정리"></a>기초용어정리</h4><ol>
-<li>계정(account) : Unix 시스템이 각각의 사용자에게 부여하는 이름.</li>
-<li>인자(arguments) : 컴퓨터에서는 주로 어떤 프로그램이나 함수에 전달되는 옵션이나 파일명이다.</li>
-<li>명령어(command) : Unix 시스템에 설치된 각각의 프로그램들을 전부 명령어라고한다.</li>
-<li>man 페이지(page) : 모든 표준 Unix 명령어에 사용법과 기능을 명시한 문서이다.</li>
-<li>다중작업(multitasking) : 하나 이상의 프로그램이나 작업을 동시에 실행할 수 있도록 해 주는 컴퓨터를 멀티태스킹 컴퓨터라고 한다.</li>
-<li>경로명(pathname) : Unix 시스템안에는 여러개의 디렉토리와 그 하위 디렉토리들이 존재하는데, 특정한 파일을 찾을때 디렉토리들을 어떤 순서로 찾아야 하는지를 명시하는 문자열이다.</li>
-<li>셸(shell) : Unix 시스템을 사용하려면 명령어를 명령어 인터프리터상에 입력해야 한다. 이 인터프리터를 Unix에서는 셸, 혹은 명령어 셸(command shell)이라고 부른다.</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/08/2017-12-08-Unix-Chapter1/" data-id="cjb5wuh2d0006k4tbd2n0i85j" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-07-TIL-Array" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/07/2017-12-07-TIL-Array/" class="article-date">
-  <time datetime="2017-12-07T08:08:57.000Z" itemprop="datePublished">2017-12-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/07/2017-12-07-TIL-Array/">2017-12-07 TIL Array</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Using-Method-Array"><a href="#Using-Method-Array" class="headerlink" title="Using Method - Array"></a>Using Method - Array</h2><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><ol>
-<li><p>arr.length : 길이 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1,2,3,4,5]</span><br><span class="line">numbers.length; //5</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Array.isArray() : 인자 객체가 배열이면 true, 아니면 false</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array.isArray([]); // true</span><br><span class="line">array.isArray([1]); // true</span><br><span class="line">array.isArray(undefined); // false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.concat() : 인자로 주어진 배열이나 ㄱ밧들을 기존 배열에 합쳐서 새 배열을 반환.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1 = [1,2,3];</span><br><span class="line">var num2 = [4,5,6]</span><br><span class="line">var nums = num1.concat(num2); // [1,2,3,4,5,6]</span><br><span class="line">// 중복없이 나열이다.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.filter() : 제공된 함수로 구현된 테스트를 통과하면 새로운 배열이 생성</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Function isbigenough(element, index, array)&#123;</span><br><span class="line">	return element &gt; =10;</span><br><span class="line">&#125;</span><br><span class="line">var filtered = [12,5,8,130,44].filter(isbigenough);</span><br><span class="line">// [12,130,44]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.every() : 배열의 모든 요소가 제공한 함수로 구현된 테스트를 통과하는지 테스트</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Function isbigenough(element, index, array)&#123;</span><br><span class="line">	return element &gt; 10;</span><br><span class="line">&#125;</span><br><span class="line">[12,5,8,13,44].every(isbigenough); // false</span><br><span class="line">[12,54,18,130,44].every(isbigenough); // true</span><br><span class="line">// 전부다 true여야 한다. 하나라도 거짓이면 false가 나온다.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.find(), arr.findIndex() : 조건에 맞는 배열 안의 값을 하나 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var inventory = [ &#123;name:’apple’, quantity:2&#125;, &#123;name:’cherries’, quantity:5&#125;];</span><br><span class="line">Function findcherries(fruit)&#123;</span><br><span class="line">	return fruit.name == ‘cherries’;</span><br><span class="line">&#125;</span><br><span class="line">inventory.find(findCherries);</span><br><span class="line">// &#123;name: ‘cherries’, quantity:5&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.forEach() : 배열 요소마다 한 번씩 제공한 함수를 실행.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Function longarrayelements(element, index, array) &#123;</span><br><span class="line">	console.log(‘a[‘+ index + ‘] = ‘ + element);</span><br><span class="line">&#125;</span><br><span class="line">[2 , 5,  7].forEach(longarrayelement);</span><br><span class="line">// a[0] = 2, a[1] = 5, a[3] = 9</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.includes() : 배열에 특정 요소가 포함되어 있는지 여부를 확인해서 true or false를 반환.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3]</span><br><span class="line">a.includes(2); // true</span><br><span class="line">a.includes(4); // false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.indexOf(), arr.lastIndexOf() : 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고, 없으면 -1을 리턴한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [2,9,9[;</span><br><span class="line">a.indexOf(2); //0</span><br><span class="line">a.indexOf(7) // -1</span><br><span class="line"></span><br><span class="line">var b = [2,5,9,2]</span><br><span class="line">a.lastIndexOf(2); // 3</span><br><span class="line">a.lastIndexOf(7); // -1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.join() : 배열의 모든 요소를 연결해 하나의 문자열로 만든다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [‘바람’, ‘비’, ‘불’];</span><br><span class="line">var myvar1 = a.join(); // ‘바람,비,불’</span><br><span class="line">var myvar3 = a.join(‘ + ‘); // ‘’바람 + 비 + 불’</span><br><span class="line">var myvar4 = a.join(‘’); // ‘바람비불’</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.map() : 배열 내의 모든 요소에 대하여 제공된 함수를 호출하고, 그 결과를 모아서, 새로운 배열을 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1,4,9]</span><br><span class="line">var doubles = numbers.map(function(num)&#123;</span><br><span class="line">	return num*2</span><br><span class="line">&#125;);</span><br><span class="line">// doubles = [2,8,18];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.pop(), arr.push() : 배열에서 마지막 요소를 추가하거나 제거한다.</p>
-</li>
-<li><p>arr.shift(), arr.unshift() : 배열에서 첫번째 요소를 제거하거나 추가한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr =[1,2];</span><br><span class="line">arr.unshift(0); // [0,1,2]</span><br><span class="line">arr.shift() // [2]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.reverse() : 배열을 반전시킵니다. 첫번째 요소는 마지막 요소가 되며 마지막 요소는 첫 번째 요소가 됩니다.</p>
-</li>
-<li><p>arr.slice() : 배열의 begin부터 end까지(end는 불포함)에 대한 shallow copy를 새로운 객체로 반환.</p>
-</li>
-<li><p>arr.splice() : 배열의 내용을 추가/제거하는 데 유용<br>arr.splice(m,n,c) arr배열 m번째 인덱스에서 n개를 제거하고 c만큼을 넣는다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var myFish = [‘angel’, ‘clown’, ‘mandarin’, ‘surgeon’]</span><br><span class="line">var removed = myFish.splice(2,0, ‘drum’);</span><br><span class="line">// var myFish = [‘angel’, ‘clown’, ‘drum’ ,‘mandarin’, ‘surgeon’]</span><br><span class="line">removed = []</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.sort() : 배열의 요소를 적절한 위치에 정렬하고 배열을 반환.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var scores = [1, 10, 21, 2];</span><br><span class="line">score.sort(); // [1, 10, 2, 21]</span><br><span class="line">Unicode 코드 포인트 순서에서 ’10’이 ‘2’앞.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.toString() : 지정된 배열 및 그 요소를 나타내는 문자열을 반환합니다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var monthNames = [‘Jan’, ‘Feb’, ‘Mar’, ‘Apr’]</span><br><span class="line">var myvar = monthNames.toString();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.reduce() : 피보나치수열을 풀때 유용</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL-Array/" data-id="cjb5wuh2c0005k4tbodp0yvcr" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-07-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/07/2017-12-07-TIL/" class="article-date">
-  <time datetime="2017-12-07T07:07:29.000Z" itemprop="datePublished">2017-12-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/07/2017-12-07-TIL/">2017-12-07 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="자료형"><a href="#자료형" class="headerlink" title="자료형"></a>자료형</h2><ol>
-<li>어떤 유형의 데이터를 사용하는 것이지 실행 환경(컴파일러/인터프리터)에게 알려주는것.</li>
-<li>소스코드를 바로 실행할 수 있는것을 인터프리터 언어 스크립트 언어라고한다.</li>
-<li>컴파일러는 기계어를 번역해주는 역할을 한다.</li>
-<li>자료형마다 사용 가능한 연살자(Operator)가 있다.</li>
-</ol>
-<h3 id="숫자의-연산자"><a href="#숫자의-연산자" class="headerlink" title="숫자의 연산자"></a>숫자의 연산자</h3><ul>
-<li>+, -, %, /, * 5개의 연산자가 있다.</li>
-</ul>
-<h3 id="문자열"><a href="#문자열" class="headerlink" title="문자열"></a>문자열</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;I am String&quot;;</span><br></pre></td></tr></table></figure>
-<p>문자열은 “Immutable”의 특징을 가진다(문자열만 Immutable)<br>객체는 “mutable”이다.</p>
-<h3 id="불리언과-논리연산자"><a href="#불리언과-논리연산자" class="headerlink" title="불리언과 논리연산자"></a>불리언과 논리연산자</h3><ul>
-<li>논리연산자에는 &amp;&amp; || ! 이 있다.</li>
-<li>논리연산자는 return이 true, false로 나오고</li>
-<li>비트연산자는 return이 숫자로 나온다.</li>
-</ul>
-<h3 id="이진수와-비트-연산자"><a href="#이진수와-비트-연산자" class="headerlink" title="이진수와 비트 연산자"></a>이진수와 비트 연산자</h3><ul>
-<li>And, or, not, xor<figure class="highlight plain"><figcaption><span>| ~ ^ ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 논리연산자와 헷갈리지 말것!</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>true &amp; true<br>true &amp;&amp; true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 변수선언</span><br></pre></td></tr></table></figure></p>
-<p>Var a;<br>Var b = 10;<br>Var c = 5.5;<br>Var d = “hello”;<br>Var e = “3”;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### 변수선언2</span><br></pre></td></tr></table></figure>
-<p>const : 안변한다, 읽기전용변수, 값을 바꿀 수 없을때<br>let : 선언을 2번 해주면 안된다, 할당은 여러번해도 되는데 재선언을 하면 안된다. 에러가 된다.<br>var에 비해 let const가 훨씬 더 안전하다.<br>const pi = 3.14;<br>let a = 5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 변수와 대입자</span><br><span class="line"></span><br><span class="line">- =: 대입연산자, 수학과는 다르다.</span><br><span class="line">- 변수에 값을 넣고 싶을 때 = 연산자를 사용.</span><br><span class="line"></span><br><span class="line">### 증감 연산자</span><br></pre></td></tr></table></figure></p>
-<p>++z : 증가를 먼저하고 리턴<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 비교연산자</span><br><span class="line">- true와 false가 리턴됨</span><br></pre></td></tr></table></figure></p>
-<p>// &gt;, &lt;, ==, ~=, &gt;=, &lt;=, ===이 있음<br>var a = 3;<br>var b = 5;<br>var c = “5”;<br>a &gt; b<br>a &lt; b<br>b == c // 값만 비교<br>b == c // 데이터타입까지 비교<br>```</p>
-<h3 id="문자열의-길이-구하기"><a href="#문자열의-길이-구하기" class="headerlink" title="문자열의 길이 구하기"></a>문자열의 길이 구하기</h3><ul>
-<li>var a = “hello”;</li>
-<li>a.length</li>
-</ul>
-<h4 id="객체와-문자는-다-참조방식으로-저장을-한다-새로만들면-참조가-갱신이-된다-을-사용을-하면-참조를-새로-만드는것이다"><a href="#객체와-문자는-다-참조방식으로-저장을-한다-새로만들면-참조가-갱신이-된다-을-사용을-하면-참조를-새로-만드는것이다" class="headerlink" title="객체와 문자는 다 참조방식으로 저장을 한다. 새로만들면 참조가 갱신이 된다. =을 사용을 하면 참조를 새로 만드는것이다."></a>객체와 문자는 다 참조방식으로 저장을 한다. 새로만들면 참조가 갱신이 된다. =을 사용을 하면 참조를 새로 만드는것이다.</h4><h3 id="undefined-null-NaN"><a href="#undefined-null-NaN" class="headerlink" title="undefined, null, NaN"></a>undefined, null, NaN</h3><ul>
-<li>undefined : 값이 정의되지 않았다, 값이 아직 할당 안된것이다.</li>
-<li>null : 값이 비어있다는 것을 명시적으로 알림, 값이 아직 무엇인지 모르겠다는 의미이다. undefined는 값이 없다. null은 값을 잘 모르겠다라는 의미.</li>
-<li>NaN : 값이 아니다. == 계산 불가능  </li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL/" data-id="cjb5wuh290003k4tb3fwle9sj" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-String-Number-Method-Object" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/06/String-Number-Method-Object/" class="article-date">
-  <time datetime="2017-12-06T06:52:53.000Z" itemprop="datePublished">2017-12-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/06/String-Number-Method-Object/">String, Number, Method Object</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS-String-and-Number-Method"><a href="#JS-String-and-Number-Method" class="headerlink" title="JS String and Number Method"></a>JS String and Number Method</h2><h4 id="String-Object"><a href="#String-Object" class="headerlink" title="String Object"></a>String Object</h4><ol>
-<li><p>str.length =&gt; length는 메소드가 아니 property이기때문에 ()가 없다. Int와 같은 숫자형들은 length가 적용안된다.</p>
-</li>
-<li><p>str.charAt(index) =&gt; 문자열에서 특정 문자를 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Ex) var str = “codestates”</span><br><span class="line">console.log(str.charAt(0)); // c</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>str.concat(string2, string3 ..) =&gt; 하나 혹은 더 많은 문자열들을 결합하여 새로운 문자열을 반환하는 함수 Concat보다는 + 연산자를 더 많이 쓴다.</p>
-</li>
-<li><p>str.includes(searchString[, position]) =&gt; 문자열 내에 찾고자 하는 문자열이 있는지 확인 //  true, false로 반환</p>
-</li>
-<li><p>str.(last)indexOf(searchValue[, fromIndex]) =&gt; 문자열 내에 찾고자 하는 문자열의 인덱스를 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ex) var str = ‘pen pineapple apple pen’;</span><br><span class="line">console.log(str.indexOf(‘e’)); // 1</span><br><span class="line">console.log(lastIndexOf(‘e’)); // 21</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>str.slice(beginIndex[, endIndex]) =&gt; 문자열의 일부를 추출하면서 새로운 문자열을 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ex) var str = ’The morning is upon us’;</span><br><span class="line">str.slice(1,8);</span><br><span class="line">// ‘he morn’ 1번인덱스부터 7번인덱스까지 반환을한다.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>str.split([seperator[, limit]]) =&gt; 문자열을 하위 문자열로 분리하여 String객체를 문자열 배열로 나눕니다.</p>
-<figure class="highlight plain"><figcaption><span>var str </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Var split = str.split(‘ ‘);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>str.substr(start[, length]) =&gt; 문자열에서 특정 위치에서 시작하여 특정 문자수만큼의 문자들을 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Var str =‘abode’</span><br><span class="line">str.substr(1,2)’ // ‘bc’</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>str.substring(indexStart[, indexEnd]) =&gt; 한 인덱스와 다른 인덱스 사이 또는 문자열 끝을 통해 문자열의 하위 집합을 반환.</p>
-<figure class="highlight plain"><figcaption><span>var str </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.substring(0,3); // ‘abc’</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>str.toLowerCase(), str.toUpperCase() or variable.toLowerCase()</p>
-</li>
-<li><p>str.trim =&gt; 양쪽 끝에서 공백을 제거</p>
-</li>
-</ol>
-<h4 id="Number-Object"><a href="#Number-Object" class="headerlink" title="Number Object"></a>Number Object</h4><ol>
-<li><p>number.isInteger(value) =&gt; 전달된 값이 정수인지 여부를 가려냅니다. True false로 리턴</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number.isInteger(1); // true</span><br><span class="line">Number.isInteger(0.1); // false</span><br><span class="line">var num = ’11’;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Number.parseInt(string[, radix]) =&gt; 문자열 인수를 형변환하여 지정된 진법이나 기본 타입으로 리턴</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof Number.parseInt(’11’); // number</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>num.toFix([digits]) =&gt; 고정 소수점 표기법을 사용하여 숫자를 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ex) var num = 12345.6789</span><br><span class="line">num.toFix(); // 12346</span><br><span class="line">num.toFix(1); // 12345.7</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="Math-Object"><a href="#Math-Object" class="headerlink" title="Math.Object"></a>Math.Object</h4><ol>
-<li><p>Math.abs(x) =&gt; 절대값을 반환</p>
-<figure class="highlight plain"><figcaption><span>Math.abs(’-1’);</span><a href="//">1 </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Math.abs([]); // 0</span><br><span class="line">Math.abs([1,2]) // NaN Not an Number</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Math.floor(x) =&gt; 주어진 숫자 이하의 가장큰 정수를 반환(내림)</p>
-<figure class="highlight plain"><figcaption><span>// 45```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. Math.max(), Math.min()</span><br><span class="line">```Math.max(10,20) // 20</span><br><span class="line">Math.,min(10,20) // 10</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Math.pow(x,y) =&gt; x의 y제곱수를 반환.</p>
-<figure class="highlight plain"><figcaption><span>// 49```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">5. Math.random() =&gt; 0과 1 사이의 난수를 반환</span><br><span class="line">```Math.random()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Math.round() =&gt; 어떤 수와 가장 가까운 정수를 반환(반올림)</p>
-<figure class="highlight plain"><figcaption><span>// 20</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Math.round(20.5) // 21</span><br><span class="line">Math.round(-20.5) // -20</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Math.sqrt() =&gt; 어떤수의 양의 제곱근을 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.sqrt(49) // 7</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjb5wuh2q000ek4tby6gb6mlw" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/12/2017-12-12-Object-Study/" data-id="cjb7av4is00096itb8fbrikjo" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -737,7 +386,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -768,6 +417,10 @@
       <ul>
         
           <li>
+            <a href="/2017/12/15/2017-12-15-JS-function-Study/">2017-12-15 JS function Study</a>
+          </li>
+        
+          <li>
             <a href="/2017/12/14/2017-12-14-TIL-HTML/">2017-12-14 TIL : HTML</a>
           </li>
         
@@ -781,10 +434,6 @@
         
           <li>
             <a href="/2017/12/12/2017-12-12-Object-Study/">2017-12-12 Object Study</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/11/2017-12-11-TIL/">2017-12-11 TIL</a>
           </li>
         
       </ul>

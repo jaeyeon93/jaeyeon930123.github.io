@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2017-12-15 JS function Study | jaeyeon&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="함수와 스코프 함수는 다대일은 괜찮으지만 일대다는 안된다. 함수에서는 return값을 출력이라고한다. console.log는 출력이 아닌 화면에 보여주는 것이다. stdio는 키보드를 입력으로 받아서 모니터로 출력을 하지만, fileIO는 file을 입력으로 받아서 file로 출력을 받">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017-12-15 JS function Study">
+<meta property="og:url" content="http://yoursite.com/2017/12/15/2017-12-15-JS-function-Study/index.html">
+<meta property="og:site_name" content="jaeyeon&#39;s blog">
+<meta property="og:description" content="함수와 스코프 함수는 다대일은 괜찮으지만 일대다는 안된다. 함수에서는 return값을 출력이라고한다. console.log는 출력이 아닌 화면에 보여주는 것이다. stdio는 키보드를 입력으로 받아서 모니터로 출력을 하지만, fileIO는 file을 입력으로 받아서 file로 출력을 받는다.  js함수선언12345678var foo = function ()">
+<meta property="og:locale" content="Korean">
+<meta property="og:updated_time" content="2017-12-15T02:33:45.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017-12-15 JS function Study">
+<meta name="twitter:description" content="함수와 스코프 함수는 다대일은 괜찮으지만 일대다는 안된다. 함수에서는 return값을 출력이라고한다. console.log는 출력이 아닌 화면에 보여주는 것이다. stdio는 키보드를 입력으로 받아서 모니터로 출력을 하지만, fileIO는 file을 입력으로 받아서 file로 출력을 받는다.  js함수선언12345678var foo = function ()">
+  
+    <link rel="alternate" href="/atom.xml" title="jaeyeon&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jaeyeon&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I design therefore I am</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2017-12-15-JS-function-Study" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/15/2017-12-15-JS-function-Study/" class="article-date">
+  <time datetime="2017-12-15T02:33:15.000Z" itemprop="datePublished">2017-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2017-12-15 JS function Study
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="함수와-스코프"><a href="#함수와-스코프" class="headerlink" title="함수와 스코프"></a>함수와 스코프</h2><ul>
+<li>함수는 다대일은 괜찮으지만 일대다는 안된다.</li>
+<li>함수에서는 return값을 출력이라고한다. console.log는 출력이 아닌 화면에 보여주는 것이다.</li>
+<li>stdio는 키보드를 입력으로 받아서 모니터로 출력을 하지만, fileIO는 file을 입력으로 받아서 file로 출력을 받는다.</li>
+</ul>
+<h4 id="js함수선언"><a href="#js함수선언" class="headerlink" title="js함수선언"></a>js함수선언</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var foo = function () &#123;</span><br><span class="line">	//code here</span><br><span class="line">    console.log(&quot;I am function&quot;); // STD IO</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function foo2() &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="hoisting"><a href="#hoisting" class="headerlink" title="hoisting"></a>hoisting</h4><p>변수 선언을 먼저한다.<br>이 부분은 공부가 좀 더 필요.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">console.log(bar);</span><br><span class="line">bar(); // error</span><br><span class="line">foo(); // no problem</span><br><span class="line"></span><br><span class="line">function foo() &#123;</span><br><span class="line">	console.log(&quot;I am foo&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var bar = function() &#123;</span><br><span class="line">	console.log(&quot;I am bar&quot;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">bar(); // &quot;I am bar&quot;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>function name() {};으로 선언을 하면 위에서 호출을 하더라도 값이 출력이 되지만, var name = function(){};형태로 할당을 하면 함수 밑에 있어야한다.</li>
+</ul>
+<h4 id="함수호출"><a href="#함수호출" class="headerlink" title="함수호출"></a>함수호출</h4><ul>
+<li>함수이름();</li>
+</ul>
+<h4 id="매개변수가-있는-함수-정의하기"><a href="#매개변수가-있는-함수-정의하기" class="headerlink" title="매개변수가 있는 함수 정의하기"></a>매개변수가 있는 함수 정의하기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var foo2 = function(name) &#123;</span><br><span class="line">	console.log(&quot;hello&quot; + name);</span><br><span class="line">&#125;</span><br><span class="line">foo2(&quot;jimmy&quot;);</span><br></pre></td></tr></table></figure>
+<p>여기서 jimmy를 arguments, name을 parameter라고 한다.<br>argument는 항상 값이 복사가 된다. 절대로 변수가 복사되지 않는다.</p>
+<p>함수에서 return을 사용하면 무조건 함수를 종료시키고 값을 리턴시킨다.</p>
+<h4 id="call-by-value"><a href="#call-by-value" class="headerlink" title="call by value"></a>call by value</h4><p>기본타입의 경우 매개변수에 변수가 아닌 값을 전달<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var foo = function(n) &#123;</span><br><span class="line">	n = n * 2;</span><br><span class="line">    return n;</span><br><span class="line">&#125;</span><br><span class="line">var a = 10;</span><br><span class="line">var b = foo(a);</span><br><span class="line">console.log(a);</span><br><span class="line">console.log(b);</span><br></pre></td></tr></table></figure></p>
+<h4 id="swap구현하기"><a href="#swap구현하기" class="headerlink" title="swap구현하기"></a>swap구현하기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function mySwap(a, b) &#123;</span><br><span class="line">	var t = a;</span><br><span class="line">    var a = b;</span><br><span class="line">    var b = t;</span><br><span class="line">&#125;</span><br><span class="line">var a = 5;</span><br><span class="line">var b = 3;</span><br><span class="line">mySwap(a, b);</span><br><span class="line">console.log(a, b); // 3 5</span><br></pre></td></tr></table></figure>
+<p>기본타입(String, Number, Boolean, null)은 call by value이기때문에 안된다.</p>
+<h3 id="call-by-reference"><a href="#call-by-reference" class="headerlink" title="call by reference"></a>call by reference</h3><p>참조를 가리키는것이 객체이다.<br>나머지 객체의 경우 변수의 참조를 넘긴다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var angel = function(people)&#123;</span><br><span class="line">	p1.money *= 2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p1 = &#123; money: 100, name: &apos;jimmy&apos;&#125;;</span><br><span class="line">angel(p1);</span><br><span class="line">console.log(p1);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>언어마다 참조변수는 다르게 정의되어 있다.</li>
+</ul>
+<h4 id="함수-어떻게-만들까"><a href="#함수-어떻게-만들까" class="headerlink" title="함수 어떻게 만들까?"></a>함수 어떻게 만들까?</h4><ul>
+<li>10줄이상 되면 함수로 빼자.</li>
+<li>인덴트가 깊어져도 함수로 빼자.</li>
+<li>함수는 반드시 한가지 일만 하도록 하자.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/15/2017-12-15-JS-function-Study/" data-id="cjb7av4ir00086itbq49mppjf" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/14/2017-12-14-TIL-HTML/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">2017-12-14 TIL : HTML</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/15/2017-12-15-JS-function-Study/">2017-12-15 JS function Study</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/14/2017-12-14-TIL-HTML/">2017-12-14 TIL : HTML</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/13/Linux-System-Mangement-1/">Linux System Mangement(1)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/13/IT-Infra-Study-1-Server-Infra/">IT Infra Study(1) - Server, Infra</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/12/2017-12-12-Object-Study/">2017-12-12 Object Study</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Jimmy<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
