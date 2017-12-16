@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2017-12-16 JS study Scope | jaeyeon&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JS Study - Scope, Closer 지역변수 =&amp;gt; 블록수준, 함수수준의 언어냐를 물어본다. 함수수준은 함수레벨(범위)안에서 이루어졌다는의미. { 중괄호로 묶인것을 블록수준이라고한다.  12345678var name = &amp;apos;richard&amp;apos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017-12-16 JS study Scope">
+<meta property="og:url" content="http://yoursite.com/2017/12/16/2017-12-16-JS-study-Scope/index.html">
+<meta property="og:site_name" content="jaeyeon&#39;s blog">
+<meta property="og:description" content="JS Study - Scope, Closer 지역변수 =&amp;gt; 블록수준, 함수수준의 언어냐를 물어본다. 함수수준은 함수레벨(범위)안에서 이루어졌다는의미. { 중괄호로 묶인것을 블록수준이라고한다.  12345678var name = &amp;apos;richard&amp;apos;// 아래의 if문은 name변수에 대한 지역-범위를 생성하지 않는다.if (name &amp;#1">
+<meta property="og:locale" content="Korean">
+<meta property="og:updated_time" content="2017-12-16T05:30:28.561Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017-12-16 JS study Scope">
+<meta name="twitter:description" content="JS Study - Scope, Closer 지역변수 =&amp;gt; 블록수준, 함수수준의 언어냐를 물어본다. 함수수준은 함수레벨(범위)안에서 이루어졌다는의미. { 중괄호로 묶인것을 블록수준이라고한다.  12345678var name = &amp;apos;richard&amp;apos;// 아래의 if문은 name변수에 대한 지역-범위를 생성하지 않는다.if (name &amp;#1">
+  
+    <link rel="alternate" href="/atom.xml" title="jaeyeon&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jaeyeon&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I design therefore I am</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2017-12-16-JS-study-Scope" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/16/2017-12-16-JS-study-Scope/" class="article-date">
+  <time datetime="2017-12-16T05:30:02.000Z" itemprop="datePublished">2017-12-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2017-12-16 JS study Scope
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-Study-Scope-Closer"><a href="#JS-Study-Scope-Closer" class="headerlink" title="JS Study - Scope, Closer"></a>JS Study - Scope, Closer</h2><ol>
+<li>지역변수 =&gt; 블록수준, 함수수준의 언어냐를 물어본다.</li>
+<li>함수수준은 함수레벨(범위)안에서 이루어졌다는의미.</li>
+<li>{ 중괄호로 묶인것을 블록수준이라고한다.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;richard&apos;</span><br><span class="line">// 아래의 if문은 name변수에 대한 지역-범위를 생성하지 않는다.</span><br><span class="line">if (name &#123;</span><br><span class="line">	name = &quot;jack&quot;;</span><br><span class="line">    console.log(name); // jack : wjsdurqustn</span><br><span class="line">&#125;</span><br><span class="line">// name은 여전히 전역변수이며 if문에서 변경한다.</span><br><span class="line">console.log(name); // jack</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;richard&apos;;</span><br><span class="line"></span><br><span class="line">function showName() &#123;</span><br><span class="line">	var name = &apos;jack&apos;; // local variable</span><br><span class="line">    console.log(name); // jack;</span><br><span class="line">&#125;</span><br><span class="line">console.log(name); // richard =&gt; global variable</span><br></pre></td></tr></table></figure>
+<h5 id="지역변수는-함수내에서-전역변수보다-높은-우선순위를-지닌다"><a href="#지역변수는-함수내에서-전역변수보다-높은-우선순위를-지닌다" class="headerlink" title="지역변수는 함수내에서 전역변수보다 높은 우선순위를 지닌다."></a>지역변수는 함수내에서 전역변수보다 높은 우선순위를 지닌다.</h5><h5 id="전역변수는-함수의-외부에서-선언된-모든-변수의-전역-범위이다-하지만-가급적-전역변수의-사용을-자제해야한다-이를-방지-하기-위해서-JS-ES6에서는-let과-const를-도입했다"><a href="#전역변수는-함수의-외부에서-선언된-모든-변수의-전역-범위이다-하지만-가급적-전역변수의-사용을-자제해야한다-이를-방지-하기-위해서-JS-ES6에서는-let과-const를-도입했다" class="headerlink" title="전역변수는 함수의 외부에서 선언된 모든 변수의 전역 범위이다. 하지만 가급적 전역변수의 사용을 자제해야한다. 이를 방지? 하기 위해서 JS ES6에서는 let과 const를 도입했다."></a>전역변수는 함수의 외부에서 선언된 모든 변수의 전역 범위이다. 하지만 가급적 전역변수의 사용을 자제해야한다. 이를 방지? 하기 위해서 JS ES6에서는 let과 const를 도입했다.</h5><h5 id="만약-변수가-최초-선언-없이-초기화가-되었다면-이-변수는-자동으로-전역-컨텍스트에-추가가된다"><a href="#만약-변수가-최초-선언-없이-초기화가-되었다면-이-변수는-자동으로-전역-컨텍스트에-추가가된다" class="headerlink" title="만약 변수가 최초 선언 없이 초기화가 되었다면, 이 변수는 자동으로 전역 컨텍스트에 추가가된다."></a>만약 변수가 최초 선언 없이 초기화가 되었다면, 이 변수는 자동으로 전역 컨텍스트에 추가가된다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function showAge() &#123;</span><br><span class="line">	// age is global variable</span><br><span class="line">    age = 90;</span><br><span class="line">    console.log(age);</span><br><span class="line">&#125;</span><br><span class="line">showAge(); // 90</span><br><span class="line">console.log(age); // 90</span><br></pre></td></tr></table></figure>
+<h5 id="함수안에서-age를-var-age로-선언을-하면-지역변수가-된다-하지만-없으면-JS는-이를-전역변수로-이해를-한다"><a href="#함수안에서-age를-var-age로-선언을-하면-지역변수가-된다-하지만-없으면-JS는-이를-전역변수로-이해를-한다" class="headerlink" title="함수안에서 age를 var age로 선언을 하면 지역변수가 된다. 하지만 없으면 JS는 이를 전역변수로 이해를 한다."></a>함수안에서 age를 var age로 선언을 하면 지역변수가 된다. 하지만 없으면 JS는 이를 전역변수로 이해를 한다.</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/16/2017-12-16-JS-study-Scope/" data-id="cjb8wm80l000anavlbe04y9kq" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/15/2017-12-15-JS-function-Study/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">2017-12-15 JS function Study</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/16/2017-12-16-JS-study-Scope/">2017-12-16 JS study Scope</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/15/2017-12-15-JS-function-Study/">2017-12-15 JS function Study</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/14/2017-12-14-TIL-HTML/">2017-12-14 TIL : HTML</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/13/Linux-System-Mangement-1/">Linux System Mangement(1)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/13/IT-Infra-Study-1-Server-Infra/">IT Infra Study(1) - Server, Infra</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Jimmy<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
