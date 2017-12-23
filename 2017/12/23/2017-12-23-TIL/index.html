@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2017-12-23 TIL | jaeyeon&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="github을 통한 협업 방식pull request 배우기 github 저장소 만들기 클론 파일 작성 README.mdindex.html index.js index.css   커밋 푸시  git 기본 명령어 git add : working direct의 변경사항을 index에 올린다. ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017-12-23 TIL">
+<meta property="og:url" content="http://yoursite.com/2017/12/23/2017-12-23-TIL/index.html">
+<meta property="og:site_name" content="jaeyeon&#39;s blog">
+<meta property="og:description" content="github을 통한 협업 방식pull request 배우기 github 저장소 만들기 클론 파일 작성 README.mdindex.html index.js index.css   커밋 푸시  git 기본 명령어 git add : working direct의 변경사항을 index에 올린다. git commit : index에 올려진 내용을 로컬저장소에 올린다.">
+<meta property="og:locale" content="Korean">
+<meta property="og:updated_time" content="2017-12-23T12:22:50.891Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017-12-23 TIL">
+<meta name="twitter:description" content="github을 통한 협업 방식pull request 배우기 github 저장소 만들기 클론 파일 작성 README.mdindex.html index.js index.css   커밋 푸시  git 기본 명령어 git add : working direct의 변경사항을 index에 올린다. git commit : index에 올려진 내용을 로컬저장소에 올린다.">
+  
+    <link rel="alternate" href="/atom.xml" title="jaeyeon&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jaeyeon&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I design therefore I am</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2017-12-23-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/23/2017-12-23-TIL/" class="article-date">
+  <time datetime="2017-12-23T12:22:05.000Z" itemprop="datePublished">2017-12-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2017-12-23 TIL
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="github을-통한-협업-방식"><a href="#github을-통한-협업-방식" class="headerlink" title="github을 통한 협업 방식"></a>github을 통한 협업 방식</h2><h3 id="pull-request-배우기"><a href="#pull-request-배우기" class="headerlink" title="pull request 배우기"></a>pull request 배우기</h3><ol>
+<li>github 저장소 만들기</li>
+<li>클론</li>
+<li>파일 작성<blockquote>
+<p>README.md<br>index.html index.js index.css</p>
+</blockquote>
+</li>
+<li>커밋 푸시</li>
+</ol>
+<h3 id="git-기본-명령어"><a href="#git-기본-명령어" class="headerlink" title="git 기본 명령어"></a>git 기본 명령어</h3><ol>
+<li>git add : working direct의 변경사항을 index에 올린다.</li>
+<li>git commit : index에 올려진 내용을 로컬저장소에 올린다.</li>
+<li>git push : 로컬저장소에 있는 내용을 원격저장소로 올린다.</li>
+<li>origin이 원격저장소 주소이다. github에 있는 내주소가 origin이다.</li>
+<li>origin/master는 원격저장소에 있는 마스터브렌치를 이야기한다.</li>
+</ol>
+<h3 id="브렌치-바꾸기"><a href="#브렌치-바꾸기" class="headerlink" title="브렌치 바꾸기"></a>브렌치 바꾸기</h3><ul>
+<li>git branch branch-name</li>
+<li>git branch &gt; 현재브렌치 확인</li>
+<li>git checkout branch-name // change the branch.</li>
+<li>git push -u origin gh-pages //</li>
+<li>git remote add cs <a href="https://github.com/code-squad/level1-js" target="_blank" rel="noopener">https://github.com/code-squad/level1-js</a> // cs라는 원격저장소를 추가한다. why? 게임으로 치면 북미서버, 한국서버를 만들겠다는 의미이다. 하나는 내가 full로 권한을 가지고 있고, 다른하나는 권한이 없다.<br>:exclamation: 내 아이디가 있는 복사본 프로젝트를 클론한다.<br>포크 후에는 동일한 저장소가 내 아이디에도 생긴다!<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export githubid=&quot;my_id&quot;;</span><br><span class="line">git clone https://github.com/my_id/level1-js;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="원격-저장소-추가"><a href="#원격-저장소-추가" class="headerlink" title="원격 저장소 추가"></a>원격 저장소 추가</h3><p>origin말고 추가 원격 저장소를 만든다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remove -v // check the remote repository</span><br><span class="line">$ git remote add cs https://github.com/code-squad/leve1-js</span><br></pre></td></tr></table></figure></p>
+<h3 id="내-작업-브렌치-만들기"><a href="#내-작업-브렌치-만들기" class="headerlink" title="내 작업 브렌치 만들기"></a>내 작업 브렌치 만들기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch my_id // git branch jimmy</span><br><span class="line">$ git checkout jimmy</span><br></pre></td></tr></table></figure>
+<h3 id="프로젝트-하위-디렉토리-생성"><a href="#프로젝트-하위-디렉토리-생성" class="headerlink" title="프로젝트 하위 디렉토리 생성"></a>프로젝트 하위 디렉토리 생성</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir jimmy</span><br><span class="line">$ cd /jimmy</span><br><span class="line">$ cp -a /Users/jimmy/Desktop/project/git-study-pull_request/* jimmy</span><br></pre></td></tr></table></figure>
+<h3 id="gh-pages-만들기"><a href="#gh-pages-만들기" class="headerlink" title="gh-pages 만들기"></a>gh-pages 만들기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch gh-pages</span><br><span class="line">$ git checkout gh-pages</span><br><span class="line">$ git push -u origin gh-pages</span><br></pre></td></tr></table></figure>
+<p>이렇게 하고 나면<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://myid.github.com/proj_name</span><br></pre></td></tr></table></figure></p>
+<p>에서 볼 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index.html</span><br></pre></td></tr></table></figure></p>
+<p>이 꼭 있어야 합니다.</p>
+<h3 id="커밋-및-푸시"><a href="#커밋-및-푸시" class="headerlink" title="커밋 및 푸시"></a>커밋 및 푸시</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;[jimmy]&quot; Init project&quot;</span><br><span class="line">$ git push -u origin jimmy</span><br></pre></td></tr></table></figure>
+<h3 id="풀리퀘"><a href="#풀리퀘" class="headerlink" title="풀리퀘"></a>풀리퀘</h3><p>github가서 풀리퀘를 보내고, 리뷰 과정을 걸쳐 머지가 이루어 집니다.<br>지금까지 내 저장소의 작업내용(커밋)<br>github가서 풀리퀘 보내고, 리뷰과정을 걸쳐 머지가 이루어진다.</p>
+<blockquote>
+<p>src : code-squad/level1-js : master<br>target : jimmy/level1-js : jimmy<br>jimmy가 최신이다.</p>
+</blockquote>
+<h3 id="cs-마스터랑-합치기"><a href="#cs-마스터랑-합치기" class="headerlink" title="cs-마스터랑 합치기"></a>cs-마스터랑 합치기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git fetch cs // cs원격저장소만 로컬로 가져와 주세요.</span><br><span class="line">$ git merge cs/master</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/23/2017-12-23-TIL/" data-id="cjbjbfo3d000fehvlcsfi5rj4" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/20/2017-12-20-TIL/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">2017-12-20 TIL</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/23/2017-12-23-TIL/">2017-12-23 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/20/2017-12-20-TIL/">2017-12-20 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/19/2017-12-19-TIL/">2017-12-19 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/">2017-12-18 JS Study - Closer, Scope,Global Variable</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/17/2017-12-17-JS-study-Hoisting/">2017-12-17 JS study Hoisting</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Jimmy<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
