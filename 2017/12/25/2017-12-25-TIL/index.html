@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2017-12-25 TIL | jaeyeon&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="재귀함수의 수학적의미크리스마스에도 공부를 하다니… 재귀함수 알고리즘에 이론까지..어쩌다보니 요즘 공부하고있는“프로그래머 수학으로 생각하라”와 “그림으로 개념을 이해하는 알고리즘”에서 공부한 내용이 재귀함수로 겹쳤다. 문제1) 자물쇠가 걸린 옷가방을 발견을 했다.열쇠는 저기에 있는 상자안">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017-12-25 TIL">
+<meta property="og:url" content="http://yoursite.com/2017/12/25/2017-12-25-TIL/index.html">
+<meta property="og:site_name" content="jaeyeon&#39;s blog">
+<meta property="og:description" content="재귀함수의 수학적의미크리스마스에도 공부를 하다니… 재귀함수 알고리즘에 이론까지..어쩌다보니 요즘 공부하고있는“프로그래머 수학으로 생각하라”와 “그림으로 개념을 이해하는 알고리즘”에서 공부한 내용이 재귀함수로 겹쳤다. 문제1) 자물쇠가 걸린 옷가방을 발견을 했다.열쇠는 저기에 있는 상자안에 있다.다른 상자를 열어보니 또 다른 상자들이 있고 그 안에 다른 상자">
+<meta property="og:locale" content="Korean">
+<meta property="og:updated_time" content="2017-12-25T12:51:26.095Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017-12-25 TIL">
+<meta name="twitter:description" content="재귀함수의 수학적의미크리스마스에도 공부를 하다니… 재귀함수 알고리즘에 이론까지..어쩌다보니 요즘 공부하고있는“프로그래머 수학으로 생각하라”와 “그림으로 개념을 이해하는 알고리즘”에서 공부한 내용이 재귀함수로 겹쳤다. 문제1) 자물쇠가 걸린 옷가방을 발견을 했다.열쇠는 저기에 있는 상자안에 있다.다른 상자를 열어보니 또 다른 상자들이 있고 그 안에 다른 상자">
+  
+    <link rel="alternate" href="/atom.xml" title="jaeyeon&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jaeyeon&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I design therefore I am</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2017-12-25-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/25/2017-12-25-TIL/" class="article-date">
+  <time datetime="2017-12-25T12:51:16.000Z" itemprop="datePublished">2017-12-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2017-12-25 TIL
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="재귀함수의-수학적의미"><a href="#재귀함수의-수학적의미" class="headerlink" title="재귀함수의 수학적의미"></a>재귀함수의 수학적의미</h2><p>크리스마스에도 공부를 하다니… 재귀함수 알고리즘에 이론까지..<br>어쩌다보니 요즘 공부하고있는<br>“프로그래머 수학으로 생각하라”와 “그림으로 개념을 이해하는 알고리즘”에서 공부한 내용이 재귀함수로 겹쳤다.</p>
+<p>문제1) 자물쇠가 걸린 옷가방을 발견을 했다.<br>열쇠는 저기에 있는 상자안에 있다.<br>다른 상자를 열어보니 또 다른 상자들이 있고 그 안에 다른 상자들이 있다.<br>이것을 어떻게 풀어야될까?</p>
+<p>Sol1)</p>
+<ol>
+<li>내부를 확인할 상자를 쌓아놓는다.</li>
+<li>상자를 하나 집어서 내부를 살핀다</li>
+<li>만약 안에 상자가 있다면 꺼내서 나중에 확인할 상자 더미에 놓는다</li>
+<li>만약 열쇠가 있으면 작업 종료.</li>
+<li>반복한다.</li>
+</ol>
+<p>Sol2)</p>
+<ol>
+<li>상자안을 확인한다.</li>
+<li>상자를 발견하면 1단계로 간다.</li>
+<li>만약 열쇠를 발견하면 작업종료.</li>
+</ol>
+<p>위의 두가지 경우를 파이썬 코드를 이용해서 풀어보자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def look_for_key(mainbox):</span><br><span class="line">	pile = main.box.make_a_pile_to_loot-through()</span><br><span class="line">    while pile is not empty:</span><br><span class="line">    	box = pile.brab_a_box();</span><br><span class="line">        for item in box:</span><br><span class="line">        	if item in box():</span><br><span class="line">				pile.append(item)</span><br><span class="line">            elif item.is_a_key():</span><br><span class="line">            	print &quot;find a key&quot;</span><br></pre></td></tr></table></figure>
+<p>second solv in python</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def look_for_key(box):</span><br><span class="line">	for item in box:</span><br><span class="line">    	if item.is_a_box():</span><br><span class="line">        	loob_for_key(item)</span><br><span class="line">        elif item.is_a_key():</span><br><span class="line">        	print &quot;열쇠를 찾았어요&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="프로그램에-반복문을-사용하면-프로그램의-성능을-향상시킬-수-있지만-재귀를-사용하면-프로그래머의-능력을-향상-시킬-수-있다"><a href="#프로그램에-반복문을-사용하면-프로그램의-성능을-향상시킬-수-있지만-재귀를-사용하면-프로그래머의-능력을-향상-시킬-수-있다" class="headerlink" title="프로그램에 반복문을 사용하면 프로그램의 성능을 향상시킬 수 있지만 재귀를 사용하면 프로그래머의 능력을 향상 시킬 수 있다."></a>프로그램에 반복문을 사용하면 프로그램의 성능을 향상시킬 수 있지만 재귀를 사용하면 프로그래머의 능력을 향상 시킬 수 있다.</h4><h4 id="기본단계와-재귀단계"><a href="#기본단계와-재귀단계" class="headerlink" title="기본단계와 재귀단계"></a>기본단계와 재귀단계</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def countdown(i):</span><br><span class="line">	print i</span><br><span class="line">    countdown(i-1)</span><br><span class="line">    // 무한루프</span><br></pre></td></tr></table></figure>
+<p>재귀함수를 만들 때는 언제 재귀를 멈출지를 제대로 알려줘야 한다.<br>재귀단계는 자기 자신을 호출하는 단계이고, 기본단계는 함수가 자기 자신을 호출하지 않는 경우, 무한 반복으로 빠져들지 않게 하는 부분입니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def countdown(i):</span><br><span class="line">	print i</span><br><span class="line">    i &lt;= i:</span><br><span class="line">    	reutn</span><br><span class="line">    else:</span><br><span class="line">    	countdown(i-1)</span><br><span class="line">// 무한 호출이 발생하지 않도록 방지를 했다.</span><br></pre></td></tr></table></figure>
+<h4 id="함수의-호출스택"><a href="#함수의-호출스택" class="headerlink" title="함수의 호출스택"></a>함수의 호출스택</h4><p>스택은 스택구조 가장위에 있는 항목만을 읽고 뗄수 있는 구조이다. POP, PUSH메소드를 이용해서 구현을 한다.<br>PUSH로 가장 위에 새 항목을 추가하고, POP으로 가장 위의 항목을 떼어내고 읽는다.<br>스택에서 할 일을 POP한다. 할 일들을 적어서 다시 메모리에 PUSH한다.</p>
+<h5 id="호출스택"><a href="#호출스택" class="headerlink" title="호출스택"></a>호출스택</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def greet(name):</span><br><span class="line">	print &quot;hello,  &quot; + name + &quot;!&quot;</span><br><span class="line">    greet2(name)</span><br><span class="line">    print &quot;getting ready to say bye...&quot;</span><br><span class="line">    bye()</span><br><span class="line">  이 함수는 인사말을 건너고 다른 두개의 함수를 호출한다.</span><br></pre></td></tr></table></figure>
+<h4 id="함수호출이-일어나면-어떤-변화들이-있나-지켜보자"><a href="#함수호출이-일어나면-어떤-변화들이-있나-지켜보자" class="headerlink" title="함수호출이 일어나면 어떤 변화들이 있나 지켜보자."></a>함수호출이 일어나면 어떤 변화들이 있나 지켜보자.</h4><ol>
+<li>greet(‘maggie’)라고 명령을 하면 메모리에 값을 저장을 하게 된다.</li>
+<li>다시 greet2함수를 호출을 하면 greet함수 위에 greet2가 쌓이게 된다.</li>
+<li>greet2함수가 출력이 되면 사라지고 다시 bye함수가 쌓인다. 이것이 스택구조이다.</li>
+</ol>
+<h4 id="재귀함수에서-호출-스택-사용"><a href="#재귀함수에서-호출-스택-사용" class="headerlink" title="재귀함수에서 호출 스택 사용"></a>재귀함수에서 호출 스택 사용</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def fact(x):</span><br><span class="line">	if x == 1:</span><br><span class="line">    	return x;</span><br><span class="line">    else:</span><br><span class="line">    	return fact(x-1) * x</span><br></pre></td></tr></table></figure>
+<p>스택을 사용하면 상자 더미를 일일이 추적하지 않아도 되므로 편리하다. 하지만 모든 정보를 저장해야 하므로 메모리를 많이 소모한다.<br>이것을 해결하기 위한 방법이 있다.</p>
+<ol>
+<li>재귀 대신 반복문을 써서 코드를 다시 작성한다.</li>
+</ol>
+<p>3장 요약</p>
+<ul>
+<li>재귀는 함수가 스스로를 호출하는 것이다.</li>
+<li>모든 재귀 함수는 기본 단계와 재귀 단계라는 부분으로 나누어져 있습니다.</li>
+<li>스택에는 푸쉬 팝이라는 두가지 연산이 있습니다.</li>
+<li>모든 함수 호출은 호출 스택을 사용합니다.</li>
+<li>호출 스택은 너무 커져서 메모리를 엄청나게 소비할 수도 있습니다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/25/2017-12-25-TIL/" data-id="cjbm7bvsr000ij0vl3xyib9ko" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/24/2017-12-24-TIL/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2017-12-24 TIL</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/25/2017-12-25-TIL/">2017-12-25 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/24/2017-12-24-TIL/">2017-12-24 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/23/2017-12-23-TIL/">2017-12-23 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/20/2017-12-20-TIL/">2017-12-20 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/19/2017-12-19-TIL/">2017-12-19 TIL</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Jimmy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
