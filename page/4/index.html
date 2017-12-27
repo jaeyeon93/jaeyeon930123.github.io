@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-12-10-Algorithm-sumDivisor" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/10/2017-12-10-Algorithm-sumDivisor/" class="article-date">
+  <time datetime="2017-12-10T14:32:51.868Z" itemprop="datePublished">2017-12-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: 2017-12-10 Algorithm sumDivisor<br>date: 2017-12-10 23:32:08<br>tags:</p>
+<h2 id="알고리즘-1-약수의합-구하기"><a href="#알고리즘-1-약수의합-구하기" class="headerlink" title="알고리즘(1) - 약수의합 구하기"></a>알고리즘(1) - 약수의합 구하기</h2><h5 id="어떤-수를-입력받아-그-수의-약수를-모두-더한-수-sumDivisor-함수를-완성해-보세요-예를-들어-12가-입력된다면-12의-약수는-1-2-3-4-6-12-가-되고-총-합은-28이-되므로-28을-반환해-주면-됩니다"><a href="#어떤-수를-입력받아-그-수의-약수를-모두-더한-수-sumDivisor-함수를-완성해-보세요-예를-들어-12가-입력된다면-12의-약수는-1-2-3-4-6-12-가-되고-총-합은-28이-되므로-28을-반환해-주면-됩니다" class="headerlink" title="어떤 수를 입력받아 그 수의 약수를 모두 더한 수 sumDivisor 함수를 완성해 보세요. 예를 들어 12가 입력된다면 12의 약수는 [1, 2, 3, 4, 6, 12]가 되고, 총 합은 28이 되므로 28을 반환해 주면 됩니다."></a>어떤 수를 입력받아 그 수의 약수를 모두 더한 수 sumDivisor 함수를 완성해 보세요. 예를 들어 12가 입력된다면 12의 약수는 [1, 2, 3, 4, 6, 12]가 되고, 총 합은 28이 되므로 28을 반환해 주면 됩니다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function sumDivisor(num) &#123;</span><br><span class="line">  var answer = 0;</span><br><span class="line">  var list = [];</span><br><span class="line">  for(var i=1; i&lt;=num; i++)&#123;</span><br><span class="line">    if(num % i === 0)&#123;</span><br><span class="line">      list.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  for(var j of list)&#123;</span><br><span class="line">    answer = answer + j;</span><br><span class="line">  &#125;</span><br><span class="line">	return answer;</span><br><span class="line">&#125;</span><br><span class="line">console.log(sumDivisor(12));</span><br></pre></td></tr></table></figure>
+<ol>
+<li>sumDivisor라는 함수는 num을 인수로 받는다.</li>
+<li>약수의 합을 반환해주는 answer라는 변수를 선언해준다.</li>
+<li>약수의 값들을 넣어둘 빈 배열 list를 선언한다.</li>
+<li>약수는 1부터 해당수까지 1씩증가를 했을때 나눠지는 수가 약수라고 한다.</li>
+<li>i가 1씩 증가할때마다 num을 i로 나눠서 0으로 나눠떨어지면 그것은 num의 약수이다. 그 약수를 push()메소드를 이용해서 list에 넣어둬야한다.</li>
+<li>약수들이 list라는 변수에 담겨져 있으면 이제는 그 안의 합을 구해야된다.</li>
+<li>for (var j of list)라는 함수는 list에 있는 각각의 요소들을 j라는 변수에 한번담고 다음변수로 넘어간다는 의미이다.</li>
+<li>j가 한바퀴 돌때마다 값을 answer에 더하고 마지막으로 돌면 그 합은 약수의 합이 된다.—</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/10/2017-12-10-Algorithm-sumDivisor/" data-id="cjboomjx90007rttbjlglfixj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2017-12-08-Unix-Chapter1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/08/2017-12-08-Unix-Chapter1/" class="article-date">
@@ -121,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/08/2017-12-08-Unix-Chapter1/" data-id="cjbm7bvs80006j0vleoy5nwti" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/08/2017-12-08-Unix-Chapter1/" data-id="cjboomjx80006rttbs872bjp1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL-Array/" data-id="cjbm7bvs50004j0vl2ksr73b3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL-Array/" data-id="cjboomjx40004rttbwhwuljus" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL/" data-id="cjbm7bvs60005j0vlkwzkw7iy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL/" data-id="cjboomjx60005rttbovvboojr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -377,61 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjbm7bvsw000mj0vlk9x6n5zw" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-06-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/06/2017-12-06-TIL/" class="article-date">
-  <time datetime="2017-12-06T05:46:16.000Z" itemprop="datePublished">2017-12-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/06/2017-12-06-TIL/">2017-12-06 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="프로그래머-수학으로-생각하라"><a href="#프로그래머-수학으로-생각하라" class="headerlink" title="프로그래머 수학으로 생각하라"></a>프로그래머 수학으로 생각하라</h2><h3 id="Chapter1-0이야기"><a href="#Chapter1-0이야기" class="headerlink" title="Chapter1 0이야기"></a>Chapter1 0이야기</h3><h4 id="10진법이란"><a href="#10진법이란" class="headerlink" title="10진법이란?"></a>10진법이란?</h4><ul>
-<li>우리는 보통 10진법을 사용한다. 사용하는 숫자는 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10종류이다.</li>
-<li>자릿수에 의미가 있으며 오른쪽으로부터 1의 자리, 10의 자리, 100의 자리, 1000의 자리라고표현한다.</li>
-</ul>
-<h5 id="예시-2503의-분해"><a href="#예시-2503의-분해" class="headerlink" title="예시 2503의 분해"></a>예시 2503의 분해</h5><ol>
-<li>2는 ‘1000’의 개수를 나타낸다.</li>
-<li>5는 ‘100’의 개수를 나타낸다.</li>
-<li>0은 ‘10’의 개수를 나타낸다.</li>
-<li>3은 ‘1’의 개수를 나타낸다.<h4 id="즉-2503이라는-수는-2개의-1000과-5개의-100과-0개의-10과-3개의-1을-더한-수로-표현하는-것이다"><a href="#즉-2503이라는-수는-2개의-1000과-5개의-100과-0개의-10과-3개의-1을-더한-수로-표현하는-것이다" class="headerlink" title="즉, 2503이라는 수는 2개의 1000과 5개의 100과 0개의 10과 3개의 1을 더한 수로 표현하는 것이다."></a>즉, 2503이라는 수는 2개의 1000과 5개의 100과 0개의 10과 3개의 1을 더한 수로 표현하는 것이다.</h4></li>
-</ol>
-<h4 id="2진법이란"><a href="#2진법이란" class="headerlink" title="2진법이란?"></a>2진법이란?</h4><h5 id="컴퓨터는-수를-다룰-때-2진법을-사용한다"><a href="#컴퓨터는-수를-다룰-때-2진법을-사용한다" class="headerlink" title="컴퓨터는 수를 다룰 때 2진법을 사용한다."></a>컴퓨터는 수를 다룰 때 2진법을 사용한다.</h5><ul>
-<li>사용하는 숫자는 0과 1 두 종류뿐이다.</li>
-<li>오른쪽으로부터 순서대로 1의 자리, 2의 자리, 4의 자리, 8의 자리를 나타낸다.</li>
-</ul>
-<h5 id="컴퓨터에서-2진법을-사용하는-이유"><a href="#컴퓨터에서-2진법을-사용하는-이유" class="headerlink" title="컴퓨터에서 2진법을 사용하는 이유"></a>컴퓨터에서 2진법을 사용하는 이유</h5><ul>
-<li>2진법은 10진법의 표보다도 작고 간단하다는 장점이 있지만 10진법과 비교하여 자릿수가 많다는 단점이 있다. 하지만 컴퓨터는 매우 빠르게 계산할 수 있으므로 자릿수가 많고 적음에 크게 상관이 없다.</li>
-<li>사람에게는 자릿수가 적고 숫자의 종류가 많으면 편하지만, 컴퓨터는 정반대이다.</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/2017-12-06-TIL/" data-id="cjbm7bvs20003j0vlnlov9a98" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjboomjxn000mrttbxak49fts" class="article-share-link">Share</a>
       
       
     </footer>
@@ -475,6 +460,10 @@
       <ul>
         
           <li>
+            <a href="/2017/12/27/2017-12-27-selection-sorting/">2017-12-27 selection sorting</a>
+          </li>
+        
+          <li>
             <a href="/2017/12/25/2017-12-25-TIL/">2017-12-25 TIL</a>
           </li>
         
@@ -488,10 +477,6 @@
         
           <li>
             <a href="/2017/12/20/2017-12-20-TIL/">2017-12-20 TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/19/2017-12-19-TIL/">2017-12-19 TIL</a>
           </li>
         
       </ul>
