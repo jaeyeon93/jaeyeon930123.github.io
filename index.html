@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,49 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2018-1-1-TIL-JAVA-study-day1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/01/2018-1-1-TIL-JAVA-study-day1/" class="article-date">
+  <time datetime="2018-01-01T11:36:04.000Z" itemprop="datePublished">2018-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/01/2018-1-1-TIL-JAVA-study-day1/">2018-1-1 TIL : JAVA study day1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JAVA-Start"><a href="#JAVA-Start" class="headerlink" title="JAVA Start"></a>JAVA Start</h2><h4 id="자바-프로그램-메소드는-이렇게-생겼어요"><a href="#자바-프로그램-메소드는-이렇게-생겼어요" class="headerlink" title="자바 프로그램 메소드는 이렇게 생겼어요"></a>자바 프로그램 메소드는 이렇게 생겼어요</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public boolean checkPassword(String password) &#123;</span><br><span class="line">	// code</span><br><span class="line">&#125;</span><br><span class="line">// pulic : access modifier</span><br><span class="line">// boolean : return type</span><br><span class="line">// checkPassword : method name</span><br><span class="line">// String password : parameter</span><br></pre></td></tr></table></figure>
+<h4 id="메소드는-늘-어딘가에-소속이-되어있어야된다-자바는-늘-클래스안에-포함이-되어야한다-하나의-클래스안에는-0개-이상의-메소드가-존재할-수-있다"><a href="#메소드는-늘-어딘가에-소속이-되어있어야된다-자바는-늘-클래스안에-포함이-되어야한다-하나의-클래스안에는-0개-이상의-메소드가-존재할-수-있다" class="headerlink" title="메소드는 늘 어딘가에 소속이 되어있어야된다. 자바는 늘 클래스안에 포함이 되어야한다. 하나의 클래스안에는 0개 이상의 메소드가 존재할 수 있다."></a>메소드는 늘 어딘가에 소속이 되어있어야된다. 자바는 늘 클래스안에 포함이 되어야한다. 하나의 클래스안에는 0개 이상의 메소드가 존재할 수 있다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class DoorLockManger &#123;</span><br><span class="line">	public boolean checkPassword(String password) &#123;</span><br><span class="line">    	// code</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setPassword(String password) &#123;</span><br><span class="line">    	// code</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void resetPassword() &#123;</span><br><span class="line">    	// code</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// DoorLockManger라는 클래스안에는 checkPassowrd, setPassword, resetPassword라는 3가지의 메소드가 존재를 한다. 각각의 메소드는 boolean, void, void형태로 리턴을 해주는데, 여기서 void는 &quot;이 메소드는 아무것도 돌려주지 않아요&quot;라고 이야기를 할 수 있다.</span><br></pre></td></tr></table></figure>
+<h4 id="클래스는-상태-state-와-행동-behavior-가-있어야-한다-여기서-메소드가-행동이고-상태는-그-클래스의-특성을-결정짓는-것이-상태이다"><a href="#클래스는-상태-state-와-행동-behavior-가-있어야-한다-여기서-메소드가-행동이고-상태는-그-클래스의-특성을-결정짓는-것이-상태이다" class="headerlink" title="클래스는 상태(state)와 행동(behavior)가 있어야 한다. 여기서 메소드가 행동이고, 상태는 그 클래스의 특성을 결정짓는 것이 상태이다."></a>클래스는 상태(state)와 행동(behavior)가 있어야 한다. 여기서 메소드가 행동이고, 상태는 그 클래스의 특성을 결정짓는 것이 상태이다.</h4><h4 id="상태는"><a href="#상태는" class="headerlink" title="상태는"></a>상태는</h4><ul>
+<li>클래스안에</li>
+<li>메소드 밖에 정의를 한다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class DoorLockManager &#123;</span><br><span class="line">	String currentPassword;</span><br><span class="line">    public boolean checkPassword(String password) &#123;</span><br><span class="line">    	// code</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // below method</span><br><span class="line">&#125;</span><br><span class="line">// String currentPassword와 같은 것이 클래스의 상태를 정의해주고 변수라고 한다.</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/01/2018-1-1-TIL-JAVA-study-day1/" data-id="cjbw4qd3n000lapvl08z8qw9u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2017-12-30-TIL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -131,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/30/2017-12-30-TIL/" data-id="cjbtbgqbd000jvmvlzbzrfsgo" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/30/2017-12-30-TIL/" data-id="cjbw4qd3m000japvl9jqs5frc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -210,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/28/2017-12-28-Regular-Expression/" data-id="cjbtbgqbc000ivmvl3hs37pa5" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/28/2017-12-28-Regular-Expression/" data-id="cjbw4qd3o000mapvl5ujqzm4x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -261,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/27/2017-12-27-selection-sorting/" data-id="cjbtbgqbh000nvmvlhagwuuzd" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/27/2017-12-27-selection-sorting/" data-id="cjbw4qd3r000papvl4fb3q6lc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -340,98 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/25/2017-12-25-TIL/" data-id="cjbtbgqbf000lvmvlhxpcclbo" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-24-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/24/2017-12-24-TIL/" class="article-date">
-  <time datetime="2017-12-24T13:11:19.000Z" itemprop="datePublished">2017-12-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/24/2017-12-24-TIL/">2017-12-24 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="알고리즘-복잡도-분석"><a href="#알고리즘-복잡도-분석" class="headerlink" title="알고리즘 복잡도 분석"></a>알고리즘 복잡도 분석</h2><p>알고리즘이란 문제해결 전략이다.</p>
-<ul>
-<li>자료구조 : array, list, stack, queue</li>
-<li>알고리즘 : 문제해결방법 (자료구조를 바탕으로 문제를 해결한다)</li>
-</ul>
-<h4 id="기본-자료구조"><a href="#기본-자료구조" class="headerlink" title="기본 자료구조"></a>기본 자료구조</h4><ul>
-<li><p>배열</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ex) int a[] = new int[5]</span><br><span class="line">// a = int의 배열이다. 타입과 갯수가 정해져 있다.</span><br><span class="line">// 크기가 고정되어있지만, 읽을때 엄청 빨리 읽는다.</span><br><span class="line">O(1)읽기</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>리스트 : LinkedList(참조 혹은 포인터) O(n)번만에 읽을 수 있다. O(1)만에 추가가 된다. 읽기는 오래걸리지만 쓰기는 굉장히 빠르다. 각각의 노드마다 주소값이 저장되어있기때문에 공간의 낭비가 심하다.</p>
-</li>
-<li>스택 : LIFO</li>
-<li>큐 : FIFO</li>
-<li>트리 : 일방향(싸이클이 없다)</li>
-<li>그래프 : 그래프는 트리랑 구조가 유사한데, 각 노드들이 연결되어있다? 그래프는 트리의 일종이지만 싸이클이 생기지 Object를 통해 만든다. key의 중복이 안된다. key로 값을 읽어 오고 싶을때 사용.</li>
-</ul>
-<h4 id="배열과-해시를-이용하면-대부분의-코딩문제들이-해결된다"><a href="#배열과-해시를-이용하면-대부분의-코딩문제들이-해결된다" class="headerlink" title="배열과 해시를 이용하면 대부분의 코딩문제들이 해결된다."></a>배열과 해시를 이용하면 대부분의 코딩문제들이 해결된다.</h4><h4 id="정렬"><a href="#정렬" class="headerlink" title="정렬"></a>정렬</h4><ul>
-<li>선택 정렬</li>
-<li>버블 정렬</li>
-<li>삽입 정렬</li>
-<li>쉘 정렬</li>
-<li>퀵 정렬</li>
-<li>기수 정렬</li>
-<li>힙 정렬</li>
-<li>병합 정렬</li>
-<li>외부 정렬</li>
-</ul>
-<h4 id="동작코드를-다-외어야-된다"><a href="#동작코드를-다-외어야-된다" class="headerlink" title="동작코드를 다 외어야 된다."></a>동작코드를 다 외어야 된다.</h4><h4 id="트리와-검색"><a href="#트리와-검색" class="headerlink" title="트리와 검색"></a>트리와 검색</h4><ul>
-<li>순차 검색</li>
-<li>2진 검색</li>
-<li>BST 검색</li>
-<li>AVL 트리</li>
-<li>레드블랙 트리</li>
-<li>MST</li>
-<li>B TREE</li>
-</ul>
-<h4 id="그래프와-탐색"><a href="#그래프와-탐색" class="headerlink" title="그래프와 탐색"></a>그래프와 탐색</h4><ul>
-<li>전위 중위 후위</li>
-<li>다익스트라 최단거리</li>
-<li>플로이드 알고리즘</li>
-<li>A* 알고리즘</li>
-</ul>
-<h4 id="알고리즘-전략"><a href="#알고리즘-전략" class="headerlink" title="알고리즘 전략"></a>알고리즘 전략</h4><ul>
-<li>휴리스틱 알고리즘</li>
-<li>그리디 알고리즘</li>
-<li>몬테카를로 알고리즘</li>
-<li>분할 정복</li>
-<li>다이나믹 프그로래밍</li>
-<li>백 트래킹</li>
-</ul>
-<h2 id="정렬-1"><a href="#정렬-1" class="headerlink" title="정렬"></a>정렬</h2><ul>
-<li>정렬을 할때는 비교기준이 있어야한다. 그 비교기준을 내가 세운다.<br>-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr = [1, 11, 2, 20, 3, 5, 9];</span><br><span class="line">arr.sort(function(a, b) &#123;</span><br><span class="line">	return a-b;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">b = [</span><br><span class="line">  &#123; name: &apos;honux&apos;, money: 100, score: 100 &#125;,</span><br><span class="line">  &#123; name: &apos;crong&apos;, money: 50, score: 500 &#125;,</span><br><span class="line">  &#123; name: &apos;jimmy&apos;, money: 999, score: 10 &#125; ]</span><br><span class="line">b.sort((a, b) =&gt; (b.score - a.score) );</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/24/2017-12-24-TIL/" data-id="cjbtbgqbe000kvmvlg8ozi2p9" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/25/2017-12-25-TIL/" data-id="cjbw4qd3n000kapvlk28ncxaw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -462,7 +414,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -470,9 +422,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/01/2018-1-1-TIL-JAVA-study-day1/">2018-1-1 TIL : JAVA study day1</a>
+          </li>
         
           <li>
             <a href="/2017/12/30/2017-12-30-TIL/">2017-12-30 TIL</a>
@@ -490,10 +446,6 @@
             <a href="/2017/12/25/2017-12-25-TIL/">2017-12-25 TIL</a>
           </li>
         
-          <li>
-            <a href="/2017/12/24/2017-12-24-TIL/">2017-12-24 TIL</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -506,8 +458,8 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 Jimmy<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2018 Jimmy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

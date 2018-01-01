@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,81 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-IT-Infra-Study-1-Server-Infra" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/13/IT-Infra-Study-1-Server-Infra/" class="article-date">
+  <time datetime="2017-12-13T05:54:12.000Z" itemprop="datePublished">2017-12-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/13/IT-Infra-Study-1-Server-Infra/">IT Infra Study(1) - Server, Infra</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="그림으로-공부하는-IT인프라-구조-1-인프라아키텍처-서버"><a href="#그림으로-공부하는-IT인프라-구조-1-인프라아키텍처-서버" class="headerlink" title="그림으로 공부하는 IT인프라 구조 (1) - 인프라아키텍처, 서버"></a>그림으로 공부하는 IT인프라 구조 (1) - 인프라아키텍처, 서버</h2><h3 id="IT인프라는-2가지-형태로-구성이-된다"><a href="#IT인프라는-2가지-형태로-구성이-된다" class="headerlink" title="IT인프라는 2가지 형태로 구성이 된다."></a>IT인프라는 2가지 형태로 구성이 된다.</h3><h4 id="집약형-대형컴퓨터-메인프레임-등-성능이-좋은것이고-집약형의-최대-장점은-단순하다는-점이다"><a href="#집약형-대형컴퓨터-메인프레임-등-성능이-좋은것이고-집약형의-최대-장점은-단순하다는-점이다" class="headerlink" title="집약형 : 대형컴퓨터, 메인프레임 등 성능이 좋은것이고 집약형의 최대 장점은 단순하다는 점이다."></a>집약형 : 대형컴퓨터, 메인프레임 등 성능이 좋은것이고 집약형의 최대 장점은 단순하다는 점이다.</h4><h5 id="장점"><a href="#장점" class="headerlink" title="장점"></a>장점</h5><ol>
+<li>한 대의 대형 컴퓨터만 있으면 되므로 구성이 간단.</li>
+<li>안정성이 높고 고성능이다.<h5 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h5></li>
+<li>비용이 비싸다.</li>
+<li>확장성에 한계가 있다.</li>
+</ol>
+<h4 id="분산형-아키텍처"><a href="#분산형-아키텍처" class="headerlink" title="분산형 아키텍처"></a>분산형 아키텍처</h4><h5 id="장점-1"><a href="#장점-1" class="headerlink" title="장점"></a>장점</h5><ol>
+<li>낮은 비용이다.</li>
+<li>확장성이 매우 좋다.</li>
+</ol>
+<h5 id="단점-1"><a href="#단점-1" class="headerlink" title="단점"></a>단점</h5><ol>
+<li>복잡하다.</li>
+<li>한대가 고장나면 영향을 최소화하기위해 설계가 필요</li>
+</ol>
+<h4 id="클라이언트-서버형-아키텍처"><a href="#클라이언트-서버형-아키텍처" class="headerlink" title="클라이언트 - 서버형 아키텍처"></a>클라이언트 - 서버형 아키텍처</h4><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_1.png" alt="Alt text" title="client-server"></p>
+<h5 id="장점-2"><a href="#장점-2" class="headerlink" title="장점"></a>장점</h5><ol>
+<li>클라이언트측에서 많은 처리를 실행할 수 있어서 소수의 서버로 다수의 클라이언트를 처리할 수 있다.</li>
+</ol>
+<h5 id="단점-2"><a href="#단점-2" class="headerlink" title="단점"></a>단점</h5><ol>
+<li>확장성에 한계가 필요</li>
+</ol>
+<h4 id="3계층형-아키텍처"><a href="#3계층형-아키텍처" class="headerlink" title="3계층형 아키텍처"></a>3계층형 아키텍처</h4><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_2.png" alt="Alt text" title="3-layer Architecture"></p>
+<h6 id="3계층형은-‘프레젠테이션-계층’-‘애플리케이션-계층’-‘데이터-계층’-총-3가지-계층으로-분할이-되어있다"><a href="#3계층형은-‘프레젠테이션-계층’-‘애플리케이션-계층’-‘데이터-계층’-총-3가지-계층으로-분할이-되어있다" class="headerlink" title="3계층형은 ‘프레젠테이션 계층’, ‘애플리케이션 계층’, ‘데이터 계층’ 총 3가지 계층으로 분할이 되어있다."></a>3계층형은 ‘프레젠테이션 계층’, ‘애플리케이션 계층’, ‘데이터 계층’ 총 3가지 계층으로 분할이 되어있다.</h6><h5 id="프레젠테이션-계층"><a href="#프레젠테이션-계층" class="headerlink" title="프레젠테이션 계층"></a>프레젠테이션 계층</h5><ul>
+<li>사용자의 입력을 받는다.</li>
+<li>웹브라우저 화면을 표시한다.</li>
+</ul>
+<h5 id="애플리케이션-계층"><a href="#애플리케이션-계층" class="headerlink" title="애플리케이션 계층"></a>애플리케이션 계층</h5><ul>
+<li>사용자 요청(request)를 처리</li>
+</ul>
+<h5 id="데이터-계층"><a href="#데이터-계층" class="headerlink" title="데이터 계층"></a>데이터 계층</h5><ul>
+<li>애플리케이션의 요청에 따라 데이터를 입출력</li>
+</ul>
+<h5 id="장점-3"><a href="#장점-3" class="headerlink" title="장점"></a>장점</h5><ul>
+<li>서버 부하 집중 개선<h5 id="단점-3"><a href="#단점-3" class="headerlink" title="단점"></a>단점</h5></li>
+<li>구조가 클라이언트 - 서버 구성보다 복잡.</li>
+</ul>
+<h4 id="물리서버"><a href="#물리서버" class="headerlink" title="물리서버"></a>물리서버</h4><h6 id="서버는-렉-rack-이라는-것에-장착된다"><a href="#서버는-렉-rack-이라는-것에-장착된다" class="headerlink" title="서버는 렉(rack)이라는 것에 장착된다."></a>서버는 렉(rack)이라는 것에 장착된다.</h6><h6 id="서버와-PC는-물리적으로-기본-구성이-같다"><a href="#서버와-PC는-물리적으로-기본-구성이-같다" class="headerlink" title="서버와 PC는 물리적으로 기본 구성이 같다."></a>서버와 PC는 물리적으로 기본 구성이 같다.</h6><h6 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h6><p>CPU는 Central Processing Unit의 약자다. 서버 중심에 위치해서 연산처리를 한다.<br><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_3.png" alt="Alt text" title="Computer Structure"></p>
+<h6 id="CPU는-명령을-받아서-연산을-실행하고-결과를-반환한다"><a href="#CPU는-명령을-받아서-연산을-실행하고-결과를-반환한다" class="headerlink" title="CPU는 명령을 받아서 연산을 실행하고 결과를 반환한다."></a>CPU는 명령을 받아서 연산을 실행하고 결과를 반환한다.</h6><h6 id="CPU가-명령을-자발적으로-처리하는-것은-아니다-‘프로세스’나-사용자의-입력을-받아서-그것이-OS에-명령을-내리고-OS-운영체제-라는-소프트웨어가-CPU에-명령을-내린다"><a href="#CPU가-명령을-자발적으로-처리하는-것은-아니다-‘프로세스’나-사용자의-입력을-받아서-그것이-OS에-명령을-내리고-OS-운영체제-라는-소프트웨어가-CPU에-명령을-내린다" class="headerlink" title="CPU가 명령을 자발적으로 처리하는 것은 아니다. ‘프로세스’나 사용자의 입력을 받아서 그것이 OS에 명령을 내리고, OS(운영체제)라는 소프트웨어가 CPU에 명령을 내린다."></a>CPU가 명령을 자발적으로 처리하는 것은 아니다. ‘프로세스’나 사용자의 입력을 받아서 그것이 OS에 명령을 내리고, OS(운영체제)라는 소프트웨어가 CPU에 명령을 내린다.</h6><h6 id="메모리"><a href="#메모리" class="headerlink" title="메모리"></a>메모리</h6><h6 id="메모리는-CPU옆에-위치하고-CPU에-전달하는-내용이나-데이터를-저장하거나-처리결과를-받는다"><a href="#메모리는-CPU옆에-위치하고-CPU에-전달하는-내용이나-데이터를-저장하거나-처리결과를-받는다" class="headerlink" title="메모리는 CPU옆에 위치하고, CPU에 전달하는 내용이나 데이터를 저장하거나 처리결과를 받는다."></a>메모리는 CPU옆에 위치하고, CPU에 전달하는 내용이나 데이터를 저장하거나 처리결과를 받는다.</h6><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_4.png" alt="Alt text" title="Memory"></p>
+<h5 id="메모리에-저장되는-정보는-영구성이-없지만-액세스가-매우-빠르게-이루어-지기때문에-사용을-한다"><a href="#메모리에-저장되는-정보는-영구성이-없지만-액세스가-매우-빠르게-이루어-지기때문에-사용을-한다" class="headerlink" title="메모리에 저장되는 정보는 영구성이 없지만 액세스가 매우 빠르게 이루어 지기때문에 사용을 한다."></a>메모리에 저장되는 정보는 영구성이 없지만 액세스가 매우 빠르게 이루어 지기때문에 사용을 한다.</h5><h6 id="CPU자체도-메모리를-가지고-있다-이것을-레지스터나-L1-L2캐시라고-부른다"><a href="#CPU자체도-메모리를-가지고-있다-이것을-레지스터나-L1-L2캐시라고-부른다" class="headerlink" title="CPU자체도 메모리를 가지고 있다. 이것을 레지스터나 L1, L2캐시라고 부른다."></a>CPU자체도 메모리를 가지고 있다. 이것을 레지스터나 L1, L2캐시라고 부른다.</h6><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_5.png" alt="Alt text" title="CPU"></p>
+<h6 id="L1-L2-캐시에-있는-데이터는-L3에도-존재한다-다른-코어는-자신-이외의-캐시를-확인하지-않고-L3캐시만-확인하면-되는-구조다"><a href="#L1-L2-캐시에-있는-데이터는-L3에도-존재한다-다른-코어는-자신-이외의-캐시를-확인하지-않고-L3캐시만-확인하면-되는-구조다" class="headerlink" title="L1, L2 캐시에 있는 데이터는 L3에도 존재한다. 다른 코어는 자신 이외의 캐시를 확인하지 않고 L3캐시만 확인하면 되는 구조다."></a>L1, L2 캐시에 있는 데이터는 L3에도 존재한다. 다른 코어는 자신 이외의 캐시를 확인하지 않고 L3캐시만 확인하면 되는 구조다.</h6><h6 id="메모리를-이용하려면-메모리-컨트롤러를-경유해서-CPU밖으로-나가야한다-이때-처리지연을-줄이기-위해서-자주-사용하는-명령-데이터를-코어-가까운-곳에-배치를-한다"><a href="#메모리를-이용하려면-메모리-컨트롤러를-경유해서-CPU밖으로-나가야한다-이때-처리지연을-줄이기-위해서-자주-사용하는-명령-데이터를-코어-가까운-곳에-배치를-한다" class="headerlink" title="메모리를 이용하려면 메모리 컨트롤러를 경유해서 CPU밖으로 나가야한다. 이때 처리지연을 줄이기 위해서 자주 사용하는 명령/데이터를 코어 가까운 곳에 배치를 한다."></a>메모리를 이용하려면 메모리 컨트롤러를 경유해서 CPU밖으로 나가야한다. 이때 처리지연을 줄이기 위해서 자주 사용하는 명령/데이터를 코어 가까운 곳에 배치를 한다.</h6><h5 id="버스"><a href="#버스" class="headerlink" title="버스"></a>버스</h5><h6 id="버스-bus-는-서버-내부에-있는-컴포넌트들을-서로-연결시키는-회선을-가리킨다-버스에서는-버스가-어느정도의-데이터-전송-능력을-가지고-있는가-대역-이-중요하다"><a href="#버스-bus-는-서버-내부에-있는-컴포넌트들을-서로-연결시키는-회선을-가리킨다-버스에서는-버스가-어느정도의-데이터-전송-능력을-가지고-있는가-대역-이-중요하다" class="headerlink" title="버스(bus)는 서버 내부에 있는 컴포넌트들을 서로 연결시키는 회선을 가리킨다. 버스에서는 버스가 어느정도의 데이터 전송 능력을 가지고 있는가(대역)이 중요하다."></a>버스(bus)는 서버 내부에 있는 컴포넌트들을 서로 연결시키는 회선을 가리킨다. 버스에서는 버스가 어느정도의 데이터 전송 능력을 가지고 있는가(대역)이 중요하다.</h6>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/13/IT-Infra-Study-1-Server-Infra/" data-id="cjbw4qd3p000napvl57alcsim" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2017-12-12-Object-Study" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -135,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/12/2017-12-12-Object-Study/" data-id="cjbtbgqb00009vmvl9xaj984f" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/12/2017-12-12-Object-Study/" data-id="cjbw4qd3c0009apvlyoj5ju7o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/11/2017-12-11-TIL/" data-id="cjbtbgqaz0008vmvl8tg80jbq" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/11/2017-12-11-TIL/" data-id="cjbw4qd3a0007apvlhu1uhcy6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -232,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/10/2017-12-10-Algorithm-sumDivisor/" data-id="cjbtbgqax0007vmvlhc4zyd6r" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/10/2017-12-10-Algorithm-sumDivisor/" data-id="cjbw4qd370005apvlvib1l1eg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -294,98 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/08/2017-12-08-Unix-Chapter1/" data-id="cjbtbgqaw0006vmvlzycu7p5n" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-07-TIL-Array" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/07/2017-12-07-TIL-Array/" class="article-date">
-  <time datetime="2017-12-07T08:08:57.000Z" itemprop="datePublished">2017-12-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/07/2017-12-07-TIL-Array/">2017-12-07 TIL Array</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Using-Method-Array"><a href="#Using-Method-Array" class="headerlink" title="Using Method - Array"></a>Using Method - Array</h2><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><ol>
-<li><p>arr.length : 길이 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1,2,3,4,5]</span><br><span class="line">numbers.length; //5</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Array.isArray() : 인자 객체가 배열이면 true, 아니면 false</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array.isArray([]); // true</span><br><span class="line">array.isArray([1]); // true</span><br><span class="line">array.isArray(undefined); // false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.concat() : 인자로 주어진 배열이나 ㄱ밧들을 기존 배열에 합쳐서 새 배열을 반환.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1 = [1,2,3];</span><br><span class="line">var num2 = [4,5,6]</span><br><span class="line">var nums = num1.concat(num2); // [1,2,3,4,5,6]</span><br><span class="line">// 중복없이 나열이다.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.filter() : 제공된 함수로 구현된 테스트를 통과하면 새로운 배열이 생성</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Function isbigenough(element, index, array)&#123;</span><br><span class="line">	return element &gt; =10;</span><br><span class="line">&#125;</span><br><span class="line">var filtered = [12,5,8,130,44].filter(isbigenough);</span><br><span class="line">// [12,130,44]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.every() : 배열의 모든 요소가 제공한 함수로 구현된 테스트를 통과하는지 테스트</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Function isbigenough(element, index, array)&#123;</span><br><span class="line">	return element &gt; 10;</span><br><span class="line">&#125;</span><br><span class="line">[12,5,8,13,44].every(isbigenough); // false</span><br><span class="line">[12,54,18,130,44].every(isbigenough); // true</span><br><span class="line">// 전부다 true여야 한다. 하나라도 거짓이면 false가 나온다.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.find(), arr.findIndex() : 조건에 맞는 배열 안의 값을 하나 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var inventory = [ &#123;name:’apple’, quantity:2&#125;, &#123;name:’cherries’, quantity:5&#125;];</span><br><span class="line">Function findcherries(fruit)&#123;</span><br><span class="line">	return fruit.name == ‘cherries’;</span><br><span class="line">&#125;</span><br><span class="line">inventory.find(findCherries);</span><br><span class="line">// &#123;name: ‘cherries’, quantity:5&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.forEach() : 배열 요소마다 한 번씩 제공한 함수를 실행.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Function longarrayelements(element, index, array) &#123;</span><br><span class="line">	console.log(‘a[‘+ index + ‘] = ‘ + element);</span><br><span class="line">&#125;</span><br><span class="line">[2 , 5,  7].forEach(longarrayelement);</span><br><span class="line">// a[0] = 2, a[1] = 5, a[3] = 9</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.includes() : 배열에 특정 요소가 포함되어 있는지 여부를 확인해서 true or false를 반환.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3]</span><br><span class="line">a.includes(2); // true</span><br><span class="line">a.includes(4); // false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.indexOf(), arr.lastIndexOf() : 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고, 없으면 -1을 리턴한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [2,9,9[;</span><br><span class="line">a.indexOf(2); //0</span><br><span class="line">a.indexOf(7) // -1</span><br><span class="line"></span><br><span class="line">var b = [2,5,9,2]</span><br><span class="line">a.lastIndexOf(2); // 3</span><br><span class="line">a.lastIndexOf(7); // -1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.join() : 배열의 모든 요소를 연결해 하나의 문자열로 만든다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [‘바람’, ‘비’, ‘불’];</span><br><span class="line">var myvar1 = a.join(); // ‘바람,비,불’</span><br><span class="line">var myvar3 = a.join(‘ + ‘); // ‘’바람 + 비 + 불’</span><br><span class="line">var myvar4 = a.join(‘’); // ‘바람비불’</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.map() : 배열 내의 모든 요소에 대하여 제공된 함수를 호출하고, 그 결과를 모아서, 새로운 배열을 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1,4,9]</span><br><span class="line">var doubles = numbers.map(function(num)&#123;</span><br><span class="line">	return num*2</span><br><span class="line">&#125;);</span><br><span class="line">// doubles = [2,8,18];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.pop(), arr.push() : 배열에서 마지막 요소를 추가하거나 제거한다.</p>
-</li>
-<li><p>arr.shift(), arr.unshift() : 배열에서 첫번째 요소를 제거하거나 추가한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr =[1,2];</span><br><span class="line">arr.unshift(0); // [0,1,2]</span><br><span class="line">arr.shift() // [2]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.reverse() : 배열을 반전시킵니다. 첫번째 요소는 마지막 요소가 되며 마지막 요소는 첫 번째 요소가 됩니다.</p>
-</li>
-<li><p>arr.slice() : 배열의 begin부터 end까지(end는 불포함)에 대한 shallow copy를 새로운 객체로 반환.</p>
-</li>
-<li><p>arr.splice() : 배열의 내용을 추가/제거하는 데 유용<br>arr.splice(m,n,c) arr배열 m번째 인덱스에서 n개를 제거하고 c만큼을 넣는다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var myFish = [‘angel’, ‘clown’, ‘mandarin’, ‘surgeon’]</span><br><span class="line">var removed = myFish.splice(2,0, ‘drum’);</span><br><span class="line">// var myFish = [‘angel’, ‘clown’, ‘drum’ ,‘mandarin’, ‘surgeon’]</span><br><span class="line">removed = []</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.sort() : 배열의 요소를 적절한 위치에 정렬하고 배열을 반환.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var scores = [1, 10, 21, 2];</span><br><span class="line">score.sort(); // [1, 10, 2, 21]</span><br><span class="line">Unicode 코드 포인트 순서에서 ’10’이 ‘2’앞.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.toString() : 지정된 배열 및 그 요소를 나타내는 문자열을 반환합니다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var monthNames = [‘Jan’, ‘Feb’, ‘Mar’, ‘Apr’]</span><br><span class="line">var myvar = monthNames.toString();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>arr.reduce() : 피보나치수열을 풀때 유용</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL-Array/" data-id="cjbtbgqat0003vmvl66xqadnz" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/08/2017-12-08-Unix-Chapter1/" data-id="cjbw4qd390006apvl6gvaglqg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -416,7 +400,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
   </div>
 
@@ -424,9 +408,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/01/2018-1-1-TIL-JAVA-study-day1/">2018-1-1 TIL : JAVA study day1</a>
+          </li>
         
           <li>
             <a href="/2017/12/30/2017-12-30-TIL/">2017-12-30 TIL</a>
@@ -444,10 +432,6 @@
             <a href="/2017/12/25/2017-12-25-TIL/">2017-12-25 TIL</a>
           </li>
         
-          <li>
-            <a href="/2017/12/24/2017-12-24-TIL/">2017-12-24 TIL</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -460,8 +444,8 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 Jimmy<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2018 Jimmy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
