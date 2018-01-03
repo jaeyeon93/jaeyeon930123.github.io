@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,57 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2018-1-3-TIL-JAVA-study-day3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/03/2018-1-3-TIL-JAVA-study-day3/" class="article-date">
+  <time datetime="2018-01-03T09:19:43.000Z" itemprop="datePublished">2018-01-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/03/2018-1-3-TIL-JAVA-study-day3/">2018-1-3 TIL : JAVA study day3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2018-1-3-TIL-JAVA-study-day3"><a href="#2018-1-3-TIL-JAVA-study-day3" class="headerlink" title="2018-1-3 TIL : JAVA study day3"></a>2018-1-3 TIL : JAVA study day3</h2><h3 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Int [] array_name = new int[100];</span><br><span class="line"></span><br><span class="line">Ex) int [] array1 = new int[100];</span><br><span class="line">// declare array</span><br><span class="line"></span><br><span class="line">array1[0] = 1;</span><br><span class="line">array1[1] = 2;</span><br><span class="line"></span><br><span class="line">Int [] array2 = new int[]&#123;1, 2, 3, 4&#125;;</span><br><span class="line">// 배열의길이가 4이고, 값이 1, 2, 3 ,4인 배열을 생성한다.</span><br><span class="line"></span><br><span class="line">Int [] array3 = &#123;1, 2, 3, 4&#125;;</span><br><span class="line">// 길이가 4이고 값이 1, 2, 3, 4인 배열을 생성</span><br></pre></td></tr></table></figure>
+<h4 id="using-array"><a href="#using-array" class="headerlink" title="using array"></a>using array</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">array_name[index];</span><br><span class="line">System.out.println(array3[3]); // 4</span><br><span class="line">Int value = array3[0];</span><br><span class="line">// array3[0]의 값을 value변수에 담는다.</span><br><span class="line"></span><br><span class="line">Int [] iarray = new int[100];</span><br><span class="line">iarray[0] = 1;</span><br><span class="line">iarray[1] = 2;</span><br><span class="line"></span><br><span class="line">For (int i = 0; i &lt; iarray.length; i++) &#123;</span><br><span class="line">	iarray[i] = i + 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Int sum = 0;</span><br><span class="line">For (int I = 0; I &lt; iarray.length; I++) &#123;</span><br><span class="line">	sum += iarray[i]</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(sum);</span><br></pre></td></tr></table></figure>
+<h4 id="메소드"><a href="#메소드" class="headerlink" title="메소드"></a>메소드</h4><p>입력값 : 매개변수, 인자</p>
+<ul>
+<li>매개변수(parameter)</li>
+<li>인자(argument) : 어떤함수를 호출시에 전달되는 값을 의미</li>
+</ul>
+<p>출력값 : 리턴값</p>
+<p>메소드란 클래스가 가지고 있는 기능<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// declare method</span><br><span class="line">Public return_type method_name (parameter) &#123;</span><br><span class="line">	// run code</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (boolean값) &#123;</span><br><span class="line">	// run code;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">	// run code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>if문의 조건문 안에(소괄호) &amp;&amp;와 ||를 활용하면 여러가지 조건을 한 번에 따질 수 있다.</li>
+<li>&amp;&amp;를 사용할 때는 앞에 조건의 결과가 false라면 두 번째 조건은 묻지도 따지지도 않는다.</li>
+<li>반대로 ||를 사용할 때 첫 번째 조건이 true라는 두 번째 조건은 묻지도 따지지도 않는다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/03/2018-1-3-TIL-JAVA-study-day3/" data-id="cjbyuqpz6000mn8tb9da7ss5c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2018-1-2-TIL-JAVA-study-day2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -124,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/2018-1-2-TIL-JAVA-study-day2/" data-id="cjbxbs3jr000lg0tbbcrc7ssw" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/01/02/2018-1-2-TIL-JAVA-study-day2/" data-id="cjbyuqpz5000ln8tbtvegewof" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/01/2018-1-1-TIL-JAVA-study-day1/" data-id="cjbxbs3jq000kg0tbowav1gtz" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/01/01/2018-1-1-TIL-JAVA-study-day1/" data-id="cjbyuqpz4000kn8tbhvvch00k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/30/2017-12-30-TIL/" data-id="cjbxbs3jp000jg0tbt9srfz40" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/30/2017-12-30-TIL/" data-id="cjbyuqpz3000jn8tb6z60zts5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -318,58 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/28/2017-12-28-Regular-Expression/" data-id="cjbxbs3jv000ng0tb29gtyged" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-27-selection-sorting" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/27/2017-12-27-selection-sorting/" class="article-date">
-  <time datetime="2017-12-27T06:30:44.000Z" itemprop="datePublished">2017-12-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/27/2017-12-27-selection-sorting/">2017-12-27 selection sorting</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="정렬"><a href="#정렬" class="headerlink" title="정렬"></a>정렬</h2><h5 id="들어가기"><a href="#들어가기" class="headerlink" title="들어가기"></a>들어가기</h5><ul>
-<li>컴퓨터에 무언가를 저장할때, 우리는 공간을 요청한다. 그러면 컴퓨터는 메모리를 할당을 해주고, 여러개의 원소를 저장하게되면 배열과 리스트라는 2가지 방법중 1가지를 선택해야한다.</li>
-</ul>
-<h4 id="배열과-연결리스트"><a href="#배열과-연결리스트" class="headerlink" title="배열과 연결리스트"></a>배열과 연결리스트</h4><ul>
-<li>메모리안에 저장된 데이터를 삽입/삭제 하는 경우가 많다. 이 경우 어떻게 해야되나?</li>
-<li>배열을 사용하면 새 원소를 추가할때 모든 자리를 한칸씩 옮겨야 된다. 여분의 공간을 미리 만들어야하는데, 추가가 안되면 쓸때없는 메모리를 낭비하게된다.</li>
-<li>하지만 연결리스트를 사용하면 원소를 메모리 어느곳에나 둘 수 있다.</li>
-<li>모든 원소의 값을 한 번에 읽어야 한다면 연결 리스트가 좋지만, 특정한 원소만 탐색 하고 싶다면 연결리스트는 최악이다. 처음부터 끝까지 일일이 다 찾아야 된다. 하지만 배열은 모든 원소의 주소를 다 알고있기때문에 탐색에 최적화가 되어있다.</li>
-</ul>
-<h4 id="선택정렬"><a href="#선택정렬" class="headerlink" title="선택정렬"></a>선택정렬</h4><ol>
-<li>주어진 리스트 중에 최소값을 찾는다.</li>
-<li>최솟값을 맨앞의 자리와 교환한다.</li>
-<li>맨 처음위치를 뺀 나머지 리스트를 같은 방법으로 반복한다.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">// 1-n까지 정수가 들어있는 배열</span><br><span class="line">// length : 생성될 배열의 길이</span><br><span class="line">// reuturn : 배열</span><br><span class="line"></span><br><span class="line">// length 길이 만큼의 배열을 생성한다.</span><br><span class="line">function genArray(length) &#123;</span><br><span class="line">  var arr = [];</span><br><span class="line">  for (var i = 0; i &lt;+ length; i++) &#123;</span><br><span class="line">    arr[i] = i + 1;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// knuth shuffle</span><br><span class="line">function shuffle(arr) &#123;</span><br><span class="line">  // 각각의 원소를 뒤섞는다</span><br><span class="line">  for(var i = arr.length - 1; i &gt; 0; i--) &#123;</span><br><span class="line">    var imax = i + 1;</span><br><span class="line">    var ridx = Math.floor(Math.random() * imax); // 0 ~ len-1</span><br><span class="line">    var temp = arr[i];</span><br><span class="line">    arr[i] = arr[ridx];</span><br><span class="line">    arr[ridx] = temp;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function selectionSort(arr) &#123;</span><br><span class="line">  for (var i = 0; i &lt; arr.length - 1; i++) &#123;</span><br><span class="line">    var idx = i;</span><br><span class="line">    var min = arr[i];</span><br><span class="line">    for (var j = i; j &lt; arr.length; j++) &#123;</span><br><span class="line">      if (arr[j] &lt; min) &#123;</span><br><span class="line">        idx = j;</span><br><span class="line">        min = arr[j];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // 바꿔주는 지점. i, min이랑 바꿔주는 지점.</span><br><span class="line">    var temp = arr[i];</span><br><span class="line">    arr[i] = arr[idx];</span><br><span class="line">    arr[idx] = temp;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 정렬이 됬는지 확인하는 과정</span><br><span class="line">function checkSorted(arr) &#123;</span><br><span class="line">  for (var i = 0; i &lt; arr.length - 1; i++) &#123;</span><br><span class="line">    if (arr[i] &gt; arr[i+1]) &#123;</span><br><span class="line">      return false;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//main(); unnamed function</span><br><span class="line">(function() &#123;</span><br><span class="line">  var testArray = genArray(20);</span><br><span class="line">  console.log(testArray);</span><br><span class="line">  console.log(shuffle(testArray));</span><br><span class="line">  console.log(selectionSort(testArray));</span><br><span class="line">  console.log(checkSorted(testArray));</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/27/2017-12-27-selection-sorting/" data-id="cjbxbs3k3000sg0tbi5qgkl4m" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/28/2017-12-28-Regular-Expression/" data-id="cjbyuqpzb000qn8tbi7iy9t6a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -408,9 +408,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/03/2018-1-3-TIL-JAVA-study-day3/">2018-1-3 TIL : JAVA study day3</a>
+          </li>
         
           <li>
             <a href="/2018/01/02/2018-1-2-TIL-JAVA-study-day2/">2018-1-2 TIL : JAVA study day2</a>
@@ -428,10 +432,6 @@
             <a href="/2017/12/28/2017-12-28-Regular-Expression/">2017-12-28 Regular Expression</a>
           </li>
         
-          <li>
-            <a href="/2017/12/27/2017-12-27-selection-sorting/">2017-12-27 selection sorting</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -445,7 +445,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Jimmy<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
