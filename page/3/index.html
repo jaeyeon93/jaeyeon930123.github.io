@@ -69,6 +69,79 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-12-23-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/23/2017-12-23-TIL/" class="article-date">
+  <time datetime="2017-12-23T12:22:05.000Z" itemprop="datePublished">2017-12-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/23/2017-12-23-TIL/">2017-12-23 TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="github을-통한-협업-방식"><a href="#github을-통한-협업-방식" class="headerlink" title="github을 통한 협업 방식"></a>github을 통한 협업 방식</h2><h3 id="pull-request-배우기"><a href="#pull-request-배우기" class="headerlink" title="pull request 배우기"></a>pull request 배우기</h3><ol>
+<li>github 저장소 만들기</li>
+<li>클론</li>
+<li>파일 작성<blockquote>
+<p>README.md<br>index.html index.js index.css</p>
+</blockquote>
+</li>
+<li>커밋 푸시</li>
+</ol>
+<h3 id="git-기본-명령어"><a href="#git-기본-명령어" class="headerlink" title="git 기본 명령어"></a>git 기본 명령어</h3><ol>
+<li>git add : working direct의 변경사항을 index에 올린다.</li>
+<li>git commit : index에 올려진 내용을 로컬저장소에 올린다.</li>
+<li>git push : 로컬저장소에 있는 내용을 원격저장소로 올린다.</li>
+<li>origin이 원격저장소 주소이다. github에 있는 내주소가 origin이다.</li>
+<li>origin/master는 원격저장소에 있는 마스터브렌치를 이야기한다.</li>
+</ol>
+<h3 id="브렌치-바꾸기"><a href="#브렌치-바꾸기" class="headerlink" title="브렌치 바꾸기"></a>브렌치 바꾸기</h3><ul>
+<li>git branch branch-name</li>
+<li>git branch &gt; 현재브렌치 확인</li>
+<li>git checkout branch-name // change the branch.</li>
+<li>git push -u origin gh-pages //</li>
+<li>git remote add cs <a href="https://github.com/code-squad/level1-js" target="_blank" rel="noopener">https://github.com/code-squad/level1-js</a> // cs라는 원격저장소를 추가한다. why? 게임으로 치면 북미서버, 한국서버를 만들겠다는 의미이다. 하나는 내가 full로 권한을 가지고 있고, 다른하나는 권한이 없다.<br>:exclamation: 내 아이디가 있는 복사본 프로젝트를 클론한다.<br>포크 후에는 동일한 저장소가 내 아이디에도 생긴다!<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export githubid=&quot;my_id&quot;;</span><br><span class="line">git clone https://github.com/my_id/level1-js;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="원격-저장소-추가"><a href="#원격-저장소-추가" class="headerlink" title="원격 저장소 추가"></a>원격 저장소 추가</h3><p>origin말고 추가 원격 저장소를 만든다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remove -v // check the remote repository</span><br><span class="line">$ git remote add cs https://github.com/code-squad/leve1-js</span><br></pre></td></tr></table></figure></p>
+<h3 id="내-작업-브렌치-만들기"><a href="#내-작업-브렌치-만들기" class="headerlink" title="내 작업 브렌치 만들기"></a>내 작업 브렌치 만들기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch my_id // git branch jimmy</span><br><span class="line">$ git checkout jimmy</span><br></pre></td></tr></table></figure>
+<h3 id="프로젝트-하위-디렉토리-생성"><a href="#프로젝트-하위-디렉토리-생성" class="headerlink" title="프로젝트 하위 디렉토리 생성"></a>프로젝트 하위 디렉토리 생성</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir jimmy</span><br><span class="line">$ cd /jimmy</span><br><span class="line">$ cp -a /Users/jimmy/Desktop/project/git-study-pull_request/* jimmy</span><br></pre></td></tr></table></figure>
+<h3 id="gh-pages-만들기"><a href="#gh-pages-만들기" class="headerlink" title="gh-pages 만들기"></a>gh-pages 만들기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch gh-pages</span><br><span class="line">$ git checkout gh-pages</span><br><span class="line">$ git push -u origin gh-pages</span><br></pre></td></tr></table></figure>
+<p>이렇게 하고 나면<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://myid.github.com/proj_name</span><br></pre></td></tr></table></figure></p>
+<p>에서 볼 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index.html</span><br></pre></td></tr></table></figure></p>
+<p>이 꼭 있어야 합니다.</p>
+<h3 id="커밋-및-푸시"><a href="#커밋-및-푸시" class="headerlink" title="커밋 및 푸시"></a>커밋 및 푸시</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;[jimmy]&quot; Init project&quot;</span><br><span class="line">$ git push -u origin jimmy</span><br></pre></td></tr></table></figure>
+<h3 id="풀리퀘"><a href="#풀리퀘" class="headerlink" title="풀리퀘"></a>풀리퀘</h3><p>github가서 풀리퀘를 보내고, 리뷰 과정을 걸쳐 머지가 이루어 집니다.<br>지금까지 내 저장소의 작업내용(커밋)<br>github가서 풀리퀘 보내고, 리뷰과정을 걸쳐 머지가 이루어진다.</p>
+<blockquote>
+<p>src : code-squad/level1-js : master<br>target : jimmy/level1-js : jimmy<br>jimmy가 최신이다.</p>
+</blockquote>
+<h3 id="cs-마스터랑-합치기"><a href="#cs-마스터랑-합치기" class="headerlink" title="cs-마스터랑 합치기"></a>cs-마스터랑 합치기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git fetch cs // cs원격저장소만 로컬로 가져와 주세요.</span><br><span class="line">$ git merge cs/master</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/23/2017-12-23-TIL/" data-id="cjc39oas6000hmhvl6kk36qtt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2017-12-20-TIL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/20/2017-12-20-TIL/" class="article-date">
@@ -107,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/20/2017-12-20-TIL/" data-id="cjc20uiuk000fjrvl5e4tzz3k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/20/2017-12-20-TIL/" data-id="cjc39oas4000gmhvl0k7s5uir" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/19/2017-12-19-TIL/" data-id="cjc20uiuj000ejrvls8w4yq4x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/19/2017-12-19-TIL/" data-id="cjc39oas3000fmhvl7c324yfs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +286,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" data-id="cjc20uiuh000djrvloszyr7zw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" data-id="cjc39oas2000emhvlm2w023iw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -253,51 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/17/2017-12-17-JS-study-Hoisting/" data-id="cjc20uiug000cjrvl68fe4yol" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-16-JS-study-Scope" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/16/2017-12-16-JS-study-Scope/" class="article-date">
-  <time datetime="2017-12-16T05:30:02.000Z" itemprop="datePublished">2017-12-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/16/2017-12-16-JS-study-Scope/">2017-12-16 JS study Scope</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS-Study-Scope-Closer"><a href="#JS-Study-Scope-Closer" class="headerlink" title="JS Study - Scope, Closer"></a>JS Study - Scope, Closer</h2><ol>
-<li>지역변수 =&gt; 블록수준, 함수수준의 언어냐를 물어본다.</li>
-<li>함수수준은 함수레벨(범위)안에서 이루어졌다는의미.</li>
-<li>{ 중괄호로 묶인것을 블록수준이라고한다.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;richard&apos;</span><br><span class="line">// 아래의 if문은 name변수에 대한 지역-범위를 생성하지 않는다.</span><br><span class="line">if (name &#123;</span><br><span class="line">	name = &quot;jack&quot;;</span><br><span class="line">    console.log(name); // jack : wjsdurqustn</span><br><span class="line">&#125;</span><br><span class="line">// name은 여전히 전역변수이며 if문에서 변경한다.</span><br><span class="line">console.log(name); // jack</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;richard&apos;;</span><br><span class="line"></span><br><span class="line">function showName() &#123;</span><br><span class="line">	var name = &apos;jack&apos;; // local variable</span><br><span class="line">    console.log(name); // jack;</span><br><span class="line">&#125;</span><br><span class="line">console.log(name); // richard =&gt; global variable</span><br></pre></td></tr></table></figure>
-<h5 id="지역변수는-함수내에서-전역변수보다-높은-우선순위를-지닌다"><a href="#지역변수는-함수내에서-전역변수보다-높은-우선순위를-지닌다" class="headerlink" title="지역변수는 함수내에서 전역변수보다 높은 우선순위를 지닌다."></a>지역변수는 함수내에서 전역변수보다 높은 우선순위를 지닌다.</h5><h5 id="전역변수는-함수의-외부에서-선언된-모든-변수의-전역-범위이다-하지만-가급적-전역변수의-사용을-자제해야한다-이를-방지-하기-위해서-JS-ES6에서는-let과-const를-도입했다"><a href="#전역변수는-함수의-외부에서-선언된-모든-변수의-전역-범위이다-하지만-가급적-전역변수의-사용을-자제해야한다-이를-방지-하기-위해서-JS-ES6에서는-let과-const를-도입했다" class="headerlink" title="전역변수는 함수의 외부에서 선언된 모든 변수의 전역 범위이다. 하지만 가급적 전역변수의 사용을 자제해야한다. 이를 방지? 하기 위해서 JS ES6에서는 let과 const를 도입했다."></a>전역변수는 함수의 외부에서 선언된 모든 변수의 전역 범위이다. 하지만 가급적 전역변수의 사용을 자제해야한다. 이를 방지? 하기 위해서 JS ES6에서는 let과 const를 도입했다.</h5><h5 id="만약-변수가-최초-선언-없이-초기화가-되었다면-이-변수는-자동으로-전역-컨텍스트에-추가가된다"><a href="#만약-변수가-최초-선언-없이-초기화가-되었다면-이-변수는-자동으로-전역-컨텍스트에-추가가된다" class="headerlink" title="만약 변수가 최초 선언 없이 초기화가 되었다면, 이 변수는 자동으로 전역 컨텍스트에 추가가된다."></a>만약 변수가 최초 선언 없이 초기화가 되었다면, 이 변수는 자동으로 전역 컨텍스트에 추가가된다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function showAge() &#123;</span><br><span class="line">	// age is global variable</span><br><span class="line">    age = 90;</span><br><span class="line">    console.log(age);</span><br><span class="line">&#125;</span><br><span class="line">showAge(); // 90</span><br><span class="line">console.log(age); // 90</span><br></pre></td></tr></table></figure>
-<h5 id="함수안에서-age를-var-age로-선언을-하면-지역변수가-된다-하지만-없으면-JS는-이를-전역변수로-이해를-한다"><a href="#함수안에서-age를-var-age로-선언을-하면-지역변수가-된다-하지만-없으면-JS는-이를-전역변수로-이해를-한다" class="headerlink" title="함수안에서 age를 var age로 선언을 하면 지역변수가 된다. 하지만 없으면 JS는 이를 전역변수로 이해를 한다."></a>함수안에서 age를 var age로 선언을 하면 지역변수가 된다. 하지만 없으면 JS는 이를 전역변수로 이해를 한다.</h5>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/16/2017-12-16-JS-study-Scope/" data-id="cjc20uiuf000bjrvlc9yok0ae" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/17/2017-12-17-JS-study-Hoisting/" data-id="cjc39oas1000dmhvl1gfmvheu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -341,6 +370,10 @@
       <ul>
         
           <li>
+            <a href="/2018/01/06/2018-1-6-TIL/">2018-1-6 TIL</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/05/2018-1-5-JAVA-study/">2018-1-5 JAVA study</a>
           </li>
         
@@ -354,10 +387,6 @@
         
           <li>
             <a href="/2018/01/01/2018-1-1-TIL-JAVA-study-day1/">2018-1-1 TIL : JAVA study day1</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/30/2017-12-30-TIL/">2017-12-30 TIL</a>
           </li>
         
       </ul>

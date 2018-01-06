@@ -69,6 +69,78 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-12-30-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/30/2017-12-30-TIL/" class="article-date">
+  <time datetime="2017-12-30T12:19:58.000Z" itemprop="datePublished">2017-12-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/30/2017-12-30-TIL/">2017-12-30 TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="퀵정렬"><a href="#퀵정렬" class="headerlink" title="퀵정렬"></a>퀵정렬</h2><p>[33, 15, 10]의 배열이 있다고 치자.<br>분할정복을 이용해서 이것을 정렬하기 위해서는 어떻게해야하는가?</p>
+<ol>
+<li>배열에서 원소를 하나고른다. 이것을 기준원소(pivot)이라고한다. 여기서는 33을 기준원소로 잡았다.</li>
+<li>이제 모든원소를 기준원소보다 작은원소와 큰원소로 분류를 한다. 15, 10, 33(기준원소) [] 마지막은 빈배열. 이것을 분할이라고 한다.</li>
+</ol>
+<p>퀵배열은 다음과 같이 구성이 된다.</p>
+<ul>
+<li>기준 원소보다 작은 하위 배열</li>
+<li>기준 원소</li>
+<li>기준 원소보다 큰 하위 배열<h4 id="여기서-중요한것은-양쪽에-있는-하위-배열은-정렬이-되어-있지-않다는-것이다"><a href="#여기서-중요한것은-양쪽에-있는-하위-배열은-정렬이-되어-있지-않다는-것이다" class="headerlink" title="여기서 중요한것은 양쪽에 있는 하위 배열은 정렬이 되어 있지 않다는 것이다!"></a>여기서 중요한것은 양쪽에 있는 하위 배열은 정렬이 되어 있지 않다는 것이다!</h4></li>
+</ul>
+<p>예시의 경우에는 [10, 15] + [33] + [] = [10, 15, 33]인 경우이다.<br>이제 원소의 개수를 늘려서 5개로 기준을 늘려보자.<br>[3, 5, 2, 1, 4]<br>위의 배열은 기준원소를 무엇으로 삼느냐에 따라 5가지 방법으로 달라질 수 있다.</p>
+<ol>
+<li style="list-style: none"><input type="checkbox"> [1] [3, 5, 2, 4]</li>
+<li>[1] [2] [3, 5, 4]</li>
+<li>[2, 1] [3] [5, 4]</li>
+<li>[3, 2, 1] [4] [5]</li>
+<li>[3, 2, 1, 4] [5] []</li>
+</ol>
+<ul>
+<li>위의 배열을 통해 모든 하위배열들이 0-4개까지의 원소를 가진것을 알 수 있다. 이것을 n개의 개수인 배열에 일반화를 시키면 n개의 기준원소로 나눌 수 가 있고, 0~n-1까지의 원소를 가진것을 알 수 있다.</li>
+</ul>
+<h4 id="어떤-원소를-기준원소로-고르던-양쪽의-하위-배열에-재귀적으로-퀵-정렬을-하면-된다"><a href="#어떤-원소를-기준원소로-고르던-양쪽의-하위-배열에-재귀적으로-퀵-정렬을-하면-된다" class="headerlink" title="어떤 원소를 기준원소로 고르던, 양쪽의 하위 배열에 재귀적으로 퀵 정렬을 하면 된다."></a>어떤 원소를 기준원소로 고르던, 양쪽의 하위 배열에 재귀적으로 퀵 정렬을 하면 된다.</h4><ul>
+<li>예를들어 3을 기준원소로 하면</li>
+</ul>
+<ol>
+<li>qsort([2, 1]) + [3] + qsort([5, 4])</li>
+<li>[1, 2] + [3] + [4, 5]</li>
+<li>[1, 2, 3, 4, 5]</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">python code</span><br><span class="line"></span><br><span class="line">def quicksort(array):</span><br><span class="line">	if len(array) &lt; 2:</span><br><span class="line">    	return array</span><br><span class="line">    else:</span><br><span class="line">    	pivot = array[0]</span><br><span class="line">        // 재귀 단계</span><br><span class="line">        less = [i for i in array[1:] if i &lt;= pivot]</span><br><span class="line">        // 기준원소보다 작거나 같은 하위배열</span><br><span class="line">        greater = [i for i in array[1:] if i &gt; pivot]</span><br><span class="line">        // 기준원소보다 큰 하위배열</span><br><span class="line">        return quicksort(less + [pivot] + greater)</span><br><span class="line"></span><br><span class="line">print quicksort([10, 5, 2, 3])</span><br><span class="line">&gt; [2, 3, 5, 10]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">JS Quick sort</span><br><span class="line"></span><br><span class="line">function genArray(length) &#123;</span><br><span class="line">  var arr = [];</span><br><span class="line">  for (var i = 0; i &lt;+ length; i++) &#123;</span><br><span class="line">    arr[i] = i + 1;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/// knuth shuffle</span><br><span class="line">function shuffle(arr) &#123;</span><br><span class="line">  // splice를 해서 하나를 빼서 뒤에다가 push를 해도 되고, 랜덤한 2개 수를 뽑아서 바꿔도 된다.</span><br><span class="line">  for(var i = arr.length - 1; i &gt; 0; i--) &#123;</span><br><span class="line">    var imax = i + 1;</span><br><span class="line">    var ridx = Math.floor(Math.random() * imax); // 0 ~ len-1</span><br><span class="line">    var temp = arr[i];</span><br><span class="line">    arr[i] = arr[ridx];</span><br><span class="line">    arr[ridx] = temp;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function quick_sort(arr) &#123;</span><br><span class="line">  var less = [];</span><br><span class="line">  var greater = [];</span><br><span class="line">  if (arr.length &lt; 2) &#123;</span><br><span class="line">    return arr</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    var pivot = arr[0];</span><br><span class="line">    for (var i of arr) &#123;</span><br><span class="line">      if (i &lt;= pivot) &#123;</span><br><span class="line">        less.push(i);</span><br><span class="line">        less.sort(function(a,b) &#123;return a-b&#125;);</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        greater.push(i);</span><br><span class="line">        greater.sort(function(a,b) &#123;return a-b&#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  var arr = less.concat(greater);</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function checkSorted(arr) &#123;</span><br><span class="line">  for (var i = 0; i &lt; arr.length - 1; i++) &#123;</span><br><span class="line">    if (arr[i] &gt; arr[i+1]) &#123;</span><br><span class="line">      return false;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// main function</span><br><span class="line">(function() &#123;</span><br><span class="line">  var testArray = genArray(20);</span><br><span class="line">  //console.log(testArray);</span><br><span class="line">  console.log(shuffle(testArray));</span><br><span class="line">  console.log(checkSorted(testArray));</span><br><span class="line">  console.log(quick_sort(testArray));</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<h4 id="퀵정렬은-선택한-기준-원소에-따라-처리속도가-달라지는-특징이-있다-일반적으로-O-nlogn-을-따른다"><a href="#퀵정렬은-선택한-기준-원소에-따라-처리속도가-달라지는-특징이-있다-일반적으로-O-nlogn-을-따른다" class="headerlink" title="퀵정렬은 선택한 기준 원소에 따라 처리속도가 달라지는 특징이 있다. 일반적으로 O(nlogn)을 따른다."></a>퀵정렬은 선택한 기준 원소에 따라 처리속도가 달라지는 특징이 있다. 일반적으로 O(nlogn)을 따른다.</h4><h4 id="맺으며"><a href="#맺으며" class="headerlink" title="맺으며"></a>맺으며</h4><ul>
+<li>분할 정복은 문제를 더 작은 조각으로 나누어서 푼다.</li>
+<li>퀵 정렬을 구현하려면 기준 원소를 무작위로 선택한다. 평균적인 실행시간은 O(n log n)이다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/30/2017-12-30-TIL/" data-id="cjc39oasb000mmhvlyu9bulf8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2017-12-28-Regular-Expression" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/28/2017-12-28-Regular-Expression/" class="article-date">
@@ -138,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/28/2017-12-28-Regular-Expression/" data-id="cjc20uiuu000qjrvlnock9c9v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/28/2017-12-28-Regular-Expression/" data-id="cjc39oasa000lmhvlxlm24zv5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/27/2017-12-27-selection-sorting/" data-id="cjc20uius000ojrvl2z8plj12" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/27/2017-12-27-selection-sorting/" data-id="cjc39oas9000kmhvlwo4zlmjh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +340,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/25/2017-12-25-TIL/" data-id="cjc20uiun000ijrvljypozp71" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/25/2017-12-25-TIL/" data-id="cjc39oas8000jmhvl73nvuzgv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -359,80 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/24/2017-12-24-TIL/" data-id="cjc20uiut000pjrvl7e9z7sad" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-23-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/23/2017-12-23-TIL/" class="article-date">
-  <time datetime="2017-12-23T12:22:05.000Z" itemprop="datePublished">2017-12-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/23/2017-12-23-TIL/">2017-12-23 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="github을-통한-협업-방식"><a href="#github을-통한-협업-방식" class="headerlink" title="github을 통한 협업 방식"></a>github을 통한 협업 방식</h2><h3 id="pull-request-배우기"><a href="#pull-request-배우기" class="headerlink" title="pull request 배우기"></a>pull request 배우기</h3><ol>
-<li>github 저장소 만들기</li>
-<li>클론</li>
-<li>파일 작성<blockquote>
-<p>README.md<br>index.html index.js index.css</p>
-</blockquote>
-</li>
-<li>커밋 푸시</li>
-</ol>
-<h3 id="git-기본-명령어"><a href="#git-기본-명령어" class="headerlink" title="git 기본 명령어"></a>git 기본 명령어</h3><ol>
-<li>git add : working direct의 변경사항을 index에 올린다.</li>
-<li>git commit : index에 올려진 내용을 로컬저장소에 올린다.</li>
-<li>git push : 로컬저장소에 있는 내용을 원격저장소로 올린다.</li>
-<li>origin이 원격저장소 주소이다. github에 있는 내주소가 origin이다.</li>
-<li>origin/master는 원격저장소에 있는 마스터브렌치를 이야기한다.</li>
-</ol>
-<h3 id="브렌치-바꾸기"><a href="#브렌치-바꾸기" class="headerlink" title="브렌치 바꾸기"></a>브렌치 바꾸기</h3><ul>
-<li>git branch branch-name</li>
-<li>git branch &gt; 현재브렌치 확인</li>
-<li>git checkout branch-name // change the branch.</li>
-<li>git push -u origin gh-pages //</li>
-<li>git remote add cs <a href="https://github.com/code-squad/level1-js" target="_blank" rel="noopener">https://github.com/code-squad/level1-js</a> // cs라는 원격저장소를 추가한다. why? 게임으로 치면 북미서버, 한국서버를 만들겠다는 의미이다. 하나는 내가 full로 권한을 가지고 있고, 다른하나는 권한이 없다.<br>:exclamation: 내 아이디가 있는 복사본 프로젝트를 클론한다.<br>포크 후에는 동일한 저장소가 내 아이디에도 생긴다!<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export githubid=&quot;my_id&quot;;</span><br><span class="line">git clone https://github.com/my_id/level1-js;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="원격-저장소-추가"><a href="#원격-저장소-추가" class="headerlink" title="원격 저장소 추가"></a>원격 저장소 추가</h3><p>origin말고 추가 원격 저장소를 만든다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remove -v // check the remote repository</span><br><span class="line">$ git remote add cs https://github.com/code-squad/leve1-js</span><br></pre></td></tr></table></figure></p>
-<h3 id="내-작업-브렌치-만들기"><a href="#내-작업-브렌치-만들기" class="headerlink" title="내 작업 브렌치 만들기"></a>내 작업 브렌치 만들기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch my_id // git branch jimmy</span><br><span class="line">$ git checkout jimmy</span><br></pre></td></tr></table></figure>
-<h3 id="프로젝트-하위-디렉토리-생성"><a href="#프로젝트-하위-디렉토리-생성" class="headerlink" title="프로젝트 하위 디렉토리 생성"></a>프로젝트 하위 디렉토리 생성</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir jimmy</span><br><span class="line">$ cd /jimmy</span><br><span class="line">$ cp -a /Users/jimmy/Desktop/project/git-study-pull_request/* jimmy</span><br></pre></td></tr></table></figure>
-<h3 id="gh-pages-만들기"><a href="#gh-pages-만들기" class="headerlink" title="gh-pages 만들기"></a>gh-pages 만들기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch gh-pages</span><br><span class="line">$ git checkout gh-pages</span><br><span class="line">$ git push -u origin gh-pages</span><br></pre></td></tr></table></figure>
-<p>이렇게 하고 나면<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://myid.github.com/proj_name</span><br></pre></td></tr></table></figure></p>
-<p>에서 볼 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index.html</span><br></pre></td></tr></table></figure></p>
-<p>이 꼭 있어야 합니다.</p>
-<h3 id="커밋-및-푸시"><a href="#커밋-및-푸시" class="headerlink" title="커밋 및 푸시"></a>커밋 및 푸시</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;[jimmy]&quot; Init project&quot;</span><br><span class="line">$ git push -u origin jimmy</span><br></pre></td></tr></table></figure>
-<h3 id="풀리퀘"><a href="#풀리퀘" class="headerlink" title="풀리퀘"></a>풀리퀘</h3><p>github가서 풀리퀘를 보내고, 리뷰 과정을 걸쳐 머지가 이루어 집니다.<br>지금까지 내 저장소의 작업내용(커밋)<br>github가서 풀리퀘 보내고, 리뷰과정을 걸쳐 머지가 이루어진다.</p>
-<blockquote>
-<p>src : code-squad/level1-js : master<br>target : jimmy/level1-js : jimmy<br>jimmy가 최신이다.</p>
-</blockquote>
-<h3 id="cs-마스터랑-합치기"><a href="#cs-마스터랑-합치기" class="headerlink" title="cs-마스터랑 합치기"></a>cs-마스터랑 합치기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git fetch cs // cs원격저장소만 로컬로 가져와 주세요.</span><br><span class="line">$ git merge cs/master</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/23/2017-12-23-TIL/" data-id="cjc20uium000hjrvlvz7526o6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/24/2017-12-24-TIL/" data-id="cjc39oas7000imhvl49u6a54v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -476,6 +475,10 @@
       <ul>
         
           <li>
+            <a href="/2018/01/06/2018-1-6-TIL/">2018-1-6 TIL</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/05/2018-1-5-JAVA-study/">2018-1-5 JAVA study</a>
           </li>
         
@@ -489,10 +492,6 @@
         
           <li>
             <a href="/2018/01/01/2018-1-1-TIL-JAVA-study-day1/">2018-1-1 TIL : JAVA study day1</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/30/2017-12-30-TIL/">2017-12-30 TIL</a>
           </li>
         
       </ul>
