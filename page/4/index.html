@@ -69,6 +69,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2017-12-18-JS-Study-Closer-Scope-Global-Variable" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" class="article-date">
+  <time datetime="2017-12-18T07:45:42.000Z" itemprop="datePublished">2017-12-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/">2017-12-18 JS Study - Closer, Scope,Global Variable</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-Study-Scope"><a href="#JS-Study-Scope" class="headerlink" title="JS Study - Scope"></a>JS Study - Scope</h2><h3 id="Scope란"><a href="#Scope란" class="headerlink" title="Scope란?"></a>Scope란?</h3><ul>
+<li>함수의 유효범위이다.</li>
+</ul>
+<h4 id="전역변수"><a href="#전역변수" class="headerlink" title="전역변수"></a>전역변수</h4><ul>
+<li>함수 외부에서 선언된 변수이다. 많이 쓰면 나쁘다.</li>
+<li>최상위 객체에 속하는 변수이다.</li>
+<li>global의 프로퍼티다.</li>
+</ul>
+<h4 id="지역변수"><a href="#지역변수" class="headerlink" title="지역변수"></a>지역변수</h4><ul>
+<li>함수 안에서 선언된 변수</li>
+<li>함수 외부에서는 쓸 수 없다.</li>
+</ul>
+<h4 id="자동-전역-변수"><a href="#자동-전역-변수" class="headerlink" title="자동 전역 변수"></a>자동 전역 변수</h4><ul>
+<li>함수 안에서 var없이 선언을 하면 자동 전역 변수가 된다. 하지만 절대 그러지 말자.</li>
+</ul>
+<h4 id="같은-이름이면-지역변수가-전역변수보다-우선순위가-높다"><a href="#같은-이름이면-지역변수가-전역변수보다-우선순위가-높다" class="headerlink" title="같은 이름이면 지역변수가 전역변수보다 우선순위가 높다."></a>같은 이름이면 지역변수가 전역변수보다 우선순위가 높다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var a = 100;</span><br><span class="line">function foo() &#123;</span><br><span class="line">	var a = 50;</span><br><span class="line">    console.log(a);</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br><span class="line">&gt;50</span><br><span class="line">&gt;a</span><br><span class="line">&gt;100;</span><br><span class="line">// 지역변수가 전역변수보다 우선순위가 높아서.</span><br></pre></td></tr></table></figure>
+<h4 id="함수의-매개변수"><a href="#함수의-매개변수" class="headerlink" title="함수의 매개변수"></a>함수의 매개변수</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function foo(a) &#123;</span><br><span class="line">	console.log(a);</span><br><span class="line">&#125;;</span><br><span class="line">&gt;foo(10)</span><br><span class="line">&gt;10</span><br><span class="line">&gt;</span><br><span class="line">// 매개변수는 지역변수이다. 그러므로 stack에 쌓인다.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">	console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">&gt;0</span><br><span class="line">&gt;1</span><br><span class="line">&gt;2</span><br><span class="line">&gt;3</span><br><span class="line">&gt;4</span><br><span class="line">&gt;5</span><br><span class="line">&gt;6</span><br><span class="line">&gt;7</span><br><span class="line">&gt;8</span><br><span class="line">&gt;9</span><br><span class="line">undefined</span><br><span class="line">&gt;i</span><br><span class="line">&gt;10</span><br><span class="line">// i는 전역변수이다.</span><br></pre></td></tr></table></figure>
+<h4 id="unnamed-function-자주-쓴다"><a href="#unnamed-function-자주-쓴다" class="headerlink" title="unnamed function(자주 쓴다.)"></a>unnamed function(자주 쓴다.)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">(functino () &#123;</span><br><span class="line">	for(var i = 20; i &lt; 30; i++) &#123;</span><br><span class="line">    	console.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">&gt;20</span><br><span class="line">&gt;21</span><br><span class="line">&gt;22</span><br><span class="line">&gt;23</span><br><span class="line">&gt;24</span><br><span class="line">&gt;25</span><br><span class="line">&gt;26</span><br><span class="line">&gt;27</span><br><span class="line">&gt;28</span><br><span class="line">&gt;29</span><br><span class="line"></span><br><span class="line">&gt;i</span><br><span class="line">&gt;10</span><br><span class="line">// 위에서 i를 10으로 전역변수로 했기때문에 10이다.</span><br></pre></td></tr></table></figure>
+<h4 id="블록스코프"><a href="#블록스코프" class="headerlink" title="블록스코프"></a>블록스코프</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&#123;</span><br><span class="line">    	let x = 10;</span><br><span class="line">        console.log(x);</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;</span><br><span class="line">&gt;x</span><br><span class="line">&gt;10</span><br><span class="line">&gt;x is undefined</span><br><span class="line">&gt;</span><br><span class="line">// const와 let은 블록스코프이기때문에, let이 로컬변수이기때문에 위에서는 되지만, 밑에서는 블록의 범위를 벗어나기때문에 밑에서는 undefined가 된다. const도 마찬가지다.</span><br></pre></td></tr></table></figure>
+<h4 id="closer-JS는-함수내부에-또-다른-함수를-선언할-수-있다-이것을-클로저라고한다-클로저는-현상이다"><a href="#closer-JS는-함수내부에-또-다른-함수를-선언할-수-있다-이것을-클로저라고한다-클로저는-현상이다" class="headerlink" title="closer : JS는 함수내부에 또 다른 함수를 선언할 수 있다. 이것을 클로저라고한다. 클로저는 현상이다."></a>closer : JS는 함수내부에 또 다른 함수를 선언할 수 있다. 이것을 클로저라고한다. 클로저는 현상이다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">	var a = 10;</span><br><span class="line">    function bar()&#123;</span><br><span class="line">    var b = 20;</span><br><span class="line">    console.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    bar();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt;foo()</span><br><span class="line">&gt;10</span><br></pre></td></tr></table></figure>
+<h4 id="내부함수는-외부함수에-있는-변수를-읽을-수-있다-이것을-클로저라고한다-to-be-continue…"><a href="#내부함수는-외부함수에-있는-변수를-읽을-수-있다-이것을-클로저라고한다-to-be-continue…" class="headerlink" title="내부함수는 외부함수에 있는 변수를 읽을 수 있다. 이것을 클로저라고한다. to be continue…."></a>내부함수는 외부함수에 있는 변수를 읽을 수 있다. 이것을 클로저라고한다. to be continue….</h4><h4 id="호이스팅"><a href="#호이스팅" class="headerlink" title="호이스팅"></a>호이스팅</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">console.log(a);</span><br><span class="line"></span><br><span class="line">var a = 10;</span><br><span class="line"></span><br><span class="line">console.log(a);</span><br><span class="line"></span><br><span class="line">// undefined</span><br><span class="line">// 10</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" data-id="cjc6bjqj2000h1rvlbl4iab3z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2017-12-17-JS-study-Hoisting" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/17/2017-12-17-JS-study-Hoisting/" class="article-date">
@@ -99,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/17/2017-12-17-JS-study-Hoisting/" data-id="cjc4r3d16000do8vlk1qguown" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/17/2017-12-17-JS-study-Hoisting/" data-id="cjc6bjqix000c1rvlpy3ddc7x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/16/2017-12-16-JS-study-Scope/" data-id="cjc4r3d12000bo8vlfvm2ed70" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/16/2017-12-16-JS-study-Scope/" data-id="cjc6bjqiw000b1rvl3kc8rpmt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -207,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/15/2017-12-15-JS-function-Study/" data-id="cjc4r3d14000co8vl9wb4oux1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/15/2017-12-15-JS-function-Study/" data-id="cjc6bjqiy000d1rvlhf6voajm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -267,46 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/14/2017-12-14-TIL-HTML/" data-id="cjc4r3d0z0009o8vlc5j1vf77" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Linux-System-Mangement-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/13/Linux-System-Mangement-1/" class="article-date">
-  <time datetime="2017-12-13T06:05:42.000Z" itemprop="datePublished">2017-12-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/13/Linux-System-Mangement-1/">Linux System Mangement(1)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Linux-System-Mangement-1"><a href="#Linux-System-Mangement-1" class="headerlink" title="Linux System Mangement (1)"></a>Linux System Mangement (1)</h2><h5 id="SSH-Secure-SHell-다른PC에-네트워크-경유로-로그인해할-수-있게-해준다"><a href="#SSH-Secure-SHell-다른PC에-네트워크-경유로-로그인해할-수-있게-해준다" class="headerlink" title="SSH(Secure SHell) : 다른PC에 네트워크 경유로 로그인해할 수 있게 해준다."></a>SSH(Secure SHell) : 다른PC에 네트워크 경유로 로그인해할 수 있게 해준다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ssh -Y -C user@192.168.0.0.1</span><br><span class="line">// -Y flag : X 전송지정</span><br><span class="line">// -C flag : 통신내용을 압축</span><br><span class="line">// X : 리눅스에서 화면 표시와 입력을 담당하는 구조</span><br></pre></td></tr></table></figure>
-<h5 id="root-sudo-root는-관리자-권한을-가진-사용자로서-파일-접근-권한을-자유롭게-변경하고-수정이-가능하다-임시적으로-root-사용자권한을-얻기-위해서는-sudo-명령어를-사용한다"><a href="#root-sudo-root는-관리자-권한을-가진-사용자로서-파일-접근-권한을-자유롭게-변경하고-수정이-가능하다-임시적으로-root-사용자권한을-얻기-위해서는-sudo-명령어를-사용한다" class="headerlink" title="root, sudo : root는 관리자 권한을 가진 사용자로서 파일 접근 권한을 자유롭게 변경하고, 수정이 가능하다. 임시적으로 root 사용자권한을 얻기 위해서는 sudo 명령어를 사용한다."></a>root, sudo : root는 관리자 권한을 가진 사용자로서 파일 접근 권한을 자유롭게 변경하고, 수정이 가능하다. 임시적으로 root 사용자권한을 얻기 위해서는 sudo 명령어를 사용한다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$sudo -i</span><br><span class="line">[sudo[ password for user: ****</span><br><span class="line">root@server:~#</span><br><span class="line">// sudo -i를 하면 root사용자로 일시적으로 권한이 생긴다.</span><br></pre></td></tr></table></figure>
-<h5 id="grep-검색하고-싶은-문자열을-검색한다"><a href="#grep-검색하고-싶은-문자열을-검색한다" class="headerlink" title="grep : 검색하고 싶은 문자열을 검색한다."></a>grep : 검색하고 싶은 문자열을 검색한다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ grep -r &quot;string&quot; /path/</span><br><span class="line">- r flag : 서브폴더까지 검색하도록 지정</span><br><span class="line">- string : 검색하고 싶은 내용</span><br><span class="line">- path : 찾을 파일이 있는 폴더</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/13/Linux-System-Mangement-1/" data-id="cjc4r3d1o000vo8vlhauf2oa1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/14/2017-12-14-TIL-HTML/" data-id="cjc6bjqiu000a1rvlvogt0vnd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -350,6 +369,10 @@
       <ul>
         
           <li>
+            <a href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/">2018-1-8 TIL JAVA practice problem solving</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/07/2018-1-7-TIL/">2018-1-7 TIL</a>
           </li>
         
@@ -363,10 +386,6 @@
         
           <li>
             <a href="/2018/01/03/2018-1-3-TIL-JAVA-study-day3/">2018-1-3 TIL : JAVA study day3</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/02/2018-1-2-TIL-JAVA-study-day2/">2018-1-2 TIL : JAVA study day2</a>
           </li>
         
       </ul>
