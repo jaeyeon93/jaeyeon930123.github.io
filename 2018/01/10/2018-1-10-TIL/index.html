@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2018-1-10 TIL | jaeyeon&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="2018-1-10 TILJVM1234567891011121314# CallStackclass CallStackTest &amp;#123;	public static void main(String [] args)&amp;#123;    	firstMethod();    &amp;#125; ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018-1-10 TIL">
+<meta property="og:url" content="http://yoursite.com/2018/01/10/2018-1-10-TIL/index.html">
+<meta property="og:site_name" content="jaeyeon&#39;s blog">
+<meta property="og:description" content="2018-1-10 TILJVM1234567891011121314# CallStackclass CallStackTest &amp;#123;	public static void main(String [] args)&amp;#123;    	firstMethod();    &amp;#125;    static void firstMethod()&amp;#123;		secondMethod();">
+<meta property="og:locale" content="Korean">
+<meta property="og:updated_time" content="2018-01-10T08:09:17.265Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018-1-10 TIL">
+<meta name="twitter:description" content="2018-1-10 TILJVM1234567891011121314# CallStackclass CallStackTest &amp;#123;	public static void main(String [] args)&amp;#123;    	firstMethod();    &amp;#125;    static void firstMethod()&amp;#123;		secondMethod();">
+  
+    <link rel="alternate" href="/atom.xml" title="jaeyeon&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jaeyeon&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I design therefore I am</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2018-1-10-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/10/2018-1-10-TIL/" class="article-date">
+  <time datetime="2018-01-10T08:08:57.000Z" itemprop="datePublished">2018-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2018-1-10 TIL
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2018-1-10-TIL"><a href="#2018-1-10-TIL" class="headerlink" title="2018-1-10 TIL"></a>2018-1-10 TIL</h2><h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># CallStack</span><br><span class="line">class CallStackTest &#123;</span><br><span class="line">	public static void main(String [] args)&#123;</span><br><span class="line">    	firstMethod();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static void firstMethod()&#123;</span><br><span class="line">		secondMethod();    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static void secondMethod()&#123;</span><br><span class="line">    	System.out.println(&quot;secondMethod();&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>위의 코드를 실행시켰을때, 호출스텍(CallStack)의 변화 이야기해보자.</p>
+<ol>
+<li>컴파일 후 실행을 시키면, JVM에 의해서 main메서드가 호출됨으로 프로그램이 시작된다. 호출스택에는 main메서드를 위한 메모리공간이 할당되고 main메서드가 수행되기 시작한다.</li>
+<li>main메서드에서 firstMethod()를 호출. 아직 main메서드가 끝나지 않고 대기상태, firstMethod()가 실행</li>
+<li>firstMethod()가 다시 secondMethod()를 호출, firstMethod()는 secondMethod()가 끝날때까지 대기,</li>
+<li>secondMethod()에서 println메서드를 호출. 값이 출력</li>
+<li>println메서드가 수행이 완료되어 호출스택에서 사라지고, 자신을 호출한 secondMethod()로 돌아간다.</li>
+<li>secondMethod()에 더 이상 수행할 코드가 없으므로 종료, firstMethod()로 돌아간다.</li>
+<li>firstMethod()에 더 이상 수행할 코드 없다. main메서드로 돌아간다.</li>
+<li>main메서드에 수행할 코드가 없다. 호출스택은 완전히 비워진다.</li>
+</ol>
+<h3 id="기본형-매개변수와-참조형-매개변수"><a href="#기본형-매개변수와-참조형-매개변수" class="headerlink" title="기본형 매개변수와 참조형 매개변수"></a>기본형 매개변수와 참조형 매개변수</h3><ul>
+<li>기본형일 때는 기본형 값이 복사되지만 참조형일때는 인스턴스의 주소가 복사가 된다.</li>
+<li>기본형 : 변수의 값을 읽기만 할 수 있다.</li>
+<li>참조형 : 변수의 값을 읽고 변경할 수 있다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Data &#123; int x; &#125;</span><br><span class="line">// Method Area에 생성이 된다.</span><br><span class="line"></span><br><span class="line">class ParameterTest &#123;</span><br><span class="line">    public static void main(String [] args) &#123;</span><br><span class="line">        Data d = new Data();</span><br><span class="line">        // 인스턴스생성</span><br><span class="line">        d.x = 10;</span><br><span class="line">        System.out.println(&quot;main () : x = &quot;+d.x);</span><br><span class="line"></span><br><span class="line">        change(d.x);</span><br><span class="line">        System.out.println(&quot;After changed(d.x)&quot;);</span><br><span class="line">        System.out.println(&quot;main () : x = &quot; + d.x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static void change(int x)&#123;</span><br><span class="line">        x = 1000;</span><br><span class="line">        System.out.println(&quot;cahnge() : x = &quot;+ x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// result</span><br><span class="line">main() : x = 10</span><br><span class="line">change() : x = 1000</span><br><span class="line">After change(d.x)</span><br><span class="line">main() : x = 10</span><br></pre></td></tr></table></figure>
+<p>x가 기본형 매개변수 이기때문에 값이 변경이 안됬다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class ParameterTest2 &#123;</span><br><span class="line">    public static void main(String [] args) &#123;</span><br><span class="line">      Data d = new Data();</span><br><span class="line">      d.x = 10;</span><br><span class="line">      System.out.println(&quot;main() : x = &quot;+d.x);</span><br><span class="line"></span><br><span class="line">      change(d);</span><br><span class="line">      System.out.println(&quot;After cahnge(d)&quot;);</span><br><span class="line">      System.out.println(&quot;main() : x = &quot;+d.x);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static void change(Data d) &#123; // 참조형 매개변수</span><br><span class="line">        d.x = 1000;</span><br><span class="line">        System.out.println(&quot;change() : x&quot;+d.x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// result</span><br><span class="line">main() : x = 10</span><br><span class="line">change() : x1000</span><br><span class="line">After cahnge(d)</span><br><span class="line">main() : x = 1000</span><br></pre></td></tr></table></figure>
+<p>Data d가 참조형 매개변수라 값이 변경이 되었다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/10/2018-1-10-TIL/" data-id="cjc8sapfy000lyftb147fr8hy" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">2018-1-8 TIL JAVA practice problem solving</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/10/2018-1-10-TIL/">2018-1-10 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/">2018-1-8 TIL JAVA practice problem solving</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/07/2018-1-7-TIL/">2018-1-7 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/06/2018-1-6-TIL/">2018-1-6 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/05/2018-1-5-JAVA-study/">2018-1-5 JAVA study</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Jimmy<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,54 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2017-12-19-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/19/2017-12-19-TIL/" class="article-date">
+  <time datetime="2017-12-19T07:02:10.000Z" itemprop="datePublished">2017-12-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/19/2017-12-19-TIL/">2017-12-19 TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="재귀함수"><a href="#재귀함수" class="headerlink" title="재귀함수"></a>재귀함수</h2><h4 id="재귀란-함수가-함수-안에서-자신을-다시-호출하는-것이다"><a href="#재귀란-함수가-함수-안에서-자신을-다시-호출하는-것이다" class="headerlink" title="재귀란 함수가 함수 안에서 자신을 다시 호출하는 것이다."></a>재귀란 함수가 함수 안에서 자신을 다시 호출하는 것이다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var foo = function() &#123;</span><br><span class="line">	foo();</span><br><span class="line">&#125;</span><br><span class="line">// stackoverflow가 발생.</span><br></pre></td></tr></table></figure>
+<h5 id="재귀와-일반함수와-성능을-비교해보면-일반함수가-더-성능이-좋다-재귀는-호출을-할때마다-stack이-쌓인다"><a href="#재귀와-일반함수와-성능을-비교해보면-일반함수가-더-성능이-좋다-재귀는-호출을-할때마다-stack이-쌓인다" class="headerlink" title="재귀와 일반함수와 성능을 비교해보면 일반함수가 더 성능이 좋다. 재귀는 호출을 할때마다 stack이 쌓인다."></a>재귀와 일반함수와 성능을 비교해보면 일반함수가 더 성능이 좋다. 재귀는 호출을 할때마다 stack이 쌓인다.</h5><h4 id="왜-재귀를-사용하나-수학문제-알고리즘을-풀때-유용-일반함수를-사용하면-성능이-좋아지고-재귀를-사용하면-프로그래머의-실력이-증가"><a href="#왜-재귀를-사용하나-수학문제-알고리즘을-풀때-유용-일반함수를-사용하면-성능이-좋아지고-재귀를-사용하면-프로그래머의-실력이-증가" class="headerlink" title="왜 재귀를 사용하나? 수학문제 알고리즘을 풀때 유용, 일반함수를 사용하면 성능이 좋아지고, 재귀를 사용하면 프로그래머의 실력이 증가 :)"></a>왜 재귀를 사용하나? 수학문제 알고리즘을 풀때 유용, 일반함수를 사용하면 성능이 좋아지고, 재귀를 사용하면 프로그래머의 실력이 증가 :)</h4><h2 id="DOM-amp-CSS"><a href="#DOM-amp-CSS" class="headerlink" title="DOM &amp; CSS"></a>DOM &amp; CSS</h2><h3 id="css는-id-tag-class에-3가지-식별자를-기준으로-css를-적용할-수-있다"><a href="#css는-id-tag-class에-3가지-식별자를-기준으로-css를-적용할-수-있다" class="headerlink" title="css는 id, tag, class에 3가지 식별자를 기준으로 css를 적용할 수 있다."></a>css는 id, tag, class에 3가지 식별자를 기준으로 css를 적용할 수 있다.</h3><ul>
+<li>id : 고유한값이다.</li>
+<li>class, tag : 여러개가 될 수 있다.</li>
+<li>디자인을 겹치고 싶을때 class를 주로 많이 쓰고 한가지만 적용할때 id를 주로 쓴다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">	background-color : lightblue;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">h1 &#123;</span><br><span class="line">	color : white;</span><br><span class="line">  	text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">  	font-family : verdana;</span><br><span class="line">  	font-size : 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="DOM-Document-Object-Model"><a href="#DOM-Document-Object-Model" class="headerlink" title="DOM : Document Object Model"></a>DOM : Document Object Model</h4><ul>
+<li>html태그를 계층 구조로 변환을 시켜준다.</li>
+<li>모든 HTML엘리먼트는 객체이므로 JS로 조작이 가능하다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">document.createElement(&apos;ul&apos;);</span><br><span class="line">&lt;ul&gt;&lt;/ul&gt;</span><br><span class="line">var item1 = document.createElement(&apos;li&apos;);</span><br><span class="line">undefined</span><br><span class="line">var menu = document.createElement(&apos;ul&apos;);</span><br><span class="line">undefined</span><br><span class="line">var item2 = document.createElement(&apos;li&apos;);</span><br><span class="line">undefined</span><br><span class="line">item1.innerHTML = &apos;설렁탕&apos;;</span><br><span class="line">&quot;설렁탕&quot;</span><br><span class="line">item2.innerHTML = &apos;순대국&apos;;</span><br><span class="line">&quot;순대국&quot;</span><br><span class="line">menu.appendChild(item1);</span><br><span class="line">&lt;li&gt;설렁탕&lt;/li&gt;</span><br><span class="line">menu.appendChild(item2);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/19/2017-12-19-TIL/" data-id="cjc8sapft000fyftbnzaefoh5" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2017-12-18-JS-Study-Closer-Scope-Global-Variable" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -117,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" data-id="cjc6bjqj2000h1rvlbl4iab3z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" data-id="cjc8sapfs000eyftbmty8tz0l" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -157,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/17/2017-12-17-JS-study-Hoisting/" data-id="cjc6bjqix000c1rvlpy3ddc7x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/17/2017-12-17-JS-study-Hoisting/" data-id="cjc8sapfr000dyftbqhmalvy4" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -201,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/16/2017-12-16-JS-study-Scope/" data-id="cjc6bjqiw000b1rvl3kc8rpmt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/16/2017-12-16-JS-study-Scope/" data-id="cjc8sapfp000cyftb4cggo3te" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -265,67 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/15/2017-12-15-JS-function-Study/" data-id="cjc6bjqiy000d1rvlhf6voajm" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-14-TIL-HTML" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/14/2017-12-14-TIL-HTML/" class="article-date">
-  <time datetime="2017-12-14T03:13:13.000Z" itemprop="datePublished">2017-12-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/14/2017-12-14-TIL-HTML/">2017-12-14 TIL : HTML</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="WWW와-HTML"><a href="#WWW와-HTML" class="headerlink" title="WWW와 HTML"></a>WWW와 HTML</h2><h3 id="www의-3요소-html-htpp-url"><a href="#www의-3요소-html-htpp-url" class="headerlink" title="www의 3요소 : html, htpp, url"></a>www의 3요소 : html, htpp, url</h3><p>html : 문서포맷<br>http : 프로토콜<br>url  : html문서를 유일하게 구별해주는 식별자 =&gt; 문서의 주소</p>
-<h4 id="h1태그"><a href="#h1태그" class="headerlink" title="h1태그"></a>h1태그</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;Hello world&lt;/h1&gt;</span><br><span class="line">&lt;h1&gt;Jimmy &lt;/h1&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="DOM-Document-Object-Model"><a href="#DOM-Document-Object-Model" class="headerlink" title="DOM (Document Object Model)"></a>DOM (Document Object Model)</h4><ul>
-<li>문서를 객체를 이용해서 트리 구조로 표현</li>
-<li>표준 : W3CDOM</li>
-<li>구현체 : Gecko, Webkit 등</li>
-</ul>
-<h4 id="엘리먼트-Element"><a href="#엘리먼트-Element" class="headerlink" title="엘리먼트(Element)"></a>엘리먼트(Element)</h4><ul>
-<li>여는 태그와 닫는 태그로 구성된다.</li>
-<li>여는 태그와 닫는 태그 사이에 있는 내용을 콘텐츠.</li>
-<li>여는 태그와 닫는 태그 + 콘텐츠를 엘리먼트라고 한다.</li>
-<li>태그 안에 속성과 속성의 값을 가진다.</li>
-</ul>
-<h4 id="속성-Attribute"><a href="#속성-Attribute" class="headerlink" title="속성(Attribute)"></a>속성(Attribute)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;jaeyeon93.github.io&quot; title=&quot;jaeyeon&apos;s blog&quot;&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>a태그의 href속성은 ‘jaeyeon93.github.io’이고 title속성은 jaeyeon’s blog이다.</li>
-<li>태그는 0개 이상의 속성을 가질 수 있다.</li>
-</ul>
-<h4 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;title&gt;HTML Tutorial&lt;/title&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;p&gt;Html template&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="블록-엘리먼트"><a href="#블록-엘리먼트" class="headerlink" title="블록 엘리먼트"></a>블록 엘리먼트</h4><figure class="highlight plain"><figcaption><span>h1, div```처럼 줄이 바뀌는 엘리먼트</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 인라인 엘리먼트</span><br><span class="line">```span, img, input, button, a```처럼 줄바뀜이 없는 엘리먼트</span><br><span class="line"></span><br><span class="line">#### HTML에 JS 포함하기</span><br><span class="line"></span><br><span class="line">```&lt;script src=&quot;./filename.js&quot;&gt;&lt;/script&gt;```를 넣기</span><br><span class="line">주로 &lt;head&gt;&lt;/head&gt; 태그사이에 넣는다.</span><br><span class="line"></span><br><span class="line">##### html도 문서객체로 간주가 된다.</span><br><span class="line">- window : 최상위 객체</span><br><span class="line">- document : DOM의 최상위 객체</span><br><span class="line">- 모든 객체는 window의 하위객체이다.</span><br></pre></td></tr></table></figure>
-<p>// hello.html</p>
-<p></p><p id="hello"></p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p></p>
-<p>// hello.js<br>var p1 = document.getElementById(‘p1’);<br>p1.innerHTML = str;</p>
-<p>// </p><p>hello</p>가 출력이 된다.<br>```<p></p>
-<h5 id="chome브라우저는-window객체이다-window객체-아래에-document객체가-있다"><a href="#chome브라우저는-window객체이다-window객체-아래에-document객체가-있다" class="headerlink" title="chome브라우저는 window객체이다. window객체 아래에 document객체가 있다."></a>chome브라우저는 window객체이다. window객체 아래에 document객체가 있다.</h5>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/14/2017-12-14-TIL-HTML/" data-id="cjc6bjqiu000a1rvlvogt0vnd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/15/2017-12-15-JS-function-Study/" data-id="cjc8sapfn000byftb8c7ubwf5" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -364,9 +352,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/10/2018-1-10-TIL/">2018-1-10 TIL</a>
+          </li>
         
           <li>
             <a href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/">2018-1-8 TIL JAVA practice problem solving</a>
@@ -384,10 +376,6 @@
             <a href="/2018/01/05/2018-1-5-JAVA-study/">2018-1-5 JAVA study</a>
           </li>
         
-          <li>
-            <a href="/2018/01/03/2018-1-3-TIL-JAVA-study-day3/">2018-1-3 TIL : JAVA study day3</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -401,7 +389,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Jimmy<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
