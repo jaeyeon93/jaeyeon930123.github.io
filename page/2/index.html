@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,174 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2018-1-8-TIL-JAVA-practice-problem-solving" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/" class="article-date">
+  <time datetime="2018-01-08T14:44:02.000Z" itemprop="datePublished">2018-01-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/">2018-1-8 TIL JAVA practice problem solving</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2018-1-8-TIL"><a href="#2018-1-8-TIL" class="headerlink" title="2018-1-8 TIL"></a>2018-1-8 TIL</h2><h4 id="자바의-정석-6-1-연습문제-풀이"><a href="#자바의-정석-6-1-연습문제-풀이" class="headerlink" title="자바의 정석 6-1 연습문제 풀이"></a>자바의 정석 6-1 연습문제 풀이</h4><p>타입             변수명            설명<br>int            num            카드의 숫자(1~10사이의정수)<br>boolean        isKwang        광이면 true, 아니면 false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public class Exercise6_2 &#123;</span><br><span class="line">    public static void main (String [] args) &#123;</span><br><span class="line"></span><br><span class="line">        // step2</span><br><span class="line">        SutdaCard card1 = new SutdaCard(3, false);</span><br><span class="line">        // card1은 매개변수가 전달되기때문에 매개변수가 있는 생성자를 만들어야 한다.</span><br><span class="line">        SutdaCard card2 = new SutdaCard();</span><br><span class="line">        // card2는 매개변수가 전달되지 않기때문에 기본생성자를 만들어야한다.</span><br><span class="line"></span><br><span class="line">        System.out.println(card1.info());</span><br><span class="line">        System.out.println(card2.info());</span><br><span class="line">        // step3</span><br><span class="line">        // 출력값 3, 1K를 보고 info메서드를 만들어야한다.</span><br><span class="line">        // Card1의 매개변수로 3과 false를 던지고</span><br><span class="line">        // Card2는 매개변수를 던지지 않는다.</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class SutdaCard &#123;</span><br><span class="line">    int num;</span><br><span class="line">    boolean isKwang;</span><br><span class="line"></span><br><span class="line">    // step1 step2에서 new sutdaCard(3, false)와 new studaCard();를 통해 매개변수를 전달하는 	기본생성자와 매개변수를 전달하지 않아도 되는 생성자를 만들어야 한다.</span><br><span class="line"></span><br><span class="line">    SutdaCard() &#123;</span><br><span class="line">        this.num = 1;</span><br><span class="line">        this.isKwang = true;</span><br><span class="line">        // 매개변수가 없는 생성자는 위와 같이 this를 이용해서 인스턴스를 초기화를 시킬 수 있다.</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    SutdaCard(int num, boolean isKwang) &#123;</span><br><span class="line">        this.num = num;</span><br><span class="line">        this.isKwang = isKwang;</span><br><span class="line">        // 매개변수가 있는 생성자는</span><br><span class="line">    &#125;</span><br><span class="line">// 위의 코드에서 생성자를 2개 정의하고 있다(오버로딩), 한개는 매개변수가 없는생성자, 한개는 매개변수가 있는 생성자.</span><br><span class="line"></span><br><span class="line">    //step4</span><br><span class="line">    public String info() &#123;</span><br><span class="line">        if (num == 1)&#123;</span><br><span class="line">            return num + &quot;K&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return num + &quot;&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//실행결과</span><br><span class="line">&gt;3</span><br><span class="line">&gt;1K</span><br><span class="line">와 같은 실행결과가 나와야한다.</span><br></pre></td></tr></table></figure></p>
+<p>위의 코드를 보고 생성자를 만들때 매개변수를 전달하는지, 아니면 매개변수를 전달하지 않고 변수를 만드는지에 대한 차이를 알았다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/" data-id="cjclcbm3v000y7ptbn4b61sve" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2018-1-7-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/07/2018-1-7-TIL/" class="article-date">
+  <time datetime="2018-01-07T12:23:47.000Z" itemprop="datePublished">2018-01-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/07/2018-1-7-TIL/">2018-1-7 TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="메서드오버로딩"><a href="#메서드오버로딩" class="headerlink" title="메서드오버로딩"></a>메서드오버로딩</h2><ul>
+<li>매개변수의 개수 또는 타입이 다르면, 같은 이름을 사용해서 메서드를 정의할 수 있다. 한 클래스 내에 같은 이름의 메서드를 여러 개 정의하는 것을 메서드 오버로딩이라고한다.</li>
+</ul>
+<h4 id="오버로딩의-조건"><a href="#오버로딩의-조건" class="headerlink" title="오버로딩의 조건"></a>오버로딩의 조건</h4><ol>
+<li>메서드 이름이 같아야 한다.</li>
+<li>매개변수의 개수 또는 타입이 달라야한다.</li>
+<li>매개변수는 같고 리턴타입이 다른 경우 오버로딩이 성립되지 않는다.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">public class OverloadingTest &#123;</span><br><span class="line">    public static void main (String [] args) &#123;</span><br><span class="line">        MyMath3 mm = new MyMath3();</span><br><span class="line">        System.out.println(&quot;mm.add(3, 3) 결과: &quot; +mm.add(3, 3));</span><br><span class="line">        System.out.println(&quot;mm.add(3L, 3) 결과: &quot; + mm.add(3L, 3));</span><br><span class="line">        System.out.println(&quot;mm.add(3, 3L) 결과: &quot; + mm.add(3, 3L));</span><br><span class="line">        System.out.println(&quot;mm.add(3L, 3L) 결과: &quot; + mm.add(3L, 3L));</span><br><span class="line"></span><br><span class="line">        int [] a = &#123;100, 200, 300&#125;;</span><br><span class="line">        System.out.println(&quot;mm.add(a) 결과 : &quot; + mm.add(a));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MyMath3 &#123;</span><br><span class="line">    int add(int a, int b) &#123;</span><br><span class="line">        System.out.print(&quot;int add(int a, int b) - &quot;);</span><br><span class="line">        return a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    long add(int a, long b) &#123;</span><br><span class="line">        System.out.print(&quot;long add(int a, long b) -&quot;);</span><br><span class="line">        return a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    long add(long a, int b) &#123;</span><br><span class="line">        System.out.print(&quot;long add(long a, int b) -&quot;);</span><br><span class="line">        return a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    long add(long a, long b) &#123;</span><br><span class="line">        System.out.print(&quot;long add(long a, long b) -&quot;);</span><br><span class="line">        return a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int add (int[] a)&#123;</span><br><span class="line">        System.out.print(&quot;int add(int [] a) - &quot;);</span><br><span class="line">        int result = 0;</span><br><span class="line">        for (int i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">            result += a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// result</span><br><span class="line">int add(int a, int b) - mm.add(3, 3) 결과: 6</span><br><span class="line">long add(long a, int b) -mm.add(3L, 3) 결과: 6</span><br><span class="line">long add(int a, long b) -mm.add(3, 3L) 결과: 6</span><br><span class="line">long add(long a, long b) -mm.add(3L, 3L) 결과: 6</span><br><span class="line">int add(int [] a) - mm.add(a) 결과 : 600</span><br></pre></td></tr></table></figure>
+<h2 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h2><ul>
+<li>생성자는 인스턴스가 생성될 때 호출되는 ‘인스턴스 초기화 메서드’이다. 생성자 역시 메서드처럼 클래스 내에 선언되며, 리턴값이 없다는 점이 다르다. void는 사용하지 않는다.</li>
+<li>생성자의 이름은 클래스이름과 같아야한다.</li>
+<li>생성자는 리턴값이 없다.<h4 id="연산자-new가-인스턴스를-생성하는-것이지-생성자가-인스턴스를-생성하는것은-아니다"><a href="#연산자-new가-인스턴스를-생성하는-것이지-생성자가-인스턴스를-생성하는것은-아니다" class="headerlink" title="연산자 new가 인스턴스를 생성하는 것이지 생성자가 인스턴스를 생성하는것은 아니다."></a>연산자 new가 인스턴스를 생성하는 것이지 생성자가 인스턴스를 생성하는것은 아니다.</h4></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Card c = new Card();</span><br></pre></td></tr></table></figure>
+<ol>
+<li>연산자 new에 의해서 메모리(heap)에 Card클래스의 인스턴스가 생성된다.</li>
+<li>생성자 Card()가 호출되어 수행된다.</li>
+<li>연산자 new의 결과로, 생성된 Card인스턴스의 주소가 변환되어 참조변수 c에 저장된다.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Data1 &#123;</span><br><span class="line">    int value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Data2 &#123;</span><br><span class="line">    int value;</span><br><span class="line"></span><br><span class="line">    Data2 (int x) &#123; // 매개변수가 있는 생성자</span><br><span class="line">        value = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class ConstructorTest &#123;</span><br><span class="line">    public static void main (String [] args) &#123;</span><br><span class="line">        Data1 d1 = new Data1();</span><br><span class="line">        Data2 d2 = new Data2();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// error</span><br><span class="line">Data2에 생성자 Data2()가 정의되어 있지 않기 때문에 에러가 발생</span><br></pre></td></tr></table></figure>
+<h4 id="매개변수가-있는-생성자"><a href="#매개변수가-있는-생성자" class="headerlink" title="매개변수가 있는 생성자"></a>매개변수가 있는 생성자</h4><ul>
+<li>매개변수가 있는 생성자 Car(String color, String gearType, int door)를 사용한다면 인스턴스를 생성하는 동시에 원하는 값으로 초기화를 할 수 있다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Car &#123;</span><br><span class="line">    String color;</span><br><span class="line">    String gearType;</span><br><span class="line">    int door;</span><br><span class="line"></span><br><span class="line">    Car () &#123;&#125;</span><br><span class="line"></span><br><span class="line">    Car (String c, String g, int d) &#123;</span><br><span class="line">        color = c;</span><br><span class="line">        gearType = g;</span><br><span class="line">        door = d;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class CarTest &#123;</span><br><span class="line">    public static void main (String [] args) &#123;</span><br><span class="line">        Car c1 = new Car();</span><br><span class="line">        c1.color = &quot;white&quot;;</span><br><span class="line">        c1.gearType = &quot;auto&quot;;</span><br><span class="line">        c1.door = 4;</span><br><span class="line"></span><br><span class="line">        Car c2 = new Car(&quot;white&quot;, &quot;auto&quot;, 4);</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;c1의 color = &quot; + c1.color + &quot;, gearType=&quot; + c1.gearType + &quot;, door=&quot; + c1.door);</span><br><span class="line">        System.out.println(&quot;c2의 color = &quot; + c2.color + &quot;, gearType=&quot; + c2.gearType + &quot;, door=&quot; + c2.door);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/07/2018-1-7-TIL/" data-id="cjclcbm3v000x7ptbab7qjzjs" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2018-1-6-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/06/2018-1-6-TIL/" class="article-date">
+  <time datetime="2018-01-06T11:28:18.000Z" itemprop="datePublished">2018-01-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/06/2018-1-6-TIL/">2018-1-6 TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2018-1-6-TIL-JAVA-study"><a href="#2018-1-6-TIL-JAVA-study" class="headerlink" title="2018-1-6 TIL JAVA study"></a>2018-1-6 TIL JAVA study</h2><h4 id="JVM의-메모리구조"><a href="#JVM의-메모리구조" class="headerlink" title="JVM의 메모리구조"></a>JVM의 메모리구조</h4><p>JVM은 프로그램을 수행하는데, 필요한 메모리를 할당받고, 3가지 주요영역으로 나누어서 관리를 한다.</p>
+<ol>
+<li>메서드영영(method area) : 클래스가 사용되면, JVM은 클래스에 대한 정보를 이 곳에 저장을 한다. 이 때, 클래스변수도 이 영역에 저장이 된다.</li>
+<li>힙(heap) : 인스턴스가 생성되는 공간이고, 생성되는 인스턴스는 모두 이곳에 저장이 된다.</li>
+<li>호출스택(call stack) : 메서드의 작업에 필요한 메모리를 제공한다. 지역변수(매개변수 포함)들과 연산의 중간결과를 저장하는데 사용된다.</li>
+</ol>
+<h4 id="기본형-매개변수와-참조형-매개변수"><a href="#기본형-매개변수와-참조형-매개변수" class="headerlink" title="기본형 매개변수와 참조형 매개변수"></a>기본형 매개변수와 참조형 매개변수</h4><p>메서드를 호출할 때 매개변수의 타입이 기본형일 때는, 기본형 값이 복사되지만, 참조형이면 인스턴스의 주소가 복사된다.</p>
+<ul>
+<li>기본형 매개변수 : 변수의 값을 읽기만 할 수 있다.</li>
+<li>참조형 매개변수 : 변수의 값을 읽고 변경 할 수 있다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Data &#123; int x; &#125;</span><br><span class="line"></span><br><span class="line">public class ParameterTest &#123;</span><br><span class="line">    public static void main(String [] args) &#123;</span><br><span class="line">        Data d = new Data();</span><br><span class="line">        d.x = 10;</span><br><span class="line">        System.out.println(&quot;main() : x = &quot; + d.x);</span><br><span class="line"></span><br><span class="line">        change(d.x);</span><br><span class="line">        System.out.println(&quot;After change (d.x)&quot;);</span><br><span class="line">        System.out.println(&quot;main() : x = &quot; + d.x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static void change (int x) &#123;</span><br><span class="line">        x = 1000;</span><br><span class="line">        System.out.println(&quot;change() : x = &quot;+ x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// result</span><br><span class="line">main() : x = 10</span><br><span class="line">change() : x = 1000</span><br><span class="line">After change (d.x)</span><br><span class="line">main() : x = 10</span><br></pre></td></tr></table></figure>
+<h4 id="재귀호출"><a href="#재귀호출" class="headerlink" title="재귀호출"></a>재귀호출</h4><p>메서드의 내부에서 메서드 자기 자신을 다시 호출하는 것을 재귀호출이라고 한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class FactorialTest &#123;</span><br><span class="line">    public static void main (String [] args) &#123;</span><br><span class="line">        System.out.println(factorial(4));</span><br><span class="line">        // FactorialTest.factorial(4)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static long factorial(int n) &#123;</span><br><span class="line">        long result = 0;</span><br><span class="line"></span><br><span class="line">        if (n == 1) &#123;</span><br><span class="line">            result = 1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            result = n * factorial(n-1 );</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>factorial메소드가 static메서드이므로 인스턴스를 생성하지 않고 직접 호출 할 수 있다.</li>
+</ul>
+<h2 id="클래스메서드-static-과-인스턴스메서드"><a href="#클래스메서드-static-과-인스턴스메서드" class="headerlink" title="클래스메서드(static)과 인스턴스메서드"></a>클래스메서드(static)과 인스턴스메서드</h2><ul>
+<li>메서드앞에 static이 붙으면 클래스메서드 없으면 인스턴스 메서드이다. 인스턴스메서드는 반드시 객체를 생성해야 호출 할 수 있다.</li>
+</ul>
+<ol>
+<li>클래스를 설계할 때, 멤버변수 중 모든 인스턴스에 공통적으로 사용하는것은 static을 붙인다. 생성된 각 인스턴스는 서로 독립적이기 때문에 각 인스턴스의 변수는 서로 다른 값을 유지한다.</li>
+<li>클래스변수(static변수)는 인스턴스를 생성하지 않아도 사용할 수 있다. 클래스변수는 클래스가 메모리에 올라갈 때 이미 자동으로 생성이 되기 때문.</li>
+<li>클래스메서드(static)는 인스턴스메서드를 사용할 수 없다.</li>
+<li>메서드 내에서 인스턴스변수를 사용하지 않는다면, static을 붙이는 것을 고려한다. static은 클래스가 만들어질때 생성이 되기때문에 호출시간이 짧아지고 시간이 덜 걸린다.</li>
+</ol>
+<h4 id="클래스멤버와-인스턴스멤버간의-참조와-호출"><a href="#클래스멤버와-인스턴스멤버간의-참조와-호출" class="headerlink" title="클래스멤버와 인스턴스멤버간의 참조와 호출"></a>클래스멤버와 인스턴스멤버간의 참조와 호출</h4><ul>
+<li><p>같은 클래스 내의 메서드는 서로 객체의 생성이나 참조변수 없이 직접 호출이 가능하지만, static메서드는 인스턴스메서드를 호출할 수 없다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class MemberCall &#123;</span><br><span class="line">    int iv = 10; // declare instance variable</span><br><span class="line">    static int cv = 20;</span><br><span class="line"></span><br><span class="line">    int iv2 = cv;</span><br><span class="line">    static int cv2 = iv; // error, class variable can not use instance variable;</span><br><span class="line"></span><br><span class="line">    static void staticMethod1()&#123;</span><br><span class="line">        System.out.println(cv);</span><br><span class="line">        System.out.println(iv); // 에러. 클래스메서드에서 인스턴스변수 사용 불가.</span><br><span class="line">        MemberCall c= new MemberCall();</span><br><span class="line">        System.out.println(c.iv); // 객체를 생성한 후에야 인스턴스 변수 참조가능</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void instanceMethod1()&#123;</span><br><span class="line">        System.out.println(cv);</span><br><span class="line">        System.out.println(iv);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static void staticMethod2()&#123;</span><br><span class="line">        staticMethod1();</span><br><span class="line">        instanceMethod1(); // 클래스메서드에서는 인스턴스메서드를 바로 호출할 수 없음.</span><br><span class="line">        MemberCall c = new MemberCall();</span><br><span class="line">        c.instanceMethod1(); // 인스턴스를 생성한 후에야 호출할 수 있음</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void instanceMethod2()&#123; // 인스턴스메서드에서는 인스턴스메서드와 클래스메서드 모두 인스턴스 생성없이 호출이 가능하다.</span><br><span class="line">        staticMethod1();</span><br><span class="line">        instanceMethod1();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>클래스변수와 클래스메서드는 언제나 참조 또는 호출이 가능하기때문에 인스턴스멤버가 클래스멤버를 사용하는 것은 아무런 문제가 안 된다. 그러나 인스턴스멤버는 반드시 객체를 생성한 후에만 참조 또는 호출이 가능하기 때문에 클래스멤버가 인스턴스 멤버를 참조, 호출하기 위해서는 객체를 생성해야한다.</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/06/2018-1-6-TIL/" data-id="cjclcbm3u000w7ptbn6wj91pk" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2018-1-5-JAVA-study" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -122,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/05/2018-1-5-JAVA-study/" data-id="cjcbk332p000ppmtbsfu7ajbh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/05/2018-1-5-JAVA-study/" data-id="cjclcbm3s000u7ptbyifvmzq3" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -173,187 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/03/2018-1-3-TIL-JAVA-study-day3/" data-id="cjcbk332o000opmtbk4f1l9ab" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2018-1-2-TIL-JAVA-study-day2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/02/2018-1-2-TIL-JAVA-study-day2/" class="article-date">
-  <time datetime="2018-01-02T07:41:08.000Z" itemprop="datePublished">2018-01-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/02/2018-1-2-TIL-JAVA-study-day2/">2018-1-2 TIL : JAVA study day2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2018-1-1-TIL-JAVA-study-day2"><a href="#2018-1-1-TIL-JAVA-study-day2" class="headerlink" title="2018-1-1 TIL : JAVA study day2"></a>2018-1-1 TIL : JAVA study day2</h2><h4 id="자바가-실행되는-순서"><a href="#자바가-실행되는-순서" class="headerlink" title="자바가 실행되는 순서"></a>자바가 실행되는 순서</h4><ol>
-<li>자바코드 작성 ex) hello.java</li>
-<li>컴파일(내가 만든 프로그램 코드를 컴퓨터가 이해할 수 있도록 바꿔주는 작업)이다. ex) javac hello</li>
-<li>실행 ex) java hello</li>
-</ol>
-<ul>
-<li>.java라는 확장자로 되어 있는 소스를 컴파일하면 .class라는 확장자를 가진 파일이 생성이 된다. .class라는 파일을 실행시키는것이다.</li>
-<li><p>컴파일은 javac라는 명령어로 하지만, 실행은 java라는 명령어로 한다.</p>
-</li>
-<li><p>실행을 목적으로 하는 모든 자바 클래스는 main() 메소드가 반드시 있어야한다. 자바 프로그램의 시작점은 main()메소드이기때문이다.</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// declare java main method</span><br><span class="line">public static void main(String args[]) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="위-예제코드-해석"><a href="#위-예제코드-해석" class="headerlink" title="위 예제코드 해석"></a>위 예제코드 해석</h4><ul>
-<li>public : 접근제어자</li>
-<li>static : 메소드를 static선언하면 객체를 생성하지 않아도 바로 호출을 할 수 있다.</li>
-<li>void : 메소드가 어떤 값을 넘겨줄지 정하는데, void는 리턴값이 없을 때, void를 쓴다.</li>
-<li>main : 메소드이름이다.</li>
-<li>(String args[]) : 메소드 이름 옆에 소괄호 안에 있는 것들을 매개변수(parameter)라고 한다. String args라는 변수가 배열이라는 말이다. args는 변수 이름이다.</li>
-</ul>
-<h4 id="helloworld-찍어보기"><a href="#helloworld-찍어보기" class="headerlink" title="helloworld 찍어보기"></a>helloworld 찍어보기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">	public static void main (String args[]) &#123;</span><br><span class="line">    	System.out.println(&quot;Hello World&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt; javac HelloWorld</span><br><span class="line">&gt; java HelloWorld</span><br><span class="line">&gt; Hello World 출력</span><br></pre></td></tr></table></figure>
-<h4 id="메소드를-만들어보자"><a href="#메소드를-만들어보자" class="headerlink" title="메소드를 만들어보자"></a>메소드를 만들어보자</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class Calculator &#123;</span><br><span class="line">	public static void main (String [] args) &#123;</span><br><span class="line">    	System.out.println(&quot;Calculator class started&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>public static : 제어자. 메소드의 특성을 정하는 부분이다.</li>
-<li>void : 메소드가 끝났을 때 돌려주는 타입</li>
-<li>main : 메소드 이름</li>
-<li>(String [] args) : 매개변수 목록</li>
-<li>System.out.println(“Calculator class started”); : 메소드 내용</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/02/2018-1-2-TIL-JAVA-study-day2/" data-id="cjcbk332n000npmtblukhg705" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2018-1-1-TIL-JAVA-study-day1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/01/2018-1-1-TIL-JAVA-study-day1/" class="article-date">
-  <time datetime="2018-01-01T11:36:04.000Z" itemprop="datePublished">2018-01-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/01/2018-1-1-TIL-JAVA-study-day1/">2018-1-1 TIL : JAVA study day1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JAVA-Start"><a href="#JAVA-Start" class="headerlink" title="JAVA Start"></a>JAVA Start</h2><h4 id="자바-프로그램-메소드는-이렇게-생겼어요"><a href="#자바-프로그램-메소드는-이렇게-생겼어요" class="headerlink" title="자바 프로그램 메소드는 이렇게 생겼어요"></a>자바 프로그램 메소드는 이렇게 생겼어요</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public boolean checkPassword(String password) &#123;</span><br><span class="line">	// code</span><br><span class="line">&#125;</span><br><span class="line">// pulic : access modifier</span><br><span class="line">// boolean : return type</span><br><span class="line">// checkPassword : method name</span><br><span class="line">// String password : parameter</span><br></pre></td></tr></table></figure>
-<h4 id="메소드는-늘-어딘가에-소속이-되어있어야된다-자바는-늘-클래스안에-포함이-되어야한다-하나의-클래스안에는-0개-이상의-메소드가-존재할-수-있다"><a href="#메소드는-늘-어딘가에-소속이-되어있어야된다-자바는-늘-클래스안에-포함이-되어야한다-하나의-클래스안에는-0개-이상의-메소드가-존재할-수-있다" class="headerlink" title="메소드는 늘 어딘가에 소속이 되어있어야된다. 자바는 늘 클래스안에 포함이 되어야한다. 하나의 클래스안에는 0개 이상의 메소드가 존재할 수 있다."></a>메소드는 늘 어딘가에 소속이 되어있어야된다. 자바는 늘 클래스안에 포함이 되어야한다. 하나의 클래스안에는 0개 이상의 메소드가 존재할 수 있다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class DoorLockManger &#123;</span><br><span class="line">	public boolean checkPassword(String password) &#123;</span><br><span class="line">    	// code</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setPassword(String password) &#123;</span><br><span class="line">    	// code</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void resetPassword() &#123;</span><br><span class="line">    	// code</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// DoorLockManger라는 클래스안에는 checkPassowrd, setPassword, resetPassword라는 3가지의 메소드가 존재를 한다. 각각의 메소드는 boolean, void, void형태로 리턴을 해주는데, 여기서 void는 &quot;이 메소드는 아무것도 돌려주지 않아요&quot;라고 이야기를 할 수 있다.</span><br></pre></td></tr></table></figure>
-<h4 id="클래스는-상태-state-와-행동-behavior-가-있어야-한다-여기서-메소드가-행동이고-상태는-그-클래스의-특성을-결정짓는-것이-상태이다"><a href="#클래스는-상태-state-와-행동-behavior-가-있어야-한다-여기서-메소드가-행동이고-상태는-그-클래스의-특성을-결정짓는-것이-상태이다" class="headerlink" title="클래스는 상태(state)와 행동(behavior)가 있어야 한다. 여기서 메소드가 행동이고, 상태는 그 클래스의 특성을 결정짓는 것이 상태이다."></a>클래스는 상태(state)와 행동(behavior)가 있어야 한다. 여기서 메소드가 행동이고, 상태는 그 클래스의 특성을 결정짓는 것이 상태이다.</h4><h4 id="상태는"><a href="#상태는" class="headerlink" title="상태는"></a>상태는</h4><ul>
-<li>클래스안에</li>
-<li>메소드 밖에 정의를 한다.</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class DoorLockManager &#123;</span><br><span class="line">	String currentPassword;</span><br><span class="line">    public boolean checkPassword(String password) &#123;</span><br><span class="line">    	// code</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // below method</span><br><span class="line">&#125;</span><br><span class="line">// String currentPassword와 같은 것이 클래스의 상태를 정의해주고 변수라고 한다.</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/01/2018-1-1-TIL-JAVA-study-day1/" data-id="cjcbk332k000kpmtbwpl7a4w8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-30-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/30/2017-12-30-TIL/" class="article-date">
-  <time datetime="2017-12-30T12:19:58.000Z" itemprop="datePublished">2017-12-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/30/2017-12-30-TIL/">2017-12-30 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="퀵정렬"><a href="#퀵정렬" class="headerlink" title="퀵정렬"></a>퀵정렬</h2><p>[33, 15, 10]의 배열이 있다고 치자.<br>분할정복을 이용해서 이것을 정렬하기 위해서는 어떻게해야하는가?</p>
-<ol>
-<li>배열에서 원소를 하나고른다. 이것을 기준원소(pivot)이라고한다. 여기서는 33을 기준원소로 잡았다.</li>
-<li>이제 모든원소를 기준원소보다 작은원소와 큰원소로 분류를 한다. 15, 10, 33(기준원소) [] 마지막은 빈배열. 이것을 분할이라고 한다.</li>
-</ol>
-<p>퀵배열은 다음과 같이 구성이 된다.</p>
-<ul>
-<li>기준 원소보다 작은 하위 배열</li>
-<li>기준 원소</li>
-<li>기준 원소보다 큰 하위 배열<h4 id="여기서-중요한것은-양쪽에-있는-하위-배열은-정렬이-되어-있지-않다는-것이다"><a href="#여기서-중요한것은-양쪽에-있는-하위-배열은-정렬이-되어-있지-않다는-것이다" class="headerlink" title="여기서 중요한것은 양쪽에 있는 하위 배열은 정렬이 되어 있지 않다는 것이다!"></a>여기서 중요한것은 양쪽에 있는 하위 배열은 정렬이 되어 있지 않다는 것이다!</h4></li>
-</ul>
-<p>예시의 경우에는 [10, 15] + [33] + [] = [10, 15, 33]인 경우이다.<br>이제 원소의 개수를 늘려서 5개로 기준을 늘려보자.<br>[3, 5, 2, 1, 4]<br>위의 배열은 기준원소를 무엇으로 삼느냐에 따라 5가지 방법으로 달라질 수 있다.</p>
-<ol>
-<li style="list-style: none"><input type="checkbox"> [1] [3, 5, 2, 4]</li>
-<li>[1] [2] [3, 5, 4]</li>
-<li>[2, 1] [3] [5, 4]</li>
-<li>[3, 2, 1] [4] [5]</li>
-<li>[3, 2, 1, 4] [5] []</li>
-</ol>
-<ul>
-<li>위의 배열을 통해 모든 하위배열들이 0-4개까지의 원소를 가진것을 알 수 있다. 이것을 n개의 개수인 배열에 일반화를 시키면 n개의 기준원소로 나눌 수 가 있고, 0~n-1까지의 원소를 가진것을 알 수 있다.</li>
-</ul>
-<h4 id="어떤-원소를-기준원소로-고르던-양쪽의-하위-배열에-재귀적으로-퀵-정렬을-하면-된다"><a href="#어떤-원소를-기준원소로-고르던-양쪽의-하위-배열에-재귀적으로-퀵-정렬을-하면-된다" class="headerlink" title="어떤 원소를 기준원소로 고르던, 양쪽의 하위 배열에 재귀적으로 퀵 정렬을 하면 된다."></a>어떤 원소를 기준원소로 고르던, 양쪽의 하위 배열에 재귀적으로 퀵 정렬을 하면 된다.</h4><ul>
-<li>예를들어 3을 기준원소로 하면</li>
-</ul>
-<ol>
-<li>qsort([2, 1]) + [3] + qsort([5, 4])</li>
-<li>[1, 2] + [3] + [4, 5]</li>
-<li>[1, 2, 3, 4, 5]</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">python code</span><br><span class="line"></span><br><span class="line">def quicksort(array):</span><br><span class="line">	if len(array) &lt; 2:</span><br><span class="line">    	return array</span><br><span class="line">    else:</span><br><span class="line">    	pivot = array[0]</span><br><span class="line">        // 재귀 단계</span><br><span class="line">        less = [i for i in array[1:] if i &lt;= pivot]</span><br><span class="line">        // 기준원소보다 작거나 같은 하위배열</span><br><span class="line">        greater = [i for i in array[1:] if i &gt; pivot]</span><br><span class="line">        // 기준원소보다 큰 하위배열</span><br><span class="line">        return quicksort(less + [pivot] + greater)</span><br><span class="line"></span><br><span class="line">print quicksort([10, 5, 2, 3])</span><br><span class="line">&gt; [2, 3, 5, 10]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">JS Quick sort</span><br><span class="line"></span><br><span class="line">function genArray(length) &#123;</span><br><span class="line">  var arr = [];</span><br><span class="line">  for (var i = 0; i &lt;+ length; i++) &#123;</span><br><span class="line">    arr[i] = i + 1;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/// knuth shuffle</span><br><span class="line">function shuffle(arr) &#123;</span><br><span class="line">  // splice를 해서 하나를 빼서 뒤에다가 push를 해도 되고, 랜덤한 2개 수를 뽑아서 바꿔도 된다.</span><br><span class="line">  for(var i = arr.length - 1; i &gt; 0; i--) &#123;</span><br><span class="line">    var imax = i + 1;</span><br><span class="line">    var ridx = Math.floor(Math.random() * imax); // 0 ~ len-1</span><br><span class="line">    var temp = arr[i];</span><br><span class="line">    arr[i] = arr[ridx];</span><br><span class="line">    arr[ridx] = temp;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function quick_sort(arr) &#123;</span><br><span class="line">  var less = [];</span><br><span class="line">  var greater = [];</span><br><span class="line">  if (arr.length &lt; 2) &#123;</span><br><span class="line">    return arr</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    var pivot = arr[0];</span><br><span class="line">    for (var i of arr) &#123;</span><br><span class="line">      if (i &lt;= pivot) &#123;</span><br><span class="line">        less.push(i);</span><br><span class="line">        less.sort(function(a,b) &#123;return a-b&#125;);</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        greater.push(i);</span><br><span class="line">        greater.sort(function(a,b) &#123;return a-b&#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  var arr = less.concat(greater);</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function checkSorted(arr) &#123;</span><br><span class="line">  for (var i = 0; i &lt; arr.length - 1; i++) &#123;</span><br><span class="line">    if (arr[i] &gt; arr[i+1]) &#123;</span><br><span class="line">      return false;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// main function</span><br><span class="line">(function() &#123;</span><br><span class="line">  var testArray = genArray(20);</span><br><span class="line">  //console.log(testArray);</span><br><span class="line">  console.log(shuffle(testArray));</span><br><span class="line">  console.log(checkSorted(testArray));</span><br><span class="line">  console.log(quick_sort(testArray));</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
-<h4 id="퀵정렬은-선택한-기준-원소에-따라-처리속도가-달라지는-특징이-있다-일반적으로-O-nlogn-을-따른다"><a href="#퀵정렬은-선택한-기준-원소에-따라-처리속도가-달라지는-특징이-있다-일반적으로-O-nlogn-을-따른다" class="headerlink" title="퀵정렬은 선택한 기준 원소에 따라 처리속도가 달라지는 특징이 있다. 일반적으로 O(nlogn)을 따른다."></a>퀵정렬은 선택한 기준 원소에 따라 처리속도가 달라지는 특징이 있다. 일반적으로 O(nlogn)을 따른다.</h4><h4 id="맺으며"><a href="#맺으며" class="headerlink" title="맺으며"></a>맺으며</h4><ul>
-<li>분할 정복은 문제를 더 작은 조각으로 나누어서 푼다.</li>
-<li>퀵 정렬을 구현하려면 기준 원소를 무작위로 선택한다. 평균적인 실행시간은 O(n log n)이다.</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/30/2017-12-30-TIL/" data-id="cjcbk332j000jpmtbexerjd6o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/03/2018-1-3-TIL-JAVA-study-day3/" data-id="cjclcbm3t000v7ptbn3owhwxl" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -392,9 +380,21 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19 TIL/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/18/2018-1-18/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/01/12/2018-1-12-TIL/">2018-1-12 TIL</a>
@@ -402,18 +402,6 @@
         
           <li>
             <a href="/2018/01/10/2018-1-10-TIL/">2018-1-10 TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/">2018-1-8 TIL JAVA practice problem solving</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/07/2018-1-7-TIL/">2018-1-7 TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/06/2018-1-6-TIL/">2018-1-6 TIL</a>
           </li>
         
       </ul>
@@ -429,7 +417,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Jimmy<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

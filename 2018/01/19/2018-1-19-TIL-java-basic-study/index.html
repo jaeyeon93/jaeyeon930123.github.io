@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2018-1-19 TIL java basic study | jaeyeon&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="자바 언어 특징 플랫폼에 독립적이다. 자바는 JVM()만 있으면 어떤 플랫폼에서도 실행이 가능 객체지향언어디ㅏ. C나 C++은 메모리 관리가 어려운데, 자바는 메모리 관리를 Garbase Collector로 사용되지 않은 메모리르 자동적으로 정리해준다.-  자바개발도구설치 JDK(Jav">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018-1-19 TIL java basic study">
+<meta property="og:url" content="http://yoursite.com/2018/01/19/2018-1-19-TIL-java-basic-study/index.html">
+<meta property="og:site_name" content="jaeyeon&#39;s blog">
+<meta property="og:description" content="자바 언어 특징 플랫폼에 독립적이다. 자바는 JVM()만 있으면 어떤 플랫폼에서도 실행이 가능 객체지향언어디ㅏ. C나 C++은 메모리 관리가 어려운데, 자바는 메모리 관리를 Garbase Collector로 사용되지 않은 메모리르 자동적으로 정리해준다.-  자바개발도구설치 JDK(Java Development Kit)의 약자 오라클사이트에서 운영체제에 맞는">
+<meta property="og:locale" content="Korean">
+<meta property="og:image" content="http://yoursite.com/Users/jimmy/Desktop/project/blog/source/_posts/primitive_data.png">
+<meta property="og:image" content="http://yoursite.com/Users/jimmy/Desktop/project/blog/source/_posts/type_change.png">
+<meta property="og:image" content="http://yoursite.com/Users/jimmy/Desktop/project/blog/source/_posts/int_long.png">
+<meta property="og:image" content="http://yoursite.com/Users/jimmy/Desktop/project/blog/source/_posts/operator.png">
+<meta property="og:image" content="http://yoursite.com/Users/jimmy/Desktop/project/blog/source/_posts/compare.png">
+<meta property="og:updated_time" content="2018-01-19T03:02:44.534Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018-1-19 TIL java basic study">
+<meta name="twitter:description" content="자바 언어 특징 플랫폼에 독립적이다. 자바는 JVM()만 있으면 어떤 플랫폼에서도 실행이 가능 객체지향언어디ㅏ. C나 C++은 메모리 관리가 어려운데, 자바는 메모리 관리를 Garbase Collector로 사용되지 않은 메모리르 자동적으로 정리해준다.-  자바개발도구설치 JDK(Java Development Kit)의 약자 오라클사이트에서 운영체제에 맞는">
+<meta name="twitter:image" content="http://yoursite.com/Users/jimmy/Desktop/project/blog/source/_posts/primitive_data.png">
+  
+    <link rel="alternate" href="/atom.xml" title="jaeyeon&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jaeyeon&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I design therefore I am</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2018-1-19-TIL-java-basic-study" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/" class="article-date">
+  <time datetime="2018-01-19T03:01:43.000Z" itemprop="datePublished">2018-01-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2018-1-19 TIL java basic study
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="자바-언어-특징"><a href="#자바-언어-특징" class="headerlink" title="자바 언어 특징"></a>자바 언어 특징</h2><ul>
+<li>플랫폼에 독립적이다.</li>
+<li>자바는 JVM()만 있으면 어떤 플랫폼에서도 실행이 가능</li>
+<li>객체지향언어디ㅏ.</li>
+<li>C나 C++은 메모리 관리가 어려운데, 자바는 메모리 관리를 Garbase Collector로 사용되지 않은 메모리르 자동적으로 정리해준다.<br>-</li>
+</ul>
+<h3 id="자바개발도구설치"><a href="#자바개발도구설치" class="headerlink" title="자바개발도구설치"></a>자바개발도구설치</h3><ul>
+<li>JDK(Java Development Kit)의 약자</li>
+<li>오라클사이트에서 운영체제에 맞는 JDK를 다운로드</li>
+</ul>
+<h3 id="자바개발순서"><a href="#자바개발순서" class="headerlink" title="자바개발순서"></a>자바개발순서</h3><ol>
+<li>소스작성</li>
+<li>작성한 소스 컴파일</li>
+<li>컴파일한 소스를 JVM을 이용한 실행</li>
+<li>HelloWorld.java를 만든다.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class HelloWorld&#123;</span><br><span class="line">	public static void main(String [] args) &#123;</span><br><span class="line">    		System.out.println(&quot;hello world&quot;);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>javac HelloWorld.java // complie을 한다.<br>java HelloWolrd<br>Hello World</p>
+<ul>
+<li>이클립스를 통해 프로젝트를 생성하고 코드작성하고 저장을 하면 자동적으로 컴파일을 해준다.</li>
+<li>src에 HelloWorld.java라는 파일이 생성이 되어있고,</li>
+</ul>
+</blockquote>
+<h3 id="주석"><a href="#주석" class="headerlink" title="주석"></a>주석</h3><ul>
+<li>구현 주석</li>
+<li>행단위주석(//)</li>
+<li><p>블럭단위 주석(/<em> 주석으로할 내용 </em>/)</p>
+</li>
+<li><p>문서화주석</p>
+</li>
+<li>/<em>* 문서에 포함할 내용을 작성함 </em>/</li>
+<li>문서화 주석은 클래스 인터페이스 그리고 멤버 당 하나씩 가질 수 있고, 선언 바로 전에 작성.</li>
+</ul>
+<h2 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h2><ul>
+<li>변수란 값을 저장할 수 있는 메모리 공간, 값이 변할 수 있는 수.</li>
+<li><strong>자바는 컴파일시에 변수의 타입이 결정</strong>이 된다.</li>
+</ul>
+<h3 id="변수의-선언"><a href="#변수의-선언" class="headerlink" title="변수의 선언"></a>변수의 선언</h3><ul>
+<li>타입 이름; ex) int count; double average;</li>
+<li>명명규칙</li>
+</ul>
+<h2 id="상수"><a href="#상수" class="headerlink" title="상수"></a>상수</h2><ul>
+<li>상수란 수식에서 변하지 않는 값을 의미한다.</li>
+<li>상수의 선언 <strong>final 상수타입 상수명;</strong></li>
+<li>상수의 사용 : 상수명 = 값; ex) J = 10;(J에는 값을 담을 수 있는 기회가 단 한번만 허락됨)</li>
+</ul>
+<h3 id="상수를-사용해야-하는-경우"><a href="#상수를-사용해야-하는-경우" class="headerlink" title="상수를 사용해야 하는 경우"></a>상수를 사용해야 하는 경우</h3><ul>
+<li>값이 변하면 위험한 경우에 사용</li>
+<li>값만 봤을때 무엇을 의미하는지 쉽게 파악할 수 없는 값에도 값 자체를 사용하기보다는 상수를 사용</li>
+</ul>
+<h4 id="자바는-변수를-사용하기위해서-반드시-데이터타입이-정해져야-한다"><a href="#자바는-변수를-사용하기위해서-반드시-데이터타입이-정해져야-한다" class="headerlink" title="자바는 변수를 사용하기위해서 반드시 데이터타입이 정해져야 한다."></a>자바는 변수를 사용하기위해서 반드시 데이터타입이 정해져야 한다.</h4><h2 id="기본형데이터타입"><a href="#기본형데이터타입" class="headerlink" title="기본형데이터타입"></a>기본형데이터타입</h2><ul>
+<li>논리형(boolean) : 1byte, true ~ false</li>
+</ul>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/primitive_data.png" alt=""></p>
+<h3 id="리터럴"><a href="#리터럴" class="headerlink" title="리터럴"></a>리터럴</h3><ul>
+<li>리터럴은 일종의 값지? 라고 생각을 하면 된다.</li>
+<li>어떤 특정한 값 자체를 리터럴 이라고한다. 이 특정 리터럴을 값을 대입할 수 있다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">char c = &apos;f&apos;;</span><br><span class="line">System.out.println(c);</span><br><span class="line"></span><br><span class="line">int x = 10;</span><br><span class="line">System.out.println(x);</span><br><span class="line"></span><br><span class="line">long bing = 3454535214L;</span><br><span class="line"></span><br><span class="line">float f = 32.5f;</span><br><span class="line"></span><br><span class="line">double d = 3434343.5;</span><br></pre></td></tr></table></figure>
+<h2 id="기본형의-타입변환"><a href="#기본형의-타입변환" class="headerlink" title="기본형의 타입변환"></a>기본형의 타입변환</h2><p><strong>형변환이란, 변수 또는 리터럴의 타입을 다른 타입으로 변환하는 것이다.</strong></p>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/type_change.png" alt=""></p>
+<h3 id="묵시형-형변환"><a href="#묵시형-형변환" class="headerlink" title="묵시형 형변환"></a>묵시형 형변환</h3><ul>
+<li>크기가 작은 타입을 크기가 더 큰 타입으로 바꿀 때에는 묵시형으로 형을 바꾸어 준다.</li>
+<li>int x = 50000;</li>
+<li>long y = x;</li>
+<li>이를 <strong>암묵적 형변환</strong> 이라고도 한다.</li>
+</ul>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/int_long.png" alt=""></p>
+<h3 id="명시정-형변환"><a href="#명시정-형변환" class="headerlink" title="명시정 형변환"></a>명시정 형변환</h3><ul>
+<li>크기가 더 큰 타입을 작은 타입으로 바꿀 때에는 명시적으로 변환 해주어야 한다.</li>
+<li>long x = 50000;</li>
+<li>int y = x; (이렇게 묵시적으로 수행하면 컴파일러는 오류를 발생 시킨다.)</li>
+<li>int y = (int) x; (반드시 (타입) 으로 명시적으로 형을 바꾸어 주어야 한다.)</li>
+<li>이를 강제 형 변환이라고 한다.</li>
+</ul>
+<h2 id="연산자와-연산식"><a href="#연산자와-연산식" class="headerlink" title="연산자와 연산식"></a>연산자와 연산식</h2><ul>
+<li>연산 : 데이터를 처리하여 결과를 산출하는 것</li>
+<li>연산자 : 연산에 사용되는 표시나 기호(+ - / *);</li>
+<li>부호연산자(+ -)</li>
+</ul>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/operator.png" alt=""></p>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/compare.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/19/2018-1-19-TIL-java-basic-study/" data-id="cjclcbm3m000p7ptbsaoxs4ye" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/19/2018-1-19 TIL/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19 TIL/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/18/2018-1-18/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/12/2018-1-12-TIL/">2018-1-12 TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/10/2018-1-10-TIL/">2018-1-10 TIL</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Jimmy<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

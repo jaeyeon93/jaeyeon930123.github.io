@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,148 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2017-12-18-JS-Study-Closer-Scope-Global-Variable" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" class="article-date">
+  <time datetime="2017-12-18T07:45:42.000Z" itemprop="datePublished">2017-12-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/">2017-12-18 JS Study - Closer, Scope,Global Variable</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-Study-Scope"><a href="#JS-Study-Scope" class="headerlink" title="JS Study - Scope"></a>JS Study - Scope</h2><h3 id="Scope란"><a href="#Scope란" class="headerlink" title="Scope란?"></a>Scope란?</h3><ul>
+<li>함수의 유효범위이다.</li>
+</ul>
+<h4 id="전역변수"><a href="#전역변수" class="headerlink" title="전역변수"></a>전역변수</h4><ul>
+<li>함수 외부에서 선언된 변수이다. 많이 쓰면 나쁘다.</li>
+<li>최상위 객체에 속하는 변수이다.</li>
+<li>global의 프로퍼티다.</li>
+</ul>
+<h4 id="지역변수"><a href="#지역변수" class="headerlink" title="지역변수"></a>지역변수</h4><ul>
+<li>함수 안에서 선언된 변수</li>
+<li>함수 외부에서는 쓸 수 없다.</li>
+</ul>
+<h4 id="자동-전역-변수"><a href="#자동-전역-변수" class="headerlink" title="자동 전역 변수"></a>자동 전역 변수</h4><ul>
+<li>함수 안에서 var없이 선언을 하면 자동 전역 변수가 된다. 하지만 절대 그러지 말자.</li>
+</ul>
+<h4 id="같은-이름이면-지역변수가-전역변수보다-우선순위가-높다"><a href="#같은-이름이면-지역변수가-전역변수보다-우선순위가-높다" class="headerlink" title="같은 이름이면 지역변수가 전역변수보다 우선순위가 높다."></a>같은 이름이면 지역변수가 전역변수보다 우선순위가 높다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var a = 100;</span><br><span class="line">function foo() &#123;</span><br><span class="line">	var a = 50;</span><br><span class="line">    console.log(a);</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br><span class="line">&gt;50</span><br><span class="line">&gt;a</span><br><span class="line">&gt;100;</span><br><span class="line">// 지역변수가 전역변수보다 우선순위가 높아서.</span><br></pre></td></tr></table></figure>
+<h4 id="함수의-매개변수"><a href="#함수의-매개변수" class="headerlink" title="함수의 매개변수"></a>함수의 매개변수</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function foo(a) &#123;</span><br><span class="line">	console.log(a);</span><br><span class="line">&#125;;</span><br><span class="line">&gt;foo(10)</span><br><span class="line">&gt;10</span><br><span class="line">&gt;</span><br><span class="line">// 매개변수는 지역변수이다. 그러므로 stack에 쌓인다.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">	console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">&gt;0</span><br><span class="line">&gt;1</span><br><span class="line">&gt;2</span><br><span class="line">&gt;3</span><br><span class="line">&gt;4</span><br><span class="line">&gt;5</span><br><span class="line">&gt;6</span><br><span class="line">&gt;7</span><br><span class="line">&gt;8</span><br><span class="line">&gt;9</span><br><span class="line">undefined</span><br><span class="line">&gt;i</span><br><span class="line">&gt;10</span><br><span class="line">// i는 전역변수이다.</span><br></pre></td></tr></table></figure>
+<h4 id="unnamed-function-자주-쓴다"><a href="#unnamed-function-자주-쓴다" class="headerlink" title="unnamed function(자주 쓴다.)"></a>unnamed function(자주 쓴다.)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">(functino () &#123;</span><br><span class="line">	for(var i = 20; i &lt; 30; i++) &#123;</span><br><span class="line">    	console.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">&gt;20</span><br><span class="line">&gt;21</span><br><span class="line">&gt;22</span><br><span class="line">&gt;23</span><br><span class="line">&gt;24</span><br><span class="line">&gt;25</span><br><span class="line">&gt;26</span><br><span class="line">&gt;27</span><br><span class="line">&gt;28</span><br><span class="line">&gt;29</span><br><span class="line"></span><br><span class="line">&gt;i</span><br><span class="line">&gt;10</span><br><span class="line">// 위에서 i를 10으로 전역변수로 했기때문에 10이다.</span><br></pre></td></tr></table></figure>
+<h4 id="블록스코프"><a href="#블록스코프" class="headerlink" title="블록스코프"></a>블록스코프</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&#123;</span><br><span class="line">    	let x = 10;</span><br><span class="line">        console.log(x);</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;</span><br><span class="line">&gt;x</span><br><span class="line">&gt;10</span><br><span class="line">&gt;x is undefined</span><br><span class="line">&gt;</span><br><span class="line">// const와 let은 블록스코프이기때문에, let이 로컬변수이기때문에 위에서는 되지만, 밑에서는 블록의 범위를 벗어나기때문에 밑에서는 undefined가 된다. const도 마찬가지다.</span><br></pre></td></tr></table></figure>
+<h4 id="closer-JS는-함수내부에-또-다른-함수를-선언할-수-있다-이것을-클로저라고한다-클로저는-현상이다"><a href="#closer-JS는-함수내부에-또-다른-함수를-선언할-수-있다-이것을-클로저라고한다-클로저는-현상이다" class="headerlink" title="closer : JS는 함수내부에 또 다른 함수를 선언할 수 있다. 이것을 클로저라고한다. 클로저는 현상이다."></a>closer : JS는 함수내부에 또 다른 함수를 선언할 수 있다. 이것을 클로저라고한다. 클로저는 현상이다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">	var a = 10;</span><br><span class="line">    function bar()&#123;</span><br><span class="line">    var b = 20;</span><br><span class="line">    console.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    bar();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt;foo()</span><br><span class="line">&gt;10</span><br></pre></td></tr></table></figure>
+<h4 id="내부함수는-외부함수에-있는-변수를-읽을-수-있다-이것을-클로저라고한다-to-be-continue…"><a href="#내부함수는-외부함수에-있는-변수를-읽을-수-있다-이것을-클로저라고한다-to-be-continue…" class="headerlink" title="내부함수는 외부함수에 있는 변수를 읽을 수 있다. 이것을 클로저라고한다. to be continue…."></a>내부함수는 외부함수에 있는 변수를 읽을 수 있다. 이것을 클로저라고한다. to be continue….</h4><h4 id="호이스팅"><a href="#호이스팅" class="headerlink" title="호이스팅"></a>호이스팅</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">console.log(a);</span><br><span class="line"></span><br><span class="line">var a = 10;</span><br><span class="line"></span><br><span class="line">console.log(a);</span><br><span class="line"></span><br><span class="line">// undefined</span><br><span class="line">// 10</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" data-id="cjclcbm3b000e7ptbkailg7fo" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2017-12-17-JS-study-Hoisting" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/17/2017-12-17-JS-study-Hoisting/" class="article-date">
+  <time datetime="2017-12-17T12:33:54.000Z" itemprop="datePublished">2017-12-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/17/2017-12-17-JS-study-Hoisting/">2017-12-17 JS study Hoisting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-Study-Hoisting"><a href="#JS-Study-Hoisting" class="headerlink" title="JS Study - Hoisting"></a>JS Study - Hoisting</h2><p>Hoisting은 끌어올리다는 의미를 가지고있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fuction showName() &#123;</span><br><span class="line">	var name;</span><br><span class="line">    // name 변수는 호이스팅이 된다.</span><br><span class="line">    // 할당은 이후에 발생하기 때문에, 이 시점에 name값은 undefined이다.</span><br><span class="line">    console.log(&quot;First name : &quot; + name);</span><br><span class="line">    // First Name : undefined</span><br><span class="line">    name = &quot;Ford&quot;;</span><br><span class="line">    // name에 값이 할당.</span><br><span class="line">    console.log(&quot;Last Name : &quot; + name);</span><br><span class="line">    // Last Name : Ford</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2가지-예시"><a href="#2가지-예시" class="headerlink" title="2가지 예시"></a>2가지 예시</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Ex1)</span><br><span class="line">a = 2;</span><br><span class="line">var a;</span><br><span class="line">console.log(a); // ? =&gt; undefined; =&gt; why?</span><br><span class="line"></span><br><span class="line">Ex2)</span><br><span class="line">console.log(a); // =&gt; undefined; =&gt; why?</span><br><span class="line">var a = 2;</span><br></pre></td></tr></table></figure>
+<h5 id="위-2가지-이유는-컴파일러가-두번-작동하기-때문이다-JS엔진이-해석-인터프리터-하기전에-컴파일을-먼저-하기-때문이다-컴파일단계에서는-엔진이-모든-선언문을-다-찾는다-이때-변수와-함수의-선언부분을-가장-우선적으로-처리하게끔-되어있다-이때-선언되는-변수와-함수의-이름들은-우선적으로-처리가-되고-대입되는-값들은-나중에-처리가-된다-global변수-선언을-하게-되면-문서의-맨-위로-올라가기-때문에-값이-할당된다-하지만-local은-함수의-맨위로-올라간다"><a href="#위-2가지-이유는-컴파일러가-두번-작동하기-때문이다-JS엔진이-해석-인터프리터-하기전에-컴파일을-먼저-하기-때문이다-컴파일단계에서는-엔진이-모든-선언문을-다-찾는다-이때-변수와-함수의-선언부분을-가장-우선적으로-처리하게끔-되어있다-이때-선언되는-변수와-함수의-이름들은-우선적으로-처리가-되고-대입되는-값들은-나중에-처리가-된다-global변수-선언을-하게-되면-문서의-맨-위로-올라가기-때문에-값이-할당된다-하지만-local은-함수의-맨위로-올라간다" class="headerlink" title="위 2가지 이유는 컴파일러가 두번 작동하기 때문이다. JS엔진이 해석(인터프리터)하기전에 컴파일을 먼저 하기 때문이다. 컴파일단계에서는 엔진이 모든 선언문을 다 찾는다. 이때 변수와 함수의 선언부분을 가장 우선적으로 처리하게끔 되어있다. 이때 선언되는 변수와 함수의 이름들은 우선적으로 처리가 되고 대입되는 값들은 나중에 처리가 된다. global변수 선언을 하게 되면 문서의 맨 위로 올라가기 때문에 값이 할당된다. 하지만 local은 함수의 맨위로 올라간다."></a>위 2가지 이유는 컴파일러가 두번 작동하기 때문이다. JS엔진이 해석(인터프리터)하기전에 컴파일을 먼저 하기 때문이다. 컴파일단계에서는 엔진이 모든 선언문을 다 찾는다. 이때 변수와 함수의 선언부분을 가장 우선적으로 처리하게끔 되어있다. 이때 선언되는 변수와 함수의 이름들은 우선적으로 처리가 되고 대입되는 값들은 나중에 처리가 된다. global변수 선언을 하게 되면 문서의 맨 위로 올라가기 때문에 값이 할당된다. 하지만 local은 함수의 맨위로 올라간다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ex3)</span><br><span class="line">show(); // TypeError</span><br><span class="line">var show = function () &#123;</span><br><span class="line">	// run code ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="표현식으로-함수를-작성할때는-문서의-맨위에다가-작성을-해야한다-선언식은-어디에-있던-호출이-되기때문에-상관이-없지만-표현식은-다르다-하지만-함수를-변수에-담기때문에-표현식을-더-많이-사용을-한다-Hoisting을-할때-함수와-변수를-끌어올리지만-함수가-변수보다-더-우선순위로-끌어올린다"><a href="#표현식으로-함수를-작성할때는-문서의-맨위에다가-작성을-해야한다-선언식은-어디에-있던-호출이-되기때문에-상관이-없지만-표현식은-다르다-하지만-함수를-변수에-담기때문에-표현식을-더-많이-사용을-한다-Hoisting을-할때-함수와-변수를-끌어올리지만-함수가-변수보다-더-우선순위로-끌어올린다" class="headerlink" title="표현식으로 함수를 작성할때는 문서의 맨위에다가 작성을 해야한다. 선언식은 어디에 있던 호출이 되기때문에 상관이 없지만 표현식은 다르다. 하지만 함수를 변수에 담기때문에 표현식을 더 많이 사용을 한다. Hoisting을 할때 함수와 변수를 끌어올리지만 함수가 변수보다 더 우선순위로 끌어올린다."></a>표현식으로 함수를 작성할때는 문서의 맨위에다가 작성을 해야한다. 선언식은 어디에 있던 호출이 되기때문에 상관이 없지만 표현식은 다르다. 하지만 함수를 변수에 담기때문에 표현식을 더 많이 사용을 한다. Hoisting을 할때 함수와 변수를 끌어올리지만 함수가 변수보다 더 우선순위로 끌어올린다.</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/17/2017-12-17-JS-study-Hoisting/" data-id="cjclcbm3a000d7ptbpgxjcv60" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2017-12-16-JS-study-Scope" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/16/2017-12-16-JS-study-Scope/" class="article-date">
+  <time datetime="2017-12-16T05:30:02.000Z" itemprop="datePublished">2017-12-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/16/2017-12-16-JS-study-Scope/">2017-12-16 JS study Scope</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-Study-Scope-Closer"><a href="#JS-Study-Scope-Closer" class="headerlink" title="JS Study - Scope, Closer"></a>JS Study - Scope, Closer</h2><ol>
+<li>지역변수 =&gt; 블록수준, 함수수준의 언어냐를 물어본다.</li>
+<li>함수수준은 함수레벨(범위)안에서 이루어졌다는의미.</li>
+<li>{ 중괄호로 묶인것을 블록수준이라고한다.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;richard&apos;</span><br><span class="line">// 아래의 if문은 name변수에 대한 지역-범위를 생성하지 않는다.</span><br><span class="line">if (name &#123;</span><br><span class="line">	name = &quot;jack&quot;;</span><br><span class="line">    console.log(name); // jack : wjsdurqustn</span><br><span class="line">&#125;</span><br><span class="line">// name은 여전히 전역변수이며 if문에서 변경한다.</span><br><span class="line">console.log(name); // jack</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;richard&apos;;</span><br><span class="line"></span><br><span class="line">function showName() &#123;</span><br><span class="line">	var name = &apos;jack&apos;; // local variable</span><br><span class="line">    console.log(name); // jack;</span><br><span class="line">&#125;</span><br><span class="line">console.log(name); // richard =&gt; global variable</span><br></pre></td></tr></table></figure>
+<h5 id="지역변수는-함수내에서-전역변수보다-높은-우선순위를-지닌다"><a href="#지역변수는-함수내에서-전역변수보다-높은-우선순위를-지닌다" class="headerlink" title="지역변수는 함수내에서 전역변수보다 높은 우선순위를 지닌다."></a>지역변수는 함수내에서 전역변수보다 높은 우선순위를 지닌다.</h5><h5 id="전역변수는-함수의-외부에서-선언된-모든-변수의-전역-범위이다-하지만-가급적-전역변수의-사용을-자제해야한다-이를-방지-하기-위해서-JS-ES6에서는-let과-const를-도입했다"><a href="#전역변수는-함수의-외부에서-선언된-모든-변수의-전역-범위이다-하지만-가급적-전역변수의-사용을-자제해야한다-이를-방지-하기-위해서-JS-ES6에서는-let과-const를-도입했다" class="headerlink" title="전역변수는 함수의 외부에서 선언된 모든 변수의 전역 범위이다. 하지만 가급적 전역변수의 사용을 자제해야한다. 이를 방지? 하기 위해서 JS ES6에서는 let과 const를 도입했다."></a>전역변수는 함수의 외부에서 선언된 모든 변수의 전역 범위이다. 하지만 가급적 전역변수의 사용을 자제해야한다. 이를 방지? 하기 위해서 JS ES6에서는 let과 const를 도입했다.</h5><h5 id="만약-변수가-최초-선언-없이-초기화가-되었다면-이-변수는-자동으로-전역-컨텍스트에-추가가된다"><a href="#만약-변수가-최초-선언-없이-초기화가-되었다면-이-변수는-자동으로-전역-컨텍스트에-추가가된다" class="headerlink" title="만약 변수가 최초 선언 없이 초기화가 되었다면, 이 변수는 자동으로 전역 컨텍스트에 추가가된다."></a>만약 변수가 최초 선언 없이 초기화가 되었다면, 이 변수는 자동으로 전역 컨텍스트에 추가가된다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function showAge() &#123;</span><br><span class="line">	// age is global variable</span><br><span class="line">    age = 90;</span><br><span class="line">    console.log(age);</span><br><span class="line">&#125;</span><br><span class="line">showAge(); // 90</span><br><span class="line">console.log(age); // 90</span><br></pre></td></tr></table></figure>
+<h5 id="함수안에서-age를-var-age로-선언을-하면-지역변수가-된다-하지만-없으면-JS는-이를-전역변수로-이해를-한다"><a href="#함수안에서-age를-var-age로-선언을-하면-지역변수가-된다-하지만-없으면-JS는-이를-전역변수로-이해를-한다" class="headerlink" title="함수안에서 age를 var age로 선언을 하면 지역변수가 된다. 하지만 없으면 JS는 이를 전역변수로 이해를 한다."></a>함수안에서 age를 var age로 선언을 하면 지역변수가 된다. 하지만 없으면 JS는 이를 전역변수로 이해를 한다.</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/16/2017-12-16-JS-study-Scope/" data-id="cjclcbm39000c7ptbevox54ss" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2017-12-15-JS-function-Study" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -123,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/15/2017-12-15-JS-function-Study/" data-id="cjcbk3329000bpmtbwekjpik2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/15/2017-12-15-JS-function-Study/" data-id="cjclcbm37000a7ptbaky5qhkx" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -183,197 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/14/2017-12-14-TIL-HTML/" data-id="cjcbk3327000apmtbcb7uq2gx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Linux-System-Mangement-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/13/Linux-System-Mangement-1/" class="article-date">
-  <time datetime="2017-12-13T06:05:42.000Z" itemprop="datePublished">2017-12-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/13/Linux-System-Mangement-1/">Linux System Mangement(1)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Linux-System-Mangement-1"><a href="#Linux-System-Mangement-1" class="headerlink" title="Linux System Mangement (1)"></a>Linux System Mangement (1)</h2><h5 id="SSH-Secure-SHell-다른PC에-네트워크-경유로-로그인해할-수-있게-해준다"><a href="#SSH-Secure-SHell-다른PC에-네트워크-경유로-로그인해할-수-있게-해준다" class="headerlink" title="SSH(Secure SHell) : 다른PC에 네트워크 경유로 로그인해할 수 있게 해준다."></a>SSH(Secure SHell) : 다른PC에 네트워크 경유로 로그인해할 수 있게 해준다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ssh -Y -C user@192.168.0.0.1</span><br><span class="line">// -Y flag : X 전송지정</span><br><span class="line">// -C flag : 통신내용을 압축</span><br><span class="line">// X : 리눅스에서 화면 표시와 입력을 담당하는 구조</span><br></pre></td></tr></table></figure>
-<h5 id="root-sudo-root는-관리자-권한을-가진-사용자로서-파일-접근-권한을-자유롭게-변경하고-수정이-가능하다-임시적으로-root-사용자권한을-얻기-위해서는-sudo-명령어를-사용한다"><a href="#root-sudo-root는-관리자-권한을-가진-사용자로서-파일-접근-권한을-자유롭게-변경하고-수정이-가능하다-임시적으로-root-사용자권한을-얻기-위해서는-sudo-명령어를-사용한다" class="headerlink" title="root, sudo : root는 관리자 권한을 가진 사용자로서 파일 접근 권한을 자유롭게 변경하고, 수정이 가능하다. 임시적으로 root 사용자권한을 얻기 위해서는 sudo 명령어를 사용한다."></a>root, sudo : root는 관리자 권한을 가진 사용자로서 파일 접근 권한을 자유롭게 변경하고, 수정이 가능하다. 임시적으로 root 사용자권한을 얻기 위해서는 sudo 명령어를 사용한다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$sudo -i</span><br><span class="line">[sudo[ password for user: ****</span><br><span class="line">root@server:~#</span><br><span class="line">// sudo -i를 하면 root사용자로 일시적으로 권한이 생긴다.</span><br></pre></td></tr></table></figure>
-<h5 id="grep-검색하고-싶은-문자열을-검색한다"><a href="#grep-검색하고-싶은-문자열을-검색한다" class="headerlink" title="grep : 검색하고 싶은 문자열을 검색한다."></a>grep : 검색하고 싶은 문자열을 검색한다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ grep -r &quot;string&quot; /path/</span><br><span class="line">- r flag : 서브폴더까지 검색하도록 지정</span><br><span class="line">- string : 검색하고 싶은 내용</span><br><span class="line">- path : 찾을 파일이 있는 폴더</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/13/Linux-System-Mangement-1/" data-id="cjcbk3332000xpmtb2voga6fo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-IT-Infra-Study-1-Server-Infra" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/13/IT-Infra-Study-1-Server-Infra/" class="article-date">
-  <time datetime="2017-12-13T05:54:12.000Z" itemprop="datePublished">2017-12-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/13/IT-Infra-Study-1-Server-Infra/">IT Infra Study(1) - Server, Infra</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="그림으로-공부하는-IT인프라-구조-1-인프라아키텍처-서버"><a href="#그림으로-공부하는-IT인프라-구조-1-인프라아키텍처-서버" class="headerlink" title="그림으로 공부하는 IT인프라 구조 (1) - 인프라아키텍처, 서버"></a>그림으로 공부하는 IT인프라 구조 (1) - 인프라아키텍처, 서버</h2><h3 id="IT인프라는-2가지-형태로-구성이-된다"><a href="#IT인프라는-2가지-형태로-구성이-된다" class="headerlink" title="IT인프라는 2가지 형태로 구성이 된다."></a>IT인프라는 2가지 형태로 구성이 된다.</h3><h4 id="집약형-대형컴퓨터-메인프레임-등-성능이-좋은것이고-집약형의-최대-장점은-단순하다는-점이다"><a href="#집약형-대형컴퓨터-메인프레임-등-성능이-좋은것이고-집약형의-최대-장점은-단순하다는-점이다" class="headerlink" title="집약형 : 대형컴퓨터, 메인프레임 등 성능이 좋은것이고 집약형의 최대 장점은 단순하다는 점이다."></a>집약형 : 대형컴퓨터, 메인프레임 등 성능이 좋은것이고 집약형의 최대 장점은 단순하다는 점이다.</h4><h5 id="장점"><a href="#장점" class="headerlink" title="장점"></a>장점</h5><ol>
-<li>한 대의 대형 컴퓨터만 있으면 되므로 구성이 간단.</li>
-<li>안정성이 높고 고성능이다.<h5 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h5></li>
-<li>비용이 비싸다.</li>
-<li>확장성에 한계가 있다.</li>
-</ol>
-<h4 id="분산형-아키텍처"><a href="#분산형-아키텍처" class="headerlink" title="분산형 아키텍처"></a>분산형 아키텍처</h4><h5 id="장점-1"><a href="#장점-1" class="headerlink" title="장점"></a>장점</h5><ol>
-<li>낮은 비용이다.</li>
-<li>확장성이 매우 좋다.</li>
-</ol>
-<h5 id="단점-1"><a href="#단점-1" class="headerlink" title="단점"></a>단점</h5><ol>
-<li>복잡하다.</li>
-<li>한대가 고장나면 영향을 최소화하기위해 설계가 필요</li>
-</ol>
-<h4 id="클라이언트-서버형-아키텍처"><a href="#클라이언트-서버형-아키텍처" class="headerlink" title="클라이언트 - 서버형 아키텍처"></a>클라이언트 - 서버형 아키텍처</h4><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_1.png" alt="Alt text" title="client-server"></p>
-<h5 id="장점-2"><a href="#장점-2" class="headerlink" title="장점"></a>장점</h5><ol>
-<li>클라이언트측에서 많은 처리를 실행할 수 있어서 소수의 서버로 다수의 클라이언트를 처리할 수 있다.</li>
-</ol>
-<h5 id="단점-2"><a href="#단점-2" class="headerlink" title="단점"></a>단점</h5><ol>
-<li>확장성에 한계가 필요</li>
-</ol>
-<h4 id="3계층형-아키텍처"><a href="#3계층형-아키텍처" class="headerlink" title="3계층형 아키텍처"></a>3계층형 아키텍처</h4><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_2.png" alt="Alt text" title="3-layer Architecture"></p>
-<h6 id="3계층형은-‘프레젠테이션-계층’-‘애플리케이션-계층’-‘데이터-계층’-총-3가지-계층으로-분할이-되어있다"><a href="#3계층형은-‘프레젠테이션-계층’-‘애플리케이션-계층’-‘데이터-계층’-총-3가지-계층으로-분할이-되어있다" class="headerlink" title="3계층형은 ‘프레젠테이션 계층’, ‘애플리케이션 계층’, ‘데이터 계층’ 총 3가지 계층으로 분할이 되어있다."></a>3계층형은 ‘프레젠테이션 계층’, ‘애플리케이션 계층’, ‘데이터 계층’ 총 3가지 계층으로 분할이 되어있다.</h6><h5 id="프레젠테이션-계층"><a href="#프레젠테이션-계층" class="headerlink" title="프레젠테이션 계층"></a>프레젠테이션 계층</h5><ul>
-<li>사용자의 입력을 받는다.</li>
-<li>웹브라우저 화면을 표시한다.</li>
-</ul>
-<h5 id="애플리케이션-계층"><a href="#애플리케이션-계층" class="headerlink" title="애플리케이션 계층"></a>애플리케이션 계층</h5><ul>
-<li>사용자 요청(request)를 처리</li>
-</ul>
-<h5 id="데이터-계층"><a href="#데이터-계층" class="headerlink" title="데이터 계층"></a>데이터 계층</h5><ul>
-<li>애플리케이션의 요청에 따라 데이터를 입출력</li>
-</ul>
-<h5 id="장점-3"><a href="#장점-3" class="headerlink" title="장점"></a>장점</h5><ul>
-<li>서버 부하 집중 개선<h5 id="단점-3"><a href="#단점-3" class="headerlink" title="단점"></a>단점</h5></li>
-<li>구조가 클라이언트 - 서버 구성보다 복잡.</li>
-</ul>
-<h4 id="물리서버"><a href="#물리서버" class="headerlink" title="물리서버"></a>물리서버</h4><h6 id="서버는-렉-rack-이라는-것에-장착된다"><a href="#서버는-렉-rack-이라는-것에-장착된다" class="headerlink" title="서버는 렉(rack)이라는 것에 장착된다."></a>서버는 렉(rack)이라는 것에 장착된다.</h6><h6 id="서버와-PC는-물리적으로-기본-구성이-같다"><a href="#서버와-PC는-물리적으로-기본-구성이-같다" class="headerlink" title="서버와 PC는 물리적으로 기본 구성이 같다."></a>서버와 PC는 물리적으로 기본 구성이 같다.</h6><h6 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h6><p>CPU는 Central Processing Unit의 약자다. 서버 중심에 위치해서 연산처리를 한다.<br><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_3.png" alt="Alt text" title="Computer Structure"></p>
-<h6 id="CPU는-명령을-받아서-연산을-실행하고-결과를-반환한다"><a href="#CPU는-명령을-받아서-연산을-실행하고-결과를-반환한다" class="headerlink" title="CPU는 명령을 받아서 연산을 실행하고 결과를 반환한다."></a>CPU는 명령을 받아서 연산을 실행하고 결과를 반환한다.</h6><h6 id="CPU가-명령을-자발적으로-처리하는-것은-아니다-‘프로세스’나-사용자의-입력을-받아서-그것이-OS에-명령을-내리고-OS-운영체제-라는-소프트웨어가-CPU에-명령을-내린다"><a href="#CPU가-명령을-자발적으로-처리하는-것은-아니다-‘프로세스’나-사용자의-입력을-받아서-그것이-OS에-명령을-내리고-OS-운영체제-라는-소프트웨어가-CPU에-명령을-내린다" class="headerlink" title="CPU가 명령을 자발적으로 처리하는 것은 아니다. ‘프로세스’나 사용자의 입력을 받아서 그것이 OS에 명령을 내리고, OS(운영체제)라는 소프트웨어가 CPU에 명령을 내린다."></a>CPU가 명령을 자발적으로 처리하는 것은 아니다. ‘프로세스’나 사용자의 입력을 받아서 그것이 OS에 명령을 내리고, OS(운영체제)라는 소프트웨어가 CPU에 명령을 내린다.</h6><h6 id="메모리"><a href="#메모리" class="headerlink" title="메모리"></a>메모리</h6><h6 id="메모리는-CPU옆에-위치하고-CPU에-전달하는-내용이나-데이터를-저장하거나-처리결과를-받는다"><a href="#메모리는-CPU옆에-위치하고-CPU에-전달하는-내용이나-데이터를-저장하거나-처리결과를-받는다" class="headerlink" title="메모리는 CPU옆에 위치하고, CPU에 전달하는 내용이나 데이터를 저장하거나 처리결과를 받는다."></a>메모리는 CPU옆에 위치하고, CPU에 전달하는 내용이나 데이터를 저장하거나 처리결과를 받는다.</h6><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_4.png" alt="Alt text" title="Memory"></p>
-<h5 id="메모리에-저장되는-정보는-영구성이-없지만-액세스가-매우-빠르게-이루어-지기때문에-사용을-한다"><a href="#메모리에-저장되는-정보는-영구성이-없지만-액세스가-매우-빠르게-이루어-지기때문에-사용을-한다" class="headerlink" title="메모리에 저장되는 정보는 영구성이 없지만 액세스가 매우 빠르게 이루어 지기때문에 사용을 한다."></a>메모리에 저장되는 정보는 영구성이 없지만 액세스가 매우 빠르게 이루어 지기때문에 사용을 한다.</h5><h6 id="CPU자체도-메모리를-가지고-있다-이것을-레지스터나-L1-L2캐시라고-부른다"><a href="#CPU자체도-메모리를-가지고-있다-이것을-레지스터나-L1-L2캐시라고-부른다" class="headerlink" title="CPU자체도 메모리를 가지고 있다. 이것을 레지스터나 L1, L2캐시라고 부른다."></a>CPU자체도 메모리를 가지고 있다. 이것을 레지스터나 L1, L2캐시라고 부른다.</h6><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_5.png" alt="Alt text" title="CPU"></p>
-<h6 id="L1-L2-캐시에-있는-데이터는-L3에도-존재한다-다른-코어는-자신-이외의-캐시를-확인하지-않고-L3캐시만-확인하면-되는-구조다"><a href="#L1-L2-캐시에-있는-데이터는-L3에도-존재한다-다른-코어는-자신-이외의-캐시를-확인하지-않고-L3캐시만-확인하면-되는-구조다" class="headerlink" title="L1, L2 캐시에 있는 데이터는 L3에도 존재한다. 다른 코어는 자신 이외의 캐시를 확인하지 않고 L3캐시만 확인하면 되는 구조다."></a>L1, L2 캐시에 있는 데이터는 L3에도 존재한다. 다른 코어는 자신 이외의 캐시를 확인하지 않고 L3캐시만 확인하면 되는 구조다.</h6><h6 id="메모리를-이용하려면-메모리-컨트롤러를-경유해서-CPU밖으로-나가야한다-이때-처리지연을-줄이기-위해서-자주-사용하는-명령-데이터를-코어-가까운-곳에-배치를-한다"><a href="#메모리를-이용하려면-메모리-컨트롤러를-경유해서-CPU밖으로-나가야한다-이때-처리지연을-줄이기-위해서-자주-사용하는-명령-데이터를-코어-가까운-곳에-배치를-한다" class="headerlink" title="메모리를 이용하려면 메모리 컨트롤러를 경유해서 CPU밖으로 나가야한다. 이때 처리지연을 줄이기 위해서 자주 사용하는 명령/데이터를 코어 가까운 곳에 배치를 한다."></a>메모리를 이용하려면 메모리 컨트롤러를 경유해서 CPU밖으로 나가야한다. 이때 처리지연을 줄이기 위해서 자주 사용하는 명령/데이터를 코어 가까운 곳에 배치를 한다.</h6><h5 id="버스"><a href="#버스" class="headerlink" title="버스"></a>버스</h5><h6 id="버스-bus-는-서버-내부에-있는-컴포넌트들을-서로-연결시키는-회선을-가리킨다-버스에서는-버스가-어느정도의-데이터-전송-능력을-가지고-있는가-대역-이-중요하다"><a href="#버스-bus-는-서버-내부에-있는-컴포넌트들을-서로-연결시키는-회선을-가리킨다-버스에서는-버스가-어느정도의-데이터-전송-능력을-가지고-있는가-대역-이-중요하다" class="headerlink" title="버스(bus)는 서버 내부에 있는 컴포넌트들을 서로 연결시키는 회선을 가리킨다. 버스에서는 버스가 어느정도의 데이터 전송 능력을 가지고 있는가(대역)이 중요하다."></a>버스(bus)는 서버 내부에 있는 컴포넌트들을 서로 연결시키는 회선을 가리킨다. 버스에서는 버스가 어느정도의 데이터 전송 능력을 가지고 있는가(대역)이 중요하다.</h6>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/13/IT-Infra-Study-1-Server-Infra/" data-id="cjcbk3330000wpmtb92hfv4sr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-12-Object-Study" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/12/2017-12-12-Object-Study/" class="article-date">
-  <time datetime="2017-12-12T07:15:48.000Z" itemprop="datePublished">2017-12-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/12/2017-12-12-Object-Study/">2017-12-12 Object Study</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><h4 id="속성"><a href="#속성" class="headerlink" title="속성"></a>속성</h4><p>객체에 속한 변수<br><code>m1.name
-// m1의 이름</code></p>
-<h4 id="메소드"><a href="#메소드" class="headerlink" title="메소드"></a>메소드</h4><p>객체에 속한 함수<br><code>honux.eat(chicken) =&gt; eat(honux, chicken) 내부적으로는 이렇게 변한다.</code></p>
-<ul>
-<li>함수에는 주어가 없다. 메소드에는 주어가 있기때문에 편하다. 함수에서는 주어와 목적어를 우리가 직접 판단해야한다…</li>
-</ul>
-<h4 id="객체지향-프로그래밍"><a href="#객체지향-프로그래밍" class="headerlink" title="객체지향 프로그래밍"></a>객체지향 프로그래밍</h4><ul>
-<li>유지보수가 쉬워진다</li>
-<li>대형 프로그램을 짜기 쉬워진다</li>
-<li>객체와 객체가 협력해서 일을 한다</li>
-<li>객체는 일에 책임을 진다</li>
-<li>객체는 객체에 메시지를 보낸다</li>
-<li>객체는 자율적으로 일을 한다</li>
-</ul>
-<h4 id="모든것을-객체와-객체의-협력으로-바라본다"><a href="#모든것을-객체와-객체의-협력으로-바라본다" class="headerlink" title="모든것을 객체와 객체의 협력으로 바라본다."></a>모든것을 객체와 객체의 협력으로 바라본다.</h4><ul>
-<li>JSON : JavaScript Object Notation</li>
-<li>this는 앞으로 만들어질 객체!!!</li>
-<li>method에서는 method를 소유한 객체가 this다.</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">var m1 = &#123;</span><br><span class="line">  &quot;name&quot; : &apos;honux&apos;,</span><br><span class="line">  hp : 100,</span><br><span class="line">  mp : 50,</span><br><span class="line">  power : 10,</span><br><span class="line">  attack : function(target)&#123;</span><br><span class="line">    target.hp -= this.power;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var c1 = &#123;</span><br><span class="line">  type: &quot;Coffee&quot;,</span><br><span class="line">  energy : 10</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var m2 = &#123;</span><br><span class="line">  &quot;name&quot; : &apos;Jimmy&apos;,</span><br><span class="line">  hp : 300,</span><br><span class="line">  mp : 100,</span><br><span class="line">  power : 20,</span><br><span class="line">  attack : function(target)&#123;</span><br><span class="line">    target.hp -= this.power;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">m1.eat = function(food)&#123;</span><br><span class="line">  this.hp += food.hp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="this키워드"><a href="#this키워드" class="headerlink" title="this키워드"></a>this키워드</h4><ol>
-<li>메소드안에서 사용시 주로 함수를 사요훈 객체</li>
-<li>객체 안에서 사용시 객체 자체를 가르킴</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m1.eat = function(food)&#123;</span><br><span class="line">	this.hp += food.hp</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="함수를-이용해서-생성자를-만들기"><a href="#함수를-이용해서-생성자를-만들기" class="headerlink" title="함수를 이용해서 생성자를 만들기"></a>함수를 이용해서 생성자를 만들기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 휴면 클래스를 정의하는 함수 = 생성자</span><br><span class="line">function Human(name, hp, mp, power)&#123;</span><br><span class="line">	this.name = name; // m1.name = name;</span><br><span class="line">    this.hp = hp;</span><br><span class="line">    this.mp = mp;</span><br><span class="line">    this.power = power;</span><br><span class="line">    this.attack = function(target)&#123;</span><br><span class="line">    	target.hp -= this.power;</span><br><span class="line">     &#125;;</span><br><span class="line">    this.show = function()&#123;</span><br><span class="line">    	console.log(&quot;%s %d %d %d&quot;,</span><br><span class="line">        this.name, this.hp, this.mp, this.power);</span><br><span class="line">     &#125;;</span><br><span class="line">    &#125; // no semicolon;</span><br></pre></td></tr></table></figure>
-<h4 id="기본-타입빼고-다-참조다-String은-참조가-아니다"><a href="#기본-타입빼고-다-참조다-String은-참조가-아니다" class="headerlink" title="기본 타입빼고 다 참조다 !! String은 참조가 아니다."></a>기본 타입빼고 다 참조다 !! String은 참조가 아니다.</h4><h4 id="왜-생성자를-쓰는가"><a href="#왜-생성자를-쓰는가" class="headerlink" title="왜 생성자를 쓰는가?"></a>왜 생성자를 쓰는가?</h4><ul>
-<li>객체를 하나만 만들 때는 간단히 json표기법으로 만든다.</li>
-<li>여러 객체를 만들고 싶을 때는 생성자를 통해서 만든다.</li>
-</ul>
-<h4 id="다른언어"><a href="#다른언어" class="headerlink" title="다른언어"></a>다른언어</h4><ul>
-<li>일반적인 언어에서는 반드시 클래스 - 생성자를 만들어야한다.</li>
-</ul>
-<h4 id="기본생성자들"><a href="#기본생성자들" class="headerlink" title="기본생성자들"></a>기본생성자들</h4><ol>
-<li>var a = String();</li>
-<li>var b = new Array();</li>
-<li>var c = new Object();<br>생성자를 이용해 생성된 객체는 ‘prototype’ 속성을 가진다.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m1.name =&gt; &apos;jimmy&apos;</span><br><span class="line">m1[&apos;name&apos;] =&gt; &apos;jimmy</span><br><span class="line">// 밑에꺼는 &apos;name&apos; 즉 키값을 문자열로 가지고 온다.</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var m1 = &#123; name : &apos;honux&apos;, hp : 100, mp : 50&#125;;</span><br><span class="line">var keys = Object.keys(m1);</span><br><span class="line"></span><br><span class="line">keys.forEach(function(key)&#123;</span><br><span class="line">  console.log(&quot;m1[%s] = %s&quot;, key, m1[key]);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">m1[name] = honux</span><br><span class="line">m1[hp] = 100</span><br><span class="line">m1[mp] = 50</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/12/2017-12-12-Object-Study/" data-id="cjcbk33260009pmtbp57h3mpl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/14/2017-12-14-TIL-HTML/" data-id="cjclcbm38000b7ptbeh8olzlx" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -412,9 +364,21 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19 TIL/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/18/2018-1-18/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/01/12/2018-1-12-TIL/">2018-1-12 TIL</a>
@@ -422,18 +386,6 @@
         
           <li>
             <a href="/2018/01/10/2018-1-10-TIL/">2018-1-10 TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/">2018-1-8 TIL JAVA practice problem solving</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/07/2018-1-7-TIL/">2018-1-7 TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/06/2018-1-6-TIL/">2018-1-6 TIL</a>
           </li>
         
       </ul>
@@ -449,7 +401,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Jimmy<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

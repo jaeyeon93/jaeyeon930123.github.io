@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,249 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2017-12-25-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/25/2017-12-25-TIL/" class="article-date">
+  <time datetime="2017-12-25T12:51:16.000Z" itemprop="datePublished">2017-12-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/25/2017-12-25-TIL/">2017-12-25 TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="재귀함수의-수학적의미"><a href="#재귀함수의-수학적의미" class="headerlink" title="재귀함수의 수학적의미"></a>재귀함수의 수학적의미</h2><p>크리스마스에도 공부를 하다니… 재귀함수 알고리즘에 이론까지..<br>어쩌다보니 요즘 공부하고있는<br>“프로그래머 수학으로 생각하라”와 “그림으로 개념을 이해하는 알고리즘”에서 공부한 내용이 재귀함수로 겹쳤다.</p>
+<p>문제1) 자물쇠가 걸린 옷가방을 발견을 했다.<br>열쇠는 저기에 있는 상자안에 있다.<br>다른 상자를 열어보니 또 다른 상자들이 있고 그 안에 다른 상자들이 있다.<br>이것을 어떻게 풀어야될까?</p>
+<p>Sol1)</p>
+<ol>
+<li>내부를 확인할 상자를 쌓아놓는다.</li>
+<li>상자를 하나 집어서 내부를 살핀다</li>
+<li>만약 안에 상자가 있다면 꺼내서 나중에 확인할 상자 더미에 놓는다</li>
+<li>만약 열쇠가 있으면 작업 종료.</li>
+<li>반복한다.</li>
+</ol>
+<p>Sol2)</p>
+<ol>
+<li>상자안을 확인한다.</li>
+<li>상자를 발견하면 1단계로 간다.</li>
+<li>만약 열쇠를 발견하면 작업종료.</li>
+</ol>
+<p>위의 두가지 경우를 파이썬 코드를 이용해서 풀어보자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def look_for_key(mainbox):</span><br><span class="line">	pile = main.box.make_a_pile_to_loot-through()</span><br><span class="line">    while pile is not empty:</span><br><span class="line">    	box = pile.brab_a_box();</span><br><span class="line">        for item in box:</span><br><span class="line">        	if item in box():</span><br><span class="line">				pile.append(item)</span><br><span class="line">            elif item.is_a_key():</span><br><span class="line">            	print &quot;find a key&quot;</span><br></pre></td></tr></table></figure>
+<p>second solv in python</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def look_for_key(box):</span><br><span class="line">	for item in box:</span><br><span class="line">    	if item.is_a_box():</span><br><span class="line">        	loob_for_key(item)</span><br><span class="line">        elif item.is_a_key():</span><br><span class="line">        	print &quot;열쇠를 찾았어요&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="프로그램에-반복문을-사용하면-프로그램의-성능을-향상시킬-수-있지만-재귀를-사용하면-프로그래머의-능력을-향상-시킬-수-있다"><a href="#프로그램에-반복문을-사용하면-프로그램의-성능을-향상시킬-수-있지만-재귀를-사용하면-프로그래머의-능력을-향상-시킬-수-있다" class="headerlink" title="프로그램에 반복문을 사용하면 프로그램의 성능을 향상시킬 수 있지만 재귀를 사용하면 프로그래머의 능력을 향상 시킬 수 있다."></a>프로그램에 반복문을 사용하면 프로그램의 성능을 향상시킬 수 있지만 재귀를 사용하면 프로그래머의 능력을 향상 시킬 수 있다.</h4><h4 id="기본단계와-재귀단계"><a href="#기본단계와-재귀단계" class="headerlink" title="기본단계와 재귀단계"></a>기본단계와 재귀단계</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def countdown(i):</span><br><span class="line">	print i</span><br><span class="line">    countdown(i-1)</span><br><span class="line">    // 무한루프</span><br></pre></td></tr></table></figure>
+<p>재귀함수를 만들 때는 언제 재귀를 멈출지를 제대로 알려줘야 한다.<br>재귀단계는 자기 자신을 호출하는 단계이고, 기본단계는 함수가 자기 자신을 호출하지 않는 경우, 무한 반복으로 빠져들지 않게 하는 부분입니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def countdown(i):</span><br><span class="line">	print i</span><br><span class="line">    i &lt;= i:</span><br><span class="line">    	reutn</span><br><span class="line">    else:</span><br><span class="line">    	countdown(i-1)</span><br><span class="line">// 무한 호출이 발생하지 않도록 방지를 했다.</span><br></pre></td></tr></table></figure>
+<h4 id="함수의-호출스택"><a href="#함수의-호출스택" class="headerlink" title="함수의 호출스택"></a>함수의 호출스택</h4><p>스택은 스택구조 가장위에 있는 항목만을 읽고 뗄수 있는 구조이다. POP, PUSH메소드를 이용해서 구현을 한다.<br>PUSH로 가장 위에 새 항목을 추가하고, POP으로 가장 위의 항목을 떼어내고 읽는다.<br>스택에서 할 일을 POP한다. 할 일들을 적어서 다시 메모리에 PUSH한다.</p>
+<h5 id="호출스택"><a href="#호출스택" class="headerlink" title="호출스택"></a>호출스택</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def greet(name):</span><br><span class="line">	print &quot;hello,  &quot; + name + &quot;!&quot;</span><br><span class="line">    greet2(name)</span><br><span class="line">    print &quot;getting ready to say bye...&quot;</span><br><span class="line">    bye()</span><br><span class="line">  이 함수는 인사말을 건너고 다른 두개의 함수를 호출한다.</span><br></pre></td></tr></table></figure>
+<h4 id="함수호출이-일어나면-어떤-변화들이-있나-지켜보자"><a href="#함수호출이-일어나면-어떤-변화들이-있나-지켜보자" class="headerlink" title="함수호출이 일어나면 어떤 변화들이 있나 지켜보자."></a>함수호출이 일어나면 어떤 변화들이 있나 지켜보자.</h4><ol>
+<li>greet(‘maggie’)라고 명령을 하면 메모리에 값을 저장을 하게 된다.</li>
+<li>다시 greet2함수를 호출을 하면 greet함수 위에 greet2가 쌓이게 된다.</li>
+<li>greet2함수가 출력이 되면 사라지고 다시 bye함수가 쌓인다. 이것이 스택구조이다.</li>
+</ol>
+<h4 id="재귀함수에서-호출-스택-사용"><a href="#재귀함수에서-호출-스택-사용" class="headerlink" title="재귀함수에서 호출 스택 사용"></a>재귀함수에서 호출 스택 사용</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def fact(x):</span><br><span class="line">	if x == 1:</span><br><span class="line">    	return x;</span><br><span class="line">    else:</span><br><span class="line">    	return fact(x-1) * x</span><br></pre></td></tr></table></figure>
+<p>스택을 사용하면 상자 더미를 일일이 추적하지 않아도 되므로 편리하다. 하지만 모든 정보를 저장해야 하므로 메모리를 많이 소모한다.<br>이것을 해결하기 위한 방법이 있다.</p>
+<ol>
+<li>재귀 대신 반복문을 써서 코드를 다시 작성한다.</li>
+</ol>
+<p>3장 요약</p>
+<ul>
+<li>재귀는 함수가 스스로를 호출하는 것이다.</li>
+<li>모든 재귀 함수는 기본 단계와 재귀 단계라는 부분으로 나누어져 있습니다.</li>
+<li>스택에는 푸쉬 팝이라는 두가지 연산이 있습니다.</li>
+<li>모든 함수 호출은 호출 스택을 사용합니다.</li>
+<li>호출 스택은 너무 커져서 메모리를 엄청나게 소비할 수도 있습니다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/25/2017-12-25-TIL/" data-id="cjclcbm3f000j7ptblj2sgu89" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2017-12-24-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/24/2017-12-24-TIL/" class="article-date">
+  <time datetime="2017-12-24T13:11:19.000Z" itemprop="datePublished">2017-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/24/2017-12-24-TIL/">2017-12-24 TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="알고리즘-복잡도-분석"><a href="#알고리즘-복잡도-분석" class="headerlink" title="알고리즘 복잡도 분석"></a>알고리즘 복잡도 분석</h2><p>알고리즘이란 문제해결 전략이다.</p>
+<ul>
+<li>자료구조 : array, list, stack, queue</li>
+<li>알고리즘 : 문제해결방법 (자료구조를 바탕으로 문제를 해결한다)</li>
+</ul>
+<h4 id="기본-자료구조"><a href="#기본-자료구조" class="headerlink" title="기본 자료구조"></a>기본 자료구조</h4><ul>
+<li><p>배열</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ex) int a[] = new int[5]</span><br><span class="line">// a = int의 배열이다. 타입과 갯수가 정해져 있다.</span><br><span class="line">// 크기가 고정되어있지만, 읽을때 엄청 빨리 읽는다.</span><br><span class="line">O(1)읽기</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>리스트 : LinkedList(참조 혹은 포인터) O(n)번만에 읽을 수 있다. O(1)만에 추가가 된다. 읽기는 오래걸리지만 쓰기는 굉장히 빠르다. 각각의 노드마다 주소값이 저장되어있기때문에 공간의 낭비가 심하다.</p>
+</li>
+<li>스택 : LIFO</li>
+<li>큐 : FIFO</li>
+<li>트리 : 일방향(싸이클이 없다)</li>
+<li>그래프 : 그래프는 트리랑 구조가 유사한데, 각 노드들이 연결되어있다? 그래프는 트리의 일종이지만 싸이클이 생기지 Object를 통해 만든다. key의 중복이 안된다. key로 값을 읽어 오고 싶을때 사용.</li>
+</ul>
+<h4 id="배열과-해시를-이용하면-대부분의-코딩문제들이-해결된다"><a href="#배열과-해시를-이용하면-대부분의-코딩문제들이-해결된다" class="headerlink" title="배열과 해시를 이용하면 대부분의 코딩문제들이 해결된다."></a>배열과 해시를 이용하면 대부분의 코딩문제들이 해결된다.</h4><h4 id="정렬"><a href="#정렬" class="headerlink" title="정렬"></a>정렬</h4><ul>
+<li>선택 정렬</li>
+<li>버블 정렬</li>
+<li>삽입 정렬</li>
+<li>쉘 정렬</li>
+<li>퀵 정렬</li>
+<li>기수 정렬</li>
+<li>힙 정렬</li>
+<li>병합 정렬</li>
+<li>외부 정렬</li>
+</ul>
+<h4 id="동작코드를-다-외어야-된다"><a href="#동작코드를-다-외어야-된다" class="headerlink" title="동작코드를 다 외어야 된다."></a>동작코드를 다 외어야 된다.</h4><h4 id="트리와-검색"><a href="#트리와-검색" class="headerlink" title="트리와 검색"></a>트리와 검색</h4><ul>
+<li>순차 검색</li>
+<li>2진 검색</li>
+<li>BST 검색</li>
+<li>AVL 트리</li>
+<li>레드블랙 트리</li>
+<li>MST</li>
+<li>B TREE</li>
+</ul>
+<h4 id="그래프와-탐색"><a href="#그래프와-탐색" class="headerlink" title="그래프와 탐색"></a>그래프와 탐색</h4><ul>
+<li>전위 중위 후위</li>
+<li>다익스트라 최단거리</li>
+<li>플로이드 알고리즘</li>
+<li>A* 알고리즘</li>
+</ul>
+<h4 id="알고리즘-전략"><a href="#알고리즘-전략" class="headerlink" title="알고리즘 전략"></a>알고리즘 전략</h4><ul>
+<li>휴리스틱 알고리즘</li>
+<li>그리디 알고리즘</li>
+<li>몬테카를로 알고리즘</li>
+<li>분할 정복</li>
+<li>다이나믹 프그로래밍</li>
+<li>백 트래킹</li>
+</ul>
+<h2 id="정렬-1"><a href="#정렬-1" class="headerlink" title="정렬"></a>정렬</h2><ul>
+<li>정렬을 할때는 비교기준이 있어야한다. 그 비교기준을 내가 세운다.<br>-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr = [1, 11, 2, 20, 3, 5, 9];</span><br><span class="line">arr.sort(function(a, b) &#123;</span><br><span class="line">	return a-b;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">b = [</span><br><span class="line">  &#123; name: &apos;honux&apos;, money: 100, score: 100 &#125;,</span><br><span class="line">  &#123; name: &apos;crong&apos;, money: 50, score: 500 &#125;,</span><br><span class="line">  &#123; name: &apos;jimmy&apos;, money: 999, score: 10 &#125; ]</span><br><span class="line">b.sort((a, b) =&gt; (b.score - a.score) );</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/24/2017-12-24-TIL/" data-id="cjclcbm3f000i7ptbti3wrboy" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2017-12-23-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/23/2017-12-23-TIL/" class="article-date">
+  <time datetime="2017-12-23T12:22:05.000Z" itemprop="datePublished">2017-12-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/23/2017-12-23-TIL/">2017-12-23 TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="github을-통한-협업-방식"><a href="#github을-통한-협업-방식" class="headerlink" title="github을 통한 협업 방식"></a>github을 통한 협업 방식</h2><h3 id="pull-request-배우기"><a href="#pull-request-배우기" class="headerlink" title="pull request 배우기"></a>pull request 배우기</h3><ol>
+<li>github 저장소 만들기</li>
+<li>클론</li>
+<li>파일 작성<blockquote>
+<p>README.md<br>index.html index.js index.css</p>
+</blockquote>
+</li>
+<li>커밋 푸시</li>
+</ol>
+<h3 id="git-기본-명령어"><a href="#git-기본-명령어" class="headerlink" title="git 기본 명령어"></a>git 기본 명령어</h3><ol>
+<li>git add : working direct의 변경사항을 index에 올린다.</li>
+<li>git commit : index에 올려진 내용을 로컬저장소에 올린다.</li>
+<li>git push : 로컬저장소에 있는 내용을 원격저장소로 올린다.</li>
+<li>origin이 원격저장소 주소이다. github에 있는 내주소가 origin이다.</li>
+<li>origin/master는 원격저장소에 있는 마스터브렌치를 이야기한다.</li>
+</ol>
+<h3 id="브렌치-바꾸기"><a href="#브렌치-바꾸기" class="headerlink" title="브렌치 바꾸기"></a>브렌치 바꾸기</h3><ul>
+<li>git branch branch-name</li>
+<li>git branch &gt; 현재브렌치 확인</li>
+<li>git checkout branch-name // change the branch.</li>
+<li>git push -u origin gh-pages //</li>
+<li>git remote add cs <a href="https://github.com/code-squad/level1-js" target="_blank" rel="noopener">https://github.com/code-squad/level1-js</a> // cs라는 원격저장소를 추가한다. why? 게임으로 치면 북미서버, 한국서버를 만들겠다는 의미이다. 하나는 내가 full로 권한을 가지고 있고, 다른하나는 권한이 없다.<br>:exclamation: 내 아이디가 있는 복사본 프로젝트를 클론한다.<br>포크 후에는 동일한 저장소가 내 아이디에도 생긴다!<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export githubid=&quot;my_id&quot;;</span><br><span class="line">git clone https://github.com/my_id/level1-js;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="원격-저장소-추가"><a href="#원격-저장소-추가" class="headerlink" title="원격 저장소 추가"></a>원격 저장소 추가</h3><p>origin말고 추가 원격 저장소를 만든다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remove -v // check the remote repository</span><br><span class="line">$ git remote add cs https://github.com/code-squad/leve1-js</span><br></pre></td></tr></table></figure></p>
+<h3 id="내-작업-브렌치-만들기"><a href="#내-작업-브렌치-만들기" class="headerlink" title="내 작업 브렌치 만들기"></a>내 작업 브렌치 만들기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch my_id // git branch jimmy</span><br><span class="line">$ git checkout jimmy</span><br></pre></td></tr></table></figure>
+<h3 id="프로젝트-하위-디렉토리-생성"><a href="#프로젝트-하위-디렉토리-생성" class="headerlink" title="프로젝트 하위 디렉토리 생성"></a>프로젝트 하위 디렉토리 생성</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir jimmy</span><br><span class="line">$ cd /jimmy</span><br><span class="line">$ cp -a /Users/jimmy/Desktop/project/git-study-pull_request/* jimmy</span><br></pre></td></tr></table></figure>
+<h3 id="gh-pages-만들기"><a href="#gh-pages-만들기" class="headerlink" title="gh-pages 만들기"></a>gh-pages 만들기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch gh-pages</span><br><span class="line">$ git checkout gh-pages</span><br><span class="line">$ git push -u origin gh-pages</span><br></pre></td></tr></table></figure>
+<p>이렇게 하고 나면<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://myid.github.com/proj_name</span><br></pre></td></tr></table></figure></p>
+<p>에서 볼 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index.html</span><br></pre></td></tr></table></figure></p>
+<p>이 꼭 있어야 합니다.</p>
+<h3 id="커밋-및-푸시"><a href="#커밋-및-푸시" class="headerlink" title="커밋 및 푸시"></a>커밋 및 푸시</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;[jimmy]&quot; Init project&quot;</span><br><span class="line">$ git push -u origin jimmy</span><br></pre></td></tr></table></figure>
+<h3 id="풀리퀘"><a href="#풀리퀘" class="headerlink" title="풀리퀘"></a>풀리퀘</h3><p>github가서 풀리퀘를 보내고, 리뷰 과정을 걸쳐 머지가 이루어 집니다.<br>지금까지 내 저장소의 작업내용(커밋)<br>github가서 풀리퀘 보내고, 리뷰과정을 걸쳐 머지가 이루어진다.</p>
+<blockquote>
+<p>src : code-squad/level1-js : master<br>target : jimmy/level1-js : jimmy<br>jimmy가 최신이다.</p>
+</blockquote>
+<h3 id="cs-마스터랑-합치기"><a href="#cs-마스터랑-합치기" class="headerlink" title="cs-마스터랑 합치기"></a>cs-마스터랑 합치기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git fetch cs // cs원격저장소만 로컬로 가져와 주세요.</span><br><span class="line">$ git merge cs/master</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/23/2017-12-23-TIL/" data-id="cjclcbm3c000f7ptb349n87md" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2017-12-20-TIL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -107,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/20/2017-12-20-TIL/" data-id="cjcbk332f000fpmtb9jhahtga" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/20/2017-12-20-TIL/" data-id="cjclcbm3d000g7ptbnjy1mqrj" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -155,149 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/19/2017-12-19-TIL/" data-id="cjcbk332g000gpmtbzozy0q26" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-18-JS-Study-Closer-Scope-Global-Variable" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" class="article-date">
-  <time datetime="2017-12-18T07:45:42.000Z" itemprop="datePublished">2017-12-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/">2017-12-18 JS Study - Closer, Scope,Global Variable</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS-Study-Scope"><a href="#JS-Study-Scope" class="headerlink" title="JS Study - Scope"></a>JS Study - Scope</h2><h3 id="Scope란"><a href="#Scope란" class="headerlink" title="Scope란?"></a>Scope란?</h3><ul>
-<li>함수의 유효범위이다.</li>
-</ul>
-<h4 id="전역변수"><a href="#전역변수" class="headerlink" title="전역변수"></a>전역변수</h4><ul>
-<li>함수 외부에서 선언된 변수이다. 많이 쓰면 나쁘다.</li>
-<li>최상위 객체에 속하는 변수이다.</li>
-<li>global의 프로퍼티다.</li>
-</ul>
-<h4 id="지역변수"><a href="#지역변수" class="headerlink" title="지역변수"></a>지역변수</h4><ul>
-<li>함수 안에서 선언된 변수</li>
-<li>함수 외부에서는 쓸 수 없다.</li>
-</ul>
-<h4 id="자동-전역-변수"><a href="#자동-전역-변수" class="headerlink" title="자동 전역 변수"></a>자동 전역 변수</h4><ul>
-<li>함수 안에서 var없이 선언을 하면 자동 전역 변수가 된다. 하지만 절대 그러지 말자.</li>
-</ul>
-<h4 id="같은-이름이면-지역변수가-전역변수보다-우선순위가-높다"><a href="#같은-이름이면-지역변수가-전역변수보다-우선순위가-높다" class="headerlink" title="같은 이름이면 지역변수가 전역변수보다 우선순위가 높다."></a>같은 이름이면 지역변수가 전역변수보다 우선순위가 높다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var a = 100;</span><br><span class="line">function foo() &#123;</span><br><span class="line">	var a = 50;</span><br><span class="line">    console.log(a);</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br><span class="line">&gt;50</span><br><span class="line">&gt;a</span><br><span class="line">&gt;100;</span><br><span class="line">// 지역변수가 전역변수보다 우선순위가 높아서.</span><br></pre></td></tr></table></figure>
-<h4 id="함수의-매개변수"><a href="#함수의-매개변수" class="headerlink" title="함수의 매개변수"></a>함수의 매개변수</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function foo(a) &#123;</span><br><span class="line">	console.log(a);</span><br><span class="line">&#125;;</span><br><span class="line">&gt;foo(10)</span><br><span class="line">&gt;10</span><br><span class="line">&gt;</span><br><span class="line">// 매개변수는 지역변수이다. 그러므로 stack에 쌓인다.</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">	console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">&gt;0</span><br><span class="line">&gt;1</span><br><span class="line">&gt;2</span><br><span class="line">&gt;3</span><br><span class="line">&gt;4</span><br><span class="line">&gt;5</span><br><span class="line">&gt;6</span><br><span class="line">&gt;7</span><br><span class="line">&gt;8</span><br><span class="line">&gt;9</span><br><span class="line">undefined</span><br><span class="line">&gt;i</span><br><span class="line">&gt;10</span><br><span class="line">// i는 전역변수이다.</span><br></pre></td></tr></table></figure>
-<h4 id="unnamed-function-자주-쓴다"><a href="#unnamed-function-자주-쓴다" class="headerlink" title="unnamed function(자주 쓴다.)"></a>unnamed function(자주 쓴다.)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">(functino () &#123;</span><br><span class="line">	for(var i = 20; i &lt; 30; i++) &#123;</span><br><span class="line">    	console.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">&gt;20</span><br><span class="line">&gt;21</span><br><span class="line">&gt;22</span><br><span class="line">&gt;23</span><br><span class="line">&gt;24</span><br><span class="line">&gt;25</span><br><span class="line">&gt;26</span><br><span class="line">&gt;27</span><br><span class="line">&gt;28</span><br><span class="line">&gt;29</span><br><span class="line"></span><br><span class="line">&gt;i</span><br><span class="line">&gt;10</span><br><span class="line">// 위에서 i를 10으로 전역변수로 했기때문에 10이다.</span><br></pre></td></tr></table></figure>
-<h4 id="블록스코프"><a href="#블록스코프" class="headerlink" title="블록스코프"></a>블록스코프</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&#123;</span><br><span class="line">    	let x = 10;</span><br><span class="line">        console.log(x);</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;</span><br><span class="line">&gt;x</span><br><span class="line">&gt;10</span><br><span class="line">&gt;x is undefined</span><br><span class="line">&gt;</span><br><span class="line">// const와 let은 블록스코프이기때문에, let이 로컬변수이기때문에 위에서는 되지만, 밑에서는 블록의 범위를 벗어나기때문에 밑에서는 undefined가 된다. const도 마찬가지다.</span><br></pre></td></tr></table></figure>
-<h4 id="closer-JS는-함수내부에-또-다른-함수를-선언할-수-있다-이것을-클로저라고한다-클로저는-현상이다"><a href="#closer-JS는-함수내부에-또-다른-함수를-선언할-수-있다-이것을-클로저라고한다-클로저는-현상이다" class="headerlink" title="closer : JS는 함수내부에 또 다른 함수를 선언할 수 있다. 이것을 클로저라고한다. 클로저는 현상이다."></a>closer : JS는 함수내부에 또 다른 함수를 선언할 수 있다. 이것을 클로저라고한다. 클로저는 현상이다.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">	var a = 10;</span><br><span class="line">    function bar()&#123;</span><br><span class="line">    var b = 20;</span><br><span class="line">    console.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    bar();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt;foo()</span><br><span class="line">&gt;10</span><br></pre></td></tr></table></figure>
-<h4 id="내부함수는-외부함수에-있는-변수를-읽을-수-있다-이것을-클로저라고한다-to-be-continue…"><a href="#내부함수는-외부함수에-있는-변수를-읽을-수-있다-이것을-클로저라고한다-to-be-continue…" class="headerlink" title="내부함수는 외부함수에 있는 변수를 읽을 수 있다. 이것을 클로저라고한다. to be continue…."></a>내부함수는 외부함수에 있는 변수를 읽을 수 있다. 이것을 클로저라고한다. to be continue….</h4><h4 id="호이스팅"><a href="#호이스팅" class="headerlink" title="호이스팅"></a>호이스팅</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">console.log(a);</span><br><span class="line"></span><br><span class="line">var a = 10;</span><br><span class="line"></span><br><span class="line">console.log(a);</span><br><span class="line"></span><br><span class="line">// undefined</span><br><span class="line">// 10</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" data-id="cjcbk332e000epmtb3ythsbop" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-17-JS-study-Hoisting" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/17/2017-12-17-JS-study-Hoisting/" class="article-date">
-  <time datetime="2017-12-17T12:33:54.000Z" itemprop="datePublished">2017-12-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/17/2017-12-17-JS-study-Hoisting/">2017-12-17 JS study Hoisting</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS-Study-Hoisting"><a href="#JS-Study-Hoisting" class="headerlink" title="JS Study - Hoisting"></a>JS Study - Hoisting</h2><p>Hoisting은 끌어올리다는 의미를 가지고있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fuction showName() &#123;</span><br><span class="line">	var name;</span><br><span class="line">    // name 변수는 호이스팅이 된다.</span><br><span class="line">    // 할당은 이후에 발생하기 때문에, 이 시점에 name값은 undefined이다.</span><br><span class="line">    console.log(&quot;First name : &quot; + name);</span><br><span class="line">    // First Name : undefined</span><br><span class="line">    name = &quot;Ford&quot;;</span><br><span class="line">    // name에 값이 할당.</span><br><span class="line">    console.log(&quot;Last Name : &quot; + name);</span><br><span class="line">    // Last Name : Ford</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2가지-예시"><a href="#2가지-예시" class="headerlink" title="2가지 예시"></a>2가지 예시</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Ex1)</span><br><span class="line">a = 2;</span><br><span class="line">var a;</span><br><span class="line">console.log(a); // ? =&gt; undefined; =&gt; why?</span><br><span class="line"></span><br><span class="line">Ex2)</span><br><span class="line">console.log(a); // =&gt; undefined; =&gt; why?</span><br><span class="line">var a = 2;</span><br></pre></td></tr></table></figure>
-<h5 id="위-2가지-이유는-컴파일러가-두번-작동하기-때문이다-JS엔진이-해석-인터프리터-하기전에-컴파일을-먼저-하기-때문이다-컴파일단계에서는-엔진이-모든-선언문을-다-찾는다-이때-변수와-함수의-선언부분을-가장-우선적으로-처리하게끔-되어있다-이때-선언되는-변수와-함수의-이름들은-우선적으로-처리가-되고-대입되는-값들은-나중에-처리가-된다-global변수-선언을-하게-되면-문서의-맨-위로-올라가기-때문에-값이-할당된다-하지만-local은-함수의-맨위로-올라간다"><a href="#위-2가지-이유는-컴파일러가-두번-작동하기-때문이다-JS엔진이-해석-인터프리터-하기전에-컴파일을-먼저-하기-때문이다-컴파일단계에서는-엔진이-모든-선언문을-다-찾는다-이때-변수와-함수의-선언부분을-가장-우선적으로-처리하게끔-되어있다-이때-선언되는-변수와-함수의-이름들은-우선적으로-처리가-되고-대입되는-값들은-나중에-처리가-된다-global변수-선언을-하게-되면-문서의-맨-위로-올라가기-때문에-값이-할당된다-하지만-local은-함수의-맨위로-올라간다" class="headerlink" title="위 2가지 이유는 컴파일러가 두번 작동하기 때문이다. JS엔진이 해석(인터프리터)하기전에 컴파일을 먼저 하기 때문이다. 컴파일단계에서는 엔진이 모든 선언문을 다 찾는다. 이때 변수와 함수의 선언부분을 가장 우선적으로 처리하게끔 되어있다. 이때 선언되는 변수와 함수의 이름들은 우선적으로 처리가 되고 대입되는 값들은 나중에 처리가 된다. global변수 선언을 하게 되면 문서의 맨 위로 올라가기 때문에 값이 할당된다. 하지만 local은 함수의 맨위로 올라간다."></a>위 2가지 이유는 컴파일러가 두번 작동하기 때문이다. JS엔진이 해석(인터프리터)하기전에 컴파일을 먼저 하기 때문이다. 컴파일단계에서는 엔진이 모든 선언문을 다 찾는다. 이때 변수와 함수의 선언부분을 가장 우선적으로 처리하게끔 되어있다. 이때 선언되는 변수와 함수의 이름들은 우선적으로 처리가 되고 대입되는 값들은 나중에 처리가 된다. global변수 선언을 하게 되면 문서의 맨 위로 올라가기 때문에 값이 할당된다. 하지만 local은 함수의 맨위로 올라간다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ex3)</span><br><span class="line">show(); // TypeError</span><br><span class="line">var show = function () &#123;</span><br><span class="line">	// run code ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="표현식으로-함수를-작성할때는-문서의-맨위에다가-작성을-해야한다-선언식은-어디에-있던-호출이-되기때문에-상관이-없지만-표현식은-다르다-하지만-함수를-변수에-담기때문에-표현식을-더-많이-사용을-한다-Hoisting을-할때-함수와-변수를-끌어올리지만-함수가-변수보다-더-우선순위로-끌어올린다"><a href="#표현식으로-함수를-작성할때는-문서의-맨위에다가-작성을-해야한다-선언식은-어디에-있던-호출이-되기때문에-상관이-없지만-표현식은-다르다-하지만-함수를-변수에-담기때문에-표현식을-더-많이-사용을-한다-Hoisting을-할때-함수와-변수를-끌어올리지만-함수가-변수보다-더-우선순위로-끌어올린다" class="headerlink" title="표현식으로 함수를 작성할때는 문서의 맨위에다가 작성을 해야한다. 선언식은 어디에 있던 호출이 되기때문에 상관이 없지만 표현식은 다르다. 하지만 함수를 변수에 담기때문에 표현식을 더 많이 사용을 한다. Hoisting을 할때 함수와 변수를 끌어올리지만 함수가 변수보다 더 우선순위로 끌어올린다."></a>표현식으로 함수를 작성할때는 문서의 맨위에다가 작성을 해야한다. 선언식은 어디에 있던 호출이 되기때문에 상관이 없지만 표현식은 다르다. 하지만 함수를 변수에 담기때문에 표현식을 더 많이 사용을 한다. Hoisting을 할때 함수와 변수를 끌어올리지만 함수가 변수보다 더 우선순위로 끌어올린다.</h5>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/17/2017-12-17-JS-study-Hoisting/" data-id="cjcbk332d000dpmtb20ja0adv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-16-JS-study-Scope" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/16/2017-12-16-JS-study-Scope/" class="article-date">
-  <time datetime="2017-12-16T05:30:02.000Z" itemprop="datePublished">2017-12-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/16/2017-12-16-JS-study-Scope/">2017-12-16 JS study Scope</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS-Study-Scope-Closer"><a href="#JS-Study-Scope-Closer" class="headerlink" title="JS Study - Scope, Closer"></a>JS Study - Scope, Closer</h2><ol>
-<li>지역변수 =&gt; 블록수준, 함수수준의 언어냐를 물어본다.</li>
-<li>함수수준은 함수레벨(범위)안에서 이루어졌다는의미.</li>
-<li>{ 중괄호로 묶인것을 블록수준이라고한다.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;richard&apos;</span><br><span class="line">// 아래의 if문은 name변수에 대한 지역-범위를 생성하지 않는다.</span><br><span class="line">if (name &#123;</span><br><span class="line">	name = &quot;jack&quot;;</span><br><span class="line">    console.log(name); // jack : wjsdurqustn</span><br><span class="line">&#125;</span><br><span class="line">// name은 여전히 전역변수이며 if문에서 변경한다.</span><br><span class="line">console.log(name); // jack</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;richard&apos;;</span><br><span class="line"></span><br><span class="line">function showName() &#123;</span><br><span class="line">	var name = &apos;jack&apos;; // local variable</span><br><span class="line">    console.log(name); // jack;</span><br><span class="line">&#125;</span><br><span class="line">console.log(name); // richard =&gt; global variable</span><br></pre></td></tr></table></figure>
-<h5 id="지역변수는-함수내에서-전역변수보다-높은-우선순위를-지닌다"><a href="#지역변수는-함수내에서-전역변수보다-높은-우선순위를-지닌다" class="headerlink" title="지역변수는 함수내에서 전역변수보다 높은 우선순위를 지닌다."></a>지역변수는 함수내에서 전역변수보다 높은 우선순위를 지닌다.</h5><h5 id="전역변수는-함수의-외부에서-선언된-모든-변수의-전역-범위이다-하지만-가급적-전역변수의-사용을-자제해야한다-이를-방지-하기-위해서-JS-ES6에서는-let과-const를-도입했다"><a href="#전역변수는-함수의-외부에서-선언된-모든-변수의-전역-범위이다-하지만-가급적-전역변수의-사용을-자제해야한다-이를-방지-하기-위해서-JS-ES6에서는-let과-const를-도입했다" class="headerlink" title="전역변수는 함수의 외부에서 선언된 모든 변수의 전역 범위이다. 하지만 가급적 전역변수의 사용을 자제해야한다. 이를 방지? 하기 위해서 JS ES6에서는 let과 const를 도입했다."></a>전역변수는 함수의 외부에서 선언된 모든 변수의 전역 범위이다. 하지만 가급적 전역변수의 사용을 자제해야한다. 이를 방지? 하기 위해서 JS ES6에서는 let과 const를 도입했다.</h5><h5 id="만약-변수가-최초-선언-없이-초기화가-되었다면-이-변수는-자동으로-전역-컨텍스트에-추가가된다"><a href="#만약-변수가-최초-선언-없이-초기화가-되었다면-이-변수는-자동으로-전역-컨텍스트에-추가가된다" class="headerlink" title="만약 변수가 최초 선언 없이 초기화가 되었다면, 이 변수는 자동으로 전역 컨텍스트에 추가가된다."></a>만약 변수가 최초 선언 없이 초기화가 되었다면, 이 변수는 자동으로 전역 컨텍스트에 추가가된다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function showAge() &#123;</span><br><span class="line">	// age is global variable</span><br><span class="line">    age = 90;</span><br><span class="line">    console.log(age);</span><br><span class="line">&#125;</span><br><span class="line">showAge(); // 90</span><br><span class="line">console.log(age); // 90</span><br></pre></td></tr></table></figure>
-<h5 id="함수안에서-age를-var-age로-선언을-하면-지역변수가-된다-하지만-없으면-JS는-이를-전역변수로-이해를-한다"><a href="#함수안에서-age를-var-age로-선언을-하면-지역변수가-된다-하지만-없으면-JS는-이를-전역변수로-이해를-한다" class="headerlink" title="함수안에서 age를 var age로 선언을 하면 지역변수가 된다. 하지만 없으면 JS는 이를 전역변수로 이해를 한다."></a>함수안에서 age를 var age로 선언을 하면 지역변수가 된다. 하지만 없으면 JS는 이를 전역변수로 이해를 한다.</h5>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/16/2017-12-16-JS-study-Scope/" data-id="cjcbk332b000cpmtbhqt4arpu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/19/2017-12-19-TIL/" data-id="cjclcbm3e000h7ptbevf5cbrb" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -336,9 +437,21 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19 TIL/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/18/2018-1-18/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/01/12/2018-1-12-TIL/">2018-1-12 TIL</a>
@@ -346,18 +459,6 @@
         
           <li>
             <a href="/2018/01/10/2018-1-10-TIL/">2018-1-10 TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/">2018-1-8 TIL JAVA practice problem solving</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/07/2018-1-7-TIL/">2018-1-7 TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/06/2018-1-6-TIL/">2018-1-6 TIL</a>
           </li>
         
       </ul>
@@ -373,7 +474,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Jimmy<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

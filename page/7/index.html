@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,230 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2017-12-08-Unix-Chapter1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/08/2017-12-08-Unix-Chapter1/" class="article-date">
+  <time datetime="2017-12-08T02:28:34.000Z" itemprop="datePublished">2017-12-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/08/2017-12-08-Unix-Chapter1/">2017-12-08 Unix Chapter1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="초보자를-위한-UNIX-Chapter1-Unix란-무엇인가"><a href="#초보자를-위한-UNIX-Chapter1-Unix란-무엇인가" class="headerlink" title="초보자를 위한 UNIX Chapter1 : Unix란 무엇인가?"></a>초보자를 위한 UNIX Chapter1 : Unix란 무엇인가?</h2><h4 id="Unix는-컴퓨터의-운영체제이다-운영체제는-사용자와-상호작용하는-역할을-할-뿐-아니라-컴퓨터상의-자원-관리-그리고-다른-컴퓨터와의-상호작용을-조율하는-소프트웨어이다"><a href="#Unix는-컴퓨터의-운영체제이다-운영체제는-사용자와-상호작용하는-역할을-할-뿐-아니라-컴퓨터상의-자원-관리-그리고-다른-컴퓨터와의-상호작용을-조율하는-소프트웨어이다" class="headerlink" title="Unix는 컴퓨터의 운영체제이다. 운영체제는 사용자와 상호작용하는 역할을 할 뿐 아니라, 컴퓨터상의 자원 관리 그리고 다른 컴퓨터와의 상호작용을 조율하는 소프트웨어이다."></a>Unix는 컴퓨터의 운영체제이다. 운영체제는 사용자와 상호작용하는 역할을 할 뿐 아니라, 컴퓨터상의 자원 관리 그리고 다른 컴퓨터와의 상호작용을 조율하는 소프트웨어이다.</h4><h5 id="Unix의-명령어들을-동사라고-생각하면-명령어들의-옵션은-형용사가-되고-파일이나-디렉토리의-이름은-명사가-된다-이-명령어들의-조합되어-만들어진-일련의-작업은-파일을-실행시키는-문장이된다"><a href="#Unix의-명령어들을-동사라고-생각하면-명령어들의-옵션은-형용사가-되고-파일이나-디렉토리의-이름은-명사가-된다-이-명령어들의-조합되어-만들어진-일련의-작업은-파일을-실행시키는-문장이된다" class="headerlink" title="Unix의 명령어들을 동사라고 생각하면, 명령어들의 옵션은 형용사가 되고, 파일이나 디렉토리의 이름은 명사가 된다. 이 명령어들의 조합되어 만들어진 일련의 작업은 파일을 실행시키는 문장이된다."></a>Unix의 명령어들을 동사라고 생각하면, 명령어들의 옵션은 형용사가 되고, 파일이나 디렉토리의 이름은 명사가 된다. 이 명령어들의 조합되어 만들어진 일련의 작업은 파일을 실행시키는 문장이된다.</h5><h4 id="다중사용시스템이란"><a href="#다중사용시스템이란" class="headerlink" title="다중사용시스템이란?"></a>다중사용시스템이란?</h4><ul>
+<li>다중사용자 시스템의 목표는 해당시스템을 사용하는 모든 사용자가 마치 자신만의 단독 시스템을 사용하는 듯한 느낌이 들게 하는것이다.</li>
+<li>각각의 사용자에게 계정(account)이 부여되며, 각각의 계정에는 홈 디렉토리가 부여된다.</li>
+</ul>
+<h4 id="셸이란"><a href="#셸이란" class="headerlink" title="셸이란?"></a>셸이란?</h4><ul>
+<li>셸이란 명령행 기반 사용자 인터페이스를 셸이라고 한다. 셸은 사용자가 입력한 명령어들을 해석하는 인터프리터이다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp folder1/file foler2</span><br><span class="line">// folder1에 있는 file을 folder2로 복사해라</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="man-명령어"><a href="#man-명령어" class="headerlink" title="man 명령어"></a>man 명령어</h4><ul>
+<li>man은 Unix manual의 약자이다.</li>
+<li>man -k옵션을 이용해서 키워드를 검색할 수도 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">man 명령어</span><br><span class="line">//해당 명령어에 대한 메뉴얼이 쭈우욱 나온다.</span><br><span class="line">mkdir man</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/mkdir_man.png" alt="Alt text" title="mkdir man"><br>mkdir 명령어에 대해서 man을 입력하면 다음과 같이 나온다.</p>
+<p>man은 명령어에 대한 모든 설명이 나와있지만 이와 간결하게 whatis라는 명령어가 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">whatis 명령어</span><br><span class="line">whatis mkdir</span><br></pre></td></tr></table></figure>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/whatis_mkdir.png" alt="Alt text" title="whatis mkdir"></p>
+<h3 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h3><h4 id="기초용어정리"><a href="#기초용어정리" class="headerlink" title="기초용어정리"></a>기초용어정리</h4><ol>
+<li>계정(account) : Unix 시스템이 각각의 사용자에게 부여하는 이름.</li>
+<li>인자(arguments) : 컴퓨터에서는 주로 어떤 프로그램이나 함수에 전달되는 옵션이나 파일명이다.</li>
+<li>명령어(command) : Unix 시스템에 설치된 각각의 프로그램들을 전부 명령어라고한다.</li>
+<li>man 페이지(page) : 모든 표준 Unix 명령어에 사용법과 기능을 명시한 문서이다.</li>
+<li>다중작업(multitasking) : 하나 이상의 프로그램이나 작업을 동시에 실행할 수 있도록 해 주는 컴퓨터를 멀티태스킹 컴퓨터라고 한다.</li>
+<li>경로명(pathname) : Unix 시스템안에는 여러개의 디렉토리와 그 하위 디렉토리들이 존재하는데, 특정한 파일을 찾을때 디렉토리들을 어떤 순서로 찾아야 하는지를 명시하는 문자열이다.</li>
+<li>셸(shell) : Unix 시스템을 사용하려면 명령어를 명령어 인터프리터상에 입력해야 한다. 이 인터프리터를 Unix에서는 셸, 혹은 명령어 셸(command shell)이라고 부른다.</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/08/2017-12-08-Unix-Chapter1/" data-id="cjclcbm3100067ptbqnk2k3ew" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2017-12-07-TIL-Array" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/07/2017-12-07-TIL-Array/" class="article-date">
+  <time datetime="2017-12-07T08:08:57.000Z" itemprop="datePublished">2017-12-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/07/2017-12-07-TIL-Array/">2017-12-07 TIL Array</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Using-Method-Array"><a href="#Using-Method-Array" class="headerlink" title="Using Method - Array"></a>Using Method - Array</h2><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><ol>
+<li><p>arr.length : 길이 반환</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1,2,3,4,5]</span><br><span class="line">numbers.length; //5</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Array.isArray() : 인자 객체가 배열이면 true, 아니면 false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array.isArray([]); // true</span><br><span class="line">array.isArray([1]); // true</span><br><span class="line">array.isArray(undefined); // false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.concat() : 인자로 주어진 배열이나 ㄱ밧들을 기존 배열에 합쳐서 새 배열을 반환.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1 = [1,2,3];</span><br><span class="line">var num2 = [4,5,6]</span><br><span class="line">var nums = num1.concat(num2); // [1,2,3,4,5,6]</span><br><span class="line">// 중복없이 나열이다.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.filter() : 제공된 함수로 구현된 테스트를 통과하면 새로운 배열이 생성</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Function isbigenough(element, index, array)&#123;</span><br><span class="line">	return element &gt; =10;</span><br><span class="line">&#125;</span><br><span class="line">var filtered = [12,5,8,130,44].filter(isbigenough);</span><br><span class="line">// [12,130,44]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.every() : 배열의 모든 요소가 제공한 함수로 구현된 테스트를 통과하는지 테스트</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Function isbigenough(element, index, array)&#123;</span><br><span class="line">	return element &gt; 10;</span><br><span class="line">&#125;</span><br><span class="line">[12,5,8,13,44].every(isbigenough); // false</span><br><span class="line">[12,54,18,130,44].every(isbigenough); // true</span><br><span class="line">// 전부다 true여야 한다. 하나라도 거짓이면 false가 나온다.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.find(), arr.findIndex() : 조건에 맞는 배열 안의 값을 하나 반환</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var inventory = [ &#123;name:’apple’, quantity:2&#125;, &#123;name:’cherries’, quantity:5&#125;];</span><br><span class="line">Function findcherries(fruit)&#123;</span><br><span class="line">	return fruit.name == ‘cherries’;</span><br><span class="line">&#125;</span><br><span class="line">inventory.find(findCherries);</span><br><span class="line">// &#123;name: ‘cherries’, quantity:5&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.forEach() : 배열 요소마다 한 번씩 제공한 함수를 실행.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Function longarrayelements(element, index, array) &#123;</span><br><span class="line">	console.log(‘a[‘+ index + ‘] = ‘ + element);</span><br><span class="line">&#125;</span><br><span class="line">[2 , 5,  7].forEach(longarrayelement);</span><br><span class="line">// a[0] = 2, a[1] = 5, a[3] = 9</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.includes() : 배열에 특정 요소가 포함되어 있는지 여부를 확인해서 true or false를 반환.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3]</span><br><span class="line">a.includes(2); // true</span><br><span class="line">a.includes(4); // false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.indexOf(), arr.lastIndexOf() : 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고, 없으면 -1을 리턴한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [2,9,9[;</span><br><span class="line">a.indexOf(2); //0</span><br><span class="line">a.indexOf(7) // -1</span><br><span class="line"></span><br><span class="line">var b = [2,5,9,2]</span><br><span class="line">a.lastIndexOf(2); // 3</span><br><span class="line">a.lastIndexOf(7); // -1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.join() : 배열의 모든 요소를 연결해 하나의 문자열로 만든다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [‘바람’, ‘비’, ‘불’];</span><br><span class="line">var myvar1 = a.join(); // ‘바람,비,불’</span><br><span class="line">var myvar3 = a.join(‘ + ‘); // ‘’바람 + 비 + 불’</span><br><span class="line">var myvar4 = a.join(‘’); // ‘바람비불’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.map() : 배열 내의 모든 요소에 대하여 제공된 함수를 호출하고, 그 결과를 모아서, 새로운 배열을 반환</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1,4,9]</span><br><span class="line">var doubles = numbers.map(function(num)&#123;</span><br><span class="line">	return num*2</span><br><span class="line">&#125;);</span><br><span class="line">// doubles = [2,8,18];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.pop(), arr.push() : 배열에서 마지막 요소를 추가하거나 제거한다.</p>
+</li>
+<li><p>arr.shift(), arr.unshift() : 배열에서 첫번째 요소를 제거하거나 추가한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr =[1,2];</span><br><span class="line">arr.unshift(0); // [0,1,2]</span><br><span class="line">arr.shift() // [2]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.reverse() : 배열을 반전시킵니다. 첫번째 요소는 마지막 요소가 되며 마지막 요소는 첫 번째 요소가 됩니다.</p>
+</li>
+<li><p>arr.slice() : 배열의 begin부터 end까지(end는 불포함)에 대한 shallow copy를 새로운 객체로 반환.</p>
+</li>
+<li><p>arr.splice() : 배열의 내용을 추가/제거하는 데 유용<br>arr.splice(m,n,c) arr배열 m번째 인덱스에서 n개를 제거하고 c만큼을 넣는다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var myFish = [‘angel’, ‘clown’, ‘mandarin’, ‘surgeon’]</span><br><span class="line">var removed = myFish.splice(2,0, ‘drum’);</span><br><span class="line">// var myFish = [‘angel’, ‘clown’, ‘drum’ ,‘mandarin’, ‘surgeon’]</span><br><span class="line">removed = []</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.sort() : 배열의 요소를 적절한 위치에 정렬하고 배열을 반환.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var scores = [1, 10, 21, 2];</span><br><span class="line">score.sort(); // [1, 10, 2, 21]</span><br><span class="line">Unicode 코드 포인트 순서에서 ’10’이 ‘2’앞.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.toString() : 지정된 배열 및 그 요소를 나타내는 문자열을 반환합니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var monthNames = [‘Jan’, ‘Feb’, ‘Mar’, ‘Apr’]</span><br><span class="line">var myvar = monthNames.toString();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr.reduce() : 피보나치수열을 풀때 유용</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL-Array/" data-id="cjclcbm2z00047ptbx3ek1mru" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2017-12-07-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/07/2017-12-07-TIL/" class="article-date">
+  <time datetime="2017-12-07T07:07:29.000Z" itemprop="datePublished">2017-12-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/07/2017-12-07-TIL/">2017-12-07 TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="자료형"><a href="#자료형" class="headerlink" title="자료형"></a>자료형</h2><ol>
+<li>어떤 유형의 데이터를 사용하는 것이지 실행 환경(컴파일러/인터프리터)에게 알려주는것.</li>
+<li>소스코드를 바로 실행할 수 있는것을 인터프리터 언어 스크립트 언어라고한다.</li>
+<li>컴파일러는 기계어를 번역해주는 역할을 한다.</li>
+<li>자료형마다 사용 가능한 연살자(Operator)가 있다.</li>
+</ol>
+<h3 id="숫자의-연산자"><a href="#숫자의-연산자" class="headerlink" title="숫자의 연산자"></a>숫자의 연산자</h3><ul>
+<li>+, -, %, /, * 5개의 연산자가 있다.</li>
+</ul>
+<h3 id="문자열"><a href="#문자열" class="headerlink" title="문자열"></a>문자열</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;I am String&quot;;</span><br></pre></td></tr></table></figure>
+<p>문자열은 “Immutable”의 특징을 가진다(문자열만 Immutable)<br>객체는 “mutable”이다.</p>
+<h3 id="불리언과-논리연산자"><a href="#불리언과-논리연산자" class="headerlink" title="불리언과 논리연산자"></a>불리언과 논리연산자</h3><ul>
+<li>논리연산자에는 &amp;&amp; || ! 이 있다.</li>
+<li>논리연산자는 return이 true, false로 나오고</li>
+<li>비트연산자는 return이 숫자로 나온다.</li>
+</ul>
+<h3 id="이진수와-비트-연산자"><a href="#이진수와-비트-연산자" class="headerlink" title="이진수와 비트 연산자"></a>이진수와 비트 연산자</h3><ul>
+<li>And, or, not, xor<figure class="highlight plain"><figcaption><span>| ~ ^ ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 논리연산자와 헷갈리지 말것!</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>true &amp; true<br>true &amp;&amp; true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 변수선언</span><br></pre></td></tr></table></figure></p>
+<p>Var a;<br>Var b = 10;<br>Var c = 5.5;<br>Var d = “hello”;<br>Var e = “3”;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### 변수선언2</span><br></pre></td></tr></table></figure>
+<p>const : 안변한다, 읽기전용변수, 값을 바꿀 수 없을때<br>let : 선언을 2번 해주면 안된다, 할당은 여러번해도 되는데 재선언을 하면 안된다. 에러가 된다.<br>var에 비해 let const가 훨씬 더 안전하다.<br>const pi = 3.14;<br>let a = 5;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 변수와 대입자</span><br><span class="line"></span><br><span class="line">- =: 대입연산자, 수학과는 다르다.</span><br><span class="line">- 변수에 값을 넣고 싶을 때 = 연산자를 사용.</span><br><span class="line"></span><br><span class="line">### 증감 연산자</span><br></pre></td></tr></table></figure></p>
+<p>++z : 증가를 먼저하고 리턴<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 비교연산자</span><br><span class="line">- true와 false가 리턴됨</span><br></pre></td></tr></table></figure></p>
+<p>// &gt;, &lt;, ==, ~=, &gt;=, &lt;=, ===이 있음<br>var a = 3;<br>var b = 5;<br>var c = “5”;<br>a &gt; b<br>a &lt; b<br>b == c // 값만 비교<br>b == c // 데이터타입까지 비교<br>```</p>
+<h3 id="문자열의-길이-구하기"><a href="#문자열의-길이-구하기" class="headerlink" title="문자열의 길이 구하기"></a>문자열의 길이 구하기</h3><ul>
+<li>var a = “hello”;</li>
+<li>a.length</li>
+</ul>
+<h4 id="객체와-문자는-다-참조방식으로-저장을-한다-새로만들면-참조가-갱신이-된다-을-사용을-하면-참조를-새로-만드는것이다"><a href="#객체와-문자는-다-참조방식으로-저장을-한다-새로만들면-참조가-갱신이-된다-을-사용을-하면-참조를-새로-만드는것이다" class="headerlink" title="객체와 문자는 다 참조방식으로 저장을 한다. 새로만들면 참조가 갱신이 된다. =을 사용을 하면 참조를 새로 만드는것이다."></a>객체와 문자는 다 참조방식으로 저장을 한다. 새로만들면 참조가 갱신이 된다. =을 사용을 하면 참조를 새로 만드는것이다.</h4><h3 id="undefined-null-NaN"><a href="#undefined-null-NaN" class="headerlink" title="undefined, null, NaN"></a>undefined, null, NaN</h3><ul>
+<li>undefined : 값이 정의되지 않았다, 값이 아직 할당 안된것이다.</li>
+<li>null : 값이 비어있다는 것을 명시적으로 알림, 값이 아직 무엇인지 모르겠다는 의미이다. undefined는 값이 없다. null은 값을 잘 모르겠다라는 의미.</li>
+<li>NaN : 값이 아니다. == 계산 불가능  </li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/07/2017-12-07-TIL/" data-id="cjclcbm3000057ptbspvnoam0" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-String-Number-Method-Object" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -153,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjcbk3333000zpmtbftosvzzf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjclcbm3y00117ptb5h41bel8" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -207,218 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/2017-12-06-TIL/" data-id="cjcbk331y0003pmtbwu5kmeum" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-05-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/05/2017-12-05-TIL/" class="article-date">
-  <time datetime="2017-12-05T07:13:47.000Z" itemprop="datePublished">2017-12-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/05/2017-12-05-TIL/">2017-12-05 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h1><ol>
-<li>git은 소스코드 관리 저장소이다.</li>
-<li>안전하게 소스코드를 관리하기 위해서</li>
-<li>git으로 관리하면 변경 이력이 다 남는다(소스코드의 타임머신이라고 생각하면 된다)</li>
-<li>Commit : 한마디로 스냅샷 -&gt; 내 컴퓨터의 특정 시간의 작업내용, commit을 만들어 낼때 해당 사람의 컴퓨터의 상태</li>
-</ol>
-<h4 id="작업-디렉토리-워킹디렉토리"><a href="#작업-디렉토리-워킹디렉토리" class="headerlink" title="작업 디렉토리 = 워킹디렉토리"></a>작업 디렉토리 = 워킹디렉토리</h4><ul>
-<li>사람이 직접 파일을 변경하는 곳</li>
-<li>에디터, IDE 등을 통해 파일 내용을 직접 변경할 수 있다.</li>
-</ul>
-<h4 id="로컬-저장소"><a href="#로컬-저장소" class="headerlink" title="로컬 저장소"></a>로컬 저장소</h4><ul>
-<li>작업 디렉토리의 작업 변경 내용을 저장하는곳</li>
-<li>git 명령어로 생성 및 조자가능</li>
-<li>내 컴퓨터에서는 숨김 폴더로 저장이 된다.</li>
-</ul>
-<h4 id="원격-저장소"><a href="#원격-저장소" class="headerlink" title="원격 저장소"></a>원격 저장소</h4><ul>
-<li>로컬 저장소를 서버에 복사해서 저장하는 곳을 원격저장소라고 한다.</li>
-<li>commit은 로컬저장소 안에 들어있고, 되돌리는곳은 로컬저장소에 저장되있는 commit을 워킹디렉토리에서 불러오는 것이다.</li>
-<li>서버에 보내는 과정을 push, 서버에서 가져오는 과정을 pull이라고한다.</li>
-</ul>
-<h3 id="글로벌-사용자-등록"><a href="#글로벌-사용자-등록" class="headerlink" title="글로벌 사용자 등록"></a>글로벌 사용자 등록</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;name&quot;</span><br><span class="line">git config --global user.email &quot;email&quot;</span><br><span class="line">git config --global user.name로 확인</span><br><span class="line">git config --global user.email로 확인</span><br></pre></td></tr></table></figure>
-<h1 id="GIT-1"><a href="#GIT-1" class="headerlink" title="GIT"></a>GIT</h1><h3 id="git을-시작한다-로컬저장소로-시작한다"><a href="#git을-시작한다-로컬저장소로-시작한다" class="headerlink" title="git을 시작한다 = 로컬저장소로 시작한다"></a>git을 시작한다 = 로컬저장소로 시작한다</h3><ol>
-<li>git명령으로 새(비어있는) 저장소를 만든다.</li>
-<li>이미 있는 (원격) 저장소를 복사해 온다.</li>
-</ol>
-<h3 id="이미-있는-원격-저장소-사용하기"><a href="#이미-있는-원격-저장소-사용하기" class="headerlink" title="이미 있는 (원격) 저장소 사용하기"></a>이미 있는 (원격) 저장소 사용하기</h3><ol>
-<li>원격저장소만들기</li>
-<li>Initialize this repository with a README 체크하기</li>
-<li>Add .gitignore:Node 클릭</li>
-<li>MIT라이센스클릭</li>
-<li>생성</li>
-<li>터미널에서 git clone git-url</li>
-</ol>
-<h3 id="소스트리사용하기"><a href="#소스트리사용하기" class="headerlink" title="소스트리사용하기"></a>소스트리사용하기</h3><p>1.새저장소에서 url복사<br>2.source URL에 url복사붙여넣기<br>3.목적지 경로 설정하기<br>4.클론</p>
-<h3 id="원격저장소-소스트리의-로컬저장소-추가"><a href="#원격저장소-소스트리의-로컬저장소-추가" class="headerlink" title="원격저장소 + 소스트리의 로컬저장소 추가"></a>원격저장소 + 소스트리의 로컬저장소 추가</h3><ol>
-<li>터미널에서 git clone url</li>
-<li>소스트리실행</li>
-<li>새저장소 만들기누르고 로컬저장소 추가</li>
-<li>clone한 폴더로 이동해서 추가한다</li>
-</ol>
-<h4 id="git저장소로-들어가면-워킹트리가-된다"><a href="#git저장소로-들어가면-워킹트리가-된다" class="headerlink" title="git저장소로 들어가면 워킹트리가 된다."></a>git저장소로 들어가면 워킹트리가 된다.</h4><h4 id="mkdir-directory-gt-cd-directory-gt-git-init을-하면-로컬저장소가-된다"><a href="#mkdir-directory-gt-cd-directory-gt-git-init을-하면-로컬저장소가-된다" class="headerlink" title="mkdir directory =&gt; cd directory =&gt; git init을 하면 로컬저장소가 된다."></a>mkdir directory =&gt; cd directory =&gt; git init을 하면 로컬저장소가 된다.</h4><h4 id="git이-있는-디렉토리를-워킹디렉토리라고하고-git을-로컬저장소라고-한다-아직-원격-저장소가-없는상태이다"><a href="#git이-있는-디렉토리를-워킹디렉토리라고하고-git을-로컬저장소라고-한다-아직-원격-저장소가-없는상태이다" class="headerlink" title=".git이 있는 디렉토리를 워킹디렉토리라고하고 .git을 로컬저장소라고 한다. 아직 원격 저장소가 없는상태이다."></a>.git이 있는 디렉토리를 워킹디렉토리라고하고 .git을 로컬저장소라고 한다. 아직 원격 저장소가 없는상태이다.</h4><h4 id="만약에-홈디렉토리에서-git-init을-하게되면-rm-rf-git폴더를-지워야된다"><a href="#만약에-홈디렉토리에서-git-init을-하게되면-rm-rf-git폴더를-지워야된다" class="headerlink" title="만약에 홈디렉토리에서 git init을 하게되면, rm -rf .git폴더를 지워야된다."></a>만약에 홈디렉토리에서 git init을 하게되면, rm -rf .git폴더를 지워야된다.</h4><h2 id="GIT-명령어"><a href="#GIT-명령어" class="headerlink" title="GIT 명령어"></a>GIT 명령어</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git status : 디렉토리의 작업상태를 보는것이다.</span><br><span class="line">git commit : 인덱스의 내용을 로컬저장소에 올리는것이다.</span><br><span class="line">git add : 변경내용을 인덱스라고 하는 stage에 업로드를 시킨다. 인덱스에 올린것만 commit할 수 있다.</span><br><span class="line">git commit -m &apos;message&apos; 우리팀사람들이나 미래의 나한테 보내는 것이다. 70자이내 간결하게.</span><br><span class="line">git log : commit의단위 commit은 고유한 번호이다.</span><br><span class="line">git push : push를 하면 로컬저장소를 원격저장소에 업로드를 하는것이다.</span><br></pre></td></tr></table></figure>
-<h4 id="중요한것은-커밋의-단위다-커밋의-단위는-기능을-추가할수록-하는것이-좋다-한문장으로-설명할-수-있으면-한커밋이다"><a href="#중요한것은-커밋의-단위다-커밋의-단위는-기능을-추가할수록-하는것이-좋다-한문장으로-설명할-수-있으면-한커밋이다" class="headerlink" title="중요한것은 커밋의 단위다. 커밋의 단위는 기능을 추가할수록 하는것이 좋다. 한문장으로 설명할 수 있으면 한커밋이다."></a>중요한것은 커밋의 단위다. 커밋의 단위는 기능을 추가할수록 하는것이 좋다. 한문장으로 설명할 수 있으면 한커밋이다.</h4><h4 id="참고-“원숭이도-배우는-GIT”을-공부하기"><a href="#참고-“원숭이도-배우는-GIT”을-공부하기" class="headerlink" title="참고 “원숭이도 배우는 GIT”을 공부하기"></a>참고 “원숭이도 배우는 GIT”을 공부하기</h4><h4 id="git-remote-v"><a href="#git-remote-v" class="headerlink" title="git remote -v"></a>git remote -v</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$git remote -v를 하면 원격저장소 위치를 확인할 수 있다</span><br><span class="line">origin	https://github.com/jaeyeon93/js-study.git (fetch)</span><br><span class="line">origin	https://github.com/jaeyeon93/js-study.git (push)</span><br><span class="line">// origin이 원격저장소다.</span><br></pre></td></tr></table></figure>
-<h4 id="원격저장소-수동으로-등록하기"><a href="#원격저장소-수동으로-등록하기" class="headerlink" title="원격저장소 수동으로 등록하기"></a>원격저장소 수동으로 등록하기</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git remote add origin url</span><br><span class="line">$git remote add origin https://github.com/jaeyeon93/git-study-day6.git</span><br></pre></td></tr></table></figure>
-<p>여기서 git push를 하더라도 안된다.<br><img src="/Users/jimmy/Desktop/project/blog/source/_posts/1.png" alt="Alt text" title="git push"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git push --set-upstream origin master</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git push -u origin master</span><br><span class="line">// 한번만 git push -u origin master하면 되고 그 다음부터는 git push만 하면된다!</span><br></pre></td></tr></table></figure>
-<p>한줄로 로그를 보기<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git log --oneline</span><br></pre></td></tr></table></figure></p>
-<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/2.png" alt="Alt text" title="git oneline"></p>
-<ul>
-<li><p>HEAD : 현재 작업하고 있는 branch *은 head다.</p>
-</li>
-<li><p>mater branch는 항상 배포버전이다 =&gt; 항상 정상동작 그러므로 master에서 코딩을 안하고 branch를 만들어서 개발을 한다.</p>
-</li>
-<li>branch의 이름은 내가 구현하는 기능을 이름으로 한다.</li>
-<li><p>merge</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$git merge branch-name</span><br><span class="line">// 충돌이 일어나는경우에는 양쪽에서 다 파일을 수정한 경우에 충돌이 일어난다. 이럴 경우 에디터를 열어서 확인해야한다.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>branch는 참조다.</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/05/2017-12-05-TIL/" data-id="cjcbk331x0002pmtb48kzx5hk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-04-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/04/2017-12-04-TIL/" class="article-date">
-  <time datetime="2017-12-04T09:01:43.000Z" itemprop="datePublished">2017-12-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/04/2017-12-04-TIL/">2017-12-04 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="12-04-TIL-JS스터디-및-하드웨어"><a href="#12-04-TIL-JS스터디-및-하드웨어" class="headerlink" title="12-04 TIL JS스터디 및 하드웨어"></a>12-04 TIL JS스터디 및 하드웨어</h1><h2 id="하드웨어"><a href="#하드웨어" class="headerlink" title="하드웨어"></a>하드웨어</h2><ol>
-<li>CPU : CPU는 주로 사칙연산 및 논리연산을 한다.</li>
-<li>RAM : 임시적으로 데이터를 기억하기위해 사용(현재 사용하고 있는 데이터만 넣는다)</li>
-<li>HDD : 영구적으로 데이터를 저장(프로그램)</li>
-<li>속도비유 CPU(우주선) &gt;&gt;&gt; RAM(KTX) &gt;&gt; HDD(자전거)</li>
-</ol>
-<ul>
-<li>컴퓨터는 데이터를 잘 처리하기 위해 존재하는 것이고 그것을 잘 처리하기 위해 데이터타입이라는것이 존재하는 것이다.</li>
-</ul>
-<h2 id="변수-및-연산자"><a href="#변수-및-연산자" class="headerlink" title="변수 및 연산자"></a>변수 및 연산자</h2><ol>
-<li>=연산자 : =연산자는 오른쪽에 있는 값을 왼쪽에 있는 변수에 할당을 하는 역할을 한다.</li>
-<li>값을 저장을 하면 특정 객체 또는 인스턴스가 생성이 된다. 컴퓨터에서 객체는 반드시 메모리를 차지한다.</li>
-</ol>
-<h2 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h2><ol>
-<li>객체들은 고유한 속성가 있고 이를 프로퍼티라고 한다.</li>
-<li>속성값은 .(dot operator)를 통해 확인 할 수 있다. ex) 철수의 키 —&gt; 철수.키; 프로퍼티</li>
-<li>메소드는 객체의 행동을 이야기한다. 객체에 속한 함수를 메소드라고 한다. ex) 철수야 먹어 —&gt; 철수.먹어();</li>
-<li>메소드를 호출하기 위해서는 객체.메소드(); 으로 호출을 한다.</li>
-</ol>
-<h2 id="Math객체"><a href="#Math객체" class="headerlink" title="Math객체"></a>Math객체</h2><ul>
-<li>Ex) Math.PI =&gt; 프로퍼티다. 괄호가 없기때문에.</li>
-<li>Math.random() =&gt; 메소드 // 0-1사이의 난수를 발생.</li>
-<li>Math.floor(2.3); =&gt; 2 // 내림</li>
-<li>Math.ceil(2.3); =&gt; 3 // 올림</li>
-<li>Math.round(2.6) =&gt; 7 // 반올림</li>
-</ul>
-<p>Math.floor(Math.random() * 10);</p>
-<h2 id="데이터의-4가지-타입"><a href="#데이터의-4가지-타입" class="headerlink" title="데이터의 4가지 타입"></a>데이터의 4가지 타입</h2><ol>
-<li>String</li>
-<li>Number</li>
-<li>Null</li>
-<li>Object</li>
-</ol>
-<h3 id="메모리와-계산을-잘하기위해-데이터타입이-중요하다-4가지-데이터타입을-제외한-나머지를-객체라고-한다-데이터타입마다-할-수-있는-operator가-있다-각-타입은-각타입마다-할-수-있는-operator가-따로있다-모든연산은-같은-타입끼리만-할-수-있다"><a href="#메모리와-계산을-잘하기위해-데이터타입이-중요하다-4가지-데이터타입을-제외한-나머지를-객체라고-한다-데이터타입마다-할-수-있는-operator가-있다-각-타입은-각타입마다-할-수-있는-operator가-따로있다-모든연산은-같은-타입끼리만-할-수-있다" class="headerlink" title="메모리와 계산을 잘하기위해 데이터타입이 중요하다.4가지 데이터타입을 제외한 나머지를 객체라고 한다.데이터타입마다 할 수 있는 operator가 있다.각 타입은 각타입마다 할 수 있는 operator가 따로있다.모든연산은 같은 타입끼리만 할 수 있다."></a>메모리와 계산을 잘하기위해 데이터타입이 중요하다.4가지 데이터타입을 제외한 나머지를 객체라고 한다.데이터타입마다 할 수 있는 operator가 있다.각 타입은 각타입마다 할 수 있는 operator가 따로있다.모든연산은 같은 타입끼리만 할 수 있다.</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/04/2017-12-04-TIL/" data-id="cjcbk331q0000pmtbpzii72t5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-01-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/01/2017-12-01-TIL/" class="article-date">
-  <time datetime="2017-12-01T07:41:37.000Z" itemprop="datePublished">2017-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/01/2017-12-01-TIL/">2017-12-01 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="오늘의-배운-것"><a href="#오늘의-배운-것" class="headerlink" title="오늘의 배운 것"></a>오늘의 배운 것</h1><h2 id="자바스크립트-hello-world-출력"><a href="#자바스크립트-hello-world-출력" class="headerlink" title="자바스크립트 hello world 출력"></a>자바스크립트 hello world 출력</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;hello world&quot;)</span><br></pre></td></tr></table></figure>
-<h2 id="실행하는-법"><a href="#실행하는-법" class="headerlink" title="실행하는 법"></a>실행하는 법</h2><ul>
-<li>크롬에서 개발자 도구를 열고 콘솔에서 실행</li>
-<li>node를 실행한 후 REPL에서 실행</li>
-<li><code>node filename.js</code> 으로 실행</li>
-<li>html과 js 생성 후 브라우저로 드래그 앤 드롭</li>
-</ul>
-<h2 id="리눅스-명령어"><a href="#리눅스-명령어" class="headerlink" title="리눅스 명령어"></a>리눅스 명령어</h2><blockquote>
-<p>ls: 디렉토리의 내용 보기<br>pwd: 현재 디렉토리의 위치확인<br>cd: 디렉토리 이동<br>mkdir: 디렉토리 생성<br>cp, mp, rm: 파일, 복사, 이동, 삭제<br>history<br>pbcopy, pbpaste<br>find ./ -name “a*.pdf”</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/01/2017-12-01-TIL/" data-id="cjcbk331v0001pmtbbvu1fknb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/06/2017-12-06-TIL/" data-id="cjclcbm2y00037ptbu26opgk0" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -457,9 +470,21 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19 TIL/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/18/2018-1-18/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/01/12/2018-1-12-TIL/">2018-1-12 TIL</a>
@@ -467,18 +492,6 @@
         
           <li>
             <a href="/2018/01/10/2018-1-10-TIL/">2018-1-10 TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/">2018-1-8 TIL JAVA practice problem solving</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/07/2018-1-7-TIL/">2018-1-7 TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/06/2018-1-6-TIL/">2018-1-6 TIL</a>
           </li>
         
       </ul>
@@ -494,7 +507,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Jimmy<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
