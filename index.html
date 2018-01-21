@@ -69,6 +69,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2018-1-21-TIL-JAVA-Basic-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/" class="article-date">
+  <time datetime="2018-01-21T12:22:27.000Z" itemprop="datePublished">2018-01-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/">2018-1-21 TIL JAVA Basic(2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="String클래스의-메소드"><a href="#String클래스의-메소드" class="headerlink" title="String클래스의 메소드"></a>String클래스의 메소드</h2><p><img src="/Users/jaeyeonkim/Desktop/stirngClass.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class StringMethodExam &#123;</span><br><span class="line">    public static void main(String [] args)&#123;</span><br><span class="line">        String str = &quot;hello&quot;;</span><br><span class="line">        System.out.println(str.length());</span><br><span class="line">        System.out.println(str.concat(&quot; world&quot;));</span><br><span class="line">        System.out.println(str);</span><br><span class="line">        // 문자열과 문자열을 결합, 하지만 변환을 해주는것은 아니다.</span><br><span class="line">        str = str.concat(&quot; world&quot;);</span><br><span class="line">        System.out.println(str);</span><br><span class="line">        System.out.println(str.substring(3));</span><br><span class="line">        System.out.println(str.substring(3, 6));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// result</span><br><span class="line">5</span><br><span class="line">hello world</span><br><span class="line">hello</span><br><span class="line">hello world</span><br><span class="line">lo world</span><br><span class="line">lo</span><br><span class="line">Process finished with exit code 0</span><br></pre></td></tr></table></figure>
+<ul>
+<li>메소드를 잘 만들고 잘 사용하는것이 객체지향의 핵심이다.</li>
+</ul>
+<h2 id="변수의-스코프"><a href="#변수의-스코프" class="headerlink" title="변수의 스코프"></a>변수의 스코프</h2><ul>
+<li>변수의 사용범위를 스코프라고 한다.</li>
+<li>변수가 선언된 블록이 그 변수의 사용범위이다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">public class VariableScopeExam &#123;</span><br><span class="line">    int globalScope = 10;</span><br><span class="line">    static int staticVal = 7;</span><br><span class="line"></span><br><span class="line">    public void scopeTest(int value)&#123;</span><br><span class="line">        int localScope = 20;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        System.out.println(globalScope);</span><br><span class="line">        System.out.println(localScope);</span><br><span class="line">        System.out.println(value);</span><br><span class="line">        // value는 블록밖이지만, 메소드 선언부에 있으므로 사용이 가능하다.</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void scopeTest2(int value2)&#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(globalScope);</span><br><span class="line">        System.out.println(localScope);</span><br><span class="line">        // localScope는 블록밖이므로 사용이 안된다.</span><br><span class="line">        System.out.println(value2);</span><br><span class="line">        // value는 블록밖이지만, 메소드 선언부에 있으므로 사용이 가능하다.</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String [] args)&#123;</span><br><span class="line">        System.out.println(globalScope);</span><br><span class="line">        System.out.println(localScope);</span><br><span class="line">        System.out.println(value);</span><br><span class="line">        // class내에 있는데도 사용이 불가하다. 이유는 static에 있다.</span><br><span class="line">        // static은 붕어빵의틀이다.</span><br><span class="line">        // 모든 클래스는 인스턴스화 하지않은 상태로 사용할 수 없다.</span><br><span class="line">        System.out.println(staticVal);</span><br><span class="line">        VariableScopeExam v1 = new VariableScopeExam();</span><br><span class="line">        System.out.println(v1.globalScope);</span><br><span class="line">        VariableScopeExam v2 = new VariableScopeExam();</span><br><span class="line">        v1.globalScope = 10;</span><br><span class="line">        v2.globalScope = 20;</span><br><span class="line">        System.out.println(v1.globalScope);</span><br><span class="line">        // 10</span><br><span class="line">        System.out.println(v2.globalScope);</span><br><span class="line">        // 20</span><br><span class="line">        v1.staticVal = 50;</span><br><span class="line">        v2.staticVal = 100;</span><br><span class="line">        System.out.println(v1.staticVal);</span><br><span class="line">        System.out.println(v2.staticVal);</span><br><span class="line">        // 결과는 100, 100이다.</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>static을 사용하면 인스턴스화를 하지 않아도 사용할 수 있다.</li>
+<li>클래스변수 : static을 사용한 변수, 값을 저장할 수 있는 공간이 하나밖에 없어서 값을 공유한다.</li>
+</ul>
+<h2 id="열거형-Enum"><a href="#열거형-Enum" class="headerlink" title="열거형 Enum"></a>열거형 Enum</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class EnumExam &#123;</span><br><span class="line">    public static final String MALE = &quot;MALE&quot;;</span><br><span class="line">    public static final String FEMALE = &quot;FEMALE&quot;;</span><br><span class="line">    public static void main (String [] args)&#123;</span><br><span class="line">        String gender1;</span><br><span class="line">        gender1 = EnumExam.MALE;</span><br><span class="line">        gender1 = EnumExam.FEMALE;</span><br><span class="line"></span><br><span class="line">        // gender1에는 둘중하나만 넣고싶은데, String이기때문에 아무것이나 들어간다.</span><br><span class="line"></span><br><span class="line">        Gender gender2;</span><br><span class="line">        gender2 = Gender.MALE;</span><br><span class="line">        gender2 = Gender.FEMALE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">enum Gender &#123;</span><br><span class="line">    MALE, FEMALE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>특정 값만 가져야 한다면 열거형을 사용하는 것이 좋다.</li>
+<li>열겨형을 선언할때 Enum으로 선언을 하고 enum 열거형이름 { };으로 선언을 하는데, 이때 선언된 열거형이름이 데이터타입이 된다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/" data-id="cjcor9zmq000r2ovlpron0tje" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2018-1-19-TIL-java-basic-study" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/" class="article-date">
@@ -186,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/19/2018-1-19-TIL-java-basic-study/" data-id="cjclh8so0000slrtbntvx7axf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/19/2018-1-19-TIL-java-basic-study/" data-id="cjcor9zmn000q2ovl4o6c7y7e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-java-study/">java, java_study</a></li></ul>
@@ -232,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/19/2018-1-19 TIL/" data-id="cjclh8so0000rlrtbysk3azhh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/19/2018-1-19 TIL/" data-id="cjcor9zmg000o2ovlgvof8bxh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -341,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/18/2018-1-18/" data-id="cjclh8snx000plrtbh05uoyhq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/18/2018-1-18/" data-id="cjcor9zn5000v2ovl5de2fwmc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -410,64 +467,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/12/2018-1-12-TIL/" data-id="cjclh8snz000qlrtbgrii72mg" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2018-1-10-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/10/2018-1-10-TIL/" class="article-date">
-  <time datetime="2018-01-10T08:08:57.000Z" itemprop="datePublished">2018-01-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/10/2018-1-10-TIL/">2018-1-10 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2018-1-10-TIL"><a href="#2018-1-10-TIL" class="headerlink" title="2018-1-10 TIL"></a>2018-1-10 TIL</h2><h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># CallStack</span><br><span class="line">class CallStackTest &#123;</span><br><span class="line">	public static void main(String [] args)&#123;</span><br><span class="line">    	firstMethod();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static void firstMethod()&#123;</span><br><span class="line">		secondMethod();    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static void secondMethod()&#123;</span><br><span class="line">    	System.out.println(&quot;secondMethod();&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>위의 코드를 실행시켰을때, 호출스텍(CallStack)의 변화 이야기해보자.</p>
-<ol>
-<li>컴파일 후 실행을 시키면, JVM에 의해서 main메서드가 호출됨으로 프로그램이 시작된다. 호출스택에는 main메서드를 위한 메모리공간이 할당되고 main메서드가 수행되기 시작한다.</li>
-<li>main메서드에서 firstMethod()를 호출. 아직 main메서드가 끝나지 않고 대기상태, firstMethod()가 실행</li>
-<li>firstMethod()가 다시 secondMethod()를 호출, firstMethod()는 secondMethod()가 끝날때까지 대기,</li>
-<li>secondMethod()에서 println메서드를 호출. 값이 출력</li>
-<li>println메서드가 수행이 완료되어 호출스택에서 사라지고, 자신을 호출한 secondMethod()로 돌아간다.</li>
-<li>secondMethod()에 더 이상 수행할 코드가 없으므로 종료, firstMethod()로 돌아간다.</li>
-<li>firstMethod()에 더 이상 수행할 코드 없다. main메서드로 돌아간다.</li>
-<li>main메서드에 수행할 코드가 없다. 호출스택은 완전히 비워진다.</li>
-</ol>
-<h3 id="기본형-매개변수와-참조형-매개변수"><a href="#기본형-매개변수와-참조형-매개변수" class="headerlink" title="기본형 매개변수와 참조형 매개변수"></a>기본형 매개변수와 참조형 매개변수</h3><ul>
-<li>기본형일 때는 기본형 값이 복사되지만 참조형일때는 인스턴스의 주소가 복사가 된다.</li>
-<li>기본형 : 변수의 값을 읽기만 할 수 있다.</li>
-<li>참조형 : 변수의 값을 읽고 변경할 수 있다.</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Data &#123; int x; &#125;</span><br><span class="line">// Method Area에 생성이 된다.</span><br><span class="line"></span><br><span class="line">class ParameterTest &#123;</span><br><span class="line">    public static void main(String [] args) &#123;</span><br><span class="line">        Data d = new Data();</span><br><span class="line">        // 인스턴스생성</span><br><span class="line">        d.x = 10;</span><br><span class="line">        System.out.println(&quot;main () : x = &quot;+d.x);</span><br><span class="line"></span><br><span class="line">        change(d.x);</span><br><span class="line">        System.out.println(&quot;After changed(d.x)&quot;);</span><br><span class="line">        System.out.println(&quot;main () : x = &quot; + d.x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static void change(int x)&#123;</span><br><span class="line">        x = 1000;</span><br><span class="line">        System.out.println(&quot;cahnge() : x = &quot;+ x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// result</span><br><span class="line">main() : x = 10</span><br><span class="line">change() : x = 1000</span><br><span class="line">After change(d.x)</span><br><span class="line">main() : x = 10</span><br></pre></td></tr></table></figure>
-<p>x가 기본형 매개변수 이기때문에 값이 변경이 안됬다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class ParameterTest2 &#123;</span><br><span class="line">    public static void main(String [] args) &#123;</span><br><span class="line">      Data d = new Data();</span><br><span class="line">      d.x = 10;</span><br><span class="line">      System.out.println(&quot;main() : x = &quot;+d.x);</span><br><span class="line"></span><br><span class="line">      change(d);</span><br><span class="line">      System.out.println(&quot;After cahnge(d)&quot;);</span><br><span class="line">      System.out.println(&quot;main() : x = &quot;+d.x);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static void change(Data d) &#123; // 참조형 매개변수</span><br><span class="line">        d.x = 1000;</span><br><span class="line">        System.out.println(&quot;change() : x&quot;+d.x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// result</span><br><span class="line">main() : x = 10</span><br><span class="line">change() : x1000</span><br><span class="line">After cahnge(d)</span><br><span class="line">main() : x = 1000</span><br></pre></td></tr></table></figure>
-<p>Data d가 참조형 매개변수라 값이 변경이 되었다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/10/2018-1-10-TIL/" data-id="cjclh8snw000olrtby0kg517y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/12/2018-1-12-TIL/" data-id="cjcor9zn3000u2ovlvah60blh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -500,7 +500,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-java-study/">java, java_study</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-java-study/">java, java_study</a></li></ul>
     </div>
   </div>
 
@@ -510,7 +510,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a>
+      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a>
     </div>
   </div>
 
@@ -532,6 +532,10 @@
       <ul>
         
           <li>
+            <a href="/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/">2018-1-21 TIL JAVA Basic(2)</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
           </li>
         
@@ -545,10 +549,6 @@
         
           <li>
             <a href="/2018/01/12/2018-1-12-TIL/">2018-1-12 TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/10/2018-1-10-TIL/">2018-1-10 TIL</a>
           </li>
         
       </ul>
