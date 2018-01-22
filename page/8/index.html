@@ -69,6 +69,100 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-String-Number-Method-Object" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/06/String-Number-Method-Object/" class="article-date">
+  <time datetime="2017-12-06T06:52:53.000Z" itemprop="datePublished">2017-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/06/String-Number-Method-Object/">String, Number, Method Object</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-String-and-Number-Method"><a href="#JS-String-and-Number-Method" class="headerlink" title="JS String and Number Method"></a>JS String and Number Method</h2><h4 id="String-Object"><a href="#String-Object" class="headerlink" title="String Object"></a>String Object</h4><ol>
+<li><p>str.length =&gt; length는 메소드가 아니 property이기때문에 ()가 없다. Int와 같은 숫자형들은 length가 적용안된다.</p>
+</li>
+<li><p>str.charAt(index) =&gt; 문자열에서 특정 문자를 반환</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Ex) var str = “codestates”</span><br><span class="line">console.log(str.charAt(0)); // c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>str.concat(string2, string3 ..) =&gt; 하나 혹은 더 많은 문자열들을 결합하여 새로운 문자열을 반환하는 함수 Concat보다는 + 연산자를 더 많이 쓴다.</p>
+</li>
+<li><p>str.includes(searchString[, position]) =&gt; 문자열 내에 찾고자 하는 문자열이 있는지 확인 //  true, false로 반환</p>
+</li>
+<li><p>str.(last)indexOf(searchValue[, fromIndex]) =&gt; 문자열 내에 찾고자 하는 문자열의 인덱스를 반환</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ex) var str = ‘pen pineapple apple pen’;</span><br><span class="line">console.log(str.indexOf(‘e’)); // 1</span><br><span class="line">console.log(lastIndexOf(‘e’)); // 21</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>str.slice(beginIndex[, endIndex]) =&gt; 문자열의 일부를 추출하면서 새로운 문자열을 반환</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ex) var str = ’The morning is upon us’;</span><br><span class="line">str.slice(1,8);</span><br><span class="line">// ‘he morn’ 1번인덱스부터 7번인덱스까지 반환을한다.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>str.split([seperator[, limit]]) =&gt; 문자열을 하위 문자열로 분리하여 String객체를 문자열 배열로 나눕니다.</p>
+<figure class="highlight plain"><figcaption><span>var str </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Var split = str.split(‘ ‘);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>str.substr(start[, length]) =&gt; 문자열에서 특정 위치에서 시작하여 특정 문자수만큼의 문자들을 반환</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Var str =‘abode’</span><br><span class="line">str.substr(1,2)’ // ‘bc’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>str.substring(indexStart[, indexEnd]) =&gt; 한 인덱스와 다른 인덱스 사이 또는 문자열 끝을 통해 문자열의 하위 집합을 반환.</p>
+<figure class="highlight plain"><figcaption><span>var str </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.substring(0,3); // ‘abc’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>str.toLowerCase(), str.toUpperCase() or variable.toLowerCase()</p>
+</li>
+<li><p>str.trim =&gt; 양쪽 끝에서 공백을 제거</p>
+</li>
+</ol>
+<h4 id="Number-Object"><a href="#Number-Object" class="headerlink" title="Number Object"></a>Number Object</h4><ol>
+<li><p>number.isInteger(value) =&gt; 전달된 값이 정수인지 여부를 가려냅니다. True false로 리턴</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number.isInteger(1); // true</span><br><span class="line">Number.isInteger(0.1); // false</span><br><span class="line">var num = ’11’;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Number.parseInt(string[, radix]) =&gt; 문자열 인수를 형변환하여 지정된 진법이나 기본 타입으로 리턴</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof Number.parseInt(’11’); // number</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>num.toFix([digits]) =&gt; 고정 소수점 표기법을 사용하여 숫자를 반환</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ex) var num = 12345.6789</span><br><span class="line">num.toFix(); // 12346</span><br><span class="line">num.toFix(1); // 12345.7</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Math-Object"><a href="#Math-Object" class="headerlink" title="Math.Object"></a>Math.Object</h4><ol>
+<li><p>Math.abs(x) =&gt; 절대값을 반환</p>
+<figure class="highlight plain"><figcaption><span>Math.abs(’-1’);</span><a href="//">1 </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Math.abs([]); // 0</span><br><span class="line">Math.abs([1,2]) // NaN Not an Number</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Math.floor(x) =&gt; 주어진 숫자 이하의 가장큰 정수를 반환(내림)</p>
+<figure class="highlight plain"><figcaption><span>// 45```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. Math.max(), Math.min()</span><br><span class="line">```Math.max(10,20) // 20</span><br><span class="line">Math.,min(10,20) // 10</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Math.pow(x,y) =&gt; x의 y제곱수를 반환.</p>
+<figure class="highlight plain"><figcaption><span>// 49```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">5. Math.random() =&gt; 0과 1 사이의 난수를 반환</span><br><span class="line">```Math.random()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Math.round() =&gt; 어떤 수와 가장 가까운 정수를 반환(반올림)</p>
+<figure class="highlight plain"><figcaption><span>// 20</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Math.round(20.5) // 21</span><br><span class="line">Math.round(-20.5) // -20</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Math.sqrt() =&gt; 어떤수의 양의 제곱근을 반환</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.sqrt(49) // 7</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/06/String-Number-Method-Object/" data-id="cjcq4ahrk001b3stbimrq2qhc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2017-12-06-TIL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/06/2017-12-06-TIL/" class="article-date">
@@ -113,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/06/2017-12-06-TIL/" data-id="cjcor9zkt00022ovlcj8ic9jf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/06/2017-12-06-TIL/" data-id="cjcq4ahq000013stb1rnunjwd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -209,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/05/2017-12-05-TIL/" data-id="cjcor9zl700042ovl2su35hs5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/05/2017-12-05-TIL/" data-id="cjcq4ahq500033stbq2tfp6af" class="article-share-link">Share</a>
       
       
     </footer>
@@ -278,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/04/2017-12-04-TIL/" data-id="cjcor9zkn00012ovl2rp4p7j9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/04/2017-12-04-TIL/" data-id="cjcq4ahq200023stbj6idfick" class="article-share-link">Share</a>
       
       
     </footer>
@@ -324,52 +418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/01/2017-12-01-TIL/" data-id="cjcor9zkg00002ovlwaykhxfh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/01/hello-world/" class="article-date">
-  <time datetime="2017-12-01T07:23:34.130Z" itemprop="datePublished">2017-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/01/hello-world/" data-id="cjcor9znt00192ovls25r7fkf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/01/2017-12-01-TIL/" data-id="cjcq4ahpv00003stbbfjh4nod" class="article-share-link">Share</a>
       
       
     </footer>
@@ -382,7 +431,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/7/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
+    <a class="extend prev" rel="prev" href="/page/7/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -402,7 +451,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-java-study/">java, java_study</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-java-study/">java, java_study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-refactoring/">java, refactoring</a></li></ul>
     </div>
   </div>
 
@@ -412,7 +461,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a>
+      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a> <a href="/tags/java-refactoring/" style="font-size: 10px;">java, refactoring</a>
     </div>
   </div>
 
@@ -434,6 +483,10 @@
       <ul>
         
           <li>
+            <a href="/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/">2018-1-22 TIL JAVA refactoring review</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/">2018-1-21 TIL JAVA Basic(2)</a>
           </li>
         
@@ -447,10 +500,6 @@
         
           <li>
             <a href="/2018/01/18/2018-1-18/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/12/2018-1-12-TIL/">2018-1-12 TIL</a>
           </li>
         
       </ul>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2018-1-22 TIL JAVA refactoring review | jaeyeon&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1월 22일 리펙토링리팩토링 전1234567891011121314151617181920212223242526272829303132333435363738394041public String peoplePrint(int people)&amp;#123;        String result =">
+<meta name="keywords" content="java, refactoring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018-1-22 TIL JAVA refactoring review">
+<meta property="og:url" content="http://yoursite.com/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/index.html">
+<meta property="og:site_name" content="jaeyeon&#39;s blog">
+<meta property="og:description" content="1월 22일 리펙토링리팩토링 전1234567891011121314151617181920212223242526272829303132333435363738394041public String peoplePrint(int people)&amp;#123;        String result = &amp;quot;&amp;quot;;        for(int i = 0; i &amp;lt;">
+<meta property="og:locale" content="Korean">
+<meta property="og:updated_time" content="2018-01-22T11:17:09.317Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018-1-22 TIL JAVA refactoring review">
+<meta name="twitter:description" content="1월 22일 리펙토링리팩토링 전1234567891011121314151617181920212223242526272829303132333435363738394041public String peoplePrint(int people)&amp;#123;        String result = &amp;quot;&amp;quot;;        for(int i = 0; i &amp;lt;">
+  
+    <link rel="alternate" href="/atom.xml" title="jaeyeon&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jaeyeon&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I design therefore I am</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2018-1-22-TIL-JAVA-refactoring-review" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/" class="article-date">
+  <time datetime="2018-01-22T11:16:33.000Z" itemprop="datePublished">2018-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2018-1-22 TIL JAVA refactoring review
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1월-22일-리펙토링"><a href="#1월-22일-리펙토링" class="headerlink" title="1월 22일 리펙토링"></a>1월 22일 리펙토링</h2><p><strong>리팩토링 전</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">public String peoplePrint(int people)&#123;</span><br><span class="line">        String result = &quot;&quot;;</span><br><span class="line">        for(int i = 0; i &lt; (2 * people) - 1; i++)&#123;</span><br><span class="line">            result = checkOdd(i, result);</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String checkOdd(int i, String result)&#123;</span><br><span class="line">        logger.debug(&quot;i, result : &#123;&#125;, &#123;&#125;&quot;, i, result);</span><br><span class="line">        logger.debug(&quot;lines : &#123;&#125;&quot;, lines.size());</span><br><span class="line">        if (i % 2 == 0)</span><br><span class="line">            return result + &quot;|&quot;;</span><br><span class="line">        return result + lines.get(i).changeBoolean();</span><br><span class="line">        //return result + returnAdd(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Boolean returnAdd(int i)&#123;</span><br><span class="line">        Random rnd = new Random();</span><br><span class="line">        int randomNumber = rnd.nextInt(10);</span><br><span class="line">        if (randomNumber &gt;= 6)</span><br><span class="line">            return true;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void process(int people, int height)&#123;</span><br><span class="line">        for (int i = 0; i &lt; height; i++) &#123;</span><br><span class="line">            lines.add(new Line(people));</span><br><span class="line">        &#125;</span><br><span class="line">        peoplePrint(people);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void heightPrint()&#123;</span><br><span class="line">        for (String result:results) &#123;</span><br><span class="line">            System.out.println(result);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">//result</span><br><span class="line">|true|false|true|false|false|true</span><br><span class="line">|false|false|true|false|false|true</span><br><span class="line">|false|false|false|false|false|true</span><br></pre></td></tr></table></figure></p>
+<p><strong>리팩토링 후</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">public String peoplePrint(int people)&#123;</span><br><span class="line">        logger.debug(&quot;lines : &#123;&#125;&quot;, lines.size());</span><br><span class="line">        Random rnd = new Random();</span><br><span class="line">        String result = &quot;&quot;;</span><br><span class="line">        for(int i = 0; i &lt; people; i++)&#123;</span><br><span class="line">            int randomNumber = rnd.nextInt(10);</span><br><span class="line">            result = printBar(result);</span><br><span class="line">            result += returnAdd(randomNumber);</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String printBar(String result)&#123;</span><br><span class="line">        return result + &quot;|&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public boolean returnAdd(int randomNumber) &#123;</span><br><span class="line">        if (randomNumber &gt;= 6)</span><br><span class="line">            return true;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public void process(int people, int height)&#123;</span><br><span class="line">        for (int i = 0; i &lt; height; i++) &#123;</span><br><span class="line">            results.add(peoplePrint(people));</span><br><span class="line">            lines.add(new Line());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void heightPrint()&#123;</span><br><span class="line">        for (String result:results) &#123;</span><br><span class="line">            System.out.println(result);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  // result</span><br><span class="line">|true|false|true|false|false|true</span><br><span class="line">|false|false|true|false|false|true</span><br><span class="line">|false|false|false|false|false|true</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>같은인풋을 통해 같은 결과를 반환을 해주는 메서드이다.</li>
+<li>리팩토링 전 코드의 경우, i값을 홀수와 짝수로 나누어서 짝수인경우에는 사다리의 높이인 “true”를 출력을 하고 홀수의 경우에는 임의의 랜덤값이 넘는경우에는 “false”를 출력을 한다. 하지만 이 경우에는 peoplePrint메서드에서 i = 0에서 2people - 1까지의 복잡한 과정을 거치기에 people까지만 입력을 받는 메서드로 리팩토링을 했다.</li>
+<li>people을 인풋으로 받아서 for문이 한번 반복을 할때마다 “|”를 출력을 하는 메서도와 true or false를 호출하는 메서드를 같이 호출을 한다. 그렇게 되면 people의 수만큼 for문을 돌면되고, 위의 경우와 같이 2people -1 의 복잡한 연산을 할 필요가 없다.</li>
+</ul>
+<h5 id="오늘의-느낀점-step2-gt-step3로-넘어가는-과정에서-이차원배열의-개념을-배우게-되었다-개념자체는-이해가-되지만-구현을-하는것이-어려웠다-lines라는-ArrayList를-만들었고-lines는-line이라는-객체를-데이터-타입으로-가진다-line객체는-Boolean타입을-가지는-points라는-ArrayList를-가지고-있고-이곳에-true-false값을-상태로-가진다-각-행에-대해서-상태를-저장을-하지고-있고-lines와-그-안의-points를-통해서-복잡한-과정이-없이-2차원-배열을-구현을-했다-하지만-구현하는-과정에서-메서드를-너무-복잡하게-설계를-해서-결국에는-코드를-다시-재설계를-하게되었다-앞으로는-설계를-할때-단순함을-추구해야겠다"><a href="#오늘의-느낀점-step2-gt-step3로-넘어가는-과정에서-이차원배열의-개념을-배우게-되었다-개념자체는-이해가-되지만-구현을-하는것이-어려웠다-lines라는-ArrayList를-만들었고-lines는-line이라는-객체를-데이터-타입으로-가진다-line객체는-Boolean타입을-가지는-points라는-ArrayList를-가지고-있고-이곳에-true-false값을-상태로-가진다-각-행에-대해서-상태를-저장을-하지고-있고-lines와-그-안의-points를-통해서-복잡한-과정이-없이-2차원-배열을-구현을-했다-하지만-구현하는-과정에서-메서드를-너무-복잡하게-설계를-해서-결국에는-코드를-다시-재설계를-하게되었다-앞으로는-설계를-할때-단순함을-추구해야겠다" class="headerlink" title="오늘의 느낀점 : step2 =&gt; step3로 넘어가는 과정에서 이차원배열의 개념을 배우게 되었다. 개념자체는 이해가 되지만 구현을 하는것이 어려웠다. lines라는 ArrayList를 만들었고, lines는 line이라는 객체를 데이터 타입으로 가진다. line객체는 Boolean타입을 가지는 points라는 ArrayList를 가지고 있고, 이곳에 true, false값을 상태로 가진다. 각 행에 대해서 상태를 저장을 하지고 있고, lines와 그 안의 points를 통해서 복잡한 과정이 없이 2차원 배열을 구현을 했다. 하지만 구현하는 과정에서 메서드를 너무 복잡하게 설계를 해서 결국에는 코드를 다시 재설계를 하게되었다. 앞으로는 설계를 할때 단순함을 추구해야겠다."></a>오늘의 느낀점 : step2 =&gt; step3로 넘어가는 과정에서 이차원배열의 개념을 배우게 되었다. 개념자체는 이해가 되지만 구현을 하는것이 어려웠다. lines라는 ArrayList를 만들었고, lines는 line이라는 객체를 데이터 타입으로 가진다. line객체는 Boolean타입을 가지는 points라는 ArrayList를 가지고 있고, 이곳에 true, false값을 상태로 가진다. 각 행에 대해서 상태를 저장을 하지고 있고, lines와 그 안의 points를 통해서 복잡한 과정이 없이 2차원 배열을 구현을 했다. 하지만 구현하는 과정에서 메서드를 너무 복잡하게 설계를 해서 결국에는 코드를 다시 재설계를 하게되었다. 앞으로는 설계를 할때 단순함을 추구해야겠다.</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/" data-id="cjcq4ahqy000s3stbyvone8r8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-refactoring/">java, refactoring</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2018-1-21 TIL JAVA Basic(2)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-java-study/">java, java_study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-refactoring/">java, refactoring</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a> <a href="/tags/java-refactoring/" style="font-size: 10px;">java, refactoring</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/">2018-1-22 TIL JAVA refactoring review</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/">2018-1-21 TIL JAVA Basic(2)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19 TIL/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/18/2018-1-18/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Jimmy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

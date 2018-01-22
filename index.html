@@ -69,6 +69,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2018-1-22-TIL-JAVA-refactoring-review" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/" class="article-date">
+  <time datetime="2018-01-22T11:16:33.000Z" itemprop="datePublished">2018-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/">2018-1-22 TIL JAVA refactoring review</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1월-22일-리펙토링"><a href="#1월-22일-리펙토링" class="headerlink" title="1월 22일 리펙토링"></a>1월 22일 리펙토링</h2><p><strong>리팩토링 전</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">public String peoplePrint(int people)&#123;</span><br><span class="line">        String result = &quot;&quot;;</span><br><span class="line">        for(int i = 0; i &lt; (2 * people) - 1; i++)&#123;</span><br><span class="line">            result = checkOdd(i, result);</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String checkOdd(int i, String result)&#123;</span><br><span class="line">        logger.debug(&quot;i, result : &#123;&#125;, &#123;&#125;&quot;, i, result);</span><br><span class="line">        logger.debug(&quot;lines : &#123;&#125;&quot;, lines.size());</span><br><span class="line">        if (i % 2 == 0)</span><br><span class="line">            return result + &quot;|&quot;;</span><br><span class="line">        return result + lines.get(i).changeBoolean();</span><br><span class="line">        //return result + returnAdd(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Boolean returnAdd(int i)&#123;</span><br><span class="line">        Random rnd = new Random();</span><br><span class="line">        int randomNumber = rnd.nextInt(10);</span><br><span class="line">        if (randomNumber &gt;= 6)</span><br><span class="line">            return true;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void process(int people, int height)&#123;</span><br><span class="line">        for (int i = 0; i &lt; height; i++) &#123;</span><br><span class="line">            lines.add(new Line(people));</span><br><span class="line">        &#125;</span><br><span class="line">        peoplePrint(people);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void heightPrint()&#123;</span><br><span class="line">        for (String result:results) &#123;</span><br><span class="line">            System.out.println(result);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">//result</span><br><span class="line">|true|false|true|false|false|true</span><br><span class="line">|false|false|true|false|false|true</span><br><span class="line">|false|false|false|false|false|true</span><br></pre></td></tr></table></figure></p>
+<p><strong>리팩토링 후</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">public String peoplePrint(int people)&#123;</span><br><span class="line">        logger.debug(&quot;lines : &#123;&#125;&quot;, lines.size());</span><br><span class="line">        Random rnd = new Random();</span><br><span class="line">        String result = &quot;&quot;;</span><br><span class="line">        for(int i = 0; i &lt; people; i++)&#123;</span><br><span class="line">            int randomNumber = rnd.nextInt(10);</span><br><span class="line">            result = printBar(result);</span><br><span class="line">            result += returnAdd(randomNumber);</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String printBar(String result)&#123;</span><br><span class="line">        return result + &quot;|&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public boolean returnAdd(int randomNumber) &#123;</span><br><span class="line">        if (randomNumber &gt;= 6)</span><br><span class="line">            return true;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public void process(int people, int height)&#123;</span><br><span class="line">        for (int i = 0; i &lt; height; i++) &#123;</span><br><span class="line">            results.add(peoplePrint(people));</span><br><span class="line">            lines.add(new Line());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void heightPrint()&#123;</span><br><span class="line">        for (String result:results) &#123;</span><br><span class="line">            System.out.println(result);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  // result</span><br><span class="line">|true|false|true|false|false|true</span><br><span class="line">|false|false|true|false|false|true</span><br><span class="line">|false|false|false|false|false|true</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>같은인풋을 통해 같은 결과를 반환을 해주는 메서드이다.</li>
+<li>리팩토링 전 코드의 경우, i값을 홀수와 짝수로 나누어서 짝수인경우에는 사다리의 높이인 “true”를 출력을 하고 홀수의 경우에는 임의의 랜덤값이 넘는경우에는 “false”를 출력을 한다. 하지만 이 경우에는 peoplePrint메서드에서 i = 0에서 2people - 1까지의 복잡한 과정을 거치기에 people까지만 입력을 받는 메서드로 리팩토링을 했다.</li>
+<li>people을 인풋으로 받아서 for문이 한번 반복을 할때마다 “|”를 출력을 하는 메서도와 true or false를 호출하는 메서드를 같이 호출을 한다. 그렇게 되면 people의 수만큼 for문을 돌면되고, 위의 경우와 같이 2people -1 의 복잡한 연산을 할 필요가 없다.</li>
+</ul>
+<h5 id="오늘의-느낀점-step2-gt-step3로-넘어가는-과정에서-이차원배열의-개념을-배우게-되었다-개념자체는-이해가-되지만-구현을-하는것이-어려웠다-lines라는-ArrayList를-만들었고-lines는-line이라는-객체를-데이터-타입으로-가진다-line객체는-Boolean타입을-가지는-points라는-ArrayList를-가지고-있고-이곳에-true-false값을-상태로-가진다-각-행에-대해서-상태를-저장을-하지고-있고-lines와-그-안의-points를-통해서-복잡한-과정이-없이-2차원-배열을-구현을-했다-하지만-구현하는-과정에서-메서드를-너무-복잡하게-설계를-해서-결국에는-코드를-다시-재설계를-하게되었다-앞으로는-설계를-할때-단순함을-추구해야겠다"><a href="#오늘의-느낀점-step2-gt-step3로-넘어가는-과정에서-이차원배열의-개념을-배우게-되었다-개념자체는-이해가-되지만-구현을-하는것이-어려웠다-lines라는-ArrayList를-만들었고-lines는-line이라는-객체를-데이터-타입으로-가진다-line객체는-Boolean타입을-가지는-points라는-ArrayList를-가지고-있고-이곳에-true-false값을-상태로-가진다-각-행에-대해서-상태를-저장을-하지고-있고-lines와-그-안의-points를-통해서-복잡한-과정이-없이-2차원-배열을-구현을-했다-하지만-구현하는-과정에서-메서드를-너무-복잡하게-설계를-해서-결국에는-코드를-다시-재설계를-하게되었다-앞으로는-설계를-할때-단순함을-추구해야겠다" class="headerlink" title="오늘의 느낀점 : step2 =&gt; step3로 넘어가는 과정에서 이차원배열의 개념을 배우게 되었다. 개념자체는 이해가 되지만 구현을 하는것이 어려웠다. lines라는 ArrayList를 만들었고, lines는 line이라는 객체를 데이터 타입으로 가진다. line객체는 Boolean타입을 가지는 points라는 ArrayList를 가지고 있고, 이곳에 true, false값을 상태로 가진다. 각 행에 대해서 상태를 저장을 하지고 있고, lines와 그 안의 points를 통해서 복잡한 과정이 없이 2차원 배열을 구현을 했다. 하지만 구현하는 과정에서 메서드를 너무 복잡하게 설계를 해서 결국에는 코드를 다시 재설계를 하게되었다. 앞으로는 설계를 할때 단순함을 추구해야겠다."></a>오늘의 느낀점 : step2 =&gt; step3로 넘어가는 과정에서 이차원배열의 개념을 배우게 되었다. 개념자체는 이해가 되지만 구현을 하는것이 어려웠다. lines라는 ArrayList를 만들었고, lines는 line이라는 객체를 데이터 타입으로 가진다. line객체는 Boolean타입을 가지는 points라는 ArrayList를 가지고 있고, 이곳에 true, false값을 상태로 가진다. 각 행에 대해서 상태를 저장을 하지고 있고, lines와 그 안의 points를 통해서 복잡한 과정이 없이 2차원 배열을 구현을 했다. 하지만 구현하는 과정에서 메서드를 너무 복잡하게 설계를 해서 결국에는 코드를 다시 재설계를 하게되었다. 앞으로는 설계를 할때 단순함을 추구해야겠다.</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/" data-id="cjcq4ahqy000s3stbyvone8r8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-refactoring/">java, refactoring</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2018-1-21-TIL-JAVA-Basic-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/" class="article-date">
@@ -114,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/" data-id="cjcor9zmq000r2ovlpron0tje" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/" data-id="cjcq4ahr8000v3stbz8r5ce71" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
@@ -243,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/19/2018-1-19-TIL-java-basic-study/" data-id="cjcor9zmn000q2ovl4o6c7y7e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/19/2018-1-19-TIL-java-basic-study/" data-id="cjcq4ahqx000r3stbgibnm5hi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-java-study/">java, java_study</a></li></ul>
@@ -289,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/19/2018-1-19 TIL/" data-id="cjcor9zmg000o2ovlgvof8bxh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/19/2018-1-19 TIL/" data-id="cjcq4ahqv000p3stb54c35yro" class="article-share-link">Share</a>
       
       
     </footer>
@@ -398,76 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/18/2018-1-18/" data-id="cjcor9zn5000v2ovl5de2fwmc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2018-1-12-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/12/2018-1-12-TIL/" class="article-date">
-  <time datetime="2018-01-12T06:41:27.000Z" itemprop="datePublished">2018-01-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/12/2018-1-12-TIL/">2018-1-12 TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="생성자-Constructor"><a href="#생성자-Constructor" class="headerlink" title="생성자(Constructor)"></a>생성자(Constructor)</h2><ul>
-<li>생성자는 인스턴스가 생성될 때 호출되는, ‘인스턴스 초기화 메서드’이다.</li>
-<li>클래스 내에 선언이 되며, 리턴값이 없다는 점이 다르다.</li>
-</ul>
-<ol>
-<li>생성자의 이름은 클래스의 이름하고 같아야 한다.</li>
-<li>생성자는 리턴 값이 없다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">클래스이름(타입 변수명, 타입 변수명 ...) &#123;</span><br><span class="line">  // 인스턴스 생성시 수행되는 코드,</span><br><span class="line">  // 주로 인스턴스 초기화 코드를 적는다.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Card() &#123;</span><br><span class="line">  Card() &#123; //매개변수가 없는 생성자</span><br><span class="line">    //...</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Card(String k, int num) &#123; // 매개변수가 있는 생성자</span><br><span class="line">   //....</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>연산자 new가 인스턴스를 생성하는 것이지, 생성자가 인스턴스를 생성하는 것은 아니다.</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Card c = new Card();</span><br></pre></td></tr></table></figure></p>
-<pre><code>1. 연산자 new에 의해서 메모리(heap)에 Card인스턴스가 생성된다.
-2. 생성자 Card()가 호출되어 수행된다.
-3. 연산자 new의 결과로, 생성된 Card인스턴스의 주소가 반환되어 참조변수 c에 저장된다.
-</code></pre><h3 id="기본생성자"><a href="#기본생성자" class="headerlink" title="기본생성자"></a>기본생성자</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Data1 &#123;</span><br><span class="line">  int value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Data2 &#123;</span><br><span class="line">  int value;</span><br><span class="line">  Data2(int x) &#123; // 매개변수가 있는 생성자.</span><br><span class="line">    value = x;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class ConstuctorTest &#123;</span><br><span class="line">  public static void main (String [] args)&#123;</span><br><span class="line">    Data d1 = new Data1();</span><br><span class="line">    Data d2 = new Data2(); // error</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Data2에는 매개변수가 있는 생성자만 정의가 되었기때문에, 매개변수가 없는 생성자를 추가로 정의하거나, 인스턴스를 생성할 때, 매개변수를 넣어야한다.</li>
-<li>매개변수가 없는 생성자를 기본 생성자라고 한다.</li>
-</ul>
-<h3 id="매개변수가-있는-생성자"><a href="#매개변수가-있는-생성자" class="headerlink" title="매개변수가 있는 생성자"></a>매개변수가 있는 생성자</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Car &#123;</span><br><span class="line">  String color;</span><br><span class="line">  String gearType;</span><br><span class="line">  int door;</span><br><span class="line"></span><br><span class="line">  Car()&#123;&#125; // 생성자</span><br><span class="line">  Car (String c, String g, int d) &#123; // 생성자</span><br><span class="line">  	color = c;</span><br><span class="line">  	gearType = g;</span><br><span class="line">  	door = d;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>매개변수가 있는 생성자 Car (String c, String g, int d)를 사용하면 인스턴스를 생성하는 동시에 원하는 값으로 초기화를 할 수 있다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Car c = new ();</span><br><span class="line">c.color = &quot;white&quot;;</span><br><span class="line">c.gearType =&quot;auto&quot;;</span><br><span class="line">c.door = 4;</span><br><span class="line"></span><br><span class="line">same as</span><br><span class="line"></span><br><span class="line">Car c = new Car(&quot;white&quot;, &quot;auto&quot;, 4);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="생성자에서-다른-생성자-호출하기-this-this"><a href="#생성자에서-다른-생성자-호출하기-this-this" class="headerlink" title="생성자에서 다른 생성자 호출하기 - this(), this"></a>생성자에서 다른 생성자 호출하기 - this(), this</h3><ul>
-<li>생성자의 이름으로 클래스이름 대신 this를 사용한다</li>
-<li><p>한 생성자에서 다른 생성자를 호출할 때는 반드시 첫 줄에서만 호출이 가능하다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class Car &#123;</span><br><span class="line">    String color;</span><br><span class="line">    String gearType;</span><br><span class="line">    int door;</span><br><span class="line"></span><br><span class="line">    Car () &#123;</span><br><span class="line">        // 매개변수가 없는 생성자</span><br><span class="line">        // default값이다.</span><br><span class="line">        this(&quot;white&quot;,&quot;auto&quot;,4);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Car (Car c) &#123;</span><br><span class="line">        // 인스턴스 복사를 위한 생성자</span><br><span class="line">        color = c.color;</span><br><span class="line">        gearType = c.gearType;</span><br><span class="line">        door = c.door;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Car(String color, String gearType, int door) &#123;</span><br><span class="line">        this.color = color;</span><br><span class="line">        // this.color는 인스턴스변수이고, color는 전달받은 매개변수이다.</span><br><span class="line">        this.gearType = gearType;</span><br><span class="line">        this.door = door;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class CarTest2 &#123;</span><br><span class="line">    public static void main(String [] args)&#123;</span><br><span class="line">        Car c1 = new Car();</span><br><span class="line">        //Car c2 = new Car(&quot;blue&quot;);</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;c1의 color = &quot; + c1.color + &quot;, gearType = &quot; + c1.gearType + &quot;, door = &quot; + c1.door);</span><br><span class="line">        System.out.println(&quot;c2의 color = &quot; + c2.color + &quot;, gearType = &quot; + c2.gearType + &quot;, door = &quot; + c2.door);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>매개변수로 선언된 변수의 이름이 color로 인스턴스변수 color와 같은 경우에는 이름만으로 두 변수가 구분이 안된다. 이럴경우에는 this를 써야한다.</p>
-</li>
-<li>this.color는 인스턴스변수이고, color는 생성자의 매개변수이다.</li>
-<li>this는 참조변수 자신을 가리킨다. this를 사용할 수 있는 것은 인스턴스멤버뿐이다.</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/12/2018-1-12-TIL/" data-id="cjcor9zn3000u2ovlvah60blh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/18/2018-1-18/" data-id="cjcq4ahqw000q3stbnur6jdjq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -480,7 +456,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -500,7 +476,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-java-study/">java, java_study</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-java-study/">java, java_study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-refactoring/">java, refactoring</a></li></ul>
     </div>
   </div>
 
@@ -510,7 +486,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a>
+      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a> <a href="/tags/java-refactoring/" style="font-size: 10px;">java, refactoring</a>
     </div>
   </div>
 
@@ -532,6 +508,10 @@
       <ul>
         
           <li>
+            <a href="/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/">2018-1-22 TIL JAVA refactoring review</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/">2018-1-21 TIL JAVA Basic(2)</a>
           </li>
         
@@ -545,10 +525,6 @@
         
           <li>
             <a href="/2018/01/18/2018-1-18/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/12/2018-1-12-TIL/">2018-1-12 TIL</a>
           </li>
         
       </ul>
