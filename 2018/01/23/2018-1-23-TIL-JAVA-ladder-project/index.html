@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2018-1-23 TIL JAVA ladder project | jaeyeon&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JAVA 사다리타기 만들기1234a    b    c    d    e    f    g    h    i    j    k   |-----|-----|-----|-----|     |     |-----|     |     |-----|   |     |-----|     |-----">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018-1-23 TIL JAVA ladder project">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/2018-1-23-TIL-JAVA-ladder-project/index.html">
+<meta property="og:site_name" content="jaeyeon&#39;s blog">
+<meta property="og:description" content="JAVA 사다리타기 만들기1234a    b    c    d    e    f    g    h    i    j    k   |-----|-----|-----|-----|     |     |-----|     |     |-----|   |     |-----|     |-----|     |-----|     |     |-----|     |">
+<meta property="og:locale" content="Korean">
+<meta property="og:updated_time" content="2018-01-23T07:59:09.086Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018-1-23 TIL JAVA ladder project">
+<meta name="twitter:description" content="JAVA 사다리타기 만들기1234a    b    c    d    e    f    g    h    i    j    k   |-----|-----|-----|-----|     |     |-----|     |     |-----|   |     |-----|     |-----|     |-----|     |     |-----|     |">
+  
+    <link rel="alternate" href="/atom.xml" title="jaeyeon&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jaeyeon&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I design therefore I am</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2018-1-23-TIL-JAVA-ladder-project" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/23/2018-1-23-TIL-JAVA-ladder-project/" class="article-date">
+  <time datetime="2018-01-23T07:46:32.000Z" itemprop="datePublished">2018-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2018-1-23 TIL JAVA ladder project
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JAVA-사다리타기-만들기"><a href="#JAVA-사다리타기-만들기" class="headerlink" title="JAVA 사다리타기 만들기"></a>JAVA 사다리타기 만들기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a    b    c    d    e    f    g    h    i    j    k</span><br><span class="line">   |-----|-----|-----|-----|     |     |-----|     |     |-----|</span><br><span class="line">   |     |-----|     |-----|     |-----|     |     |-----|     |</span><br><span class="line">   |-----|     |     |-----|     |-----|     |-----|     |     |</span><br></pre></td></tr></table></figure>
+<ul>
+<li>자바를 이용해서 사다리타기를 구현을 했다. 위의 경우에는 2차원 배열을 이용을 해야되지만, 어제 ArrayList<arraylist<boolean>&gt;를 사용하는 대신 ArrayList<line></line>을 구현을 해서 2차원 배열을 단순화를 했다.</arraylist<boolean></li>
+<li>Line객체에는 ArrayList<boolean> points = new ArrayList<boolean>();이라는 points ArrayList가 있고, points에는 사다리 가로열에 해당을 하는 <figure class="highlight plain"><figcaption><span>"```과 ```-----```의 값에 따라 true와 false값을 담고 있다.</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 위의 출력결과의 문제는 사다리의 ```-----```가 양쪽에 다 있을때의 경우에 문제가 발생을 한다. 앞에값이 true이면 뒤에값은 무조건 false로 할당을 해주는 문제를 해결을 해줘야 한다.</span><br></pre></td></tr></table></figure></boolean></boolean></li>
+</ul>
+<p>public void checkNext() {<br>        for (int i = 0; i &lt; points.size() - 1; i++) {<br>            if (points.get(i).booleanValue() == true) {<br>                points.set(i + 1, false);<br>            }<br>        }<br>    }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 우선 checkNext라는 메서드를 만들었고, 이 메서드의 역할은 for문을 돌면서 points.get(i)의 boolean값이 true인 경우, 다음 값은 무조건 false로 바꿔주는 역할을 한다. points.set(i + 1, false)라는 메서드를 사용을 했고, 여기서 주의할 점은 i의 범위가 points.size()-1까지라는 점이다. points.size까지하면 밑에 set(i+1)에서 배열의 크기초과 오류가 발생을 하기 때문이다.</span><br><span class="line">- 이제는 checkNext에 있는 값들을 다시 할당을 해주는 문제에 부딪치게 된다.</span><br></pre></td></tr></table></figure></p>
+<p>public String method2(int people) {<br>        String emp = “     “;<br>        for (int i = 0; i &lt; people; i++){<br>            emp = printBar(emp);<br>            if (i == people - 1){<br>                return emp;<br>            }<br>            emp += lines.get(currentIndex).result2(i);<br>        }<br>        return emp;<br>    }</p>
+<pre><code>public String printBar(String result){
+    return result + &quot;|&quot;;
+}
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- method2라는 메서드를 만들어서 다음의 문제를 해결을 했다.</span><br></pre></td></tr></table></figure>
+<p>a    b    c    d    e    f    g    h    i    j    k<br>     |—–|     |     |—–|     |     |—–|     |     |—–|<br>     |     |—–|     |—–|     |—–|     |     |—–|     |<br>     |—–|     |     |—–|     |—–|     |—–|     |     |<br>```</p>
+<p>위의 결과로 다음과 같은 사다리가 만들어졌다.</p>
+<p><strong>사다리타기를 구현을 하면서 ArrayList에 대해서, 그리고 2차원배열에 대한 개념을 알게되었다. 2차원 좌표의 개념을 표현하기 위해서 2차원배열을 사용을 해야되지만, 2차원 배열을 사용을 하게 되면 복잡도가 증가하므로 ArrayList<line></line>을 사용을 해서 2차원배열을 표현을 하면서도 복잡도를 단순화하는 방법을 배웠다. :)</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/23/2018-1-23-TIL-JAVA-ladder-project/" data-id="cjcrcntk4000vtktb9dl5re3n" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">2018-1-22 TIL JAVA refactoring review</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-java-study/">java, java_study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-refactoring/">java, refactoring</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a> <a href="/tags/java-refactoring/" style="font-size: 10px;">java, refactoring</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/23/2018-1-23-TIL-JAVA-ladder-project/">2018-1-23 TIL JAVA ladder project</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/">2018-1-22 TIL JAVA refactoring review</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/">2018-1-21 TIL JAVA Basic(2)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19 TIL/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Jimmy<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
