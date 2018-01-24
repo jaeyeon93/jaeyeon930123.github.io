@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2018-1-24 TIL java basic(3) | jaeyeon&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="생성자 모든 클래스는 인스턴스화를 될때 생성자를 사용한다. 생성자는 메서드와는 다르게 리턴타입을 가지고 있지않다.  12345678910public class className &amp;#123;	type fieldName;    public className (parameters...">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018-1-24 TIL java basic(3)">
+<meta property="og:url" content="http://yoursite.com/2018/01/24/2018-1-24-TIL-java-basic-3/index.html">
+<meta property="og:site_name" content="jaeyeon&#39;s blog">
+<meta property="og:description" content="생성자 모든 클래스는 인스턴스화를 될때 생성자를 사용한다. 생성자는 메서드와는 다르게 리턴타입을 가지고 있지않다.  12345678910public class className &amp;#123;	type fieldName;    public className (parameters...)&amp;#123;    	//..generator block    &amp;#125;">
+<meta property="og:locale" content="Korean">
+<meta property="og:updated_time" content="2018-01-24T13:52:53.688Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018-1-24 TIL java basic(3)">
+<meta name="twitter:description" content="생성자 모든 클래스는 인스턴스화를 될때 생성자를 사용한다. 생성자는 메서드와는 다르게 리턴타입을 가지고 있지않다.  12345678910public class className &amp;#123;	type fieldName;    public className (parameters...)&amp;#123;    	//..generator block    &amp;#125;">
+  
+    <link rel="alternate" href="/atom.xml" title="jaeyeon&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jaeyeon&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I design therefore I am</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2018-1-24-TIL-java-basic-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/24/2018-1-24-TIL-java-basic-3/" class="article-date">
+  <time datetime="2018-01-24T13:52:04.000Z" itemprop="datePublished">2018-01-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2018-1-24 TIL java basic(3)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="생성자"><a href="#생성자" class="headerlink" title="생성자"></a>생성자</h2><ul>
+<li>모든 클래스는 인스턴스화를 될때 생성자를 사용한다.</li>
+<li>생성자는 메서드와는 다르게 <strong>리턴타입을 가지고 있지않다.</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class className &#123;</span><br><span class="line">	type fieldName;</span><br><span class="line"></span><br><span class="line">    public className (parameters...)&#123;</span><br><span class="line">    	//..generator block</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public returnType methodName(parameters)&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>매개변수가 없는 생성자를 기본 생성자라고 한다.</li>
+<li>객체가 될때 필드를 초기화를 하는것이 생성자의 역할이다.</li>
+<li>사용자가 생성자를 추가하면 더 이상 기본생성자를 이용할 수 없다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">## Car.java</span><br><span class="line">public class Car &#123;</span><br><span class="line">    String name;</span><br><span class="line">    int number;</span><br><span class="line"></span><br><span class="line">    public Car(String n)&#123;</span><br><span class="line">        name = n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Car클래스는 인스턴스화할때, name값을 초기화해주는 생성자를 만들었다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## CarExam2.java</span><br><span class="line">public class CarExam2 &#123;</span><br><span class="line">    public static void main(String [] args)&#123;</span><br><span class="line">        Car c1 = new Car(&quot;carName&quot;);</span><br><span class="line">        System.out.println(c1.name);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// result</span><br><span class="line">carName;</span><br></pre></td></tr></table></figure>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">## Car.java</span><br><span class="line">public class Car &#123;</span><br><span class="line">    String name;</span><br><span class="line">    int number;</span><br><span class="line"></span><br><span class="line">    public Car(String n)&#123;</span><br><span class="line">        name = n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Car클래스에서 생성자는 매개변수로 n을 의미한다. 하지만 이 n이 무엇을 의미하는지는 모른다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Car &#123;</span><br><span class="line">    String name;</span><br><span class="line">    int number;</span><br><span class="line"></span><br><span class="line">    public Car(String name)&#123;</span><br><span class="line">        name = name;</span><br><span class="line">        // 왼쪽의 name하고 오른쪽의 name중에 어느 name이 파라미터로 전달받은지 모른다.</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>이때 사용하는것이 this요소이다.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Car &#123;</span><br><span class="line">    String name;</span><br><span class="line">    int number;</span><br><span class="line"></span><br><span class="line">    public Car(String name)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        // 왼쪽의 name하고 오른쪽의 name중에 어느 name이 파라미터로 전달받은지 모른다.</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>this는 현재 객체, 자기 자신을 나타낸다.</li>
+<li>클래스 안에서 자기 자신이 가지고 있는 메소드를 사용할 때도 this.메소드명()으로 호출할 수 있다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/24/2018-1-24-TIL-java-basic-3/" data-id="cjct4qh4g000xvavlbl4qa8n3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/23/2018-1-23-TIL-JAVA-ladder-project/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2018-1-23 TIL JAVA ladder project</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-java-study/">java, java_study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-refactoring/">java, refactoring</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a> <a href="/tags/java-refactoring/" style="font-size: 10px;">java, refactoring</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/24/2018-1-24-TIL-java-basic-3/">2018-1-24 TIL java basic(3)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/23/2018-1-23-TIL-JAVA-ladder-project/">2018-1-23 TIL JAVA ladder project</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/22/2018-1-22-TIL-JAVA-refactoring-review/">2018-1-22 TIL JAVA refactoring review</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/">2018-1-21 TIL JAVA Basic(2)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Jimmy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

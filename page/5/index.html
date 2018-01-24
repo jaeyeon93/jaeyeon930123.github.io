@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,97 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2017-12-24-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/24/2017-12-24-TIL/" class="article-date">
+  <time datetime="2017-12-24T13:11:19.000Z" itemprop="datePublished">2017-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/24/2017-12-24-TIL/">2017-12-24 TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="알고리즘-복잡도-분석"><a href="#알고리즘-복잡도-분석" class="headerlink" title="알고리즘 복잡도 분석"></a>알고리즘 복잡도 분석</h2><p>알고리즘이란 문제해결 전략이다.</p>
+<ul>
+<li>자료구조 : array, list, stack, queue</li>
+<li>알고리즘 : 문제해결방법 (자료구조를 바탕으로 문제를 해결한다)</li>
+</ul>
+<h4 id="기본-자료구조"><a href="#기본-자료구조" class="headerlink" title="기본 자료구조"></a>기본 자료구조</h4><ul>
+<li><p>배열</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ex) int a[] = new int[5]</span><br><span class="line">// a = int의 배열이다. 타입과 갯수가 정해져 있다.</span><br><span class="line">// 크기가 고정되어있지만, 읽을때 엄청 빨리 읽는다.</span><br><span class="line">O(1)읽기</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>리스트 : LinkedList(참조 혹은 포인터) O(n)번만에 읽을 수 있다. O(1)만에 추가가 된다. 읽기는 오래걸리지만 쓰기는 굉장히 빠르다. 각각의 노드마다 주소값이 저장되어있기때문에 공간의 낭비가 심하다.</p>
+</li>
+<li>스택 : LIFO</li>
+<li>큐 : FIFO</li>
+<li>트리 : 일방향(싸이클이 없다)</li>
+<li>그래프 : 그래프는 트리랑 구조가 유사한데, 각 노드들이 연결되어있다? 그래프는 트리의 일종이지만 싸이클이 생기지 Object를 통해 만든다. key의 중복이 안된다. key로 값을 읽어 오고 싶을때 사용.</li>
+</ul>
+<h4 id="배열과-해시를-이용하면-대부분의-코딩문제들이-해결된다"><a href="#배열과-해시를-이용하면-대부분의-코딩문제들이-해결된다" class="headerlink" title="배열과 해시를 이용하면 대부분의 코딩문제들이 해결된다."></a>배열과 해시를 이용하면 대부분의 코딩문제들이 해결된다.</h4><h4 id="정렬"><a href="#정렬" class="headerlink" title="정렬"></a>정렬</h4><ul>
+<li>선택 정렬</li>
+<li>버블 정렬</li>
+<li>삽입 정렬</li>
+<li>쉘 정렬</li>
+<li>퀵 정렬</li>
+<li>기수 정렬</li>
+<li>힙 정렬</li>
+<li>병합 정렬</li>
+<li>외부 정렬</li>
+</ul>
+<h4 id="동작코드를-다-외어야-된다"><a href="#동작코드를-다-외어야-된다" class="headerlink" title="동작코드를 다 외어야 된다."></a>동작코드를 다 외어야 된다.</h4><h4 id="트리와-검색"><a href="#트리와-검색" class="headerlink" title="트리와 검색"></a>트리와 검색</h4><ul>
+<li>순차 검색</li>
+<li>2진 검색</li>
+<li>BST 검색</li>
+<li>AVL 트리</li>
+<li>레드블랙 트리</li>
+<li>MST</li>
+<li>B TREE</li>
+</ul>
+<h4 id="그래프와-탐색"><a href="#그래프와-탐색" class="headerlink" title="그래프와 탐색"></a>그래프와 탐색</h4><ul>
+<li>전위 중위 후위</li>
+<li>다익스트라 최단거리</li>
+<li>플로이드 알고리즘</li>
+<li>A* 알고리즘</li>
+</ul>
+<h4 id="알고리즘-전략"><a href="#알고리즘-전략" class="headerlink" title="알고리즘 전략"></a>알고리즘 전략</h4><ul>
+<li>휴리스틱 알고리즘</li>
+<li>그리디 알고리즘</li>
+<li>몬테카를로 알고리즘</li>
+<li>분할 정복</li>
+<li>다이나믹 프그로래밍</li>
+<li>백 트래킹</li>
+</ul>
+<h2 id="정렬-1"><a href="#정렬-1" class="headerlink" title="정렬"></a>정렬</h2><ul>
+<li>정렬을 할때는 비교기준이 있어야한다. 그 비교기준을 내가 세운다.<br>-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr = [1, 11, 2, 20, 3, 5, 9];</span><br><span class="line">arr.sort(function(a, b) &#123;</span><br><span class="line">	return a-b;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">b = [</span><br><span class="line">  &#123; name: &apos;honux&apos;, money: 100, score: 100 &#125;,</span><br><span class="line">  &#123; name: &apos;crong&apos;, money: 50, score: 500 &#125;,</span><br><span class="line">  &#123; name: &apos;jimmy&apos;, money: 999, score: 10 &#125; ]</span><br><span class="line">b.sort((a, b) =&gt; (b.score - a.score) );</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/24/2017-12-24-TIL/" data-id="cjct4qh3r000ivavlhml0p5tt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2017-12-23-TIL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -132,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/23/2017-12-23-TIL/" data-id="cjcrcntjm000itktba5idnxpk" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/23/2017-12-23-TIL/" data-id="cjct4qh3p000gvavlrtv5ov9l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/20/2017-12-20-TIL/" data-id="cjcrcntjk000gtktb3g7gdb0j" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/20/2017-12-20-TIL/" data-id="cjct4qh3n000evavlq8uc3tgf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -228,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/19/2017-12-19-TIL/" data-id="cjcrcntjk000ftktbjv83rdrm" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/19/2017-12-19-TIL/" data-id="cjct4qh3q000hvavlsaxiu1o4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -286,47 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" data-id="cjcrcntjj000etktbfrserf6t" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2017-12-17-JS-study-Hoisting" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/17/2017-12-17-JS-study-Hoisting/" class="article-date">
-  <time datetime="2017-12-17T12:33:54.000Z" itemprop="datePublished">2017-12-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/17/2017-12-17-JS-study-Hoisting/">2017-12-17 JS study Hoisting</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS-Study-Hoisting"><a href="#JS-Study-Hoisting" class="headerlink" title="JS Study - Hoisting"></a>JS Study - Hoisting</h2><p>Hoisting은 끌어올리다는 의미를 가지고있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fuction showName() &#123;</span><br><span class="line">	var name;</span><br><span class="line">    // name 변수는 호이스팅이 된다.</span><br><span class="line">    // 할당은 이후에 발생하기 때문에, 이 시점에 name값은 undefined이다.</span><br><span class="line">    console.log(&quot;First name : &quot; + name);</span><br><span class="line">    // First Name : undefined</span><br><span class="line">    name = &quot;Ford&quot;;</span><br><span class="line">    // name에 값이 할당.</span><br><span class="line">    console.log(&quot;Last Name : &quot; + name);</span><br><span class="line">    // Last Name : Ford</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2가지-예시"><a href="#2가지-예시" class="headerlink" title="2가지 예시"></a>2가지 예시</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Ex1)</span><br><span class="line">a = 2;</span><br><span class="line">var a;</span><br><span class="line">console.log(a); // ? =&gt; undefined; =&gt; why?</span><br><span class="line"></span><br><span class="line">Ex2)</span><br><span class="line">console.log(a); // =&gt; undefined; =&gt; why?</span><br><span class="line">var a = 2;</span><br></pre></td></tr></table></figure>
-<h5 id="위-2가지-이유는-컴파일러가-두번-작동하기-때문이다-JS엔진이-해석-인터프리터-하기전에-컴파일을-먼저-하기-때문이다-컴파일단계에서는-엔진이-모든-선언문을-다-찾는다-이때-변수와-함수의-선언부분을-가장-우선적으로-처리하게끔-되어있다-이때-선언되는-변수와-함수의-이름들은-우선적으로-처리가-되고-대입되는-값들은-나중에-처리가-된다-global변수-선언을-하게-되면-문서의-맨-위로-올라가기-때문에-값이-할당된다-하지만-local은-함수의-맨위로-올라간다"><a href="#위-2가지-이유는-컴파일러가-두번-작동하기-때문이다-JS엔진이-해석-인터프리터-하기전에-컴파일을-먼저-하기-때문이다-컴파일단계에서는-엔진이-모든-선언문을-다-찾는다-이때-변수와-함수의-선언부분을-가장-우선적으로-처리하게끔-되어있다-이때-선언되는-변수와-함수의-이름들은-우선적으로-처리가-되고-대입되는-값들은-나중에-처리가-된다-global변수-선언을-하게-되면-문서의-맨-위로-올라가기-때문에-값이-할당된다-하지만-local은-함수의-맨위로-올라간다" class="headerlink" title="위 2가지 이유는 컴파일러가 두번 작동하기 때문이다. JS엔진이 해석(인터프리터)하기전에 컴파일을 먼저 하기 때문이다. 컴파일단계에서는 엔진이 모든 선언문을 다 찾는다. 이때 변수와 함수의 선언부분을 가장 우선적으로 처리하게끔 되어있다. 이때 선언되는 변수와 함수의 이름들은 우선적으로 처리가 되고 대입되는 값들은 나중에 처리가 된다. global변수 선언을 하게 되면 문서의 맨 위로 올라가기 때문에 값이 할당된다. 하지만 local은 함수의 맨위로 올라간다."></a>위 2가지 이유는 컴파일러가 두번 작동하기 때문이다. JS엔진이 해석(인터프리터)하기전에 컴파일을 먼저 하기 때문이다. 컴파일단계에서는 엔진이 모든 선언문을 다 찾는다. 이때 변수와 함수의 선언부분을 가장 우선적으로 처리하게끔 되어있다. 이때 선언되는 변수와 함수의 이름들은 우선적으로 처리가 되고 대입되는 값들은 나중에 처리가 된다. global변수 선언을 하게 되면 문서의 맨 위로 올라가기 때문에 값이 할당된다. 하지만 local은 함수의 맨위로 올라간다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ex3)</span><br><span class="line">show(); // TypeError</span><br><span class="line">var show = function () &#123;</span><br><span class="line">	// run code ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="표현식으로-함수를-작성할때는-문서의-맨위에다가-작성을-해야한다-선언식은-어디에-있던-호출이-되기때문에-상관이-없지만-표현식은-다르다-하지만-함수를-변수에-담기때문에-표현식을-더-많이-사용을-한다-Hoisting을-할때-함수와-변수를-끌어올리지만-함수가-변수보다-더-우선순위로-끌어올린다"><a href="#표현식으로-함수를-작성할때는-문서의-맨위에다가-작성을-해야한다-선언식은-어디에-있던-호출이-되기때문에-상관이-없지만-표현식은-다르다-하지만-함수를-변수에-담기때문에-표현식을-더-많이-사용을-한다-Hoisting을-할때-함수와-변수를-끌어올리지만-함수가-변수보다-더-우선순위로-끌어올린다" class="headerlink" title="표현식으로 함수를 작성할때는 문서의 맨위에다가 작성을 해야한다. 선언식은 어디에 있던 호출이 되기때문에 상관이 없지만 표현식은 다르다. 하지만 함수를 변수에 담기때문에 표현식을 더 많이 사용을 한다. Hoisting을 할때 함수와 변수를 끌어올리지만 함수가 변수보다 더 우선순위로 끌어올린다."></a>표현식으로 함수를 작성할때는 문서의 맨위에다가 작성을 해야한다. 선언식은 어디에 있던 호출이 되기때문에 상관이 없지만 표현식은 다르다. 하지만 함수를 변수에 담기때문에 표현식을 더 많이 사용을 한다. Hoisting을 할때 함수와 변수를 끌어올리지만 함수가 변수보다 더 우선순위로 끌어올린다.</h5>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/17/2017-12-17-JS-study-Hoisting/" data-id="cjcrcntji000dtktbldd0fkkt" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/18/2017-12-18-JS-Study-Closer-Scope-Global-Variable/" data-id="cjct4qh3j000avavllpc95nt9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -347,7 +398,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li></ul>
     </div>
@@ -357,7 +408,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-java-study/">java, java_study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-refactoring/">java, refactoring</a></li></ul>
     </div>
@@ -367,9 +418,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a> <a href="/tags/java-refactoring/" style="font-size: 10px;">java, refactoring</a>
+      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a> <a href="/tags/java-refactoring/" style="font-size: 10px;">java, refactoring</a>
     </div>
   </div>
 
@@ -386,9 +437,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/24/2018-1-24-TIL-java-basic-3/">2018-1-24 TIL java basic(3)</a>
+          </li>
         
           <li>
             <a href="/2018/01/23/2018-1-23-TIL-JAVA-ladder-project/">2018-1-23 TIL JAVA ladder project</a>
@@ -406,10 +461,6 @@
             <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
           </li>
         
-          <li>
-            <a href="/2018/01/19/2018-1-19 TIL/">(no title)</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -423,7 +474,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Jimmy<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

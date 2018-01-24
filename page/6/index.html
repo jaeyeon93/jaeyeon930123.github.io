@@ -56,9 +56,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -68,6 +68,46 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2017-12-17-JS-study-Hoisting" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/17/2017-12-17-JS-study-Hoisting/" class="article-date">
+  <time datetime="2017-12-17T12:33:54.000Z" itemprop="datePublished">2017-12-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/17/2017-12-17-JS-study-Hoisting/">2017-12-17 JS study Hoisting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-Study-Hoisting"><a href="#JS-Study-Hoisting" class="headerlink" title="JS Study - Hoisting"></a>JS Study - Hoisting</h2><p>Hoisting은 끌어올리다는 의미를 가지고있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fuction showName() &#123;</span><br><span class="line">	var name;</span><br><span class="line">    // name 변수는 호이스팅이 된다.</span><br><span class="line">    // 할당은 이후에 발생하기 때문에, 이 시점에 name값은 undefined이다.</span><br><span class="line">    console.log(&quot;First name : &quot; + name);</span><br><span class="line">    // First Name : undefined</span><br><span class="line">    name = &quot;Ford&quot;;</span><br><span class="line">    // name에 값이 할당.</span><br><span class="line">    console.log(&quot;Last Name : &quot; + name);</span><br><span class="line">    // Last Name : Ford</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2가지-예시"><a href="#2가지-예시" class="headerlink" title="2가지 예시"></a>2가지 예시</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Ex1)</span><br><span class="line">a = 2;</span><br><span class="line">var a;</span><br><span class="line">console.log(a); // ? =&gt; undefined; =&gt; why?</span><br><span class="line"></span><br><span class="line">Ex2)</span><br><span class="line">console.log(a); // =&gt; undefined; =&gt; why?</span><br><span class="line">var a = 2;</span><br></pre></td></tr></table></figure>
+<h5 id="위-2가지-이유는-컴파일러가-두번-작동하기-때문이다-JS엔진이-해석-인터프리터-하기전에-컴파일을-먼저-하기-때문이다-컴파일단계에서는-엔진이-모든-선언문을-다-찾는다-이때-변수와-함수의-선언부분을-가장-우선적으로-처리하게끔-되어있다-이때-선언되는-변수와-함수의-이름들은-우선적으로-처리가-되고-대입되는-값들은-나중에-처리가-된다-global변수-선언을-하게-되면-문서의-맨-위로-올라가기-때문에-값이-할당된다-하지만-local은-함수의-맨위로-올라간다"><a href="#위-2가지-이유는-컴파일러가-두번-작동하기-때문이다-JS엔진이-해석-인터프리터-하기전에-컴파일을-먼저-하기-때문이다-컴파일단계에서는-엔진이-모든-선언문을-다-찾는다-이때-변수와-함수의-선언부분을-가장-우선적으로-처리하게끔-되어있다-이때-선언되는-변수와-함수의-이름들은-우선적으로-처리가-되고-대입되는-값들은-나중에-처리가-된다-global변수-선언을-하게-되면-문서의-맨-위로-올라가기-때문에-값이-할당된다-하지만-local은-함수의-맨위로-올라간다" class="headerlink" title="위 2가지 이유는 컴파일러가 두번 작동하기 때문이다. JS엔진이 해석(인터프리터)하기전에 컴파일을 먼저 하기 때문이다. 컴파일단계에서는 엔진이 모든 선언문을 다 찾는다. 이때 변수와 함수의 선언부분을 가장 우선적으로 처리하게끔 되어있다. 이때 선언되는 변수와 함수의 이름들은 우선적으로 처리가 되고 대입되는 값들은 나중에 처리가 된다. global변수 선언을 하게 되면 문서의 맨 위로 올라가기 때문에 값이 할당된다. 하지만 local은 함수의 맨위로 올라간다."></a>위 2가지 이유는 컴파일러가 두번 작동하기 때문이다. JS엔진이 해석(인터프리터)하기전에 컴파일을 먼저 하기 때문이다. 컴파일단계에서는 엔진이 모든 선언문을 다 찾는다. 이때 변수와 함수의 선언부분을 가장 우선적으로 처리하게끔 되어있다. 이때 선언되는 변수와 함수의 이름들은 우선적으로 처리가 되고 대입되는 값들은 나중에 처리가 된다. global변수 선언을 하게 되면 문서의 맨 위로 올라가기 때문에 값이 할당된다. 하지만 local은 함수의 맨위로 올라간다.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ex3)</span><br><span class="line">show(); // TypeError</span><br><span class="line">var show = function () &#123;</span><br><span class="line">	// run code ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="표현식으로-함수를-작성할때는-문서의-맨위에다가-작성을-해야한다-선언식은-어디에-있던-호출이-되기때문에-상관이-없지만-표현식은-다르다-하지만-함수를-변수에-담기때문에-표현식을-더-많이-사용을-한다-Hoisting을-할때-함수와-변수를-끌어올리지만-함수가-변수보다-더-우선순위로-끌어올린다"><a href="#표현식으로-함수를-작성할때는-문서의-맨위에다가-작성을-해야한다-선언식은-어디에-있던-호출이-되기때문에-상관이-없지만-표현식은-다르다-하지만-함수를-변수에-담기때문에-표현식을-더-많이-사용을-한다-Hoisting을-할때-함수와-변수를-끌어올리지만-함수가-변수보다-더-우선순위로-끌어올린다" class="headerlink" title="표현식으로 함수를 작성할때는 문서의 맨위에다가 작성을 해야한다. 선언식은 어디에 있던 호출이 되기때문에 상관이 없지만 표현식은 다르다. 하지만 함수를 변수에 담기때문에 표현식을 더 많이 사용을 한다. Hoisting을 할때 함수와 변수를 끌어올리지만 함수가 변수보다 더 우선순위로 끌어올린다."></a>표현식으로 함수를 작성할때는 문서의 맨위에다가 작성을 해야한다. 선언식은 어디에 있던 호출이 되기때문에 상관이 없지만 표현식은 다르다. 하지만 함수를 변수에 담기때문에 표현식을 더 많이 사용을 한다. Hoisting을 할때 함수와 변수를 끌어올리지만 함수가 변수보다 더 우선순위로 끌어올린다.</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/17/2017-12-17-JS-study-Hoisting/" data-id="cjct4qh3o000fvavlt87mwd5a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2017-12-16-JS-study-Scope" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -103,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/16/2017-12-16-JS-study-Scope/" data-id="cjcrcntjf000btktb23bbuk2i" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/16/2017-12-16-JS-study-Scope/" data-id="cjct4qh3l000cvavlu1ecy0pj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/15/2017-12-15-JS-function-Study/" data-id="cjcrcntje000atktbj5fy3rkd" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/15/2017-12-15-JS-function-Study/" data-id="cjct4qh3m000dvavlhc3sku5j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -227,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/14/2017-12-14-TIL-HTML/" data-id="cjcrcntjh000ctktbh1b91x78" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/14/2017-12-14-TIL-HTML/" data-id="cjct4qh3g0008vavls50bg2u2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -266,82 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/13/Linux-System-Mangement-1/" data-id="cjcrcntke001btktb11frv7qk" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-IT-Infra-Study-1-Server-Infra" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/13/IT-Infra-Study-1-Server-Infra/" class="article-date">
-  <time datetime="2017-12-13T05:54:12.000Z" itemprop="datePublished">2017-12-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/13/IT-Infra-Study-1-Server-Infra/">IT Infra Study(1) - Server, Infra</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="그림으로-공부하는-IT인프라-구조-1-인프라아키텍처-서버"><a href="#그림으로-공부하는-IT인프라-구조-1-인프라아키텍처-서버" class="headerlink" title="그림으로 공부하는 IT인프라 구조 (1) - 인프라아키텍처, 서버"></a>그림으로 공부하는 IT인프라 구조 (1) - 인프라아키텍처, 서버</h2><h3 id="IT인프라는-2가지-형태로-구성이-된다"><a href="#IT인프라는-2가지-형태로-구성이-된다" class="headerlink" title="IT인프라는 2가지 형태로 구성이 된다."></a>IT인프라는 2가지 형태로 구성이 된다.</h3><h4 id="집약형-대형컴퓨터-메인프레임-등-성능이-좋은것이고-집약형의-최대-장점은-단순하다는-점이다"><a href="#집약형-대형컴퓨터-메인프레임-등-성능이-좋은것이고-집약형의-최대-장점은-단순하다는-점이다" class="headerlink" title="집약형 : 대형컴퓨터, 메인프레임 등 성능이 좋은것이고 집약형의 최대 장점은 단순하다는 점이다."></a>집약형 : 대형컴퓨터, 메인프레임 등 성능이 좋은것이고 집약형의 최대 장점은 단순하다는 점이다.</h4><h5 id="장점"><a href="#장점" class="headerlink" title="장점"></a>장점</h5><ol>
-<li>한 대의 대형 컴퓨터만 있으면 되므로 구성이 간단.</li>
-<li>안정성이 높고 고성능이다.<h5 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h5></li>
-<li>비용이 비싸다.</li>
-<li>확장성에 한계가 있다.</li>
-</ol>
-<h4 id="분산형-아키텍처"><a href="#분산형-아키텍처" class="headerlink" title="분산형 아키텍처"></a>분산형 아키텍처</h4><h5 id="장점-1"><a href="#장점-1" class="headerlink" title="장점"></a>장점</h5><ol>
-<li>낮은 비용이다.</li>
-<li>확장성이 매우 좋다.</li>
-</ol>
-<h5 id="단점-1"><a href="#단점-1" class="headerlink" title="단점"></a>단점</h5><ol>
-<li>복잡하다.</li>
-<li>한대가 고장나면 영향을 최소화하기위해 설계가 필요</li>
-</ol>
-<h4 id="클라이언트-서버형-아키텍처"><a href="#클라이언트-서버형-아키텍처" class="headerlink" title="클라이언트 - 서버형 아키텍처"></a>클라이언트 - 서버형 아키텍처</h4><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_1.png" alt="Alt text" title="client-server"></p>
-<h5 id="장점-2"><a href="#장점-2" class="headerlink" title="장점"></a>장점</h5><ol>
-<li>클라이언트측에서 많은 처리를 실행할 수 있어서 소수의 서버로 다수의 클라이언트를 처리할 수 있다.</li>
-</ol>
-<h5 id="단점-2"><a href="#단점-2" class="headerlink" title="단점"></a>단점</h5><ol>
-<li>확장성에 한계가 필요</li>
-</ol>
-<h4 id="3계층형-아키텍처"><a href="#3계층형-아키텍처" class="headerlink" title="3계층형 아키텍처"></a>3계층형 아키텍처</h4><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_2.png" alt="Alt text" title="3-layer Architecture"></p>
-<h6 id="3계층형은-‘프레젠테이션-계층’-‘애플리케이션-계층’-‘데이터-계층’-총-3가지-계층으로-분할이-되어있다"><a href="#3계층형은-‘프레젠테이션-계층’-‘애플리케이션-계층’-‘데이터-계층’-총-3가지-계층으로-분할이-되어있다" class="headerlink" title="3계층형은 ‘프레젠테이션 계층’, ‘애플리케이션 계층’, ‘데이터 계층’ 총 3가지 계층으로 분할이 되어있다."></a>3계층형은 ‘프레젠테이션 계층’, ‘애플리케이션 계층’, ‘데이터 계층’ 총 3가지 계층으로 분할이 되어있다.</h6><h5 id="프레젠테이션-계층"><a href="#프레젠테이션-계층" class="headerlink" title="프레젠테이션 계층"></a>프레젠테이션 계층</h5><ul>
-<li>사용자의 입력을 받는다.</li>
-<li>웹브라우저 화면을 표시한다.</li>
-</ul>
-<h5 id="애플리케이션-계층"><a href="#애플리케이션-계층" class="headerlink" title="애플리케이션 계층"></a>애플리케이션 계층</h5><ul>
-<li>사용자 요청(request)를 처리</li>
-</ul>
-<h5 id="데이터-계층"><a href="#데이터-계층" class="headerlink" title="데이터 계층"></a>데이터 계층</h5><ul>
-<li>애플리케이션의 요청에 따라 데이터를 입출력</li>
-</ul>
-<h5 id="장점-3"><a href="#장점-3" class="headerlink" title="장점"></a>장점</h5><ul>
-<li>서버 부하 집중 개선<h5 id="단점-3"><a href="#단점-3" class="headerlink" title="단점"></a>단점</h5></li>
-<li>구조가 클라이언트 - 서버 구성보다 복잡.</li>
-</ul>
-<h4 id="물리서버"><a href="#물리서버" class="headerlink" title="물리서버"></a>물리서버</h4><h6 id="서버는-렉-rack-이라는-것에-장착된다"><a href="#서버는-렉-rack-이라는-것에-장착된다" class="headerlink" title="서버는 렉(rack)이라는 것에 장착된다."></a>서버는 렉(rack)이라는 것에 장착된다.</h6><h6 id="서버와-PC는-물리적으로-기본-구성이-같다"><a href="#서버와-PC는-물리적으로-기본-구성이-같다" class="headerlink" title="서버와 PC는 물리적으로 기본 구성이 같다."></a>서버와 PC는 물리적으로 기본 구성이 같다.</h6><h6 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h6><p>CPU는 Central Processing Unit의 약자다. 서버 중심에 위치해서 연산처리를 한다.<br><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_3.png" alt="Alt text" title="Computer Structure"></p>
-<h6 id="CPU는-명령을-받아서-연산을-실행하고-결과를-반환한다"><a href="#CPU는-명령을-받아서-연산을-실행하고-결과를-반환한다" class="headerlink" title="CPU는 명령을 받아서 연산을 실행하고 결과를 반환한다."></a>CPU는 명령을 받아서 연산을 실행하고 결과를 반환한다.</h6><h6 id="CPU가-명령을-자발적으로-처리하는-것은-아니다-‘프로세스’나-사용자의-입력을-받아서-그것이-OS에-명령을-내리고-OS-운영체제-라는-소프트웨어가-CPU에-명령을-내린다"><a href="#CPU가-명령을-자발적으로-처리하는-것은-아니다-‘프로세스’나-사용자의-입력을-받아서-그것이-OS에-명령을-내리고-OS-운영체제-라는-소프트웨어가-CPU에-명령을-내린다" class="headerlink" title="CPU가 명령을 자발적으로 처리하는 것은 아니다. ‘프로세스’나 사용자의 입력을 받아서 그것이 OS에 명령을 내리고, OS(운영체제)라는 소프트웨어가 CPU에 명령을 내린다."></a>CPU가 명령을 자발적으로 처리하는 것은 아니다. ‘프로세스’나 사용자의 입력을 받아서 그것이 OS에 명령을 내리고, OS(운영체제)라는 소프트웨어가 CPU에 명령을 내린다.</h6><h6 id="메모리"><a href="#메모리" class="headerlink" title="메모리"></a>메모리</h6><h6 id="메모리는-CPU옆에-위치하고-CPU에-전달하는-내용이나-데이터를-저장하거나-처리결과를-받는다"><a href="#메모리는-CPU옆에-위치하고-CPU에-전달하는-내용이나-데이터를-저장하거나-처리결과를-받는다" class="headerlink" title="메모리는 CPU옆에 위치하고, CPU에 전달하는 내용이나 데이터를 저장하거나 처리결과를 받는다."></a>메모리는 CPU옆에 위치하고, CPU에 전달하는 내용이나 데이터를 저장하거나 처리결과를 받는다.</h6><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_4.png" alt="Alt text" title="Memory"></p>
-<h5 id="메모리에-저장되는-정보는-영구성이-없지만-액세스가-매우-빠르게-이루어-지기때문에-사용을-한다"><a href="#메모리에-저장되는-정보는-영구성이-없지만-액세스가-매우-빠르게-이루어-지기때문에-사용을-한다" class="headerlink" title="메모리에 저장되는 정보는 영구성이 없지만 액세스가 매우 빠르게 이루어 지기때문에 사용을 한다."></a>메모리에 저장되는 정보는 영구성이 없지만 액세스가 매우 빠르게 이루어 지기때문에 사용을 한다.</h5><h6 id="CPU자체도-메모리를-가지고-있다-이것을-레지스터나-L1-L2캐시라고-부른다"><a href="#CPU자체도-메모리를-가지고-있다-이것을-레지스터나-L1-L2캐시라고-부른다" class="headerlink" title="CPU자체도 메모리를 가지고 있다. 이것을 레지스터나 L1, L2캐시라고 부른다."></a>CPU자체도 메모리를 가지고 있다. 이것을 레지스터나 L1, L2캐시라고 부른다.</h6><p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/infra_5.png" alt="Alt text" title="CPU"></p>
-<h6 id="L1-L2-캐시에-있는-데이터는-L3에도-존재한다-다른-코어는-자신-이외의-캐시를-확인하지-않고-L3캐시만-확인하면-되는-구조다"><a href="#L1-L2-캐시에-있는-데이터는-L3에도-존재한다-다른-코어는-자신-이외의-캐시를-확인하지-않고-L3캐시만-확인하면-되는-구조다" class="headerlink" title="L1, L2 캐시에 있는 데이터는 L3에도 존재한다. 다른 코어는 자신 이외의 캐시를 확인하지 않고 L3캐시만 확인하면 되는 구조다."></a>L1, L2 캐시에 있는 데이터는 L3에도 존재한다. 다른 코어는 자신 이외의 캐시를 확인하지 않고 L3캐시만 확인하면 되는 구조다.</h6><h6 id="메모리를-이용하려면-메모리-컨트롤러를-경유해서-CPU밖으로-나가야한다-이때-처리지연을-줄이기-위해서-자주-사용하는-명령-데이터를-코어-가까운-곳에-배치를-한다"><a href="#메모리를-이용하려면-메모리-컨트롤러를-경유해서-CPU밖으로-나가야한다-이때-처리지연을-줄이기-위해서-자주-사용하는-명령-데이터를-코어-가까운-곳에-배치를-한다" class="headerlink" title="메모리를 이용하려면 메모리 컨트롤러를 경유해서 CPU밖으로 나가야한다. 이때 처리지연을 줄이기 위해서 자주 사용하는 명령/데이터를 코어 가까운 곳에 배치를 한다."></a>메모리를 이용하려면 메모리 컨트롤러를 경유해서 CPU밖으로 나가야한다. 이때 처리지연을 줄이기 위해서 자주 사용하는 명령/데이터를 코어 가까운 곳에 배치를 한다.</h6><h5 id="버스"><a href="#버스" class="headerlink" title="버스"></a>버스</h5><h6 id="버스-bus-는-서버-내부에-있는-컴포넌트들을-서로-연결시키는-회선을-가리킨다-버스에서는-버스가-어느정도의-데이터-전송-능력을-가지고-있는가-대역-이-중요하다"><a href="#버스-bus-는-서버-내부에-있는-컴포넌트들을-서로-연결시키는-회선을-가리킨다-버스에서는-버스가-어느정도의-데이터-전송-능력을-가지고-있는가-대역-이-중요하다" class="headerlink" title="버스(bus)는 서버 내부에 있는 컴포넌트들을 서로 연결시키는 회선을 가리킨다. 버스에서는 버스가 어느정도의 데이터 전송 능력을 가지고 있는가(대역)이 중요하다."></a>버스(bus)는 서버 내부에 있는 컴포넌트들을 서로 연결시키는 회선을 가리킨다. 버스에서는 버스가 어느정도의 데이터 전송 능력을 가지고 있는가(대역)이 중요하다.</h6>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/13/IT-Infra-Study-1-Server-Infra/" data-id="cjcrcntkf001ctktbrvyrpwtk" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/12/13/Linux-System-Mangement-1/" data-id="cjct4qh4q001dvavl0th23bj9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -362,7 +327,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li></ul>
     </div>
@@ -372,7 +337,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-java-study/">java, java_study</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-refactoring/">java, refactoring</a></li></ul>
     </div>
@@ -382,9 +347,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a> <a href="/tags/java-refactoring/" style="font-size: 10px;">java, refactoring</a>
+      <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java-java-study/" style="font-size: 10px;">java, java_study</a> <a href="/tags/java-refactoring/" style="font-size: 10px;">java, refactoring</a>
     </div>
   </div>
 
@@ -401,9 +366,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/24/2018-1-24-TIL-java-basic-3/">2018-1-24 TIL java basic(3)</a>
+          </li>
         
           <li>
             <a href="/2018/01/23/2018-1-23-TIL-JAVA-ladder-project/">2018-1-23 TIL JAVA ladder project</a>
@@ -421,10 +390,6 @@
             <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
           </li>
         
-          <li>
-            <a href="/2018/01/19/2018-1-19 TIL/">(no title)</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -438,7 +403,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Jimmy<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
