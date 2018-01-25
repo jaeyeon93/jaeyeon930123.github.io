@@ -69,6 +69,135 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2018-1-19-TIL-java-basic-study" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/" class="article-date">
+  <time datetime="2018-01-19T03:01:43.000Z" itemprop="datePublished">2018-01-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="자바-언어-특징"><a href="#자바-언어-특징" class="headerlink" title="자바 언어 특징"></a>자바 언어 특징</h2><ul>
+<li>플랫폼에 독립적이다.</li>
+<li>자바는 JVM()만 있으면 어떤 플랫폼에서도 실행이 가능</li>
+<li>객체지향언어디ㅏ.</li>
+<li>C나 C++은 메모리 관리가 어려운데, 자바는 메모리 관리를 Garbase Collector로 사용되지 않은 메모리르 자동적으로 정리해준다.<br>-</li>
+</ul>
+<h3 id="자바개발도구설치"><a href="#자바개발도구설치" class="headerlink" title="자바개발도구설치"></a>자바개발도구설치</h3><ul>
+<li>JDK(Java Development Kit)의 약자</li>
+<li>오라클사이트에서 운영체제에 맞는 JDK를 다운로드</li>
+</ul>
+<h3 id="자바개발순서"><a href="#자바개발순서" class="headerlink" title="자바개발순서"></a>자바개발순서</h3><ol>
+<li>소스작성</li>
+<li>작성한 소스 컴파일</li>
+<li>컴파일한 소스를 JVM을 이용한 실행</li>
+<li>HelloWorld.java를 만든다.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class HelloWorld&#123;</span><br><span class="line">	public static void main(String [] args) &#123;</span><br><span class="line">    		System.out.println(&quot;hello world&quot;);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>javac HelloWorld.java // complie을 한다.<br>java HelloWolrd<br>Hello World</p>
+<ul>
+<li>이클립스를 통해 프로젝트를 생성하고 코드작성하고 저장을 하면 자동적으로 컴파일을 해준다.</li>
+<li>src에 HelloWorld.java라는 파일이 생성이 되어있고,</li>
+</ul>
+</blockquote>
+<h3 id="주석"><a href="#주석" class="headerlink" title="주석"></a>주석</h3><ul>
+<li>구현 주석</li>
+<li>행단위주석(//)</li>
+<li><p>블럭단위 주석(/<em> 주석으로할 내용 </em>/)</p>
+</li>
+<li><p>문서화주석</p>
+</li>
+<li>/<em>* 문서에 포함할 내용을 작성함 </em>/</li>
+<li>문서화 주석은 클래스 인터페이스 그리고 멤버 당 하나씩 가질 수 있고, 선언 바로 전에 작성.</li>
+</ul>
+<h2 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h2><ul>
+<li>변수란 값을 저장할 수 있는 메모리 공간, 값이 변할 수 있는 수.</li>
+<li><strong>자바는 컴파일시에 변수의 타입이 결정</strong>이 된다.</li>
+</ul>
+<h3 id="변수의-선언"><a href="#변수의-선언" class="headerlink" title="변수의 선언"></a>변수의 선언</h3><ul>
+<li>타입 이름; ex) int count; double average;</li>
+<li>명명규칙</li>
+</ul>
+<h2 id="상수"><a href="#상수" class="headerlink" title="상수"></a>상수</h2><ul>
+<li>상수란 수식에서 변하지 않는 값을 의미한다.</li>
+<li>상수의 선언 <strong>final 상수타입 상수명;</strong></li>
+<li>상수의 사용 : 상수명 = 값; ex) J = 10;(J에는 값을 담을 수 있는 기회가 단 한번만 허락됨)</li>
+</ul>
+<h3 id="상수를-사용해야-하는-경우"><a href="#상수를-사용해야-하는-경우" class="headerlink" title="상수를 사용해야 하는 경우"></a>상수를 사용해야 하는 경우</h3><ul>
+<li>값이 변하면 위험한 경우에 사용</li>
+<li>값만 봤을때 무엇을 의미하는지 쉽게 파악할 수 없는 값에도 값 자체를 사용하기보다는 상수를 사용</li>
+</ul>
+<h4 id="자바는-변수를-사용하기위해서-반드시-데이터타입이-정해져야-한다"><a href="#자바는-변수를-사용하기위해서-반드시-데이터타입이-정해져야-한다" class="headerlink" title="자바는 변수를 사용하기위해서 반드시 데이터타입이 정해져야 한다."></a>자바는 변수를 사용하기위해서 반드시 데이터타입이 정해져야 한다.</h4><h2 id="기본형데이터타입"><a href="#기본형데이터타입" class="headerlink" title="기본형데이터타입"></a>기본형데이터타입</h2><ul>
+<li>논리형(boolean) : 1byte, true ~ false</li>
+</ul>
+<p><img src="primitive_data.png" alt=""></p>
+<h3 id="리터럴"><a href="#리터럴" class="headerlink" title="리터럴"></a>리터럴</h3><ul>
+<li>리터럴은 일종의 값지? 라고 생각을 하면 된다.</li>
+<li>어떤 특정한 값 자체를 리터럴 이라고한다. 이 특정 리터럴을 값을 대입할 수 있다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">char c = &apos;f&apos;;</span><br><span class="line">System.out.println(c);</span><br><span class="line"></span><br><span class="line">int x = 10;</span><br><span class="line">System.out.println(x);</span><br><span class="line"></span><br><span class="line">long bing = 3454535214L;</span><br><span class="line"></span><br><span class="line">float f = 32.5f;</span><br><span class="line"></span><br><span class="line">double d = 3434343.5;</span><br></pre></td></tr></table></figure>
+<h2 id="기본형의-타입변환"><a href="#기본형의-타입변환" class="headerlink" title="기본형의 타입변환"></a>기본형의 타입변환</h2><p><strong>형변환이란, 변수 또는 리터럴의 타입을 다른 타입으로 변환하는 것이다.</strong></p>
+<p><img src="type_change.png" alt=""></p>
+<ul>
+<li>
+</li>
+</ul>
+<h3 id="묵시형-형변환"><a href="#묵시형-형변환" class="headerlink" title="묵시형 형변환"></a>묵시형 형변환</h3><ul>
+<li>크기가 작은 타입을 크기가 더 큰 타입으로 바꿀 때에는 묵시형으로 형을 바꾸어 준다.</li>
+<li>int x = 50000;</li>
+<li>long y = x;</li>
+<li>이를 <strong>암묵적 형변환</strong> 이라고도 한다.</li>
+</ul>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/int_long.png" alt=""></p>
+<h3 id="명시정-형변환"><a href="#명시정-형변환" class="headerlink" title="명시정 형변환"></a>명시정 형변환</h3><ul>
+<li>크기가 더 큰 타입을 작은 타입으로 바꿀 때에는 명시적으로 변환 해주어야 한다.</li>
+<li>long x = 50000;</li>
+<li>int y = x; (이렇게 묵시적으로 수행하면 컴파일러는 오류를 발생 시킨다.)</li>
+<li>int y = (int) x; (반드시 (타입) 으로 명시적으로 형을 바꾸어 주어야 한다.)</li>
+<li>이를 강제 형 변환이라고 한다.</li>
+</ul>
+<h2 id="연산자와-연산식"><a href="#연산자와-연산식" class="headerlink" title="연산자와 연산식"></a>연산자와 연산식</h2><ul>
+<li>연산 : 데이터를 처리하여 결과를 산출하는 것</li>
+<li>연산자 : 연산에 사용되는 표시나 기호(+ - / *);</li>
+<li>부호연산자(+ -)</li>
+</ul>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/operator.png" alt=""></p>
+<p><img src="/Users/jimmy/Desktop/project/blog/source/_posts/compare.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/19/2018-1-19-TIL-java-basic-study/" data-id="cjcu203eo000so4tbbr7rq5z7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-java-study/">java, java_study</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2018-1-19 TIL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/19/2018-1-19 TIL/" class="article-date">
@@ -103,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/19/2018-1-19 TIL/" data-id="cjct4qh42000rvavljokfrdqn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/19/2018-1-19 TIL/" data-id="cjcu203em000ro4tbcwo22syn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/18/2018-1-18/" data-id="cjct4qh41000qvavlzhitv2hm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/18/2018-1-18/" data-id="cjcu203ek000qo4tbhhzuk8e1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -281,7 +410,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/12/2018-1-12-TIL/" data-id="cjct4qh3z000pvavlwih3bny4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/12/2018-1-12-TIL/" data-id="cjcu203ej000po4tb170w67rp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -338,45 +467,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/10/2018-1-10-TIL/" data-id="cjct4qh3y000ovavlzwhgt6zr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2018-1-8-TIL-JAVA-practice-problem-solving" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/" class="article-date">
-  <time datetime="2018-01-08T14:44:02.000Z" itemprop="datePublished">2018-01-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/">2018-1-8 TIL JAVA practice problem solving</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2018-1-8-TIL"><a href="#2018-1-8-TIL" class="headerlink" title="2018-1-8 TIL"></a>2018-1-8 TIL</h2><h4 id="자바의-정석-6-1-연습문제-풀이"><a href="#자바의-정석-6-1-연습문제-풀이" class="headerlink" title="자바의 정석 6-1 연습문제 풀이"></a>자바의 정석 6-1 연습문제 풀이</h4><p>타입             변수명            설명<br>int            num            카드의 숫자(1~10사이의정수)<br>boolean        isKwang        광이면 true, 아니면 false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public class Exercise6_2 &#123;</span><br><span class="line">    public static void main (String [] args) &#123;</span><br><span class="line"></span><br><span class="line">        // step2</span><br><span class="line">        SutdaCard card1 = new SutdaCard(3, false);</span><br><span class="line">        // card1은 매개변수가 전달되기때문에 매개변수가 있는 생성자를 만들어야 한다.</span><br><span class="line">        SutdaCard card2 = new SutdaCard();</span><br><span class="line">        // card2는 매개변수가 전달되지 않기때문에 기본생성자를 만들어야한다.</span><br><span class="line"></span><br><span class="line">        System.out.println(card1.info());</span><br><span class="line">        System.out.println(card2.info());</span><br><span class="line">        // step3</span><br><span class="line">        // 출력값 3, 1K를 보고 info메서드를 만들어야한다.</span><br><span class="line">        // Card1의 매개변수로 3과 false를 던지고</span><br><span class="line">        // Card2는 매개변수를 던지지 않는다.</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class SutdaCard &#123;</span><br><span class="line">    int num;</span><br><span class="line">    boolean isKwang;</span><br><span class="line"></span><br><span class="line">    // step1 step2에서 new sutdaCard(3, false)와 new studaCard();를 통해 매개변수를 전달하는 	기본생성자와 매개변수를 전달하지 않아도 되는 생성자를 만들어야 한다.</span><br><span class="line"></span><br><span class="line">    SutdaCard() &#123;</span><br><span class="line">        this.num = 1;</span><br><span class="line">        this.isKwang = true;</span><br><span class="line">        // 매개변수가 없는 생성자는 위와 같이 this를 이용해서 인스턴스를 초기화를 시킬 수 있다.</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    SutdaCard(int num, boolean isKwang) &#123;</span><br><span class="line">        this.num = num;</span><br><span class="line">        this.isKwang = isKwang;</span><br><span class="line">        // 매개변수가 있는 생성자는</span><br><span class="line">    &#125;</span><br><span class="line">// 위의 코드에서 생성자를 2개 정의하고 있다(오버로딩), 한개는 매개변수가 없는생성자, 한개는 매개변수가 있는 생성자.</span><br><span class="line"></span><br><span class="line">    //step4</span><br><span class="line">    public String info() &#123;</span><br><span class="line">        if (num == 1)&#123;</span><br><span class="line">            return num + &quot;K&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return num + &quot;&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//실행결과</span><br><span class="line">&gt;3</span><br><span class="line">&gt;1K</span><br><span class="line">와 같은 실행결과가 나와야한다.</span><br></pre></td></tr></table></figure></p>
-<p>위의 코드를 보고 생성자를 만들때 매개변수를 전달하는지, 아니면 매개변수를 전달하지 않고 변수를 만드는지에 대한 차이를 알았다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/08/2018-1-8-TIL-JAVA-practice-problem-solving/" data-id="cjct4qh4p001bvavlodta5kzg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/10/2018-1-10-TIL/" data-id="cjcu203eh000oo4tbk4ki62aa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -441,6 +532,10 @@
       <ul>
         
           <li>
+            <a href="/2018/01/25/2018-1-25-TIL-java-basic-4/">2018-1-25 TIL java basic(4)</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/24/2018-1-24-TIL-java-basic-3/">2018-1-24 TIL java basic(3)</a>
           </li>
         
@@ -454,10 +549,6 @@
         
           <li>
             <a href="/2018/01/21/2018-1-21-TIL-JAVA-Basic-2/">2018-1-21 TIL JAVA Basic(2)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/19/2018-1-19-TIL-java-basic-study/">2018-1-19 TIL java basic study</a>
           </li>
         
       </ul>
